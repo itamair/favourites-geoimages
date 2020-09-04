@@ -1,0 +1,31 @@
+uuid: 9b8fc200-dd8f-49f9-a72d-51898c192307
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_locations
+    - node.type.event
+    - paragraphs.paragraphs_type.location
+  module:
+    - entity_reference_revisions
+id: node.event.field_locations
+field_name: field_locations
+entity_type: node
+bundle: event
+label: Locations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      location: location
+    target_bundles_drag_drop:
+      location:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

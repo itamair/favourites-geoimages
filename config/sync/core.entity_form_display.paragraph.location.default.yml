@@ -1,0 +1,93 @@
+uuid: 3cc6f2d0-848b-4e56-a32f-b117d0c020c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.location.field_geofield
+    - field.field.paragraph.location.field_stroke_color
+    - field.field.paragraph.location.field_title
+    - paragraphs.paragraphs_type.location
+  module:
+    - leaflet
+id: paragraph.location.default
+targetEntityType: paragraph
+bundle: location
+mode: default
+content:
+  field_geofield:
+    weight: 1
+    settings:
+      map:
+        leaflet_map: 'OSM Mapnik'
+        height: '600'
+        map_position:
+          center:
+            lat: '40.45'
+            lon: '17.2'
+          zoom: '12'
+          minZoom: '3'
+          maxZoom: '18'
+          zoomFiner: '0'
+          force: 0
+        scroll_zoom_enabled: '1'
+        fullscreen_control: '1'
+        auto_center: 0
+        locate: 0
+      input:
+        show: '1'
+        readonly: 0
+      toolbar:
+        position: topright
+        drawMarker: '1'
+        drawPolyline: '1'
+        drawRectangle: '1'
+        drawPolygon: '1'
+        editMode: '1'
+        dragMode: '1'
+        removalMode: '1'
+        drawCircle: false
+        drawCircleMarker: false
+        cutPolygon: 0
+      reset_map:
+        control: '1'
+        position: topright
+      geocoder:
+        control: '1'
+        settings:
+          position: topright
+          input_size: '25'
+          providers:
+            arcgisonline:
+              checked: '1'
+              weight: '0'
+            googlemaps:
+              checked: '1'
+              weight: '1'
+            file:
+              weight: '0'
+              checked: 0
+          min_terms: '4'
+          delay: '800'
+          zoom: '16'
+          options: ''
+          popup: 0
+    third_party_settings: {  }
+    type: leaflet_widget_default
+    region: content
+  field_stroke_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
