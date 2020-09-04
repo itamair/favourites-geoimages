@@ -20,10 +20,13 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/geocoder": "^3.11",
         "drupal/geofield_map": "^2.67",
         "drupal/leaflet": "^2.0",
         "drupal/paragraphs": "^1.12",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "geocoder-php/arcgis-online-provider": "^4.1",
+        "geocoder-php/google-maps-provider": "^4.5"
     },
     "conflict": {
         "drupal/drupal": "*"
