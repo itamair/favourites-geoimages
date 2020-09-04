@@ -20,6 +20,8 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/geofield_map": "^2.67",
+        "drupal/leaflet": "^2.0",
         "drupal/paragraphs": "^1.12",
         "drush/drush": "^10.3"
     },
