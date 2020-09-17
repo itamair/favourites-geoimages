@@ -1,0 +1,25 @@
+uuid: 5a37dbc8-eaa9-41ab-b080-d5a4560572d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stroke_opacity
+    - paragraphs.paragraphs_type.geometry
+id: paragraph.geometry.field_stroke_opacity
+field_name: field_stroke_opacity
+entity_type: paragraph
+bundle: geometry
+label: 'Stroke Opacity'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: !!float 1
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 1
+  prefix: ''
+  suffix: ''
+field_type: decimal

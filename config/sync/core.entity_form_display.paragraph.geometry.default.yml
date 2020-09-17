@@ -1,0 +1,138 @@
+uuid: 71341bc3-1962-41d9-b996-669c036f8141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.geometry.field_fill_color
+    - field.field.paragraph.geometry.field_fill_opacity
+    - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_stroke_color
+    - field.field.paragraph.geometry.field_stroke_opacity
+    - field.field.paragraph.geometry.field_stroke_weight
+    - field.field.paragraph.geometry.field_title
+    - paragraphs.paragraphs_type.geometry
+  module:
+    - color_field
+    - leaflet
+id: paragraph.geometry.default
+targetEntityType: paragraph
+bundle: geometry
+mode: default
+content:
+  field_fill_color:
+    weight: 4
+    settings:
+      show_palette: '1'
+      palette: ''
+      show_input: '0'
+      show_palette_only: '0'
+      show_buttons: '0'
+      allow_empty: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_fill_opacity:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_geofield:
+    weight: 6
+    settings:
+      map:
+        leaflet_map: 'OSM Mapnik'
+        height: '800'
+        auto_center: '1'
+        map_position:
+          center:
+            lat: '40.45'
+            lon: '17.26'
+          zoom: '12'
+          minZoom: '3'
+          maxZoom: '18'
+          zoomFiner: '-1'
+          force: 0
+        scroll_zoom_enabled: '1'
+        fullscreen_control: '1'
+        locate: 0
+      input:
+        show: '1'
+        readonly: 0
+      toolbar:
+        position: topright
+        drawRectangle: '1'
+        drawPolygon: '1'
+        editMode: '1'
+        dragMode: '1'
+        cutPolygon: '1'
+        removalMode: '1'
+        drawMarker: 0
+        drawPolyline: 0
+        drawCircle: false
+        drawCircleMarker: false
+      reset_map:
+        control: '1'
+        position: topright
+      path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"0.2"}'
+      geocoder:
+        control: '1'
+        settings:
+          position: topright
+          input_size: '25'
+          providers:
+            arcgisonline:
+              checked: '1'
+              weight: '0'
+            googlemaps:
+              checked: '1'
+              weight: '1'
+            file:
+              weight: '0'
+              checked: 0
+          min_terms: '4'
+          delay: '800'
+          zoom: '16'
+          options: ''
+          popup: 0
+    third_party_settings: {  }
+    type: leaflet_widget_default
+    region: content
+  field_stroke_color:
+    weight: 1
+    settings:
+      show_palette: '1'
+      palette: ''
+      show_input: '0'
+      show_palette_only: '0'
+      show_buttons: '0'
+      allow_empty: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_stroke_opacity:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_stroke_weight:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

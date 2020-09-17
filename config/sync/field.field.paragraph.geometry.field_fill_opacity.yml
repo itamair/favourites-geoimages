@@ -1,0 +1,25 @@
+uuid: d7b1763d-4f1d-49bb-bb1c-e554ada516eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fill_opacity
+    - paragraphs.paragraphs_type.geometry
+id: paragraph.geometry.field_fill_opacity
+field_name: field_fill_opacity
+entity_type: paragraph
+bundle: geometry
+label: 'Fill Opacity'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0.5
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 1
+  prefix: ''
+  suffix: ''
+field_type: decimal

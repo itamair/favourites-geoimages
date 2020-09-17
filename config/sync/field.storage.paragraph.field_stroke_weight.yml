@@ -1,17 +1,17 @@
-uuid: 18a3e979-fa00-4061-b4b3-6e075495fa88
+uuid: 2ed1db95-5753-4c67-8e8f-9e161ff8ec5d
 langcode: en
 status: true
 dependencies:
   module:
-    - color_field
     - paragraphs
-id: paragraph.field_stroke_color
-field_name: field_stroke_color
+id: paragraph.field_stroke_weight
+field_name: field_stroke_weight
 entity_type: paragraph
-type: color_field_type
+type: integer
 settings:
-  format: '#HEXHEX'
-module: color_field
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

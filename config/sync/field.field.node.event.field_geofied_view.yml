@@ -1,0 +1,50 @@
+uuid: e6db03c8-c787-4514-abd9-9e994c9e5913
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geofied_view
+    - node.type.event
+    - views.view.events
+  module:
+    - viewfield
+id: node.event.field_geofied_view
+field_name: field_geofied_view
+entity_type: node
+bundle: event
+label: 'Geofied View'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: block_event_map
+    arguments: '[node:nid]'
+    items_to_display: ''
+    target_uuid: 6045ea60-93a0-421b-aab9-b570ff4b949e
+default_value_callback: ''
+settings:
+  force_default: true
+  allowed_views:
+    events: events
+    comment: '0'
+    content: '0'
+    block_content: '0'
+    files: '0'
+    frontpage: '0'
+    user_admin_people: '0'
+    comments_recent: '0'
+    content_recent: '0'
+    taxonomy_term: '0'
+    watchdog: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    block: block
+    page: page
+    feed: '0'
+    default: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

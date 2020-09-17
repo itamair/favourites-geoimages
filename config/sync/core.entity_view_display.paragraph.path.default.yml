@@ -1,0 +1,43 @@
+uuid: f179c80c-31dd-404d-be3b-c7c2c1d504c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.path.field_fill_color
+    - field.field.paragraph.path.field_fill_opacity
+    - field.field.paragraph.path.field_geofield
+    - field.field.paragraph.path.field_stroke_color
+    - field.field.paragraph.path.field_stroke_opacity
+    - field.field.paragraph.path.field_stroke_weight
+    - field.field.paragraph.path.field_title
+    - paragraphs.paragraphs_type.path
+  module:
+    - geofield
+id: paragraph.path.default
+targetEntityType: paragraph
+bundle: path
+mode: default
+content:
+  field_geofield:
+    weight: 1
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    type: geofield_default
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_fill_color: true
+  field_fill_opacity: true
+  field_stroke_color: true
+  field_stroke_opacity: true
+  field_stroke_weight: true

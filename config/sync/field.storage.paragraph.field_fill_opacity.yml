@@ -1,17 +1,17 @@
-uuid: 18a3e979-fa00-4061-b4b3-6e075495fa88
+uuid: 9fc743db-6931-45a9-8a3d-96a953625d8f
 langcode: en
 status: true
 dependencies:
   module:
-    - color_field
     - paragraphs
-id: paragraph.field_stroke_color
-field_name: field_stroke_color
+id: paragraph.field_fill_opacity
+field_name: field_fill_opacity
 entity_type: paragraph
-type: color_field_type
+type: decimal
 settings:
-  format: '#HEXHEX'
-module: color_field
+  precision: 10
+  scale: 1
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -8,6 +8,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   color: 0
+  color_field: 0
   comment: 0
   config: 0
   contact: 0
@@ -16,6 +17,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_clone: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0
@@ -29,7 +31,12 @@ module:
   help: 0
   history: 0
   image: 0
+  italo_module: 0
+  layout_discovery: 0
+  layout_paragraphs: 0
   leaflet: 0
+  leaflet_markercluster: 0
+  leaflet_views: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
@@ -50,6 +57,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  viewfield: 0
   views_ui: 0
   views: 10
   paragraphs: 11

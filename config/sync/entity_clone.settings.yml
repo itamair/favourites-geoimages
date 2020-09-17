@@ -1,0 +1,45 @@
+form_settings:
+  paragraph:
+    default_value: true
+    disable: false
+    hidden: false
+  block_content:
+    default_value: false
+    disable: false
+    hidden: false
+  comment:
+    default_value: false
+    disable: false
+    hidden: false
+  contact_message:
+    default_value: false
+    disable: false
+    hidden: false
+  file:
+    default_value: false
+    disable: false
+    hidden: false
+  menu_link_content:
+    default_value: false
+    disable: false
+    hidden: false
+  node:
+    default_value: false
+    disable: false
+    hidden: false
+  path_alias:
+    default_value: false
+    disable: false
+    hidden: false
+  shortcut:
+    default_value: false
+    disable: false
+    hidden: false
+  taxonomy_term:
+    default_value: false
+    disable: false
+    hidden: false
+  user:
+    default_value: false
+    disable: false
+    hidden: false

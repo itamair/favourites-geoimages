@@ -15,7 +15,18 @@ label: Geofield
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 'POINT (17.26 40.45)'
+    geo_type: Point
+    lat: 40.45
+    lon: 17.26
+    left: 17.26
+    top: 40.45
+    right: 17.26
+    bottom: 40.45
+    geohash: srhq0g
+    latlon: '40.45,17.26'
 default_value_callback: ''
 settings:
   backend: geofield_backend_default

@@ -1,17 +1,21 @@
-uuid: 84d867a6-2635-44aa-988c-4846aaec6c4d
+uuid: 7e429470-d5b4-4c68-9aaa-4deddc419e29
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_location_icon
-    - field.field.paragraph.location.field_title
-    - paragraphs.paragraphs_type.location
+    - field.field.paragraph.geometry.field_fill_color
+    - field.field.paragraph.geometry.field_fill_opacity
+    - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_stroke_color
+    - field.field.paragraph.geometry.field_stroke_opacity
+    - field.field.paragraph.geometry.field_stroke_weight
+    - field.field.paragraph.geometry.field_title
+    - paragraphs.paragraphs_type.geometry
   module:
     - leaflet
-id: paragraph.location.default
+id: paragraph.geometry.default
 targetEntityType: paragraph
-bundle: location
+bundle: geometry
 mode: default
 content:
   field_geofield:
@@ -26,22 +30,22 @@ content:
       height_unit: px
       fullscreen_control: '1'
       reset_map:
-        control: '1'
         position: topright
+        control: 0
       map_position:
         center:
           lat: '40.45'
           lon: '17.26'
-        zoom: '15'
+        zoom: '12'
         minZoom: '3'
         maxZoom: '18'
-        zoomFiner: '0'
+        zoomFiner: '-1'
         force: 0
       icon:
-        iconType: html
-        iconUrl: '[paragraph:field_geofield:lat]'
+        iconType: marker
+        iconUrl: ''
         shadowUrl: ''
-        html: '<div>Cicco</div>'
+        html: '<div></div>'
         html_class: leaflet-map-divicon
         circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
         iconSize:
@@ -59,7 +63,10 @@ content:
         popupAnchor:
           x: ''
           'y': ''
-      path: '{"color":"[paragraph:field_stroke_color:entity:name]","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"yellow","fillOpacity":"0.2"}'
+      leaflet_markercluster:
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        control: 0
+      path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"0.2"}'
       geocoder:
         settings:
           position: topright
@@ -83,9 +90,6 @@ content:
       hide_empty_map: 0
       disable_wheel: 0
       gesture_handling: 0
-      leaflet_markercluster:
-        control: 0
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
     third_party_settings: {  }
     type: leaflet_formatter_default
     region: content
@@ -98,4 +102,8 @@ content:
     type: string
     region: content
 hidden:
-  field_location_icon: true
+  field_fill_color: true
+  field_fill_opacity: true
+  field_stroke_color: true
+  field_stroke_opacity: true
+  field_stroke_weight: true
