@@ -17,14 +17,17 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/adminimal_admin_toolbar": "^1.11",
+        "drupal/color_field": "^2.4",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/geocoder": "^3.11",
         "drupal/geofield_map": "^2.67",
+        "drupal/layout_paragraphs": "^1.0@beta",
         "drupal/leaflet": "^2.0",
         "drupal/paragraphs": "^1.12",
         "drupal/token": "^1.7",
+        "drupal/viewfield": "^3.0@beta",
         "drush/drush": "^10.3",
         "geocoder-php/arcgis-online-provider": "^4.1",
         "geocoder-php/google-maps-provider": "^4.5"
