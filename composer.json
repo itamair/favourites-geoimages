@@ -24,7 +24,7 @@
         "drupal/geocoder": "^3.11",
         "drupal/geofield_map": "^2.67",
         "drupal/layout_paragraphs": "^1.0@beta",
-        "drupal/leaflet": "^2.0",
+        "drupal/leaflet": "^2.1",
         "drupal/paragraphs": "^1.12",
         "drupal/token": "^1.7",
         "drupal/viewfield": "^3.0@beta",
