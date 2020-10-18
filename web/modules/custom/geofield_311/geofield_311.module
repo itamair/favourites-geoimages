@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Contains geofield_3111.module.
+ */
+
+use Drupal\leaflet_views\Plugin\views\style\LeafletMap;
+
+/**
+ * Implements hook_leaflet_map_view_style_alter().
+ */
+function geofield_311_leaflet_map_view_style_alter(array &$map_settings, LeafletMap &$view_style) {
+  $config = \Drupal::config('geofield_311.settings');
+  $geojson_app_limit = $config->get('geojson_app_limit');
+  $drupal_root = DRUPAL_ROOT . '/';
+  $drupal_virtual_host = \Drupal::request()->getHost() . '/';
+  //$geojson_app_limit["file"] = $drupal_virtual_host . $geojson_app_limit["file"];
+  $map_settings["map"]['geojson_app_limit'] = $geojson_app_limit;
+}

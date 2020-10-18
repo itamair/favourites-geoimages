@@ -1,0 +1,7 @@
+geofield_311.settings:
+  path: '/admin/config/system/geofield_311_settings'
+  defaults:
+    _form:  '\Drupal\geofield_311\Form\Geofield311SettingsForm'
+    _title: 'Geofield 311 settings'
+  requirements:
+    _permission: 'configure geofield_311'
