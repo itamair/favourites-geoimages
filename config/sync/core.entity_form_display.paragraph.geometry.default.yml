@@ -10,10 +10,11 @@ dependencies:
     - field.field.paragraph.geometry.field_stroke_opacity
     - field.field.paragraph.geometry.field_stroke_weight
     - field.field.paragraph.geometry.field_title
+    - field.field.paragraph.geometry.field_zindex
     - paragraphs.paragraphs_type.geometry
   module:
     - color_field
-    - leaflet
+    - geofield_311
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry
@@ -39,42 +40,41 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_geofield:
-    weight: 6
+    weight: 8
     settings:
       map:
-        leaflet_map: 'OSM Mapnik'
+        leaflet_map: multilayers
         height: '800'
         auto_center: '1'
         map_position:
           center:
-            lat: '40.45'
-            lon: '17.26'
+            lat: '0'
+            lon: '0'
           zoom: '12'
-          minZoom: '3'
+          minZoom: '1'
           maxZoom: '18'
-          zoomFiner: '-1'
+          zoomFiner: '0'
           force: 0
+        locate: '1'
         scroll_zoom_enabled: '1'
         fullscreen_control: '1'
-        locate: 0
       input:
         show: '1'
         readonly: 0
       toolbar:
         position: topright
+        marker: defaultMarker
+        drawPolyline: '1'
         drawRectangle: '1'
         drawPolygon: '1'
         editMode: '1'
         dragMode: '1'
         cutPolygon: '1'
         removalMode: '1'
-        drawMarker: 0
-        drawPolyline: 0
         drawCircle: false
-        drawCircleMarker: false
       reset_map:
-        control: '1'
         position: topright
+        control: 0
       path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"0.2"}'
       geocoder:
         control: '1'
@@ -85,10 +85,10 @@ content:
             arcgisonline:
               checked: '1'
               weight: '0'
-            googlemaps:
-              checked: '1'
-              weight: '1'
             file:
+              weight: '0'
+              checked: 0
+            googlemaps:
               weight: '0'
               checked: 0
           min_terms: '4'
@@ -96,8 +96,13 @@ content:
           zoom: '16'
           options: ''
           popup: 0
+      geojson_app_limit:
+        bounds_zoom_correction: '0'
+        bounds_limit_flag: '1'
+        max_zoom_out: '-1'
+        bounds_zoom_flag: 0
     third_party_settings: {  }
-    type: leaflet_widget_default
+    type: geofield_311_leaflet_widget
     region: content
   field_stroke_color:
     weight: 1
@@ -132,6 +137,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_zindex:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
 hidden:
   created: true

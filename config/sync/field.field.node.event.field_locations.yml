@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_locations
     - node.type.event
+    - paragraphs.paragraphs_type.geoimage
     - paragraphs.paragraphs_type.geometry
     - paragraphs.paragraphs_type.location
     - paragraphs.paragraphs_type.path
@@ -27,8 +28,12 @@ settings:
     target_bundles:
       location: location
       geometry: geometry
+      geoimage: geoimage
       path: path
     target_bundles_drag_drop:
+      geoimage:
+        enabled: true
+        weight: 5
       geometry:
         enabled: true
         weight: 3

@@ -1,0 +1,38 @@
+uuid: 9d0b93c7-e129-47bd-af64-18daf2b73425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.geoimage
+  module:
+    - image
+id: paragraph.geoimage.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: geoimage
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: geimages
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 5MB
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

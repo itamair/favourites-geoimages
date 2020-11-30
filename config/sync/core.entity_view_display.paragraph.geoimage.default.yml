@@ -1,54 +1,53 @@
-uuid: 84d867a6-2635-44aa-988c-4846aaec6c4d
+uuid: 7d54a790-9a3e-4716-bbf2-716179eb3c7e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.location.field_classname
-    - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_location_icon
-    - field.field.paragraph.location.field_location_icon_width
-    - field.field.paragraph.location.field_title
-    - paragraphs.paragraphs_type.location
+    - field.field.paragraph.geoimage.field_geofield
+    - field.field.paragraph.geoimage.field_image
+    - field.field.paragraph.geoimage.field_title
+    - paragraphs.paragraphs_type.geoimage
   module:
+    - image
     - leaflet
-id: paragraph.location.default
+id: paragraph.geoimage.default
 targetEntityType: paragraph
-bundle: location
+bundle: geoimage
 mode: default
 content:
   field_geofield:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
-      multiple_map: false
+      multiple_map: '0'
       popup_content: ''
-      leaflet_map: 'OSM Mapnik'
-      height: 400
+      leaflet_map: multilayers
+      height: '600'
       height_unit: px
-      fullscreen_control: true
+      fullscreen_control: '1'
       reset_map:
         position: topright
-        control: false
+        control: 0
       map_position:
         center:
-          lat: !!float 0
-          lon: !!float 0
-        zoom: 12
-        minZoom: 1
-        maxZoom: 18
-        zoomFiner: 0
-        force: false
+          lat: '0'
+          lon: '0'
+        zoom: '14'
+        minZoom: '4'
+        maxZoom: '18'
+        zoomFiner: '0'
+        force: 0
       weight: ''
       icon:
         iconType: marker
-        iconUrl: '[paragraph:field_location_icon:thumbnail:url]'
+        iconUrl: ''
         shadowUrl: ''
         className: ''
         html: '<div></div>'
         html_class: leaflet-map-divicon
         circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
         iconSize:
-          x: '[paragraph:field_location_icon:width]'
+          x: ''
           'y': ''
         iconAnchor:
           x: ''
@@ -64,52 +63,50 @@ content:
           'y': ''
       leaflet_markercluster:
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-        control: false
+        control: 0
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
       geocoder:
         settings:
           position: topright
-          input_size: 25
+          input_size: '25'
           providers:
             arcgisonline:
-              weight: 0
-              checked: false
+              weight: '0'
+              checked: 0
             file:
-              weight: 0
-              checked: false
+              weight: '0'
+              checked: 0
             googlemaps:
-              weight: 0
-              checked: false
-          min_terms: 4
-          delay: 800
-          zoom: 16
+              weight: '0'
+              checked: 0
+          min_terms: '4'
+          delay: '800'
+          zoom: '16'
           options: ''
-          popup: false
-        control: false
-      popup: false
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
+          popup: 0
+        control: 0
+      popup: 0
+      hide_empty_map: 0
+      disable_wheel: 0
+      gesture_handling: 0
     third_party_settings: {  }
     type: leaflet_formatter_default
     region: content
-  field_location_icon_width:
-    weight: 2
-    label: above
+  field_image:
+    weight: 1
+    label: hidden
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: number_integer
+    type: image
     region: content
   field_title:
     weight: 0
-    label: inline
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-hidden:
-  field_classname: true
-  field_location_icon: true
+hidden: {  }

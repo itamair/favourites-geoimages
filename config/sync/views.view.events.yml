@@ -3,22 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.paragraph.field_classname
     - field.storage.paragraph.field_fill_color
     - field.storage.paragraph.field_fill_opacity
     - field.storage.paragraph.field_geofield
     - field.storage.paragraph.field_location_icon
+    - field.storage.paragraph.field_location_icon_width
     - field.storage.paragraph.field_stroke_color
     - field.storage.paragraph.field_stroke_weight
     - field.storage.paragraph.field_title
+    - field.storage.paragraph.field_zindex
     - image.style.large
-    - image.style.medium
+    - image.style.thumbnail
     - node.type.event
     - system.menu.main
   module:
     - color_field
     - geofield
+    - geofield_311
     - image
-    - leaflet_views
     - node
     - paragraphs
     - user
@@ -80,7 +83,7 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: leaflet_map
+        type: geofield_311_leaflet_map
         options:
           grouping: {  }
           data_source: field_geofield
@@ -89,7 +92,7 @@ display:
           name_field: field_title
           description_field: '#rendered_view_fields'
           view_mode: full
-          leaflet_map: 'OSM Mapnik'
+          leaflet_map: multilayers
           height: '800'
           height_unit: px
           hide_empty_map: 0
@@ -97,7 +100,7 @@ display:
           fullscreen_control: 1
           gesture_handling: 0
           reset_map:
-            control: 0
+            control: 1
             position: topright
           map_position:
             force: 0
@@ -105,18 +108,20 @@ display:
               lat: '0'
               lon: '0'
             zoom: '12'
-            minZoom: '3'
+            minZoom: '1'
             maxZoom: '18'
             zoomFiner: '0'
+          weight: ''
           icon:
             iconType: marker
             iconUrl: '{{ field_location_icon }}'
             shadowUrl: ''
+            className: '{{ field_classname }}'
             html: '<div></div>'
             html_class: leaflet-map-divicon
-            circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+            circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
             iconSize:
-              x: ''
+              x: '{{ field_location_icon_width }}'
               'y': ''
             iconAnchor:
               x: ''
@@ -131,9 +136,9 @@ display:
               x: ''
               'y': ''
           leaflet_markercluster:
-            control: 1
+            control: 0
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
-          path: '{"color":"{{ field_stroke_color }}","opacity":"{{ field_stroke_opacity }}","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
+          path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
           geocoder:
             control: 0
             settings:
@@ -154,6 +159,11 @@ display:
               zoom: '16'
               popup: 0
               options: ''
+          geojson_app_limit:
+            bounds_zoom_flag: 1
+            bounds_zoom_correction: '0'
+            bounds_limit_flag: 1
+            max_zoom_out: '-1'
       row:
         type: fields
       fields:
@@ -400,7 +410,7 @@ display:
           click_sort_column: target_id
           type: image_url
           settings:
-            image_style: medium
+            image_style: thumbnail
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -728,6 +738,193 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_zindex:
+          id: field_zindex
+          table: paragraph__field_zindex
+          field: field_zindex
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_classname:
+          id: field_classname
+          table: paragraph__field_classname
+          field: field_classname
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_location_icon_width:
+          id: field_location_icon_width
+          table: paragraph__field_location_icon_width
+          field: field_location_icon_width
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -754,93 +951,19 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        type_1:
-          id: type_1
-          table: paragraphs_item_field_data
-          field: type
+      sorts:
+        field_zindex_value:
+          id: field_zindex_value
+          table: paragraph__field_zindex
+          field: field_zindex_value
           relationship: field_locations
           group_type: group
           admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
+          order: DESC
+          exposed: false
           expose:
-            operator_id: type_1_op
-            label: 'Paragraph type'
-            description: ''
-            use_operator: false
-            operator: type_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type_1
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
             label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: paragraph
-          entity_field: type
-          plugin_id: bundle
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: title_op
-            label: Title
-            description: ''
-            use_operator: false
-            operator: title_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: title
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
-      sorts:
+          plugin_id: standard
         created:
           id: created
           table: node_field_data
@@ -856,7 +979,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Events
+      title: 'Taranto 2021'
       header: {  }
       footer: {  }
       empty: {  }
@@ -920,13 +1043,16 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.paragraph.field_classname'
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
         - 'config:field.storage.paragraph.field_location_icon'
+        - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
+        - 'config:field.storage.paragraph.field_zindex'
   block_event_map:
     display_plugin: block
     id: block_event_map
@@ -966,10 +1092,97 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        style: false
+        row: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      style:
+        type: geofield_311_leaflet_map
+        options:
+          grouping: {  }
+          data_source: field_geofield
+          entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
+          name_field: field_title
+          description_field: '#rendered_view_fields'
+          view_mode: full
+          leaflet_map: multilayers
+          height: '800'
+          height_unit: px
+          hide_empty_map: 0
+          disable_wheel: 0
+          fullscreen_control: 1
+          gesture_handling: 0
+          reset_map:
+            control: 1
+            position: topright
+          map_position:
+            force: 0
+            center:
+              lat: '0'
+              lon: '0'
+            zoom: '12'
+            minZoom: '1'
+            maxZoom: '18'
+            zoomFiner: '0'
+          weight: ''
+          icon:
+            iconType: marker
+            iconUrl: '{{ field_location_icon }}'
+            shadowUrl: ''
+            className: '{{ field_classname }}'
+            html: '<div></div>'
+            html_class: leaflet-map-divicon
+            circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+            iconSize:
+              x: '{{ field_location_icon_width }}'
+              'y': ''
+            iconAnchor:
+              x: ''
+              'y': ''
+            shadowSize:
+              x: ''
+              'y': ''
+            shadowAnchor:
+              x: ''
+              'y': ''
+            popupAnchor:
+              x: ''
+              'y': ''
+          leaflet_markercluster:
+            control: 0
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
+          path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
+          geocoder:
+            control: 0
+            settings:
+              position: topright
+              input_size: '25'
+              providers:
+                arcgisonline:
+                  weight: '0'
+                  checked: 0
+                file:
+                  weight: '0'
+                  checked: 0
+                googlemaps:
+                  weight: '0'
+                  checked: 0
+              min_terms: '4'
+              delay: '800'
+              zoom: '16'
+              popup: 0
+              options: ''
+          geojson_app_limit:
+            bounds_zoom_flag: 0
+            bounds_zoom_correction: '0'
+            bounds_limit_flag: 1
+            max_zoom_out: '-1'
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -980,13 +1193,16 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.paragraph.field_classname'
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
         - 'config:field.storage.paragraph.field_location_icon'
+        - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
+        - 'config:field.storage.paragraph.field_zindex'
   page_events_map:
     display_plugin: page
     id: page_events_map
@@ -1015,10 +1231,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.paragraph.field_classname'
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
         - 'config:field.storage.paragraph.field_location_icon'
+        - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
+        - 'config:field.storage.paragraph.field_zindex'

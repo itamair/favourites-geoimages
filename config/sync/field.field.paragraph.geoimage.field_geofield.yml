@@ -1,0 +1,39 @@
+uuid: 51a968e6-47f9-4b19-80a2-2570543e9577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_geofield
+    - paragraphs.paragraphs_type.geoimage
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - file
+    dumper: wkt
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+    field: field_image
+    delta_handling: default
+id: paragraph.geoimage.field_geofield
+field_name: field_geofield
+entity_type: paragraph
+bundle: geoimage
+label: Geofield
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  backend: geofield_backend_default
+field_type: geofield

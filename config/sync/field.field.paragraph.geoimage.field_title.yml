@@ -1,0 +1,19 @@
+uuid: 6de7677d-74af-46ee-9b38-397ea98793aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.geoimage
+id: paragraph.geoimage.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: geoimage
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

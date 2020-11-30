@@ -1,33 +1,21 @@
-uuid: 3cc6f2d0-848b-4e56-a32f-b117d0c020c4
+uuid: 578fece2-288b-467c-9e82-73efcb8a614b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.location.field_classname
-    - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_location_icon
-    - field.field.paragraph.location.field_location_icon_width
-    - field.field.paragraph.location.field_title
+    - field.field.paragraph.geoimage.field_geofield
+    - field.field.paragraph.geoimage.field_image
+    - field.field.paragraph.geoimage.field_title
     - image.style.thumbnail
-    - paragraphs.paragraphs_type.location
+    - paragraphs.paragraphs_type.geoimage
   module:
     - geofield_map
     - image
-id: paragraph.location.default
+id: paragraph.geoimage.default
 targetEntityType: paragraph
-bundle: location
+bundle: geoimage
 mode: default
 content:
-  field_classname:
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_geofield:
     weight: 2
     settings:
@@ -48,22 +36,20 @@ content:
           options: ''
         control: 0
       map_google_places:
-        places_control: true
         places_additional_options: ''
+        places_control: false
       map_library: leaflet
       map_type_google: roadmap
       map_type_leaflet: OpenStreetMap_Mapnik
       map_type_selector: true
       map_dimensions:
         width: 100%
-        height: 650px
+        height: 450px
       zoom:
         start: 6
         focus: 12
         min: 0
         max: 22
-      click_to_find_marker: true
-      click_to_place_marker: true
       geoaddress_field:
         field: '0'
         disabled: true
@@ -71,6 +57,8 @@ content:
       default_value:
         lat: !!float 0
         lon: !!float 0
+      click_to_find_marker: false
+      click_to_place_marker: false
       hide_coordinates: false
       html5_geolocation: false
       map_google_api_key: ''
@@ -84,20 +72,13 @@ content:
     third_party_settings: {  }
     type: geofield_map
     region: content
-  field_location_icon:
-    weight: 3
+  field_image:
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-    region: content
-  field_location_icon_width:
-    weight: 5
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   field_title:
     weight: 0
