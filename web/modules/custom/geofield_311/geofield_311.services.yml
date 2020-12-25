@@ -1,0 +1,4 @@
+services:
+  geofield_311.service:
+      class: Drupal\geofield_311\Geofield311Service
+      arguments: ['@config.factory']

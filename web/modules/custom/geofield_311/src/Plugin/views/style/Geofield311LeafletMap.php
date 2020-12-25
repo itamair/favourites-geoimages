@@ -2,6 +2,8 @@
 
 namespace Drupal\geofield_311\Plugin\views\style;
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\geofield_311\Geofield311SettingsElementsTrait;
 use Drupal\leaflet_views\Plugin\views\style\LeafletMap;
 
 
@@ -21,12 +23,28 @@ use Drupal\leaflet_views\Plugin\views\style\LeafletMap;
  * )
  */
 class Geofield311LeafletMap extends LeafletMap {
+
+  use Geofield311SettingsElementsTrait;
+
   /**
-   * Renders the View.
+   * {@inheritdoc}
+   */
+  public function buildOptionsForm(&$form, FormStateInterface $form_state) {
+    parent::buildOptionsForm($form,  $form_state);
+    $this->getGeofield311AdditionalGeojsonAppLimitSettings($form, $this->options);
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function render() {
+    $default_settings = $this->getGeofield311AdditionalDefaultSettings();
     $element = parent::render();
     array_unshift($element["#attached"]["library"],'geofield_311/geofield_311');
+    $element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"]["bounds_zoom_flag"] = $this->options["geojson_app_limit"]["bounds_zoom_flag"] ?? $default_settings['geojson_app_limit']["bounds_zoom_flag"];
+    $element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"]["bounds_zoom_correction"] = $this->options["geojson_app_limit"]["bounds_zoom_correction"] ?? $default_settings['geojson_app_limit']["bounds_zoom_correction"];
+    $element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"]["bounds_limit_flag"] = $this->options["geojson_app_limit"]["bounds_limit_flag"] ?? $default_settings['geojson_app_limit']["bounds_limit_flag"];
+    $element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"]["max_zoom_out"] = $this->options["geojson_app_limit"]["max_zoom_out"] ?? $default_settings['geojson_app_limit']["max_zoom_out"];
     return $element;
   }
 
