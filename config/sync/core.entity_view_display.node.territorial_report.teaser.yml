@@ -1,0 +1,34 @@
+uuid: 25b3a013-d1d8-4b36-9edc-8061413391cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.territorial_report.body
+    - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_locations
+    - node.type.territorial_report
+  module:
+    - text
+    - user
+id: node.territorial_report.teaser
+targetEntityType: node
+bundle: territorial_report
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_geofied_view: true
+  field_locations: true

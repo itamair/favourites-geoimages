@@ -22,6 +22,7 @@ dependencies:
     - geofield
     - geofield_311
     - image
+    - leaflet_views
     - node
     - paragraphs
     - user
@@ -160,7 +161,7 @@ display:
               popup: 0
               options: ''
           geojson_app_limit:
-            bounds_zoom_flag: 1
+            bounds_zoom_flag: 0
             bounds_zoom_correction: '0'
             bounds_limit_flag: 1
             max_zoom_out: '-1'
@@ -808,7 +809,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -871,7 +872,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -951,6 +952,7 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
       sorts:
         field_zindex_value:
           id: field_zindex_value
@@ -1033,6 +1035,10 @@ display:
           plugin_id: node_nid
       display_extenders: {  }
       use_ajax: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1099,7 +1105,7 @@ display:
         groups:
           1: AND
       style:
-        type: geofield_311_leaflet_map
+        type: leaflet_map
         options:
           grouping: {  }
           data_source: field_geofield
@@ -1111,22 +1117,22 @@ display:
           leaflet_map: multilayers
           height: '800'
           height_unit: px
-          hide_empty_map: 0
-          disable_wheel: 0
-          fullscreen_control: 1
-          gesture_handling: 0
+          hide_empty_map: false
+          disable_wheel: false
+          fullscreen_control: true
+          gesture_handling: false
           reset_map:
-            control: 1
+            control: true
             position: topright
           map_position:
-            force: 0
+            force: false
             center:
-              lat: '0'
-              lon: '0'
-            zoom: '12'
-            minZoom: '1'
-            maxZoom: '18'
-            zoomFiner: '0'
+              lat: 0
+              lon: 0
+            zoom: 12
+            minZoom: 1
+            maxZoom: 18
+            zoomFiner: 0
           weight: ''
           icon:
             iconType: marker
@@ -1152,14 +1158,14 @@ display:
               x: ''
               'y': ''
           leaflet_markercluster:
-            control: 0
+            control: false
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
           path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
           geocoder:
-            control: 0
+            control: false
             settings:
               position: topright
-              input_size: '25'
+              input_size: 25
               providers:
                 arcgisonline:
                   weight: '0'
@@ -1170,16 +1176,11 @@ display:
                 googlemaps:
                   weight: '0'
                   checked: 0
-              min_terms: '4'
-              delay: '800'
-              zoom: '16'
-              popup: 0
+              min_terms: 4
+              delay: 800
+              zoom: 16
+              popup: false
               options: ''
-          geojson_app_limit:
-            bounds_zoom_flag: 0
-            bounds_zoom_correction: '0'
-            bounds_limit_flag: 1
-            max_zoom_out: '-1'
       row:
         type: fields
         options: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.geoimage.field_geofield
     - field.field.paragraph.geoimage.field_image
+    - field.field.paragraph.geoimage.field_location_icon_width
     - field.field.paragraph.geoimage.field_title
     - paragraphs.paragraphs_type.geoimage
   module:
@@ -19,24 +20,24 @@ content:
     weight: 2
     label: hidden
     settings:
-      multiple_map: '0'
+      multiple_map: false
       popup_content: ''
       leaflet_map: multilayers
-      height: '600'
+      height: 600
       height_unit: px
-      fullscreen_control: '1'
+      fullscreen_control: true
       reset_map:
         position: topright
-        control: 0
+        control: false
       map_position:
         center:
-          lat: '0'
-          lon: '0'
-        zoom: '14'
-        minZoom: '4'
-        maxZoom: '18'
-        zoomFiner: '0'
-        force: 0
+          lat: !!float 0
+          lon: !!float 0
+        zoom: 14
+        minZoom: 4
+        maxZoom: 18
+        zoomFiner: 0
+        force: false
       weight: ''
       icon:
         iconType: marker
@@ -63,32 +64,32 @@ content:
           'y': ''
       leaflet_markercluster:
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-        control: 0
+        control: false
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
       geocoder:
         settings:
           position: topright
-          input_size: '25'
+          input_size: 25
           providers:
             arcgisonline:
-              weight: '0'
-              checked: 0
+              weight: 0
+              checked: false
             file:
-              weight: '0'
-              checked: 0
+              weight: 0
+              checked: false
             googlemaps:
-              weight: '0'
-              checked: 0
-          min_terms: '4'
-          delay: '800'
-          zoom: '16'
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 800
+          zoom: 16
           options: ''
-          popup: 0
-        control: 0
-      popup: 0
-      hide_empty_map: 0
-      disable_wheel: 0
-      gesture_handling: 0
+          popup: false
+        control: false
+      popup: false
+      hide_empty_map: false
+      disable_wheel: false
+      gesture_handling: false
     third_party_settings: {  }
     type: leaflet_formatter_default
     region: content
@@ -109,4 +110,5 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_location_icon_width: true

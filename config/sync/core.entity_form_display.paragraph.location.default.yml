@@ -11,8 +11,27 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.location
   module:
+    - field_group
     - geofield_map
     - image
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_location_icon
+        - field_classname
+        - field_location_icon_width
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Attributes
 id: paragraph.location.default
 targetEntityType: paragraph
 bundle: location

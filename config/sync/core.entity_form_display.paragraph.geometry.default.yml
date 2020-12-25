@@ -14,7 +14,30 @@ dependencies:
     - paragraphs.paragraphs_type.geometry
   module:
     - color_field
+    - field_group
     - geofield_311
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_stroke_color
+        - field_stroke_weight
+        - field_stroke_opacity
+        - field_fill_color
+        - field_fill_opacity
+        - field_zindex
+      parent_name: ''
+      weight: 7
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        weight: '0'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: Attributes
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry

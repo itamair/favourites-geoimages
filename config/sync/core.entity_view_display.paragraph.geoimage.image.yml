@@ -1,0 +1,32 @@
+uuid: 9d288eb5-63d4-4c06-b8ad-faeec9acd0e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.image
+    - field.field.paragraph.geoimage.field_geofield
+    - field.field.paragraph.geoimage.field_image
+    - field.field.paragraph.geoimage.field_location_icon_width
+    - field.field.paragraph.geoimage.field_title
+    - image.style.medium
+    - paragraphs.paragraphs_type.geoimage
+  module:
+    - image
+id: paragraph.geoimage.image
+targetEntityType: paragraph
+bundle: geoimage
+mode: image
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_geofield: true
+  field_location_icon_width: true
+  field_title: true

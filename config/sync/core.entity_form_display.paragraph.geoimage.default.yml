@@ -5,12 +5,30 @@ dependencies:
   config:
     - field.field.paragraph.geoimage.field_geofield
     - field.field.paragraph.geoimage.field_image
+    - field.field.paragraph.geoimage.field_location_icon_width
     - field.field.paragraph.geoimage.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.geoimage
   module:
+    - field_group
     - geofield_map
     - image
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_location_icon_width
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Attributes
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage
@@ -46,8 +64,8 @@ content:
         width: 100%
         height: 450px
       zoom:
-        start: 6
-        focus: 12
+        start: 12
+        focus: 14
         min: 0
         max: 22
       geoaddress_field:
@@ -80,6 +98,13 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_location_icon_width:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_title:
     weight: 0
     settings:
@@ -88,6 +113,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

@@ -1,0 +1,20 @@
+uuid: cae8f64e-b9fc-4c56-8d86-ef09114aa26d
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - bartik
+id: masquerade
+theme: bartik
+region: footer_first
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility: {  }

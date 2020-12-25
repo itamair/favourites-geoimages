@@ -1,0 +1,42 @@
+uuid: 05e4e591-ab25-479f-8e7b-a31e49b3699f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.territorial_report.body
+    - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_locations
+    - node.type.territorial_report
+  module:
+    - text
+    - user
+    - viewfield
+id: node.territorial_report.default
+targetEntityType: node
+bundle: territorial_report
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_geofied_view:
+    type: viewfield_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_locations: true

@@ -583,7 +583,7 @@ display:
         - user.permissions
       max-age: 0
       tags: {  }
-  page_1:
+  page_admin_content:
     display_options:
       path: admin/content/node
       menu:
@@ -600,9 +600,10 @@ display:
         menu_name: admin
         weight: -10
       display_extenders: {  }
+      display_description: ''
     display_plugin: page
-    display_title: Page
-    id: page_1
+    display_title: 'Page Admin Content'
+    id: page_admin_content
     position: 1
     cache_metadata:
       contexts:

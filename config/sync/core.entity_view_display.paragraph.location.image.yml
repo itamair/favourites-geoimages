@@ -1,0 +1,34 @@
+uuid: c255cc76-2089-441c-9a19-5ad0eca8fcef
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.image
+    - field.field.paragraph.location.field_classname
+    - field.field.paragraph.location.field_geofield
+    - field.field.paragraph.location.field_location_icon
+    - field.field.paragraph.location.field_location_icon_width
+    - field.field.paragraph.location.field_title
+    - image.style.geofield_map_default_icon_style
+    - paragraphs.paragraphs_type.location
+  module:
+    - image
+id: paragraph.location.image
+targetEntityType: paragraph
+bundle: location
+mode: image
+content:
+  field_location_icon:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: geofield_map_default_icon_style
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_classname: true
+  field_geofield: true
+  field_location_icon_width: true
+  field_title: true
