@@ -20,3 +20,73 @@ function geofield_311_leaflet_default_widget_alter(array &$map_settings) {
   $map_settings['geojson_app_limit'] = \Drupal::service('geofield_311.service')
     ->getGeojsonAppLimit();
 }
+
+/**
+ * Returns leaflet map default settings.
+ */
+function geofield_311_leaflet_map_default_settings() {
+  return [
+    'dragging' => TRUE,
+    'touchZoom' => TRUE,
+    'scrollWheelZoom' => TRUE,
+    'doubleClickZoom' => TRUE,
+    'zoomControl' => TRUE,
+    'attributionControl' => TRUE,
+    'trackResize' => TRUE,
+    'fadeAnimation' => TRUE,
+    'zoomAnimation' => TRUE,
+    'closePopupOnClick' => TRUE,
+    'minZoom' => 2,
+    'maxZoom' => 20,
+    'zoom' => 15,
+    'layerControl' => TRUE,
+    'layerControlOptions' => [
+      'position' => 'topright',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_leaflet_map_info().
+ */
+function geofield_311_leaflet_map_info() {
+  $map_info = [];
+  $map_info['multilayers'] = [
+    'label' => 'Multilayers',
+    'description' => t('Multilayers'),
+    'settings' => geofield_311_leaflet_map_default_settings(),
+    'layers' => [
+      'Google Roads' => [
+        'type' => 'google',
+        'urlTemplate' =>  '//mt{s}.googleapis.com/vt?x={x}&y={y}&z={z}',
+        'options' => [
+          'attribution' => 'Map data &copy; <a href="http://googlemaps.com">Google</a>',
+          'detectRetina' => FALSE,
+          'subdomains' => [0, 1, 2, 3],
+        ],
+      ],
+      'Stamen_TonerLite' => [
+        'urlTemplate' => '//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}',
+        'options' => [
+          "subdomains" => "abcd",
+          "minZoom" => 0,
+          "maxZoom" => 20,
+          "ext" => "png",
+          "attribution" => "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        ],
+      ],
+      'Stamen_Terrain' => [
+        'urlTemplate' => '//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}',
+        'options' => [
+          "subdomains" => "abcd",
+          "minZoom" => 0,
+          "maxZoom" => 18,
+          "ext" => "png",
+          "attribution" => "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+        ],
+      ],
+    ],
+  ];
+
+  return $map_info;
+}
