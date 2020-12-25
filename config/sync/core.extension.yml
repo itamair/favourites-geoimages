@@ -33,7 +33,6 @@ module:
   help: 0
   history: 0
   image: 0
-  italo_module: 0
   layout_discovery: 0
   layout_paragraphs: 0
   leaflet: 0
