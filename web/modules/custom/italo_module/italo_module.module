@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains italo_module.module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function italo_module_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'italo_module/common';
+  $page['#attached']['library'][] = 'italo_module/leaflet_map_interaction';
+}
+

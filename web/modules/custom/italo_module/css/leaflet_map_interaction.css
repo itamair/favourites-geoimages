@@ -1,0 +1,23 @@
+/* line 1, ../sass/leaflet_map_interaction.scss */
+.leaflet-popup-content-wrapper {
+  border-radius: 1px;
+}
+/* line 3, ../sass/leaflet_map_interaction.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  min-width: 100px;
+  width: auto !important;
+  margin: 12px 8px;
+}
+/* line 7, ../sass/leaflet_map_interaction.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content h2 {
+  font-size: 24px;
+}
+/* line 10, ../sass/leaflet_map_interaction.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content div {
+  margin-bottom: 6px;
+}
+/* line 13, ../sass/leaflet_map_interaction.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content img {
+  width: auto;
+  max-width: 300px;
+}

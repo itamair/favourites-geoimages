@@ -1,0 +1,15 @@
+common:
+  version: 1.x
+  css:
+    component:
+      css/common.css: {}
+
+leaflet_map_interaction:
+  version: 1.x
+  css:
+    component:
+      css/leaflet_map_interaction.css: {}
+  js:
+    js/leaflet_map_interaction.js: {}
+  dependencies:
+      - leaflet/leaflet
