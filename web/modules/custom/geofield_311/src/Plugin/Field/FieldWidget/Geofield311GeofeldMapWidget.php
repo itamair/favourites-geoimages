@@ -5,21 +5,21 @@ namespace Drupal\geofield_311\Plugin\Field\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\geofield_311\Geofield311SettingsElementsTrait;
-use Drupal\leaflet\Plugin\Field\FieldWidget\LeafletDefaultWidget;
+use Drupal\geofield_map\Plugin\Field\FieldWidget\GeofieldMapWidget;
 
 /**
  * Plugin implementation of the "geofield_311_leaflet_widget" widget.
  *
  * @FieldWidget(
- *   id = "geofield_311_leaflet_widget",
- *   label = @Translation("Geofield 311 Leaflet Map"),
- *   description = @Translation("Provides a custom Geofield 311 Leaflet Widget, with Geoman Js Library and custom js addictions."),
+ *   id = "geofield_311_geofield_map_widget",
+ *   label = @Translation("Geofield 311 Geofield Map"),
+ *   description = @Translation("Provides a custom Geofield 311 Geofield Map Widget, with Geoman Js Library and custom js addictions."),
  *   field_types = {
  *     "geofield",
  *   },
  * )
  */
-class Geofield311LeafletWidget extends LeafletDefaultWidget {
+class Geofield311GeofeldMapWidget extends GeofieldMapWidget {
   use Geofield311SettingsElementsTrait;
 
   /**
@@ -53,9 +53,10 @@ class Geofield311LeafletWidget extends LeafletDefaultWidget {
   ) {
     $settings = $this->getSettings();
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
-    array_unshift($element['map']["#attached"]["library"], 'geofield_311/geofield_311');
-    $element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"] = array_merge($element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"], $settings["geojson_app_limit"]);
-    // $this->setGeojsonAppLimitWidgetElementData($element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"], $settings, $default_settings);
+    $element["value"]["#geojson_app_limit"] = $settings["geojson_app_limit"];
+    // Change the Element type to render the Geofield Map Widget to the custom
+    // 'geofield_311_geofield_map'.
+    $element["value"]["#type"] = 'geofield_311_geofield_map';
     return $element;
   }
 

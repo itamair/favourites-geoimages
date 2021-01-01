@@ -31,12 +31,14 @@ class Geofield311Service {
    * Returns the GeojsonAppLimit settings.
    *
    * @return array|\Drupal\Core\Config\ImmutableConfig|mixed|null
+   *   The geojson_app_limit.
    */
-  public function getGeojsonAppLimit () {
+  public function getGeojsonAppLimit() {
     $geojson_app_limit = $this->config->get('geojson_app_limit');
     // $drupal_root = DRUPAL_ROOT . '/';
     // $drupal_virtual_host = \Drupal::request()->getHost() . '/';
     $geojson_app_limit["file"] = Url::fromUri('base:', ['absolute' => TRUE])->toString() . $geojson_app_limit["file"];
     return $geojson_app_limit;
   }
+
 }

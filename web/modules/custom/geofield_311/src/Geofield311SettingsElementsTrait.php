@@ -94,4 +94,21 @@ trait Geofield311SettingsElementsTrait {
 
   }
 
+  /**
+   * Sets the GeojsonAppLimit Element data.
+   *
+   * @param array $geojson_app_limit
+   *   Geojson_app_limit map settings.
+   * @param array $settings
+   *   Widget element settings.
+   * @param array $default_settings
+   *   Widget element default settings.
+   */
+  public function setGeojsonAppLimitWidgetElementData(array &$geojson_app_limit, array $settings, array $default_settings) {
+    $geojson_app_limit["bounds_zoom_flag"] = $settings["geojson_app_limit"]["bounds_zoom_flag"] ?? $default_settings['geojson_app_limit']["bounds_zoom_flag"];
+    $geojson_app_limit["bounds_zoom_correction"] = $settings["geojson_app_limit"]["bounds_zoom_correction"] ?? $default_settings['geojson_app_limit']["bounds_zoom_correction"];
+    $geojson_app_limit["bounds_limit_flag"] = $settings["geojson_app_limit"]["bounds_limit_flag"] ?? $default_settings['geojson_app_limit']["bounds_limit_flag"];
+    $geojson_app_limit["max_zoom_out"] = $settings["geojson_app_limit"]["max_zoom_out"] ?? $default_settings['geojson_app_limit']["max_zoom_out"];
+  }
+
 }
