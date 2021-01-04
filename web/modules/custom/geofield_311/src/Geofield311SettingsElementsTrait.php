@@ -8,7 +8,6 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  * Class GeofieldMapFieldTrait.
  *
  * Provide common functions for Geofield 311 Settings Elements.
- *
  */
 trait Geofield311SettingsElementsTrait {
 
@@ -27,7 +26,7 @@ trait Geofield311SettingsElementsTrait {
         'bounds_zoom_correction' => 0,
         'bounds_limit_flag' => FALSE,
         'max_zoom_out' => -2,
-        ],
+      ],
     ];
   }
 
@@ -101,14 +100,9 @@ trait Geofield311SettingsElementsTrait {
    *   Geojson_app_limit map settings.
    * @param array $settings
    *   Widget element settings.
-   * @param array $default_settings
-   *   Widget element default settings.
    */
-  public function setGeojsonAppLimitWidgetElementData(array &$geojson_app_limit, array $settings, array $default_settings) {
-    $geojson_app_limit["bounds_zoom_flag"] = $settings["geojson_app_limit"]["bounds_zoom_flag"] ?? $default_settings['geojson_app_limit']["bounds_zoom_flag"];
-    $geojson_app_limit["bounds_zoom_correction"] = $settings["geojson_app_limit"]["bounds_zoom_correction"] ?? $default_settings['geojson_app_limit']["bounds_zoom_correction"];
-    $geojson_app_limit["bounds_limit_flag"] = $settings["geojson_app_limit"]["bounds_limit_flag"] ?? $default_settings['geojson_app_limit']["bounds_limit_flag"];
-    $geojson_app_limit["max_zoom_out"] = $settings["geojson_app_limit"]["max_zoom_out"] ?? $default_settings['geojson_app_limit']["max_zoom_out"];
+  public function setGeojsonAppLimitWidgetElementData(array &$geojson_app_limit, array $settings) {
+    $geojson_app_limit = array_merge($geojson_app_limit, $settings["geojson_app_limit"]);
   }
 
 }

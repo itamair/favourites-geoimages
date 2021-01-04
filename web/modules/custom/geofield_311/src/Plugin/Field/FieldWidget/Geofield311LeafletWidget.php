@@ -54,8 +54,7 @@ class Geofield311LeafletWidget extends LeafletDefaultWidget {
     $settings = $this->getSettings();
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
     array_unshift($element['map']["#attached"]["library"], 'geofield_311/geofield_311');
-    $element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"] = array_merge($element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"], $settings["geojson_app_limit"]);
-    // $this->setGeojsonAppLimitWidgetElementData($element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"], $settings, $default_settings);
+    $this->setGeojsonAppLimitWidgetElementData($element["map"]["#attached"]["drupalSettings"]["leaflet"][$element["map"]["#map_id"]]["map"]["geojson_app_limit"], $settings);
     return $element;
   }
 

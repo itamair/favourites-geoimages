@@ -53,6 +53,7 @@ class Geofield311GeofeldMapWidget extends GeofieldMapWidget {
   ) {
     $settings = $this->getSettings();
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
+    // Add the geojson_app_limit settings to the element value.
     $element["value"]["#geojson_app_limit"] = $settings["geojson_app_limit"];
     // Change the Element type to render the Geofield Map Widget to the custom
     // 'geofield_311_geofield_map'.

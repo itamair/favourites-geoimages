@@ -17,8 +17,8 @@
 
       // React on geofieldMapInit
       $(context).on('geofieldMapInit', function (event, mapid) {
-        let geofieldMap_settings = settings.geofield_map[mapid];
-        let map = geofieldMap_settings.map;
+        let geofieldMap_settings = settings.geofield_map ? settings.geofield_map[mapid] : (settings.geofield_google_map[mapid] ?? []);
+        let map = geofieldMap_settings.map ?? geofieldMap_settings['map_settings'].map;
         // Geojson Overlays
         // If there is Geojson valid file input.
         if (geofieldMap_settings.geojson_app_limit && geofieldMap_settings.geojson_app_limit.file.length > 0) {
@@ -108,12 +108,14 @@
             layerBounds.extend(LatLng);
           });
         });
+        let start_center = map.getCenter();
+        let start_zoom = map.getZoom();
         // We need to fitBounds anyway, to be able to get the boundsZoom.
         map.fitBounds(layerBounds);
         let boundsZoom = map.getZoom() + parseInt(geojsonAppLimitSettings.bounds_zoom_correction);
-        if (!geojsonAppLimitSettings.bounds_zoom_flag ?? false) {
-          map.setCenter(Drupal.Leaflet[mapid].start_center);
-          map.setZoom(Drupal.Leaflet[mapid].start_zoom);
+        if (!geojsonAppLimitSettings.bounds_zoom_flag) {
+          map.setCenter(start_center);
+          map.setZoom(start_zoom);
         }
         if (geojsonAppLimitSettings.bounds_limit_flag ?? false) {
           map.setOptions({minZoom: boundsZoom + parseInt(geojsonAppLimitSettings.max_zoom_out)});
