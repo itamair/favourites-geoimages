@@ -1,7 +1,13 @@
-
+/* line 2, ../sass/common.scss */
 .views-ui-display-tab-setting.overridden,
 .views-ui-display-tab-bucket.overridden {
   font-style: italic;
   color: red !important;
   font-weight: bold;
+}
+
+/* line 9, ../sass/common.scss */
+.paragraphs-subform .field-group-details.geometry-attributes .details-wrapper {
+  display: flex;
+  justify-content: space-around;
 }
