@@ -2,7 +2,10 @@
 
   'use strict';
 
-  const zoomDefaultIconSize = 12;
+  let markers, features;
+  let hidden_markers = [];
+
+  const zoomDefaultIconSize = 18;
 
   /**
    * Update Icon Size.
@@ -16,6 +19,7 @@
     let icon = marker.options.icon;
     icon.options.iconSize.x = markersOriginSizes[i].x*iconSizeRate;
     icon.options.iconSize.y = markersOriginSizes[i].y*iconSizeRate;
+    icon.options.iconAnchor = new L.Point(icon.options.iconSize.x/2, icon.options.iconSize.y);
     marker.setIcon(icon);
   }
 
@@ -50,11 +54,27 @@
     return markersOriginalSizes;
   }
 
-  function updateMarkersSizesOnZoom(map, markers, markersOriginalSizes) {
+  function reactOnZoomEnd(mapid, map, markers, markersOriginalSizes) {
     let iconSizeRate = getIconSizeRate(map);
+    let zoomLevel = map.getZoom();
     for (let i in markers) {
-      if (markers.hasOwnProperty(i) && !markers[i].setStyle) {
-        updateIconSize(i, markers[i], iconSizeRate, markersOriginalSizes);
+      if (markers.hasOwnProperty(i)) {
+        let hidden_marker_index = hidden_markers.indexOf(i);
+        // Only in case of Points (setStyle undefined), update Icon size.
+        if (!markers[i].setStyle) {
+          updateIconSize(i, markers[i], iconSizeRate, markersOriginalSizes);
+        }
+        if (features.hasOwnProperty(i) && features[i] && features[i]['min_zoom_visibility'] && zoomLevel <= features[i]['min_zoom_visibility']) {
+          map.removeLayer(markers[i]);
+          if (hidden_marker_index === -1) {
+            hidden_markers.push(i);
+          }
+
+        }
+        else if (markers.hasOwnProperty(i) && hidden_marker_index > -1) {
+          markers[i].addTo(map);
+          hidden_markers.splice(hidden_marker_index, 1);
+        }
       }
     }
   }
@@ -62,14 +82,15 @@
 // React on leafletMapInit event.
   $(document).on('leafletMapInit', function (e, settings, lMap, mapid) {
     let map = lMap;
-    let markers = Drupal.Leaflet[mapid].markers;
+    markers = Drupal.Leaflet[mapid].markers;
+    features = Drupal.Leaflet[mapid].features;
     let markersOriginalSizes = setMarkersOriginalSizes(markers);
 
-    updateMarkersSizesOnZoom(map, markers, markersOriginalSizes);
+    reactOnZoomEnd(mapid, map, markers, markersOriginalSizes);
 
     // Resizing on zoom
     map.on('zoomend', function() {
-      updateMarkersSizesOnZoom(map, markers, markersOriginalSizes);
+      reactOnZoomEnd(mapid, map, markers, markersOriginalSizes);
     });
   });
 
