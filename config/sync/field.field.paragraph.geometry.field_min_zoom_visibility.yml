@@ -1,23 +1,25 @@
-uuid: bbce9f8a-0963-4ee6-b77c-8ee7b963ea13
+uuid: 41d635c0-ae32-412f-bb36-31ff6b21e1ba
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_zindex
+    - field.storage.paragraph.field_min_zoom_visibility
     - paragraphs.paragraphs_type.geometry
-id: paragraph.geometry.field_zindex
-field_name: field_zindex
+id: paragraph.geometry.field_min_zoom_visibility
+field_name: field_min_zoom_visibility
 entity_type: paragraph
 bundle: geometry
-label: 'Weight / zIndex'
+label: 'Min Zoom Visibility'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 15
 default_value_callback: ''
 settings:
-  min: null
-  max: 999
+  min: 3
+  max: 18
   prefix: ''
   suffix: ''
 field_type: integer

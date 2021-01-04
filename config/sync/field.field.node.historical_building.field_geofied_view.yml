@@ -1,0 +1,52 @@
+uuid: 18275b8a-8e78-453f-aa82-e08565558d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geofied_view
+    - node.type.historical_building
+    - views.view.historical_buildings
+  module:
+    - viewfield
+id: node.historical_building.field_geofied_view
+field_name: field_geofied_view
+entity_type: node
+bundle: historical_building
+label: 'Geofied View'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    token_help: ''
+    display_id: block_territorial_reports_map
+    arguments: '[node:nid]'
+    items_to_display: node
+    target_uuid: 9b278198-f89c-4eb8-af39-73ff72352c9a
+default_value_callback: ''
+settings:
+  force_default: false
+  allowed_views:
+    historical_buildings: historical_buildings
+    comment: '0'
+    content: '0'
+    block_content: '0'
+    events: '0'
+    files: '0'
+    frontpage: '0'
+    user_admin_people: '0'
+    comments_recent: '0'
+    content_recent: '0'
+    taxonomy_term: '0'
+    territorial_reports: '0'
+    watchdog: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    block: block
+    feed: '0'
+    default: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

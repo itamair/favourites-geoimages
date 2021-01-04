@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.path
   module:
     - color_field
-    - leaflet
+    - geofield_311
 id: paragraph.path.default
 targetEntityType: paragraph
 bundle: path
@@ -96,8 +96,13 @@ content:
           zoom: '16'
           options: ''
           popup: 0
+      geojson_app_limit:
+        bounds_zoom_flag: false
+        bounds_zoom_correction: 0
+        bounds_limit_flag: false
+        max_zoom_out: -2
     third_party_settings: {  }
-    type: leaflet_widget_default
+    type: geofield_311_leaflet_widget
     region: content
   field_stroke_color:
     weight: 1

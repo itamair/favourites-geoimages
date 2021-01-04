@@ -12,7 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.location
   module:
     - field_group
-    - geofield_map
+    - geofield_311
     - image
 third_party_settings:
   field_group:
@@ -51,57 +51,56 @@ content:
     weight: 2
     settings:
       map_geocoder:
+        control: '1'
         settings:
           providers:
             arcgisonline:
-              weight: 0
-              checked: false
+              checked: '1'
+              weight: '0'
             file:
-              weight: 0
-              checked: false
+              weight: '0'
+              checked: 0
             googlemaps:
-              weight: 0
-              checked: false
-          min_terms: 4
-          delay: 800
+              weight: '0'
+              checked: 0
+          min_terms: '4'
+          delay: '800'
           options: ''
-        control: 0
       map_google_places:
-        places_control: true
+        places_control: '1'
         places_additional_options: ''
-      map_library: leaflet
+      map_library: gmap
       map_type_google: roadmap
       map_type_leaflet: OpenStreetMap_Mapnik
-      map_type_selector: true
+      map_type_selector: '1'
       map_dimensions:
         width: 100%
         height: 650px
       zoom:
-        start: 6
-        focus: 12
-        min: 0
-        max: 22
-      click_to_find_marker: true
-      click_to_place_marker: true
+        start: '12'
+        focus: '15'
+        min: '0'
+        max: '22'
+      click_to_find_marker: '1'
+      click_to_place_marker: '1'
+      hide_coordinates: '1'
       geoaddress_field:
         field: '0'
-        disabled: true
-        hidden: false
+        disabled: '1'
+        hidden: 0
+      geojson_app_limit:
+        bounds_zoom_correction: '0'
+        bounds_limit_flag: '1'
+        max_zoom_out: '-2'
+        bounds_zoom_flag: 0
       default_value:
         lat: !!float 0
         lon: !!float 0
-      hide_coordinates: false
-      html5_geolocation: false
+      html5_geolocation: 0
       map_google_api_key: ''
       zoom_level: 5
-      map_marker:
-        icon_image_mode: icon_file
-        icon_image_path: ''
-        icon_file_wrapper:
-          icon_file: ''
-        view_mode: full
     third_party_settings: {  }
-    type: geofield_map
+    type: geofield_311_geofield_map_widget
     region: content
   field_location_icon:
     weight: 3

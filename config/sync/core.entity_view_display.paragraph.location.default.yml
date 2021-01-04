@@ -33,7 +33,7 @@ content:
         center:
           lat: !!float 0
           lon: !!float 0
-        zoom: 12
+        zoom: 15
         minZoom: 1
         maxZoom: 18
         zoomFiner: 0

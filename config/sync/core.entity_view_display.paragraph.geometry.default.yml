@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_color
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
     - field.field.paragraph.geometry.field_stroke_opacity
     - field.field.paragraph.geometry.field_stroke_weight
@@ -34,14 +35,14 @@ content:
         position: topright
         control: false
       map_position:
+        force: true
         center:
           lat: 40.45
           lon: 17.26
-        zoom: 12
+        zoom: 15
         minZoom: 3
         maxZoom: 18
         zoomFiner: -1
-        force: false
       weight: '[paragraph:field_zindex:value]'
       icon:
         iconType: marker
@@ -69,7 +70,7 @@ content:
       leaflet_markercluster:
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
         control: false
-      path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"0.2"}'
+      path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"[paragraph:field_stroke_opacity:value]","stroke":true,"weight":"[paragraph:field_stroke_weight:value]","fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"[paragraph:field_fill_opacity:value]"}'
       geocoder:
         settings:
           position: topright
@@ -95,6 +96,15 @@ content:
       gesture_handling: false
     third_party_settings: {  }
     type: leaflet_formatter_default
+    region: content
+  field_min_zoom_visibility:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_title:
     weight: 0

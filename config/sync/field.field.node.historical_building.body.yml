@@ -1,0 +1,23 @@
+uuid: 0cfe558b-9a50-4d6c-a645-92b0feb6ac8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.historical_building
+  module:
+    - text
+id: node.historical_building.body
+field_name: body
+entity_type: node
+bundle: historical_building
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
