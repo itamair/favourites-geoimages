@@ -4,12 +4,12 @@ common:
     component:
       css/common.css: {}
 
-leaflet_map_interaction:
+leaflet_map_interactions:
   version: 1.x
   css:
     component:
-      css/leaflet_map_interaction.css: {}
+      css/leaflet_map_interactions.css: {}
   js:
-    js/leaflet_map_interaction.js: {}
+    js/leaflet_map_interactions.js: {}
   dependencies:
       - leaflet/leaflet
