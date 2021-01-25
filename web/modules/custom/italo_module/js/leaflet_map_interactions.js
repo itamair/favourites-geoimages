@@ -24,6 +24,7 @@
     },
 
     zoomDefaultIconSize: 18,
+    hidden_markers: [],
 
     /**
      * Update Icon Size.
@@ -84,12 +85,12 @@
      * @param markersOriginalSizes
      */
     reactOnZoomEnd: function(mapid, map, features, markers, markersOriginalSizes) {
+      let self = this;
       let iconSizeRate = this.getIconSizeRate(map);
       let zoomLevel = map.getZoom();
-      let hidden_markers = [];
       for (let i in markers) {
         if (markers.hasOwnProperty(i)) {
-          let hidden_marker_index = hidden_markers.indexOf(i);
+          let hidden_marker_index = self.hidden_markers.indexOf(i);
           // Only in case of Points (setStyle undefined), update Icon size.
           if (!markers[i].setStyle) {
             this.updateIconSize(i, markers[i], iconSizeRate, markersOriginalSizes);
@@ -97,13 +98,13 @@
           if (features.hasOwnProperty(i) && features[i] && features[i]['min_zoom_visibility'] && zoomLevel <= features[i]['min_zoom_visibility']) {
             map.removeLayer(markers[i]);
             if (hidden_marker_index === -1) {
-              hidden_markers.push(i);
+              self.hidden_markers.push(i);
             }
 
           }
           else if (markers.hasOwnProperty(i) && hidden_marker_index > -1) {
             markers[i].addTo(map);
-            hidden_markers.splice(hidden_marker_index, 1);
+            self.hidden_markers.splice(hidden_marker_index, 1);
           }
         }
       }
