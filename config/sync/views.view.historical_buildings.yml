@@ -109,10 +109,10 @@ display:
             control: 1
             position: topright
           map_position:
-            force: 0
+            force: 1
             center:
-              lat: '42'
-              lon: '12'
+              lat: '42.25'
+              lon: '12.32'
             zoom: '12'
             minZoom: '1'
             maxZoom: '20'
