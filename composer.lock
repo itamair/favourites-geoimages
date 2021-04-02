@@ -1607,16 +1607,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.0.3",
+            "version": "9.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "883018fe0aa16cee450bb043fcb4893c05438283"
+                "reference": "41697df079ae8aa64fa45b61976f50e7a2998d7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/883018fe0aa16cee450bb043fcb4893c05438283",
-                "reference": "883018fe0aa16cee450bb043fcb4893c05438283",
+                "url": "https://api.github.com/repos/drupal/core/zipball/41697df079ae8aa64fa45b61976f50e7a2998d7f",
+                "reference": "41697df079ae8aa64fa45b61976f50e7a2998d7f",
                 "shasum": ""
             },
             "require": {
@@ -1642,8 +1642,8 @@
                 "laminas/laminas-diactoros": "^2.1",
                 "laminas/laminas-feed": "^2.12",
                 "masterminds/html5": "^2.1",
-                "pear/archive_tar": "^1.4.9",
-                "php": ">=7.3",
+                "pear/archive_tar": "^1.4.12",
+                "php": "^7.3",
                 "psr/log": "^1.0",
                 "stack/builder": "^1.0",
                 "symfony-cmf/routing": "^2.1",
@@ -1842,31 +1842,25 @@
                     "lib/Drupal/Core/Site/Settings.php"
                 ]
             },
-            "scripts": {
-                "pre-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::preAutoloadDump"
-                ],
-                "post-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::ensureHtaccess"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
-            "description": "Drupal is an open source content management platform powering millions of websites and applications."
+            "description": "Drupal is an open source content management platform powering millions of websites and applications.",
+            "time": "2021-01-19T23:10:53+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.0.3",
+            "version": "9.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
-                "reference": "fb112a238577589311395099324ddec7fb4176d7"
+                "reference": "7b125516d6568b888945ee03ac2636dcced76e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/fb112a238577589311395099324ddec7fb4176d7",
-                "reference": "fb112a238577589311395099324ddec7fb4176d7",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/7b125516d6568b888945ee03ac2636dcced76e8d",
+                "reference": "7b125516d6568b888945ee03ac2636dcced76e8d",
                 "shasum": ""
             },
             "require": {
@@ -1891,6 +1885,7 @@
                     "Drupal\\Composer\\Plugin\\Scaffold\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1898,20 +1893,21 @@
             "homepage": "https://www.drupal.org/project/drupal",
             "keywords": [
                 "drupal"
-            ]
+            ],
+            "time": "2020-08-07T22:30:13+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.0.3",
+            "version": "9.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
-                "reference": "fbb9d944f82a1f25ab967a8bc22d3dc19479bd11"
+                "reference": "812d6da43dd49cc210af62e80fa92189e68e565a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-project-message/zipball/fbb9d944f82a1f25ab967a8bc22d3dc19479bd11",
-                "reference": "fbb9d944f82a1f25ab967a8bc22d3dc19479bd11",
+                "url": "https://api.github.com/repos/drupal/core-project-message/zipball/812d6da43dd49cc210af62e80fa92189e68e565a",
+                "reference": "812d6da43dd49cc210af62e80fa92189e68e565a",
                 "shasum": ""
             },
             "require": {
@@ -1927,6 +1923,7 @@
                     "Drupal\\Composer\\Plugin\\ProjectMessage\\": "."
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1934,20 +1931,21 @@
             "homepage": "https://www.drupal.org/project/drupal",
             "keywords": [
                 "drupal"
-            ]
+            ],
+            "time": "2020-09-14T13:40:36+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.0.3",
+            "version": "9.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "50da17643f7192fb2771f9fbb7b55fc2b22d8be1"
+                "reference": "9750cd44badc2ba6f3dc4ff419e04421b7b60da6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/50da17643f7192fb2771f9fbb7b55fc2b22d8be1",
-                "reference": "50da17643f7192fb2771f9fbb7b55fc2b22d8be1",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/9750cd44badc2ba6f3dc4ff419e04421b7b60da6",
+                "reference": "9750cd44badc2ba6f3dc4ff419e04421b7b60da6",
                 "shasum": ""
             },
             "require": {
@@ -1956,7 +1954,7 @@
                 "doctrine/annotations": "1.10.3",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.1",
-                "drupal/core": "9.0.3",
+                "drupal/core": "9.0.11",
                 "egulias/email-validator": "2.1.17",
                 "guzzlehttp/guzzle": "6.5.4",
                 "guzzlehttp/promises": "v1.3.1",
@@ -1967,7 +1965,7 @@
                 "laminas/laminas-stdlib": "3.2.1",
                 "laminas/laminas-zendframework-bridge": "1.0.4",
                 "masterminds/html5": "2.7.0",
-                "pear/archive_tar": "1.4.9",
+                "pear/archive_tar": "1.4.12",
                 "pear/console_getopt": "v1.4.3",
                 "pear/pear-core-minimal": "v1.10.10",
                 "pear/pear_exception": "v1.0.1",
@@ -1985,7 +1983,7 @@
                 "symfony/event-dispatcher": "v4.4.9",
                 "symfony/event-dispatcher-contracts": "v1.1.7",
                 "symfony/http-foundation": "v4.4.9",
-                "symfony/http-kernel": "v4.4.9",
+                "symfony/http-kernel": "v4.4.13",
                 "symfony/mime": "v5.1.0",
                 "symfony/polyfill-ctype": "v1.17.0",
                 "symfony/polyfill-iconv": "v1.17.0",
@@ -2011,10 +2009,12 @@
                 "webflo/drupal-core-strict": "*"
             },
             "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
-            "description": "Locked core dependencies; require this project INSTEAD OF drupal/core."
+            "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
+            "time": "2021-01-19T23:10:53+00:00"
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -4132,16 +4132,16 @@
         },
         {
             "name": "pear/archive_tar",
-            "version": "1.4.9",
+            "version": "1.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Archive_Tar.git",
-                "reference": "c5b00053770e1d72128252c62c2c1a12c26639f0"
+                "reference": "19bb8e95490d3e3ad92fcac95500ca80bdcc7495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/c5b00053770e1d72128252c62c2c1a12c26639f0",
-                "reference": "c5b00053770e1d72128252c62c2c1a12c26639f0",
+                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/19bb8e95490d3e3ad92fcac95500ca80bdcc7495",
+                "reference": "19bb8e95490d3e3ad92fcac95500ca80bdcc7495",
                 "shasum": ""
             },
             "require": {
@@ -4194,7 +4194,7 @@
                 "archive",
                 "tar"
             ],
-            "time": "2019-12-04T10:17:28+00:00"
+            "time": "2021-01-18T19:32:54+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -5753,16 +5753,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v4.4.9",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "54526b598d7fc86a67850488b194a88a79ab8467"
+                "reference": "2bb7b90ecdc79813c0bf237b7ff20e79062b5188"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/54526b598d7fc86a67850488b194a88a79ab8467",
-                "reference": "54526b598d7fc86a67850488b194a88a79ab8467",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/2bb7b90ecdc79813c0bf237b7ff20e79062b5188",
+                "reference": "2bb7b90ecdc79813c0bf237b7ff20e79062b5188",
                 "shasum": ""
             },
             "require": {
@@ -5840,7 +5840,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-31T05:25:51+00:00"
+            "time": "2020-09-02T08:09:29+00:00"
         },
         {
             "name": "symfony/mime",
