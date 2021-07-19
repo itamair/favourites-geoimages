@@ -1,4 +1,4 @@
-name: italo_module
+name: Geofield 311
 type: module
 description: My module to test some Drupal functionalities
 core_version_requirement: ^8.8 || ^9
