@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66d377560d51b6ad49a4a8c5d2e91449",
+    "content-hash": "dd119eb12d58d9e4a0f310dbbaaaaef7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1606,6 +1606,143 @@
             }
         },
         {
+            "name": "drupal/computed_field",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/computed_field.git",
+                "reference": "4b8a10bea2df1018d9ad515d90267d4929fe96cf"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0+2-dev",
+                    "datestamp": "1590617272",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Agileware",
+                    "homepage": "https://www.drupal.org/user/89106"
+                },
+                {
+                    "name": "Moonshine",
+                    "homepage": "https://www.drupal.org/user/133705"
+                },
+                {
+                    "name": "Pedro Lozano",
+                    "homepage": "https://www.drupal.org/user/123766"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "dealancer",
+                    "homepage": "https://www.drupal.org/user/243418"
+                },
+                {
+                    "name": "markus_petrux",
+                    "homepage": "https://www.drupal.org/user/39593"
+                },
+                {
+                    "name": "nickcaballero",
+                    "homepage": "https://www.drupal.org/user/588336"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
+                }
+            ],
+            "description": "Defines a field type that allows values to be \"computed\" via PHP code.",
+            "homepage": "https://www.drupal.org/project/computed_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/computed_field"
+            },
+            "time": "2020-05-27T22:07:14+00:00"
+        },
+        {
+            "name": "drupal/config_inspector",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_inspector.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "d108857180fc60918656b6b940006d9e9e1e9942"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1615549998",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "Jose Reyero",
+                    "homepage": "https://www.drupal.org/user/4299"
+                },
+                {
+                    "name": "aspilicious",
+                    "homepage": "https://www.drupal.org/user/172527"
+                },
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                },
+                {
+                    "name": "vuil",
+                    "homepage": "https://www.drupal.org/user/3568458"
+                }
+            ],
+            "description": "Provides a configuration data and structure inspector tool",
+            "homepage": "https://drupal.org/project/config_inspector",
+            "support": {
+                "source": "https://cgit.drupalcode.org/config_inspector",
+                "issues": "https://drupal.org/project/issues/config_inspector",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "9.0.11",
             "source": {
@@ -2076,6 +2213,114 @@
             }
         },
         {
+            "name": "drupal/feeds",
+            "version": "3.0.0-alpha10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds.git",
+                "reference": "8.x-3.0-alpha10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/feeds-8.x-3.0-alpha10.zip",
+                "reference": "8.x-3.0-alpha10",
+                "shasum": "84691c6258503c8d4afea5009dcd21bbd8292d49"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drupal/pathauto": "^1.8",
+                "drush/drush": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-alpha10",
+                    "datestamp": "1612455136",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Ian Ward",
+                    "homepage": "https://www.drupal.org/user/4736"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "Will White",
+                    "homepage": "https://www.drupal.org/user/32237"
+                },
+                {
+                    "name": "alex_b",
+                    "homepage": "https://www.drupal.org/user/53995"
+                },
+                {
+                    "name": "e2thex",
+                    "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "febbraro",
+                    "homepage": "https://www.drupal.org/user/43670"
+                },
+                {
+                    "name": "franz",
+                    "homepage": "https://www.drupal.org/user/581844"
+                },
+                {
+                    "name": "jmiccolis",
+                    "homepage": "https://www.drupal.org/user/31731"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
+                    "name": "kking",
+                    "homepage": "https://www.drupal.org/user/24399"
+                },
+                {
+                    "name": "tobby",
+                    "homepage": "https://www.drupal.org/user/154797"
+                },
+                {
+                    "name": "tristanoneil",
+                    "homepage": "https://www.drupal.org/user/340659"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                },
+                {
+                    "name": "yhahn",
+                    "homepage": "https://www.drupal.org/user/264833"
+                }
+            ],
+            "description": "Aggregates RSS/Atom/RDF feeds, imports CSV files and more.",
+            "homepage": "https://www.drupal.org/project/feeds",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/feeds",
+                "issues": "https://www.drupal.org/project/issues/feeds"
+            }
+        },
+        {
             "name": "drupal/field_group",
             "version": "3.1.0",
             "source": {
@@ -2266,17 +2511,17 @@
         },
         {
             "name": "drupal/geofield",
-            "version": "1.31.0",
+            "version": "1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geofield.git",
-                "reference": "8.x-1.31"
+                "reference": "8.x-1.33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.31.zip",
-                "reference": "8.x-1.31",
-                "shasum": "5eb185044e6686a498b686be6a2793f4a3d57fa4"
+                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.33.zip",
+                "reference": "8.x-1.33",
+                "shasum": "3e320158a67e0d6c18c7c4c10ca6809373391db0"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -2285,8 +2530,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.31",
-                    "datestamp": "1622755130",
+                    "version": "8.x-1.33",
+                    "datestamp": "1626553604",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2344,17 +2589,17 @@
         },
         {
             "name": "drupal/geofield_map",
-            "version": "2.68.0",
+            "version": "2.70.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geofield_map.git",
-                "reference": "8.x-2.68"
+                "reference": "8.x-2.70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield_map-8.x-2.68.zip",
-                "reference": "8.x-2.68",
-                "shasum": "34900b3b398e6f69963d567d06c73a77c8d73b21"
+                "url": "https://ftp.drupal.org/files/projects/geofield_map-8.x-2.70.zip",
+                "reference": "8.x-2.70",
+                "shasum": "d01e5527240ac90631116decb45d195dd372c799"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -2363,8 +2608,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.68",
-                    "datestamp": "1622756607",
+                    "version": "8.x-2.70",
+                    "datestamp": "1626553818",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7324,6 +7569,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/feeds": 15,
         "drupal/gin": 15,
         "drupal/imagefield_slideshow": 20,
         "drupal/layout_paragraphs": 10,
@@ -7335,5 +7581,6 @@
     "platform": {
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
