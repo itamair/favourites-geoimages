@@ -1,0 +1,55 @@
+uuid: 89146cbf-2e09-4208-a35a-617c25a66c4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.place_types.field_icon
+    - image.style.thumbnail
+    - taxonomy.vocabulary.place_types
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.place_types.default
+targetEntityType: taxonomy_term
+bundle: place_types
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_icon:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+hidden: {  }

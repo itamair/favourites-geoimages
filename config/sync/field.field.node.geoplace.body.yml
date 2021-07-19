@@ -1,0 +1,23 @@
+uuid: d527c913-24b2-4ade-abb1-971af856506b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.geoplace
+  module:
+    - text
+id: node.geoplace.body
+field_name: body
+entity_type: node
+bundle: geoplace
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

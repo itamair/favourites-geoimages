@@ -1,0 +1,42 @@
+uuid: c8c62a77-0075-453f-b093-9aa30bc2c917
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_locations
+    - node.type.geoplace
+    - paragraphs.paragraphs_type.geometry
+    - paragraphs.paragraphs_type.location
+  module:
+    - entity_reference_revisions
+id: node.geoplace.field_locations
+field_name: field_locations
+entity_type: node
+bundle: geoplace
+label: Locations
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      geometry: geometry
+      location: location
+    target_bundles_drag_drop:
+      geoimage:
+        weight: 5
+        enabled: false
+      geometry:
+        enabled: true
+        weight: 6
+      location:
+        enabled: true
+        weight: 7
+      path:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

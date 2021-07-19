@@ -1,0 +1,24 @@
+uuid: d77d7f99-7b62-44b2-96e8-a711c10cc667
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_marker_icon_path
+    - paragraphs.paragraphs_type.location
+  module:
+    - computed_field
+id: paragraph.location.field_marker_icon_path
+field_name: field_marker_icon_path
+entity_type: paragraph
+bundle: location
+label: 'Marker Icon Path'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings:
+  code: '$value = '''';'
+field_type: computed_string

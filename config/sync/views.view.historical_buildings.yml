@@ -1425,8 +1425,8 @@ display:
           map_position:
             force: false
             center:
-              lat: 45
-              lon: 16
+              lat: !!float 45
+              lon: !!float 16
             zoom: 16
             minZoom: 1
             maxZoom: 18
@@ -1517,7 +1517,7 @@ display:
       path: historical_buildings_map
       menu:
         type: normal
-        title: 'Historial Buildings Map'
+        title: 'Historical Buildings Map'
         description: ''
         expanded: false
         parent: ''

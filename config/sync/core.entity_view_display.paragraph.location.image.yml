@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.location.field_geofield
     - field.field.paragraph.location.field_location_icon
     - field.field.paragraph.location.field_location_icon_width
+    - field.field.paragraph.location.field_location_type
+    - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_title
     - image.style.geofield_map_default_icon_style
     - paragraphs.paragraphs_type.location
@@ -31,4 +33,6 @@ hidden:
   field_classname: true
   field_geofield: true
   field_location_icon_width: true
+  field_location_type: true
+  field_marker_icon_path: true
   field_title: true
