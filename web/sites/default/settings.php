@@ -1,7 +1,6 @@
 <?php
 
 // Set up a config sync directory.
-//
 // This is defined inside the read-only "config" directory, deployed via Git.
 $settings['config_sync_directory'] = '../config/sync';
 
