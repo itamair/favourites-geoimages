@@ -18,6 +18,7 @@
         "ext-json": "*",
         "composer/installers": "^1.9",
         "drupal/adminimal_admin_toolbar": "^1.11",
+        "drupal/adminimal_theme": "^1.6",
         "drupal/color_field": "^2.4",
         "drupal/computed_field": "^2.0",
         "drupal/config_inspector": "^1.3",
