@@ -38,7 +38,7 @@
  */
 $settings['trusted_host_patterns'] = [
   '^taranto2021.ddev.site$',
-  '^www.geodemocracy.com/taranto_2021/web$',
+  '^www.geodemocracy.com$',
 ];
 
 // Set up a config sync directory.
