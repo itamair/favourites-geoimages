@@ -25,122 +25,122 @@ third_party_settings:
         - field_location_icon
         - field_classname
         - field_location_icon_width
-      parent_name: ''
-      weight: 2
-      format_type: details
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        open: false
-        required_fields: true
       label: Attributes
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: paragraph.location.default
 targetEntityType: paragraph
 bundle: location
 mode: default
 content:
   field_classname:
+    type: entity_reference_autocomplete
     weight: 3
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_geofield:
-    weight: 3
+    type: geofield_311_geofield_map_widget
+    weight: 2
+    region: content
     settings:
-      map_geocoder:
-        control: '1'
-        settings:
-          providers:
-            arcgisonline:
-              checked: '1'
-              weight: '0'
-            file:
-              weight: '0'
-              checked: 0
-            googlemaps:
-              weight: '0'
-              checked: 0
-          min_terms: '4'
-          delay: '800'
-          options: ''
-      map_google_places:
-        places_control: '1'
-        places_additional_options: ''
-      map_library: gmap
-      map_type_google: roadmap
-      map_type_leaflet: OpenStreetMap_Mapnik
-      map_type_selector: '1'
-      map_dimensions:
-        width: 100%
-        height: 850px
-      zoom:
-        start: '12'
-        focus: '18'
-        min: '10'
-        max: '22'
-      click_to_find_marker: '1'
-      click_to_place_marker: '1'
-      hide_coordinates: '1'
-      geoaddress_field:
-        field: '0'
-        disabled: '1'
-        hidden: 0
-      geojson_app_limit:
-        bounds_zoom_flag: '1'
-        bounds_zoom_correction: '0'
-        bounds_limit_flag: '1'
-        max_zoom_out: '-2'
+      html5_geolocation: false
       default_value:
         lat: !!float 0
         lon: !!float 0
-      html5_geolocation: 0
+      map_library: gmap
       map_google_api_key: ''
+      map_google_places:
+        places_control: true
+        places_additional_options: ''
+      map_dimensions:
+        width: 100%
+        height: 850px
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
       zoom_level: 5
+      zoom:
+        start: 12
+        focus: 18
+        min: 10
+        max: 22
+      click_to_find_marker: true
+      click_to_place_marker: true
+      hide_coordinates: true
+      geoaddress_field:
+        field: '0'
+        hidden: false
+        disabled: true
+      map_geocoder:
+        control: 1
+        settings:
+          providers:
+            arcgisonline:
+              weight: 0
+              checked: true
+            file:
+              weight: 0
+              checked: false
+            googlemaps:
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 800
+          options: ''
+      geojson_app_limit:
+        bounds_zoom_flag: false
+        bounds_zoom_correction: 0
+        bounds_limit_flag: false
+        max_zoom_out: -2
     third_party_settings: {  }
-    type: geofield_311_geofield_map_widget
-    region: content
   field_location_icon:
+    type: image_image
     weight: 2
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_location_icon_width:
+    type: number
     weight: 4
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_location_type:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    weight: 1
     region: content
-  field_marker_icon_path:
-    weight: 5
     settings: {  }
     third_party_settings: {  }
+  field_marker_icon_path:
     type: computed_string_widget
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

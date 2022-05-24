@@ -21,37 +21,35 @@ bundle: geometry
 mode: default
 content:
   field_geofield:
-    weight: 1
+    type: leaflet_formatter_default
     label: hidden
     settings:
       multiple_map: false
-      popup: true
-      popup_content: '[paragraph:field_title:value]'
       leaflet_map: 'OSM Mapnik'
       height: 800
       height_unit: px
-      fullscreen_control: true
+      hide_empty_map: false
+      disable_wheel: false
+      gesture_handling: false
       reset_map:
-        position: topright
         control: false
+        position: topright
+      popup: true
+      popup_content: '[paragraph:field_title:value]'
       map_position:
         force: true
         center:
           lat: 40.45
           lon: 17.26
-        zoom: 15
+        zoom: 17
         minZoom: 3
         maxZoom: 18
         zoomFiner: -1
-      weight: '[paragraph:field_zindex:value]'
       icon:
         iconType: marker
         iconUrl: ''
         shadowUrl: ''
         className: ''
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
         iconSize:
           x: ''
           'y': ''
@@ -67,11 +65,19 @@ content:
         popupAnchor:
           x: ''
           'y': ''
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
       leaflet_markercluster:
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
         control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        include_path: false
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"[paragraph:field_stroke_opacity:value]","stroke":true,"weight":"[paragraph:field_stroke_weight:value]","fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"[paragraph:field_fill_opacity:value]"}'
       geocoder:
+        control: false
         settings:
           position: topright
           input_size: 25
@@ -88,31 +94,28 @@ content:
           min_terms: 4
           delay: 800
           zoom: 16
-          options: ''
           popup: false
-        control: false
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
+          options: ''
+      weight: null
     third_party_settings: {  }
-    type: leaflet_formatter_default
+    weight: 1
     region: content
   field_min_zoom_visibility:
-    weight: 3
+    type: number_integer
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 3
     region: content
   field_title:
-    weight: 0
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   field_fill_color: true

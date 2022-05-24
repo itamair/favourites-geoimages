@@ -18,14 +18,14 @@ required: false
 translatable: true
 default_value:
   -
-    token_help: ''
+    target_uuid: 9b278198-f89c-4eb8-af39-73ff72352c9a
     display_id: block_territorial_reports_map
     arguments: '[node:nid]'
-    items_to_display: node
-    target_uuid: 9b278198-f89c-4eb8-af39-73ff72352c9a
+    items_to_display: ''
+    token_help: ''
 default_value_callback: ''
 settings:
-  force_default: false
+  force_default: true
   allowed_views:
     historical_buildings: historical_buildings
     comment: '0'
@@ -34,6 +34,7 @@ settings:
     events: '0'
     files: '0'
     frontpage: '0'
+    media: '0'
     user_admin_people: '0'
     comments_recent: '0'
     content_recent: '0'
@@ -44,8 +45,8 @@ settings:
     who_s_online: '0'
   allowed_display_types:
     block: block
-    feed: '0'
     default: '0'
+    feed: '0'
     page: '0'
   handler: 'default:view'
   handler_settings: {  }

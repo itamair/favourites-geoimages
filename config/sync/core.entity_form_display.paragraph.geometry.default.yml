@@ -28,28 +28,28 @@ third_party_settings:
         - field_fill_opacity
         - field_zindex
         - field_min_zoom_visibility
-      parent_name: ''
-      weight: 7
-      format_type: details
+      label: Attributes
       region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
       format_settings:
+        classes: geometry-attributes
+        id: ''
+        open: false
         description: ''
         required_fields: true
-        id: ''
-        classes: geometry-attributes
-        open: false
-      label: Attributes
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry
 mode: default
 content:
   field_fill_color:
+    type: color_field_widget_html5
     weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: color_field_widget_html5
-    region: content
   field_fill_opacity:
     type: number
     weight: 5
@@ -58,7 +58,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_geofield:
-    weight: 8
+    type: geofield_311_leaflet_widget
+    weight: 2
+    region: content
     settings:
       map:
         leaflet_map: multilayers
@@ -75,7 +77,6 @@ content:
           zoomFiner: '0'
           force: 0
         scroll_zoom_enabled: '1'
-        fullscreen_control: '1'
       input:
         show: '1'
         readonly: 0
@@ -90,9 +91,13 @@ content:
         removalMode: '1'
         drawCircle: false
         cutPolygon: 0
+        rotateMode: 0
       reset_map:
         control: '1'
         position: topright
+      fullscreen:
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+        control: 0
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
         settings:
@@ -120,50 +125,48 @@ content:
         bounds_zoom_flag: 0
         bounds_limit_flag: 0
     third_party_settings: {  }
-    type: geofield_311_leaflet_widget
-    region: content
   field_min_zoom_visibility:
+    type: number
     weight: 7
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_stroke_color:
+    type: color_field_widget_html5
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: color_field_widget_html5
-    region: content
   field_stroke_opacity:
+    type: number
     weight: 3
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_stroke_weight:
+    type: number
     weight: 2
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_zindex:
+    type: number
     weight: 6
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
 hidden:
   created: true
   status: true
