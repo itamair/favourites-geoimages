@@ -17,6 +17,7 @@
     "require": {
         "ext-json": "*",
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/adminimal_theme": "^1.6",
         "drupal/color_field": "^2.4",
@@ -33,7 +34,7 @@
         "drupal/gin": "^3.0@alpha",
         "drupal/imagefield_slideshow": "1.x-dev",
         "drupal/layout_paragraphs": "^1.0@beta",
-        "drupal/leaflet": "^2.1",
+        "drupal/leaflet": "^2.2",
         "drupal/masquerade": "^2.0@beta",
         "drupal/paragraphs": "^1.12",
         "drupal/slick": "^2.2",
@@ -49,7 +50,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "cweagans/composer-patches": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -103,6 +110,11 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch"
+            }
         }
     }
 }
