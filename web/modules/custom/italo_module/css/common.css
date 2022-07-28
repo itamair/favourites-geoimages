@@ -11,3 +11,17 @@
   display: flex;
   justify-content: space-around;
 }
+
+/* line 14, ../sass/common.scss */
+a, a.link {
+  border-bottom: none !important;
+}
+
+/*
+.node .field--type-image {
+  float: none !important;
+  .field__item {
+    display: inline-block;
+  }
+}
+*/

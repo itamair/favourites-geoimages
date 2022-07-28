@@ -2,10 +2,12 @@
   border-radius: 1px;
   .leaflet-popup-content {
     min-width: 100px;
-    width: auto!important;
     margin: 12px 8px;
     h2 {
-      font-size: 24px;
+      font-size: 1.6em;
+    }
+    h3 {
+      font-size: 1.2em;
     }
     div {
       margin-bottom: 6px;

@@ -38,7 +38,7 @@
       let icon = marker.options.icon;
       icon.options.iconSize.x = markersOriginSizes[i].x*iconSizeRate;
       icon.options.iconSize.y = markersOriginSizes[i].y*iconSizeRate;
-      icon.options.iconAnchor = new L.Point(icon.options.iconSize.x/2, icon.options.iconSize.y);
+      //icon.options.iconAnchor = new L.Point(icon.options.iconSize.x/2, icon.options.iconSize.y);
       marker.setIcon(icon);
     },
 
