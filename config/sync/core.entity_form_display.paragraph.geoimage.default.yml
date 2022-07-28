@@ -11,31 +11,39 @@ dependencies:
     - paragraphs.paragraphs_type.geoimage
   module:
     - field_group
+    - field_layout
     - geofield_311
     - image
+    - layout_discovery
 third_party_settings:
   field_group:
     group_attributes:
       children:
         - field_location_icon_width
+      label: Attributes
+      region: content
       parent_name: ''
       weight: 3
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: Attributes
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage
 mode: default
 content:
   field_geofield:
+    type: geofield_311_geofield_map_widget
     weight: 2
+    region: content
     settings:
       map_geocoder:
         settings:
@@ -87,31 +95,29 @@ content:
       map_google_api_key: ''
       zoom_level: 5
     third_party_settings: {  }
-    type: geofield_311_geofield_map_widget
-    region: content
   field_image:
+    type: image_image
     weight: 1
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_location_icon_width:
+    type: number
     weight: 4
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   status:
     type: boolean_checkbox
     weight: 4

@@ -22,13 +22,15 @@ mode: image
 content:
   field_location_icon:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: geofield_map_default_icon_style
       image_link: ''
+      image_style: geofield_map_default_icon_style
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_classname: true
   field_geofield: true

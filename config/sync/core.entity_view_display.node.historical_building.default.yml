@@ -7,13 +7,101 @@ dependencies:
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
     - field.field.node.historical_building.field_locations
-    - image.style.large
     - node.type.historical_building
   module:
-    - image
+    - imagefield_slideshow
+    - layout_builder
+    - layout_discovery
     - text
     - user
     - viewfield
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          3f2505a5-75a9-41e9-8baa-9841c9959f9f:
+            uuid: 3f2505a5-75a9-41e9-8baa-9841c9959f9f
+            region: content
+            configuration:
+              id: 'field_block:node:historical_building:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          f9e72ae3-ea7d-42e8-9e44-fe91a5c31b8e:
+            uuid: f9e72ae3-ea7d-42e8-9e44-fe91a5c31b8e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:historical_building:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          444acb77-67ec-4cce-a206-a38addb6e511:
+            uuid: 444acb77-67ec-4cce-a206-a38addb6e511
+            region: second
+            configuration:
+              id: 'field_block:node:historical_building:field_geofied_view'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewfield_default
+                label: hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          1963815f-bd57-477e-bed2-e4ef756875e0:
+            uuid: 1963815f-bd57-477e-bed2-e4ef756875e0
+            region: first
+            configuration:
+              id: 'field_block:node:historical_building:field_image'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: imagefield_slideshow_field_formatter
+                label: hidden
+                settings:
+                  imagefield_slideshow_style: large
+                  imagefield_slideshow_style_effects: scrollHorz
+                  imagefield_slideshow_style_pause: 'false'
+                  imagefield_slideshow_prev_next: 1
+                  imagefield_slideshow_transition_speed: '100'
+                  imagefield_slideshow_timeout: '0'
+                  imagefield_slideshow_pager: 0
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.historical_building.default
 targetEntityType: node
 bundle: historical_building
@@ -37,11 +125,16 @@ content:
     weight: 2
     region: content
   field_image:
-    type: image
+    type: imagefield_slideshow_field_formatter
     label: hidden
     settings:
-      image_link: ''
-      image_style: large
+      imagefield_slideshow_style: large
+      imagefield_slideshow_style_effects: scrollHorz
+      imagefield_slideshow_style_pause: 'false'
+      imagefield_slideshow_prev_next: '1'
+      imagefield_slideshow_transition_speed: '100'
+      imagefield_slideshow_timeout: '0'
+      imagefield_slideshow_pager: 0
     third_party_settings: {  }
     weight: 1
     region: content

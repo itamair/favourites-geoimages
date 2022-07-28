@@ -1,7 +1,20 @@
 uuid: ee378226-00bc-4c48-b8ea-c4b40cbced8d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.territorial_report
+  module:
+    - comment
+    - contact
+    - filter
+    - media
+    - node
+    - search
+    - shortcut
+    - system
+    - toolbar
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated

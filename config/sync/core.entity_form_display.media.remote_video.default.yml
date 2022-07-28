@@ -6,8 +6,15 @@ dependencies:
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
+    - field_layout
+    - layout_discovery
     - media
     - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 _core:
   default_config_hash: DfbjvjtGEMGLvm-1Zm7-MCRZj3wpGokUWZOuaK5-1Po
 id: media.remote_video.default
@@ -24,11 +31,11 @@ content:
   field_media_oembed_video:
     type: oembed_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    region: content
   path:
     type: path
     weight: 30
@@ -37,20 +44,20 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 100
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
-    region: content
     third_party_settings: {  }
 hidden:
   name: true

@@ -17,19 +17,23 @@ bundle: geoimage
 mode: default
 content:
   field_geofield:
-    weight: 2
+    type: leaflet_formatter_default
     label: hidden
     settings:
       multiple_map: false
-      popup_content: ''
       leaflet_map: multilayers
       height: 600
       height_unit: px
-      fullscreen_control: true
+      hide_empty_map: false
+      disable_wheel: false
+      gesture_handling: false
       reset_map:
-        position: topright
         control: false
+        position: topright
+      popup: false
+      popup_content: ''
       map_position:
+        force: false
         center:
           lat: !!float 0
           lon: !!float 0
@@ -37,16 +41,11 @@ content:
         minZoom: 4
         maxZoom: 18
         zoomFiner: 0
-        force: false
-      weight: ''
       icon:
         iconType: marker
         iconUrl: ''
         shadowUrl: ''
         className: ''
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
         iconSize:
           x: ''
           'y': ''
@@ -62,11 +61,15 @@ content:
         popupAnchor:
           x: ''
           'y': ''
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
       leaflet_markercluster:
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
         control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
       geocoder:
+        control: false
         settings:
           position: topright
           input_size: 25
@@ -83,32 +86,31 @@ content:
           min_terms: 4
           delay: 800
           zoom: 16
-          options: ''
           popup: false
-        control: false
-      popup: false
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
+          options: ''
+      fullscreen_control: true
+      weight: ''
     third_party_settings: {  }
-    type: leaflet_formatter_default
+    weight: 2
     region: content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_title:
-    weight: 0
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   field_location_icon_width: true

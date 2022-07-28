@@ -20,51 +20,55 @@ bundle: geoplace
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_geofied_view:
-    weight: 2
+    type: viewfield_default
     label: hidden
     settings:
       view_title: hidden
       always_build_output: false
       empty_view_title: hidden
     third_party_settings: {  }
-    type: viewfield_default
+    weight: 2
     region: content
   field_image:
-    weight: 0
+    type: slick_image
     label: hidden
     settings:
-      style: grid
-      optionset: default
-      optionset_thumbnail: ''
-      skin: ''
-      skin_thumbnail: ''
-      image_style: large
-      thumbnail_effect: ''
-      thumbnail_position: ''
-      media_switch: ''
-      thumbnail_style: ''
-      ratio: ''
-      grid: null
-      grid_medium: null
-      grid_small: null
-      visible_items: null
-      layout: ''
-      thumbnail_caption: ''
-      cache: 0
-      current_view_mode: default
-      background: false
       caption:
         title: '0'
         alt: '0'
-      preserve_keys: false
-      override: false
+      optionset: default
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      current_view_mode: default
+      skin: ''
+      fx: ''
+      style: grid
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      responsive_image_style: ''
+      box_style: ''
+      image_style: large
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: null
+      grid_medium: null
+      grid_small: null
       overridables:
         arrows: '0'
         autoplay: '0'
@@ -74,27 +78,23 @@ content:
         mouseWheel: '0'
         randomize: '0'
         variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
       skin_arrows: ''
       skin_dots: ''
-      fx: ''
-      icon: ''
-      view_mode: ''
-      box_caption: ''
-      box_caption_custom: ''
-      box_media_style: ''
-      responsive_image_style: ''
-      box_style: ''
-      _uri: ''
-      breakpoints: {  }
-      sizes: ''
-      grid_header: ''
+      preserve_keys: false
+      visible_items: null
     third_party_settings: {  }
-    type: slick_image
+    weight: 0
     region: content
   links:
-    weight: 3
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   field_locations: true

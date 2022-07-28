@@ -15,8 +15,10 @@ dependencies:
   module:
     - computed_field
     - field_group
+    - field_layout
     - geofield_311
     - image
+    - layout_discovery
 third_party_settings:
   field_group:
     group_attributes:
@@ -36,6 +38,10 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: paragraph.location.default
 targetEntityType: paragraph
 bundle: location

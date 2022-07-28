@@ -16,7 +16,9 @@ dependencies:
   module:
     - color_field
     - field_group
+    - field_layout
     - geofield_311
+    - layout_discovery
 third_party_settings:
   field_group:
     group_attributes:
@@ -39,6 +41,10 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry
@@ -69,8 +75,8 @@ content:
         auto_center: '1'
         map_position:
           center:
-            lat: '0'
-            lon: '0'
+            lat: '45'
+            lon: '27'
           zoom: '12'
           minZoom: '1'
           maxZoom: '20'

@@ -11,9 +11,16 @@ dependencies:
     - node.type.article
   module:
     - comment
+    - field_layout
     - image
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 _core:
   default_config_hash: 6VUXB1jTUjK5zjkfMa2Kd2WW4sFUlgfBlfJSx01qLpU
 id: node.article.default
@@ -69,24 +76,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 15
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 120
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 16
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

@@ -12,18 +12,18 @@ third_party_settings:
   geocoder_field:
     method: geocode
     weight: 0
+    field: field_image
     skip_not_empty_value: false
     disabled: false
     hidden: false
     providers:
       - file
     dumper: wkt
+    delta_handling: default
     failure:
       handling: preserve
       status_message: true
       log: true
-    field: field_image
-    delta_handling: default
 id: paragraph.geoimage.field_geofield
 field_name: field_geofield
 entity_type: paragraph

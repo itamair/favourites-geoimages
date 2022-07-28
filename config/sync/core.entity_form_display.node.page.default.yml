@@ -6,8 +6,15 @@ dependencies:
     - field.field.node.page.body
     - node.type.page
   module:
+    - field_layout
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 _core:
   default_config_hash: AD_lefuYmjsKeH3OQApsyP_nLj6ZnGaALznLQSQ0Z_o
 id: node.page.default
@@ -39,24 +46,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 15
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 120
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 16
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

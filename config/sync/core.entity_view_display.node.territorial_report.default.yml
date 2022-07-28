@@ -17,26 +17,26 @@ bundle: territorial_report
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_geofied_view:
     type: viewfield_default
-    weight: 1
-    region: content
     label: hidden
     settings:
       view_title: hidden
       always_build_output: false
       empty_view_title: hidden
     third_party_settings: {  }
-  links:
-    weight: 2
+    weight: 1
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   field_locations: true

@@ -23,74 +23,76 @@ third_party_settings:
       children:
         - group_main_view_map
         - group_field_map
+      label: Tabs
       parent_name: ''
+      region: content
       weight: 0
       format_type: accordion
-      region: content
       format_settings:
-        effect: bounceslide
-        id: ''
         classes: ''
-      label: Tabs
+        id: ''
+        effect: bounceslide
     group_field_map:
       children:
         - field_image
         - body
+      label: 'Field Map'
       parent_name: group_tabs
+      region: content
       weight: 3
       format_type: accordion_item
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
-      label: 'Field Map'
+        description: ''
     group_main_view_map:
       children:
         - field_geofied_view
+      label: 'Main View Map'
       parent_name: group_tabs
+      region: content
       weight: 2
       format_type: accordion_item
-      region: content
       format_settings:
-        formatter: closed
-        id: ''
         classes: ''
-      label: 'Main View Map'
+        id: ''
+        formatter: closed
 id: node.event.default
 targetEntityType: node
 bundle: event
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_geofied_view:
-    weight: 1
+    type: viewfield_default
     label: hidden
     settings:
       view_title: hidden
-      empty_view_title: hidden
       always_build_output: false
+      empty_view_title: hidden
     third_party_settings: {  }
-    type: viewfield_default
+    weight: 1
     region: content
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: large
       image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_link:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -99,12 +101,12 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
   links:
-    weight: 3
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   field_locations: true

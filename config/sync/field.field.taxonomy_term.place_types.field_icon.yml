@@ -18,7 +18,9 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: place_stypes
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: places_types
   file_extensions: 'png gif jpg jpeg'
   max_filesize: 2MB
   max_resolution: ''
@@ -33,6 +35,4 @@ settings:
     title: ''
     width: null
     height: null
-  handler: 'default:file'
-  handler_settings: {  }
 field_type: image

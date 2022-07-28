@@ -18,13 +18,15 @@ bundle: geoimage
 mode: image
 content:
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: medium
       image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
 hidden:
   field_geofield: true

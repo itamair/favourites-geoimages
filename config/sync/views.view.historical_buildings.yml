@@ -16,6 +16,7 @@ dependencies:
     - field.storage.paragraph.field_stroke_weight
     - field.storage.paragraph.field_title
     - field.storage.paragraph.field_zindex
+    - field.storage.taxonomy_term.field_icon
     - image.style.large
     - image.style.medium
     - image.style.thumbnail
@@ -28,6 +29,7 @@ dependencies:
     - leaflet_views
     - node
     - paragraphs
+    - taxonomy
     - text
     - user
 id: historical_buildings
@@ -147,7 +149,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -363,6 +365,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_summary_or_trimmed
+          settings:
+            trim_length: 300
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_image_2:
           id: field_image_2
           table: node__field_image
@@ -415,8 +480,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_link: ''
+            image_link: content
             image_style: large
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -479,8 +546,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_link: ''
-            image_style: large
+            image_link: content
+            image_style: medium
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -930,14 +999,78 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
+        field_icon:
+          id: field_icon
+          table: taxonomy_term__field_icon
+          field: field_icon
+          relationship: field_location_type
           group_type: group
           admin_label: ''
           plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: '{{ field_location_icon }}{{ field_image }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_url
+          settings:
+            image_style: medium
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        edit_node:
+          id: edit_node
+          table: node
+          field: edit_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link_edit
           label: ''
           exclude: false
           alter:
@@ -979,20 +1112,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_summary_or_trimmed
-          settings:
-            trim_length: 300
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          text: edit
+          output_url_as_text: false
+          absolute: false
       pager:
         type: mini
         options:
@@ -1229,7 +1351,7 @@ display:
           weight: ''
           icon:
             iconType: marker
-            iconUrl: '{{ field_location_icon }}{{ field_image }}'
+            iconUrl: '{{ field_icon }}'
             shadowUrl: ''
             className: '{{ field_classname }}'
             iconSize:
@@ -1298,6 +1420,15 @@ display:
           admin_label: 'field_locations: Paragraph'
           plugin_id: standard
           required: false
+        field_location_type:
+          id: field_location_type
+          table: paragraph__field_location_type
+          field: field_location_type
+          relationship: field_locations
+          group_type: group
+          admin_label: 'field_location_type: Taxonomy term'
+          plugin_id: standard
+          required: false
       use_ajax: true
       group_by: false
       header: {  }
@@ -1326,8 +1457,9 @@ display:
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
-  block_territorial_reports_map:
-    id: block_territorial_reports_map
+        - 'config:field.storage.taxonomy_term.field_icon'
+  block_historical_building_map:
+    id: block_historical_building_map
     display_title: 'Block Map'
     display_plugin: block
     position: 1
@@ -1431,93 +1563,9 @@ display:
         operator: AND
         groups:
           1: AND
-      style:
-        type: leaflet_map
-        options:
-          grouping: {  }
-          data_source:
-            field_geofield: field_geofield
-          entity_source: __base_table
-          entity_source_submit: 'Update Entity Source'
-          name_field: title
-          description_field: '#rendered_view_fields'
-          view_mode: full
-          leaflet_map: multilayers
-          height: '800'
-          height_unit: px
-          hide_empty_map: true
-          disable_wheel: false
-          gesture_handling: false
-          reset_map:
-            control: true
-            position: topright
-          map_position:
-            force: false
-            center:
-              lat: !!float 45
-              lon: !!float 16
-            zoom: 18
-            minZoom: 1
-            maxZoom: 18
-            zoomFiner: -1
-          weight: ''
-          icon:
-            iconType: marker
-            iconUrl: '{{ field_location_icon }}{{ field_image }}'
-            shadowUrl: ''
-            className: '{{ field_classname }}'
-            iconSize:
-              x: '{{ field_location_icon_width }}'
-              'y': '{{ field_location_icon_width }}'
-            iconAnchor:
-              x: ''
-              'y': ''
-            shadowSize:
-              x: ''
-              'y': ''
-            shadowAnchor:
-              x: ''
-              'y': ''
-            popupAnchor:
-              x: ''
-              'y': ''
-            html: '<div></div>'
-            html_class: leaflet-map-divicon
-            circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
-          leaflet_markercluster:
-            control: true
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-            include_path: false
-          fullscreen:
-            control: true
-            options: '{"position":"topleft","pseudoFullscreen":false}'
-          path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
-          geocoder:
-            control: false
-            settings:
-              position: topright
-              input_size: 25
-              providers:
-                arcgisonline:
-                  weight: '0'
-                  checked: 0
-                file:
-                  weight: '0'
-                  checked: 0
-                googlemaps:
-                  weight: '0'
-                  checked: 0
-              min_terms: 4
-              delay: 800
-              zoom: 16
-              popup: false
-              options: ''
-      row:
-        type: fields
-        options: {  }
       defaults:
-        style: false
-        row: false
+        style: true
+        row: true
         filters: false
         filter_groups: false
       display_description: ''
@@ -1548,6 +1596,7 @@ display:
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
+        - 'config:field.storage.taxonomy_term.field_icon'
   page_historical_buildings_map:
     id: page_historical_buildings_map
     display_title: 'Page Map '
@@ -1589,3 +1638,4 @@ display:
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
+        - 'config:field.storage.taxonomy_term.field_icon'

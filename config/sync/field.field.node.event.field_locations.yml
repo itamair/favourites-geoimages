@@ -24,23 +24,23 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       location: location
       geometry: geometry
       geoimage: geoimage
       path: path
+    negate: 0
     target_bundles_drag_drop:
       geoimage:
-        enabled: true
         weight: 5
+        enabled: true
       geometry:
-        enabled: true
         weight: 3
+        enabled: true
       location:
-        enabled: true
         weight: 2
-      path:
         enabled: true
+      path:
         weight: 6
+        enabled: true
 field_type: entity_reference_revisions

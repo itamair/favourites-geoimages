@@ -10,10 +10,17 @@ dependencies:
     - image.style.thumbnail
     - node.type.historical_building
   module:
+    - field_layout
     - image
+    - layout_discovery
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.historical_building.default
 targetEntityType: node
 bundle: historical_building
@@ -44,23 +51,16 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_locations:
-    type: paragraphs
+    type: entity_reference_paragraphs
     weight: 3
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
+      default_paragraph_type: ''
     third_party_settings: {  }
   path:
     type: path

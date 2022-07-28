@@ -11,11 +11,18 @@ dependencies:
     - image.style.thumbnail
     - node.type.event
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -24,13 +31,13 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 2
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 6
@@ -38,24 +45,25 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_image:
+    type: image_image
     weight: 1
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_link:
+    type: link_default
     weight: 4
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_locations:
     type: paragraphs
     weight: 3
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -71,7 +79,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-    region: content
   path:
     type: path
     weight: 9
@@ -80,24 +87,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 8
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -110,12 +117,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden:
   field_geofied_view: true
