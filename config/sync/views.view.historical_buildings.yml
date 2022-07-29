@@ -13,6 +13,7 @@ dependencies:
     - field.storage.paragraph.field_location_icon
     - field.storage.paragraph.field_location_icon_width
     - field.storage.paragraph.field_stroke_color
+    - field.storage.paragraph.field_stroke_opacity
     - field.storage.paragraph.field_stroke_weight
     - field.storage.paragraph.field_title
     - field.storage.paragraph.field_zindex
@@ -812,6 +813,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_stroke_opacity:
+          id: field_stroke_opacity
+          table: paragraph__field_stroke_opacity
+          field: field_stroke_opacity
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            decimal_separator: .
+            scale: 2
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_zindex:
           id: field_zindex
           table: paragraph__field_zindex
@@ -1344,7 +1411,7 @@ display:
             center:
               lat: !!float 42
               lon: !!float 12
-            zoom: 16
+            zoom: 14
             minZoom: 1
             maxZoom: 20
             zoomFiner: 0
@@ -1454,6 +1521,7 @@ display:
         - 'config:field.storage.paragraph.field_location_icon'
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
+        - 'config:field.storage.paragraph.field_stroke_opacity'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
@@ -1563,9 +1631,93 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: leaflet_map
+        options:
+          grouping: {  }
+          data_source:
+            field_geofield: field_geofield
+          entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
+          name_field: field_title
+          description_field: field_title
+          view_mode: full
+          leaflet_map: multilayers
+          height: '800'
+          height_unit: px
+          hide_empty_map: false
+          disable_wheel: false
+          gesture_handling: false
+          reset_map:
+            control: true
+            position: topright
+          map_position:
+            force: false
+            center:
+              lat: !!float 42
+              lon: !!float 12
+            zoom: 14
+            minZoom: 1
+            maxZoom: 20
+            zoomFiner: -2
+          weight: ''
+          icon:
+            iconType: marker
+            iconUrl: '{{ field_icon }}'
+            shadowUrl: ''
+            className: '{{ field_classname }}'
+            iconSize:
+              x: '{{ field_location_icon_width }}'
+              'y': '{{ field_location_icon_width }}'
+            iconAnchor:
+              x: ''
+              'y': ''
+            shadowSize:
+              x: ''
+              'y': ''
+            shadowAnchor:
+              x: ''
+              'y': ''
+            popupAnchor:
+              x: ''
+              'y': ''
+            html: '<div></div>'
+            html_class: leaflet-map-divicon
+            circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+          leaflet_markercluster:
+            control: true
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
+            include_path: false
+          fullscreen:
+            control: false
+            options: '{"position":"topleft","pseudoFullscreen":false}'
+          path: '{"color":"{{ field_stroke_color }}","opacity":"{{ field_stroke_opacity }}","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
+          geocoder:
+            control: false
+            settings:
+              position: topright
+              input_size: 25
+              providers:
+                arcgisonline:
+                  weight: '0'
+                  checked: 0
+                file:
+                  weight: '0'
+                  checked: 0
+                googlemaps:
+                  weight: '0'
+                  checked: 0
+              min_terms: 4
+              delay: 800
+              zoom: 16
+              popup: false
+              options: ''
+      row:
+        type: fields
+        options: {  }
       defaults:
-        style: true
-        row: true
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -1593,6 +1745,7 @@ display:
         - 'config:field.storage.paragraph.field_location_icon'
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
+        - 'config:field.storage.paragraph.field_stroke_opacity'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
@@ -1635,6 +1788,7 @@ display:
         - 'config:field.storage.paragraph.field_location_icon'
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
+        - 'config:field.storage.paragraph.field_stroke_opacity'
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'

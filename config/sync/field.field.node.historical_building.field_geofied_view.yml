@@ -19,7 +19,7 @@ translatable: true
 default_value:
   -
     target_uuid: 9b278198-f89c-4eb8-af39-73ff72352c9a
-    display_id: block_territorial_reports_map
+    display_id: block_historical_building_map
     arguments: '[node:nid]'
     items_to_display: ''
     token_help: ''
