@@ -1,4 +1,10 @@
-/* line 2, ../sass/common.scss */
+@media all and (min-width: 851px) {
+  /* line 2, ../sass/common.scss */
+  .layout-container {
+    max-width: 90% !important;
+  }
+}
+/* line 7, ../sass/common.scss */
 .views-ui-display-tab-setting.overridden,
 .views-ui-display-tab-bucket.overridden {
   font-style: italic;
@@ -6,15 +12,15 @@
   font-weight: bold;
 }
 
-/* line 9, ../sass/common.scss */
+/* line 14, ../sass/common.scss */
 .paragraphs-subform .field-group-details.geometry-attributes .details-wrapper {
   display: flex;
   justify-content: space-around;
 }
 
-/* line 14, ../sass/common.scss */
+/* line 19, ../sass/common.scss */
 a, a.link {
-  border-bottom: none !important;
+  border-bottom: none;
 }
 
 /*
