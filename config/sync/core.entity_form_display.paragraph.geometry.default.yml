@@ -38,7 +38,7 @@ third_party_settings:
       format_settings:
         classes: geometry-attributes
         id: ''
-        open: false
+        open: true
         description: ''
         required_fields: true
   field_layout:
@@ -68,8 +68,9 @@ content:
     weight: 2
     region: content
     settings:
+      geometry_validation: '1'
       map:
-        leaflet_map: multilayers
+        leaflet_map: google_roads
         height: '600'
         locate: '1'
         auto_center: '1'
@@ -94,9 +95,10 @@ content:
         drawPolygon: '1'
         editMode: '1'
         dragMode: '1'
+        cutPolygon: '1'
         removalMode: '1'
         drawCircle: false
-        cutPolygon: 0
+        drawText: false
         rotateMode: 0
       reset_map:
         control: '1'
@@ -127,9 +129,9 @@ content:
         control: 0
       geojson_app_limit:
         bounds_zoom_correction: '0'
+        bounds_limit_flag: '1'
         max_zoom_out: '-2'
         bounds_zoom_flag: 0
-        bounds_limit_flag: 0
     third_party_settings: {  }
   field_min_zoom_visibility:
     type: number

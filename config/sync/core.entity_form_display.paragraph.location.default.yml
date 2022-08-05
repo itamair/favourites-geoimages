@@ -35,7 +35,7 @@ third_party_settings:
       format_settings:
         classes: ''
         id: ''
-        open: false
+        open: true
         description: ''
         required_fields: true
   field_layout:

@@ -39,6 +39,7 @@
         "drupal/masquerade": "^2.0@beta",
         "drupal/paragraphs": "^1.12",
         "drupal/slick": "^2.2",
+        "drupal/svg_image": "^1.16",
         "drupal/token": "^1.7",
         "drupal/viewfield": "^3.0@beta",
         "drush/drush": "^10.5",
