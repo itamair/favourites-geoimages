@@ -3,6 +3,9 @@
   .leaflet-popup-content {
     min-width: 100px;
     margin: 12px 8px;
+    .field--type-image img, .field--name-user-picture img {
+      margin: 0;
+    }
     h2 {
       font-size: 1.6em;
     }
@@ -12,9 +15,21 @@
     div {
       margin-bottom: 6px;
     }
+    div:last-child {
+      margin-bottom: 0px;
+    }
     img {
       width: auto;
-      max-width: 300px;
+    }
+    @media only screen and (max-width: 992px) {
+      min-width: 80px;
+      max-width: 100px;
+      .field--type-text-with-summary, .field--name-body {
+        display: none;
+      }
+      h2 {
+        font-size: 1.2em
+      }
     }
   }
 }
