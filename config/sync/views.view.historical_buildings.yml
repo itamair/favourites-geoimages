@@ -26,7 +26,7 @@ dependencies:
   module:
     - color_field
     - geofield
-    - leaflet_views
+    - geofield_311
     - node
     - paragraphs
     - svg_image
@@ -1324,7 +1324,7 @@ display:
         groups:
           1: AND
       style:
-        type: leaflet_map
+        type: geofield_311_leaflet_map
         options:
           grouping: {  }
           data_source:
@@ -1332,8 +1332,8 @@ display:
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
           name_field: field_title
-          description_field: '#rendered_view_fields'
-          view_mode: full
+          description_field: '#rendered_entity_ajax'
+          view_mode: map_infowindow
           leaflet_map: multilayers
           height: '800'
           height_unit: px
@@ -1379,10 +1379,7 @@ display:
           leaflet_markercluster:
             control: true
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
-            include_path: false
-          fullscreen:
-            control: true
-            options: '{"position":"topleft","pseudoFullscreen":false}'
+            include_path: 0
           path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
           geocoder:
             control: false
@@ -1404,6 +1401,14 @@ display:
               zoom: 16
               popup: false
               options: ''
+          geojson_app_limit:
+            bounds_zoom_flag: false
+            bounds_zoom_correction: '0'
+            bounds_limit_flag: false
+            max_zoom_out: '-2'
+          fullscreen:
+            control: 1
+            options: '{"position":"topleft","pseudoFullscreen":false}'
       row:
         type: fields
       query:
@@ -1433,7 +1438,7 @@ display:
           admin_label: 'field_location_type: Taxonomy term'
           plugin_id: standard
           required: false
-      use_ajax: true
+      use_ajax: false
       group_by: false
       header: {  }
       footer: {  }
@@ -1569,7 +1574,7 @@ display:
         groups:
           1: AND
       style:
-        type: leaflet_map
+        type: geofield_311_leaflet_map
         options:
           grouping: {  }
           data_source:
@@ -1624,10 +1629,7 @@ display:
           leaflet_markercluster:
             control: true
             options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
-            include_path: false
-          fullscreen:
-            control: false
-            options: '{"position":"topleft","pseudoFullscreen":false}'
+            include_path: 0
           path: '{"color":"{{ field_stroke_color }}","opacity":"{{ field_stroke_opacity }}","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
           geocoder:
             control: false
@@ -1649,6 +1651,14 @@ display:
               zoom: 16
               popup: false
               options: ''
+          geojson_app_limit:
+            bounds_zoom_flag: false
+            bounds_zoom_correction: '0'
+            bounds_limit_flag: false
+            max_zoom_out: '-2'
+          fullscreen:
+            control: 0
+            options: '{"position":"topleft","pseudoFullscreen":false}'
       row:
         type: fields
         options: {  }

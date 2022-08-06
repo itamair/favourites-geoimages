@@ -1,0 +1,10 @@
+uuid: 36d80bee-1928-4341-9acd-0f198756da3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.map_infowindow
+label: 'Map InfoWindow'
+targetEntityType: node
+cache: true
