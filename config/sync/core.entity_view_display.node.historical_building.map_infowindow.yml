@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
     - field.field.node.historical_building.field_locations
-    - image.style.large
+    - image.style.300x200_cropped
     - node.type.historical_building
   module:
     - layout_builder
@@ -36,7 +36,7 @@ content:
     type: single_image_formatter
     label: hidden
     settings:
-      image_style: large
+      image_style: 300x200_cropped
       image_link: content
       image_loading:
         attribute: lazy
