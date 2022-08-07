@@ -1,13 +1,17 @@
 .leaflet-popup-content-wrapper {
   border-radius: 1px;
   .leaflet-popup-content {
+    .node__content {
+      font-size: 1em;
+    }
     min-width: 100px;
     margin: 12px 8px;
     .field--type-image img, .field--name-user-picture img {
       margin: 0;
     }
     h2 {
-      font-size: 1.6em;
+      font-size: 1.4em;
+      margin: 0.5em 0;
     }
     h3 {
       font-size: 1.2em;
