@@ -1,23 +1,23 @@
-uuid: ecb68439-6734-46f8-80f2-cce343836a47
+uuid: e1a86e5a-00ec-4a57-8447-c0cdff8a5cda
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:2b216da4-b9db-4663-b0a3-8e0b593e9f21'
+    - 'block_content:basic:0d13c2a7-40d3-490e-bbb1-fc7bcd4c10ae'
   module:
     - block_content
     - system
     - user
   theme:
     - bartik
-id: addnewhistoricalbuilding
+id: addnewhistoricalbuilding_2
 theme: bartik
 region: content
 weight: -4
 provider: null
-plugin: 'block_content:2b216da4-b9db-4663-b0a3-8e0b593e9f21'
+plugin: 'block_content:0d13c2a7-40d3-490e-bbb1-fc7bcd4c10ae'
 settings:
-  id: 'block_content:2b216da4-b9db-4663-b0a3-8e0b593e9f21'
+  id: 'block_content:0d13c2a7-40d3-490e-bbb1-fc7bcd4c10ae'
   label: 'Add new Historical Building'
   label_display: '0'
   provider: block_content
@@ -25,6 +25,10 @@ settings:
   info: ''
   view_mode: full
 visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /historical_buildings_map
   user_role:
     id: user_role
     negate: false
@@ -32,7 +36,3 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       administrator: administrator
-  request_path:
-    id: request_path
-    negate: false
-    pages: /historical_buildings_map
