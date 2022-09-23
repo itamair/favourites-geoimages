@@ -1707,7 +1707,8 @@ display:
         type: normal
         title: 'Historical Buildings Map'
         description: ''
-        weight: -10
+        weight: -49
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''

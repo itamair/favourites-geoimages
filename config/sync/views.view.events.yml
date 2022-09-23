@@ -24,9 +24,9 @@ dependencies:
     - color_field
     - geofield
     - geofield_311
-    - image
     - node
     - paragraphs
+    - svg_image
     - user
 id: events
 label: Events
@@ -1357,7 +1357,8 @@ display:
         type: normal
         title: 'Events Map'
         description: ''
-        weight: 0
+        weight: -48
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''

@@ -25,10 +25,10 @@ dependencies:
     - entity_reference_revisions
     - geofield
     - geofield_311
-    - image
     - leaflet_views
     - node
     - paragraphs
+    - svg_image
     - user
 id: territorial_reports
 label: 'Territorial Reports'
@@ -2005,7 +2005,8 @@ display:
         type: normal
         title: 'My Territorial Reports'
         description: ''
-        weight: 101
+        weight: -45
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''
@@ -2605,7 +2606,8 @@ display:
         type: normal
         title: 'Territorial Reports List'
         description: ''
-        weight: 100
+        weight: -46
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''
@@ -2635,7 +2637,8 @@ display:
         type: normal
         title: 'Territorial Reports Map'
         description: ''
-        weight: 10
+        weight: -47
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''
