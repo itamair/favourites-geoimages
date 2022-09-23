@@ -41,3 +41,6 @@ phpunit.xml
 
 # Ignore logs
 *.log*
+
+# Ignore .htaccess
+.htaccess
