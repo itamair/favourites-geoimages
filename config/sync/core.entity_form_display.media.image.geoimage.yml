@@ -1,8 +1,9 @@
-uuid: e2fce9c1-1549-4583-893a-9a2525059046
+uuid: 3553e061-16c0-4728-ab66-e14de4419ed8
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_form_mode.media.geoimage
     - field.field.media.image.field_address
     - field.field.media.image.field_geofield
     - field.field.media.image.field_media_image
@@ -21,10 +22,10 @@ third_party_settings:
       label: ''
 _core:
   default_config_hash: WeM0d1VqhuyGELo4SRiDJfhDQSLqfKavISEbrnlcTaE
-id: media.image.default
+id: media.image.geoimage
 targetEntityType: media
 bundle: image
-mode: default
+mode: geoimage
 content:
   created:
     type: datetime_timestamp

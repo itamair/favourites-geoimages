@@ -7,6 +7,7 @@
       let self = this;
 
       // React on leafletMapInit event.
+      // Resizing Markers.
       $(context).on('leafletMapInit', function (e, settings, lMap, mapid) {
         let map = lMap;
         let markers = Drupal.Leaflet[mapid].markers;
@@ -21,6 +22,17 @@
         });
       });
 
+      // Interact with each feature created and added to the map.
+/*      $(context).on('leaflet.feature', function(e, lFeature, feature, add_features) {
+
+        // Add an event listener on the popup open to dynamically pan to the center.
+        lFeature.on('popupopen', function (popup) {
+          const zoom = popup.target._map.getZoom();
+          const zoom_pow = Math.pow(zoom , 3);
+          const lat_addition = zoom < 17 ? 12/zoom_pow: 3/zoom_pow;
+          popup.target._map.panTo([popup.target._latlng.lat + lat_addition, popup.target._latlng.lng])
+        });
+      });*/
     },
 
     zoomDefaultIconSize: 18,

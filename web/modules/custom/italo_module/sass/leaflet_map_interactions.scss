@@ -1,11 +1,41 @@
+#leaflet-map-view-geo-media-images-page-geoimages-map {
+  .leaflet-popup-content {
+    width: 600px !important;
+    margin: 1px;
+    @media only screen and (max-width: 992px) {
+      min-width: 80px;
+      max-width: 300px;
+    }
+  }
+}
+
 .leaflet-popup-content-wrapper {
   border-radius: 1px;
   .leaflet-popup-content {
+    min-width: 100px;
+    width: auto !important;
+    margin: 0;
     .node__content {
       font-size: 1em;
     }
-    min-width: 100px;
-    margin: 12px 8px;
+    .node--type-geoimage {
+      width: 600px !important;
+      margin: 2px;
+      .node__content {
+        margin: 0;
+      }
+      .node__title {
+        display: none;
+      }
+      .field--type-image {
+        float: none;
+        margin: 0;
+      }
+    }
+    .node--type-historical-building {
+      width: 300px !important;
+      margin: 12px 8px;
+    }
     .field--type-image img, .field--name-user-picture img {
       margin: 0;
     }
@@ -20,7 +50,7 @@
       margin-bottom: 6px;
     }
     div:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
     img {
       width: auto;

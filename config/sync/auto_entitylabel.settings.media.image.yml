@@ -1,0 +1,9 @@
+status: 0
+pattern: '[media:field_address:value]'
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - media.type.image
+save: 1
+chunk: '50'

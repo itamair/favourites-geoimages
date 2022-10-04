@@ -1,0 +1,39 @@
+uuid: 51e55ecf-5c12-43b5-a002-8fb2c2815873
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_geofield
+    - field.field.media.geoimage.field_media_geoimage
+    - image.style.map_scaled_cropped_image_600_400
+    - media.type.geoimage
+  module:
+    - svg_image
+id: media.geoimage.default
+targetEntityType: media
+bundle: geoimage
+mode: default
+content:
+  field_media_geoimage:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: map_scaled_cropped_image_600_400
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_address: true
+  field_geofield: true
+  name: true
+  thumbnail: true
+  uid: true

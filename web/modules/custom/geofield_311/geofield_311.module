@@ -42,9 +42,11 @@ function geofield_311_leaflet_views_feature_alter(array &$feature, ResultRow $ro
 
   // Inject the Zoom Visibility levels/rules in View results Features.
   if (in_array($rowPlugin->view->id(), ['historical_buildings'])) {
-    $paragraph = Paragraph::load($row->{'paragraphs_item_field_data_node__field_locations_id'});
-    if ($paragraph instanceof ParagraphInterface && $min_zoom_visibility = $paragraph->field_min_zoom_visibility) {
-      $feature['min_zoom_visibility'] = $min_zoom_visibility->value;
+    if (isset($row->{'paragraphs_item_field_data_node__field_locations_id'})) {
+      $paragraph = Paragraph::load($row->{'paragraphs_item_field_data_node__field_locations_id'});
+      if ($paragraph instanceof ParagraphInterface && $min_zoom_visibility = $paragraph->field_min_zoom_visibility) {
+        $feature['min_zoom_visibility'] = $min_zoom_visibility->value;
+      }
     }
   }
 }

@@ -1,0 +1,34 @@
+uuid: 5d526a97-435f-4520-9f28-7137d7622198
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.geoimage.body
+    - field.field.node.geoimage.field_geoimage
+    - field.field.node.geoimage.field_media_image
+    - node.type.geoimage
+  module:
+    - text
+    - user
+id: node.geoimage.teaser
+targetEntityType: node
+bundle: geoimage
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_geoimage: true
+  field_media_image: true

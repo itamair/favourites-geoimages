@@ -1,0 +1,41 @@
+uuid: b4c2d9f8-0f13-4b63-99fb-f440a5917b94
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_geofield
+    - field.field.media.geoimage.field_media_geoimage
+    - image.style.thumbnail
+    - media.type.geoimage
+  module:
+    - field_layout
+    - layout_discovery
+    - svg_image
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.geoimage.media_library
+targetEntityType: media
+bundle: geoimage
+mode: media_library
+content:
+  field_media_geoimage:
+    type: image_image
+    weight: -50
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_address: true
+  field_geofield: true
+  name: true
+  path: true
+  status: true
+  uid: true

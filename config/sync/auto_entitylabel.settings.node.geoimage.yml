@@ -1,0 +1,9 @@
+status: 1
+pattern: '[node:field_media_image:entity:field_address]'
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - node.type.geoimage
+save: 0
+chunk: '50'

@@ -1,17 +1,17 @@
-uuid: bd6eba02-12c3-4b56-aca7-7e219eb20806
+uuid: db760a70-42cf-4f2e-b2e0-fe8b97d2c04b
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.historical_building.body
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
     - field.field.node.historical_building.field_locations
-    - image.style.big
     - node.type.historical_building
   module:
+    - imagefield_slideshow
     - layout_builder
-    - svg_image
     - text
     - user
     - viewfield
@@ -19,10 +19,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.historical_building.default
+id: node.historical_building.full
 targetEntityType: node
 bundle: historical_building
-mode: default
+mode: full
 content:
   body:
     type: text_default
@@ -42,17 +42,16 @@ content:
     weight: 2
     region: content
   field_image:
-    type: image
+    type: imagefield_slideshow_field_formatter
     label: hidden
     settings:
-      image_link: ''
-      image_style: big
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_loading:
-        attribute: lazy
+      imagefield_slideshow_style: big
+      imagefield_slideshow_style_effects: scrollHorz
+      imagefield_slideshow_style_pause: 'false'
+      imagefield_slideshow_prev_next: '1'
+      imagefield_slideshow_transition_speed: '100'
+      imagefield_slideshow_timeout: '0'
+      imagefield_slideshow_pager: 0
     third_party_settings: {  }
     weight: 1
     region: content

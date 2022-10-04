@@ -1,52 +1,43 @@
-uuid: bd6eba02-12c3-4b56-aca7-7e219eb20806
+uuid: 641d2107-8e76-467a-8122-07c642462525
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.leaflet_popup
     - field.field.node.historical_building.body
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
     - field.field.node.historical_building.field_locations
-    - image.style.big
+    - image.style.cropped_map_image_
     - node.type.historical_building
   module:
     - layout_builder
     - svg_image
     - text
     - user
-    - viewfield
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.historical_building.default
+id: node.historical_building.leaflet_popup
 targetEntityType: node
 bundle: historical_building
-mode: default
+mode: leaflet_popup
 content:
   body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_geofied_view:
-    type: viewfield_default
+    type: text_summary_or_trimmed
     label: hidden
     settings:
-      view_title: hidden
-      always_build_output: true
-      empty_view_title: hidden
+      trim_length: 600
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: big
+      image_style: cropped_map_image_
       svg_attributes:
         width: null
         height: null
@@ -59,7 +50,8 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
+  field_geofied_view: true
   field_locations: true

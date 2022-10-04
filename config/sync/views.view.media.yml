@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.thumbnail
+    - image.style.image_map_marker
   module:
-    - image
     - media
+    - svg_image
     - user
 _core:
   default_config_hash: UZP23LgBdE1XbvscbLCdd9uTk5t4qqA1Z56koqbvYP0
@@ -134,7 +134,11 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: thumbnail
+            image_style: image_map_marker
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
             image_loading:
               attribute: lazy
           group_column: ''
@@ -513,7 +517,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 50
+          items_per_page: 100
           total_pages: null
           id: 0
           tags:

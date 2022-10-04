@@ -1,22 +1,26 @@
-uuid: 527e08d7-12c5-4c1c-af5f-bd580e45b8c9
+uuid: 2dcce811-b1cd-4a9e-96a9-7c1c4247014a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_address
-    - field.field.media.image.field_geofield
-    - field.field.media.image.field_media_image
-    - image.style.large
-    - media.type.image
+    - core.entity_view_mode.media.leaflet_popup
+    - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_geofield
+    - field.field.media.geoimage.field_media_geoimage
+    - image.style.map_scaled_cropped_image_600_400
+    - media.type.geoimage
   module:
+    - layout_builder
     - leaflet
     - svg_image
-_core:
-  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
-id: media.image.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.geoimage.leaflet_popup
 targetEntityType: media
-bundle: image
-mode: default
+bundle: geoimage
+mode: leaflet_popup
 content:
   field_geofield:
     type: leaflet_formatter_default
@@ -98,12 +102,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_media_image:
+  field_media_geoimage:
     type: image
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: map_scaled_cropped_image_600_400
       svg_attributes:
         width: null
         height: null
