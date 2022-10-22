@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_geofield
+    - field.storage.media.field_media_geoimage
     - field.storage.media.field_media_image
     - field.storage.node.body
+    - field.storage.node.field_classname
     - field.storage.node.field_image
     - field.storage.paragraph.field_classname
     - field.storage.paragraph.field_fill_color
@@ -251,7 +253,7 @@ display:
           id: field_geofield_1
           table: media__field_geofield
           field: field_geofield
-          relationship: field_media_image
+          relationship: field_geoimage
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -448,7 +450,7 @@ display:
           id: field_media_image
           table: media__field_media_image
           field: field_media_image
-          relationship: field_media_image
+          relationship: field_geoimage
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -1269,23 +1271,10 @@ display:
           output_url_as_text: false
           absolute: false
       pager:
-        type: mini
+        type: some
         options:
           offset: 0
           items_per_page: 0
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -1476,13 +1465,21 @@ display:
       style:
         type: leaflet_map
         options:
-          grouping: {  }
+          grouping:
+            -
+              field: field_classname_1
+              rendered: true
+              overlays_options:
+                disabled_overlays:
+                  opacity-50: opacity-50
+                hidden_overlays_controls:
+                  'opacity-50 bordered': 'opacity-50 bordered'
           data_source:
             field_geofield: field_geofield
             field_geofield_1: field_geofield_1
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
-          name_field: field_title
+          name_field: title
           description_field: '#rendered_entity'
           view_mode: leaflet_popup
           leaflet_map: multilayers
@@ -1503,7 +1500,7 @@ display:
             minZoom: 1
             maxZoom: 20
             zoomFiner: 0
-          weight: ''
+          weight: '{{ field_zindex }}'
           icon:
             iconType: marker
             iconUrl: '{{ nothing }}'
@@ -1529,21 +1526,21 @@ display:
             circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: true
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":14}'
+            options: '{"spiderfyOnMaxZoom":false,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":18}'
             include_path: false
           fullscreen:
             control: true
             options: '{"position":"topleft","pseudoFullscreen":false}'
           path: '{"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true}'
           geocoder:
-            control: false
+            control: true
             settings:
               position: topright
               input_size: 25
               providers:
                 arcgisonline:
                   weight: '0'
-                  checked: 0
+                  checked: 1
                 file:
                   weight: '0'
                   checked: 0
@@ -1553,7 +1550,7 @@ display:
               min_terms: 4
               delay: 800
               zoom: 16
-              popup: false
+              popup: true
               options: ''
       row:
         type: fields
@@ -1562,7 +1559,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_tags: {  }
       relationships:
@@ -1584,11 +1581,15 @@ display:
           admin_label: 'field_location_type: Taxonomy term'
           plugin_id: standard
           required: false
-        field_media_image:
-          id: field_media_image
-          table: node__field_media_image
-          field: field_media_image
+        field_geoimage:
+          id: field_geoimage
+          table: node__field_geoimage
+          field: field_geoimage
+          relationship: none
+          group_type: group
+          admin_label: 'field_geoimage: Media'
           plugin_id: standard
+          required: false
       use_ajax: true
       group_by: false
       header: {  }
@@ -1600,7 +1601,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1826,7 +1826,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1864,7 +1863,7 @@ display:
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
           name_field: field_title
-          description_field: '#rendered_entity'
+          description_field: field_fill_color
           view_mode: leaflet_popup
           leaflet_map: multilayers
           height: '800'
@@ -1963,7 +1962,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1992,6 +1990,71 @@ display:
     display_options:
       title: 'Hybrid Map'
       fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_title:
           id: field_title
           table: paragraph__field_title
@@ -2044,71 +2107,6 @@ display:
           click_sort_column: value
           type: string
           settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: h3
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2187,7 +2185,7 @@ display:
           id: field_geofield_1
           table: media__field_geofield
           field: field_geofield
-          relationship: field_media_image
+          relationship: field_geoimage
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -2237,69 +2235,6 @@ display:
           settings:
             output_format: wkt
             output_escape: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_summary_or_trimmed
-          settings:
-            trim_length: 300
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2374,208 +2309,6 @@ display:
           group_columns: {  }
           group_rows: true
           delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_media_geoimage:
-          id: field_media_geoimage
-          table: media__field_media_image
-          field: field_media_image
-          relationship: field_media_image
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: 'sites/default/files/styles/image_map_marker/public/photo_albums/Old_Taranto_Images/{{ field_media_geoimage }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image_file_name
-          settings: {  }
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_media_image:
-          id: field_media_image
-          table: media__field_media_image
-          field: field_media_image
-          relationship: field_media_image
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: ''
-            image_style: image_map_marker
-            svg_attributes:
-              width: null
-              height: null
-            svg_render_as_image: true
-            image_loading:
-              attribute: lazy
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_image_1:
-          id: field_image_1
-          table: paragraph__field_image
-          field: field_image
-          relationship: field_locations
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: '{{ field_image_2 }}'
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: content
-            image_style: cropped_map_image_
-            svg_attributes:
-              width: null
-              height: null
-            svg_render_as_image: true
-            image_loading:
-              attribute: eager
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -2962,6 +2695,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_classname_1:
+          id: field_classname_1
+          table: node__field_classname
+          field: field_classname
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_classname:
           id: field_classname
           table: paragraph__field_classname
@@ -3007,7 +2803,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: '{{ field_classname_1 }}'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -3161,7 +2957,7 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: true
+            alter_text: false
             text: ''
             make_link: false
             path: ''
@@ -3266,6 +3062,68 @@ display:
           text: edit
           output_url_as_text: false
           absolute: false
+        field_media_geoimage:
+          id: field_media_geoimage
+          table: media__field_media_geoimage
+          field: field_media_geoimage
+          relationship: field_geoimage
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'sites/default/files/styles/image_map_marker/public/photo_albums/Taranto_Images/{{ field_media_geoimage }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_file_name
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -3315,6 +3173,71 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       exposed_form:
         type: bef
         options:
@@ -3347,6 +3270,7 @@ display:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
+      sorts: {  }
       filters:
         status:
           id: status
@@ -3456,8 +3380,10 @@ display:
       defaults:
         title: false
         exposed_form: false
+        group_by: false
         relationships: false
         fields: false
+        sorts: false
         filters: false
         filter_groups: false
         header: false
@@ -3480,17 +3406,28 @@ display:
           admin_label: 'field_location_type: Taxonomy term'
           plugin_id: standard
           required: false
-        field_media_image:
-          id: field_media_image
-          table: node__field_media_image
-          field: field_media_image
+        field_geoimage:
+          id: field_geoimage
+          table: node__field_geoimage
+          field: field_geoimage
           relationship: none
           group_type: group
-          admin_label: 'field_media_image: Media'
+          admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
+      group_by: false
       display_description: ''
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
       path: hybrid_map
       menu:
@@ -3508,19 +3445,17 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.media.field_geofield'
-        - 'config:field.storage.media.field_media_image'
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.media.field_media_geoimage'
+        - 'config:field.storage.node.field_classname'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.paragraph.field_classname'
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
-        - 'config:field.storage.paragraph.field_image'
         - 'config:field.storage.paragraph.field_location_icon'
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'

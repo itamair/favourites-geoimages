@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_title
+    - field.field.paragraph.location.field_zindex
     - image.style.thumbnail
     - paragraphs.paragraphs_type.location
   module:
@@ -17,8 +18,8 @@ dependencies:
     - field_group
     - field_layout
     - geofield_311
-    - image
     - layout_discovery
+    - svg_image
 third_party_settings:
   field_group:
     group_attributes:
@@ -27,6 +28,7 @@ third_party_settings:
         - field_location_icon
         - field_classname
         - field_location_icon_width
+        - field_zindex
       label: Attributes
       region: content
       parent_name: ''
@@ -145,6 +147,13 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_zindex:
+    type: number
+    weight: 5
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
 hidden:

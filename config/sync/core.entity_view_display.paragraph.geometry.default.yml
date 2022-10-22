@@ -25,7 +25,7 @@ content:
     label: hidden
     settings:
       multiple_map: false
-      leaflet_map: 'OSM Mapnik'
+      leaflet_map: multilayers
       height: 800
       height_unit: px
       hide_empty_map: false
@@ -37,11 +37,11 @@ content:
       popup: true
       popup_content: '[paragraph:field_title:value]'
       map_position:
-        force: true
+        force: false
         center:
           lat: 40.45
           lon: 17.26
-        zoom: 17
+        zoom: 18
         minZoom: 3
         maxZoom: 18
         zoomFiner: -1

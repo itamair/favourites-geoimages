@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.geoimage.body
+    - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_geoimage
-    - field.field.node.geoimage.field_media_image
     - node.type.geoimage
   module:
     - text
@@ -30,5 +30,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_classname: true
   field_geoimage: true
-  field_media_image: true

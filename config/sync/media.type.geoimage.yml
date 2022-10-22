@@ -7,7 +7,7 @@ label: 'Geo Image'
 description: 'Use local reusable media with geofield location.'
 source: image
 queue_thumbnail_downloads: false
-new_revision: true
+new_revision: false
 source_configuration:
   source_field: field_media_geoimage
 field_map:

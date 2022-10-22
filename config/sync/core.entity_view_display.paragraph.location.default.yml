@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_title
+    - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
   module:
     - computed_field
@@ -46,11 +47,11 @@ content:
         zoomFiner: 0
       icon:
         iconType: marker
-        iconUrl: '[paragraph:field_location_icon:thumbnail:url]'
+        iconUrl: '[paragraph:field_location_icon:thumbnail:uri]'
         shadowUrl: ''
         className: ''
         iconSize:
-          x: '[paragraph:field_location_icon:width]'
+          x: '[paragraph:field_location_icon_width:value]'
           'y': ''
         iconAnchor:
           x: ''
@@ -68,8 +69,12 @@ content:
         html_class: leaflet-map-divicon
         circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
       leaflet_markercluster:
-        control: false
+        control: true
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        include_path: false
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
       geocoder:
         control: false
@@ -91,8 +96,7 @@ content:
           zoom: 16
           popup: false
           options: ''
-      fullscreen_control: true
-      weight: ''
+      weight: null
     third_party_settings: {  }
     weight: 1
     region: content
@@ -130,6 +134,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_zindex:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   field_classname: true

@@ -7,6 +7,7 @@ dependencies:
     - field.storage.media.field_media_image
     - image.style.image_map_marker
     - image.style.map_scaled_cropped_image_600_400
+    - media.type.geoimage
     - media.type.image
     - system.menu.main
   module:
@@ -387,8 +388,8 @@ display:
             field_geofield: field_geofield
           entity_source: __base_table
           name_field: ''
-          description_field: '#rendered_view_fields'
-          view_mode: full
+          description_field: '#rendered_entity'
+          view_mode: leaflet_popup
           leaflet_map: multilayers
           height: '800'
           height_unit: px
@@ -432,7 +433,7 @@ display:
             html_class: leaflet-map-divicon
             circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
-            control: true
+            control: false
             options: '{"spiderfyOnMaxZoom":false,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"disableClusteringAtZoom":18,"maxClusterRadius":80}'
             include_path: false
           fullscreen:
@@ -616,15 +617,44 @@ display:
           id: bundle
           table: media_field_data
           field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
+          operator: in
           value:
-            image: image
+            geoimage: geoimage
           group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         field_geofield_value:
           id: field_geofield_value
           table: media__field_geofield

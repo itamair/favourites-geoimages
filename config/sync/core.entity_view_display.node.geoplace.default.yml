@@ -10,10 +10,10 @@ dependencies:
     - image.style.large
     - node.type.geoplace
   module:
+    - entity_reference_revisions
     - slick
     - text
     - user
-    - viewfield
 id: node.geoplace.default
 targetEntityType: node
 bundle: geoplace
@@ -25,16 +25,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_geofied_view:
-    type: viewfield_default
-    label: hidden
-    settings:
-      view_title: hidden
-      always_build_output: false
-      empty_view_title: hidden
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_image:
     type: slick_image
@@ -91,10 +81,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_locations:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
 hidden:
-  field_locations: true
+  field_geofied_view: true

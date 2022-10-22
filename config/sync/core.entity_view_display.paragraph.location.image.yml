@@ -11,10 +11,11 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_title
+    - field.field.paragraph.location.field_zindex
     - image.style.geofield_map_default_icon_style
     - paragraphs.paragraphs_type.location
   module:
-    - image
+    - svg_image
 id: paragraph.location.image
 targetEntityType: paragraph
 bundle: location
@@ -38,3 +39,4 @@ hidden:
   field_location_type: true
   field_marker_icon_path: true
   field_title: true
+  field_zindex: true
