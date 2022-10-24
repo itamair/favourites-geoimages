@@ -67,3 +67,16 @@
     }
   }
 }
+
+// Customise Leaflet Marker Icons
+.leaflet-pane .leaflet-marker-icon {
+  &.up-to-the-top {
+    z-index: 1000 !important;
+  }
+  &.opacity-50 {
+    opacity: 50% !important;
+  }
+  &.opacity-50:hover {
+    opacity: 100% !important;
+  }
+}

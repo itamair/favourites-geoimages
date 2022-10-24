@@ -88,3 +88,16 @@
     font-size: 1.2em;
   }
 }
+
+/* line 73, ../sass/leaflet_map_interactions.scss */
+.leaflet-pane .leaflet-marker-icon.up-to-the-top {
+  z-index: 1000 !important;
+}
+/* line 76, ../sass/leaflet_map_interactions.scss */
+.leaflet-pane .leaflet-marker-icon.opacity-50 {
+  opacity: 50% !important;
+}
+/* line 79, ../sass/leaflet_map_interactions.scss */
+.leaflet-pane .leaflet-marker-icon.opacity-50:hover {
+  opacity: 100% !important;
+}

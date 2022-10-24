@@ -12,4 +12,4 @@ leaflet_map_interactions:
   js:
     js/leaflet_map_interactions.js: {}
   dependencies:
-      - leaflet/leaflet
+    - leaflet/leaflet-drupal
