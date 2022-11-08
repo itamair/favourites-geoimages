@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.geoimage.body
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_geoimage
+    - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
     - layout_builder
@@ -37,3 +38,4 @@ content:
 hidden:
   body: true
   field_classname: true
+  field_place_type: true

@@ -2,21 +2,20 @@
   .leaflet-popup-content {
     width: 600px !important;
     margin: 1px;
-    @media only screen and (max-width: 992px) {
-      min-width: 80px;
-      max-width: 300px;
-    }
   }
 }
 
 .leaflet-popup-content-wrapper {
   border-radius: 1px;
   .leaflet-popup-content {
-    min-width: 100px;
     width: auto !important;
     margin: 0;
     .node__content {
       font-size: 1em;
+    }
+    .field--type-image {
+      float: none; // This is needed to move the Leaflet Popup to show all of it in the map container
+      margin: 0;
     }
     .node--type-geoimage {
       width: 600px !important;
@@ -27,12 +26,8 @@
       .node__title {
         display: none;
       }
-      .field--type-image {
-        float: none;
-        margin: 0;
-      }
     }
-    .node--type-historical-building {
+    .node--type-historical-building, .node--type-geoplace {
       width: 300px !important;
       margin: 12px 8px;
     }
@@ -52,17 +47,18 @@
     div:last-child {
       margin-bottom: 0;
     }
-    img {
-      width: auto;
-    }
     @media only screen and (max-width: 992px) {
       min-width: 80px;
-      max-width: 100px;
+      max-width: 400px;
+      position: relative;
       .field--type-text-with-summary, .field--name-body {
         display: none;
       }
       h2 {
         font-size: 1.2em
+      }
+      img.image-style-map-scaled-cropped-image-600-400 {
+        width: 395px;
       }
     }
   }

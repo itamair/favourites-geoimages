@@ -1,6 +1,6 @@
 uuid: b5391ce8-fb21-4429-9122-e5101ce7aee9
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.media.field_geofield
@@ -388,7 +388,6 @@ display:
             field_geofield: field_geofield
           entity_source: __base_table
           name_field: ''
-          description_field: '#rendered_entity'
           view_mode: leaflet_popup
           leaflet_map: multilayers
           height: '800'
@@ -460,6 +459,7 @@ display:
               zoom: 16
               popup: false
               options: ''
+          description_field: '#rendered_entity'
       row:
         type: fields
       query:

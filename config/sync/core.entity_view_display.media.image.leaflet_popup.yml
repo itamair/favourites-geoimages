@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.leaflet_popup
-    - field.field.media.image.field_address
-    - field.field.media.image.field_geofield
     - field.field.media.image.field_media_image
     - image.style.map_scaled_cropped_image_600_400
     - media.type.image
@@ -40,8 +38,6 @@ content:
     region: content
 hidden:
   created: true
-  field_address: true
-  field_geofield: true
   name: true
   thumbnail: true
   uid: true

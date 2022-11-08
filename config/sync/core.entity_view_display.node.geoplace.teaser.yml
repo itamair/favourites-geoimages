@@ -1,4 +1,4 @@
-uuid: ae40b02e-6257-49ba-a7cd-918ec691146e
+uuid: 1472fded-11a6-41d5-997b-4b7ca168162c
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.geoplace.body
     - field.field.node.geoplace.field_geofied_view
     - field.field.node.geoplace.field_image
+    - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_locations
+    - field.field.node.geoplace.field_place_type
     - node.type.geoplace
   module:
     - text
@@ -33,4 +35,6 @@ content:
 hidden:
   field_geofied_view: true
   field_image: true
+  field_link: true
   field_locations: true
+  field_place_type: true

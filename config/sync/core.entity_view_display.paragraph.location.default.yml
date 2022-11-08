@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.location.field_location_icon_width
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
+    - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
@@ -34,8 +35,17 @@ content:
       reset_map:
         control: false
         position: topright
+      leaflet_tooltip:
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
       popup: false
       popup_content: ''
+      leaflet_popup:
+        control: ''
+        content: ''
+        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
+        value: ''
+        view_mode: full
       map_position:
         force: false
         center:
@@ -76,6 +86,8 @@ content:
         control: false
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
+      feature_properties:
+        values: ''
       geocoder:
         control: false
         settings:
@@ -115,7 +127,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_marker_icon_path:
     type: computed_string
@@ -125,7 +137,17 @@ content:
       cache_unit: -1
       cache_duration: 1
     third_party_settings: {  }
-    weight: 5
+    weight: 4
+    region: content
+  field_markercluster_exclude:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_title:
     type: string
@@ -142,7 +164,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
 hidden:
   field_classname: true

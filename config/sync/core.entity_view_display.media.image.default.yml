@@ -3,13 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_address
-    - field.field.media.image.field_geofield
     - field.field.media.image.field_media_image
     - image.style.large
     - media.type.image
   module:
-    - leaflet
     - svg_image
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
@@ -18,86 +15,6 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_geofield:
-    type: leaflet_formatter_default
-    label: hidden
-    settings:
-      multiple_map: false
-      leaflet_map: 'OSM Mapnik'
-      height: 600
-      height_unit: px
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
-      reset_map:
-        control: false
-        position: topright
-      popup: false
-      popup_content: ''
-      map_position:
-        force: false
-        center:
-          lat: !!float 0
-          lon: !!float 0
-        zoom: 12
-        minZoom: 1
-        maxZoom: 18
-        zoomFiner: 0
-      icon:
-        iconType: marker
-        iconUrl: ''
-        shadowUrl: ''
-        className: ''
-        iconSize:
-          x: ''
-          'y': ''
-        iconAnchor:
-          x: ''
-          'y': ''
-        shadowSize:
-          x: ''
-          'y': ''
-        shadowAnchor:
-          x: ''
-          'y': ''
-        popupAnchor:
-          x: ''
-          'y': ''
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
-      leaflet_markercluster:
-        control: false
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-        include_path: false
-      fullscreen:
-        control: false
-        options: '{"position":"topleft","pseudoFullscreen":false}'
-      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
-      geocoder:
-        control: false
-        settings:
-          position: topright
-          input_size: 25
-          providers:
-            arcgisonline:
-              weight: 0
-              checked: false
-            file:
-              weight: 0
-              checked: false
-            googlemaps:
-              weight: 0
-              checked: false
-          min_terms: 4
-          delay: 800
-          zoom: 16
-          popup: false
-          options: ''
-      weight: null
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_image:
     type: image
     label: visually_hidden
@@ -111,11 +28,17 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   created: true
-  field_address: true
-  name: true
   thumbnail: true
   uid: true

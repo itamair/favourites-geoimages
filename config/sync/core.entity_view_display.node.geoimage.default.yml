@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.geoimage.body
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_geoimage
+    - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
     - text
@@ -38,6 +39,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_place_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }

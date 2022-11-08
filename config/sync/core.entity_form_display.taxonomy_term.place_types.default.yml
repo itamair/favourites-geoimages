@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.place_types.field_icon
-    - image.style.thumbnail
+    - field.field.taxonomy_term.place_types.field_place_type_icon
     - taxonomy.vocabulary.place_types
   module:
     - field_layout
-    - image
     - layout_discovery
+    - media_library
     - path
     - text
 third_party_settings:
@@ -30,13 +29,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_icon:
-    type: image_image
-    weight: 3
+  field_place_type_icon:
+    type: media_library_widget
+    weight: 4
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
@@ -48,7 +46,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

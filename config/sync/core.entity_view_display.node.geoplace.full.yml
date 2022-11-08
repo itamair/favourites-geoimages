@@ -1,0 +1,63 @@
+uuid: 237db0a6-13de-440c-8853-678364968a17
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.geoplace.body
+    - field.field.node.geoplace.field_geofied_view
+    - field.field.node.geoplace.field_image
+    - field.field.node.geoplace.field_link
+    - field.field.node.geoplace.field_locations
+    - field.field.node.geoplace.field_place_type
+    - node.type.geoplace
+  module:
+    - imagefield_slideshow
+    - text
+    - user
+    - viewfield
+id: node.geoplace.full
+targetEntityType: node
+bundle: geoplace
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_geofied_view:
+    type: viewfield_default
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: true
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: imagefield_slideshow_field_formatter
+    label: hidden
+    settings:
+      imagefield_slideshow_style: big
+      imagefield_slideshow_style_effects: scrollHorz
+      imagefield_slideshow_style_pause: 'false'
+      imagefield_slideshow_prev_next: '1'
+      imagefield_slideshow_transition_speed: '100'
+      imagefield_slideshow_timeout: '0'
+      imagefield_slideshow_pager: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_link: true
+  field_locations: true
+  field_place_type: true

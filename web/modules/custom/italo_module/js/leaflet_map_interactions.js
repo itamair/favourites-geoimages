@@ -14,6 +14,7 @@
         let features = Drupal.Leaflet[mapid].features;
         let markersOriginalSizes = self.setMarkersOriginalSizes(markers);
 
+        // Trigger the reaction
         self.reactOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
 
         // Resizing on zoom
@@ -23,16 +24,24 @@
       });
 
       // Interact with each feature created and added to the map.
-/*      $(context).on('leaflet.feature', function(e, lFeature, feature, add_features) {
+      $(context).on('leaflet.feature', function(e, lFeature, feature, add_features) {
 
-        // Add an event listener on the popup open to dynamically pan to the center.
+        // Add Arrows effect to Paths.
+        if (feature.type !== 'point' && feature.path) {
+          const feature_path = feature.path instanceof Object ? feature.path : JSON.parse(feature.path);
+          if (feature_path['arrowed'] === "1") {
+            lFeature.arrowheads();
+          }
+        }
+
+/*        // Add an event listener on the popup open to dynamically pan to the center.
         lFeature.on('popupopen', function (popup) {
           const zoom = popup.target._map.getZoom();
           const zoom_pow = Math.pow(zoom , 3);
           const lat_addition = zoom < 17 ? 12/zoom_pow: 3/zoom_pow;
           popup.target._map.panTo([popup.target._latlng.lat + lat_addition, popup.target._latlng.lng])
-        });
-      });*/
+        });*/
+      });
     },
 
     zoomDefaultIconSize: 18,
@@ -103,78 +112,28 @@
       for (let i in markers) {
         if (markers.hasOwnProperty(i)) {
           let hidden_marker_index = self.hidden_markers.indexOf(i);
-          // Only in case of Points (setStyle undefined), update Icon size.
+          // Update Icon size, only in case of Points (setStyle undefined),
           if (!markers[i].setStyle) {
             this.updateIconSize(i, markers[i], iconSizeRate, markersOriginalSizes);
           }
-          if (features.hasOwnProperty(i) && features[i] && features[i]['min_zoom_visibility'] && zoomLevel <= features[i]['min_zoom_visibility']) {
-            map.removeLayer(markers[i]);
-            if (hidden_marker_index === -1) {
-              self.hidden_markers.push(i);
+          // Set Feature visibility, if properties['min_zoom_visibility'] is set.
+          if (features.hasOwnProperty(i) && features[i] && features[i]['properties'] && features[i]['properties'].length > 0) {
+            const properties = JSON.parse(features[i]['properties']);
+            if (properties['min_zoom_visibility'] && zoomLevel <= properties['min_zoom_visibility']) {
+              map.removeLayer(markers[i]);
+              if (hidden_marker_index === -1) {
+                self.hidden_markers.push(i);
+              }
             }
-
-          }
-          else if (markers.hasOwnProperty(i) && hidden_marker_index > -1) {
-            markers[i].addTo(map);
-            self.hidden_markers.splice(hidden_marker_index, 1);
+            else if (markers.hasOwnProperty(i) && hidden_marker_index > -1) {
+              markers[i].addTo(map);
+              self.hidden_markers.splice(hidden_marker_index, 1);
+            }
           }
         }
       }
     }
 
-  };
-
-  Drupal.Leaflet.prototype.create_linestring = function(polyline) {
-    let latlngs = [];
-    for (let i = 0; i < polyline.points.length; i++) {
-      let latlng = new L.LatLng(polyline.points[i].lat, polyline.points[i].lon);
-      latlngs.push(latlng);
-    }
-    return new L.Polyline(latlngs);
-  };
-
-  Drupal.Leaflet.prototype.create_polygon = function(polygon) {
-    let latlngs = [];
-    for (let i = 0; i < polygon.points.length; i++) {
-      let latlng = new L.LatLng(polygon.points[i].lat, polygon.points[i].lon);
-      latlngs.push(latlng);
-    }
-    return new L.Polygon(latlngs);
-  };
-
-  Drupal.Leaflet.prototype.create_multipolygon = function(multipolygon) {
-    let polygons = [];
-    for (let x = 0; x < multipolygon.component.length; x++) {
-      let latlngs = [];
-      let polygon = multipolygon.component[x];
-      for (let i = 0; i < polygon.points.length; i++) {
-        let latlng = new L.LatLng(polygon.points[i].lat, polygon.points[i].lon);
-        latlngs.push(latlng);
-      }
-      polygons.push(latlngs);
-    }
-    return new L.Polygon(polygons);
-  };
-
-  // Override the original leaflet.drupal.js method not to use the
-  // L.PolygonClusterable object.
-  Drupal.Leaflet.prototype.create_multipoly = function(multipoly) {
-    let polygons = [];
-    for (let x = 0; x < multipoly.component.length; x++) {
-      let latlngs = [];
-      let polygon = multipoly.component[x];
-      for (let i = 0; i < polygon.points.length; i++) {
-        let latlng = new L.LatLng(polygon.points[i].lat, polygon.points[i].lon);
-        latlngs.push(latlng);
-      }
-      polygons.push(latlngs);
-    }
-    if (multipoly.multipolyline) {
-      return new L.Polyline(polygons);
-    }
-    else {
-      return new L.Polygon(polygons);
-    }
   };
 
 })(jQuery, Drupal);

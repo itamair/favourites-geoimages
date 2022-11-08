@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.place_types.field_icon
+    - field.field.taxonomy_term.place_types.field_place_type_icon
     - taxonomy.vocabulary.place_types
   module:
-    - image
     - text
 id: taxonomy_term.place_types.default
 targetEntityType: taxonomy_term
@@ -20,15 +19,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_icon:
-    type: image
+  field_place_type_icon:
+    type: entity_reference_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden: {  }

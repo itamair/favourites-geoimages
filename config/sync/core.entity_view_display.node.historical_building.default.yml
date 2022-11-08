@@ -6,32 +6,160 @@ dependencies:
     - field.field.node.historical_building.body
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
+    - field.field.node.historical_building.field_link
     - field.field.node.historical_building.field_locations
+    - field.field.node.historical_building.field_place_type
     - node.type.historical_building
   module:
-    - entity_reference_revisions
+    - imagefield_slideshow
     - layout_builder
+    - layout_discovery
+    - link
     - user
+    - viewfield
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          98c17df9-b814-4c8b-8057-06b3e795fe78:
+            uuid: 98c17df9-b814-4c8b-8057-06b3e795fe78
+            region: content
+            configuration:
+              id: 'field_block:node:historical_building:field_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          e30880de-0443-4fd0-ad50-0db19a885481:
+            uuid: e30880de-0443-4fd0-ad50-0db19a885481
+            region: content
+            configuration:
+              id: 'field_block:node:historical_building:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          77973a23-5d45-47c0-9c7f-429898c78859:
+            uuid: 77973a23-5d45-47c0-9c7f-429898c78859
+            region: first
+            configuration:
+              id: 'field_block:node:historical_building:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: imagefield_slideshow_field_formatter
+                label: hidden
+                settings:
+                  imagefield_slideshow_style: map_scaled_cropped_image_600_400
+                  imagefield_slideshow_style_effects: fade
+                  imagefield_slideshow_style_pause: 'true'
+                  imagefield_slideshow_transition_speed: '300'
+                  imagefield_slideshow_timeout: '4000'
+                  imagefield_slideshow_prev_next: 0
+                  imagefield_slideshow_pager: 0
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          00567dbf-842c-4611-87f0-e6074433fa51:
+            uuid: 00567dbf-842c-4611-87f0-e6074433fa51
+            region: second
+            configuration:
+              id: 'field_block:node:historical_building:field_geofied_view'
+              label: 'Geofied View'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: viewfield_default
+                label: visually_hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.historical_building.default
 targetEntityType: node
 bundle: historical_building
 mode: default
 content:
-  field_locations:
-    type: entity_reference_revisions_entity_view
-    label: above
+  field_geofied_view:
+    type: viewfield_default
+    label: visually_hidden
     settings:
-      view_mode: default
-      link: ''
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: imagefield_slideshow_field_formatter
+    label: hidden
+    settings:
+      imagefield_slideshow_style: map_scaled_cropped_image_600_400
+      imagefield_slideshow_style_effects: fade
+      imagefield_slideshow_style_pause: 'true'
+      imagefield_slideshow_transition_speed: '300'
+      imagefield_slideshow_timeout: '4000'
+      imagefield_slideshow_prev_next: 0
+      imagefield_slideshow_pager: 0
     third_party_settings: {  }
     weight: 0
     region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   body: true
-  field_geofied_view: true
-  field_image: true
+  field_locations: true
+  field_place_type: true
   links: true

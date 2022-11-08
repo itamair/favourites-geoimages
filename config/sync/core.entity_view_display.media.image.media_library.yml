@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
-    - field.field.media.image.field_address
-    - field.field.media.image.field_geofield
     - field.field.media.image.field_media_image
     - image.style.medium
     - media.type.image
@@ -31,8 +29,6 @@ content:
     region: content
 hidden:
   created: true
-  field_address: true
-  field_geofield: true
   field_media_image: true
   name: true
   uid: true

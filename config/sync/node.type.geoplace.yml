@@ -1,4 +1,4 @@
-uuid: bd63fc13-e7f7-498c-9639-99111f1357c0
+uuid: a84a0b22-7853-4c95-9c7f-191311b764d4
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Geoplace
+name: 'Geo Place'
 type: geoplace
 description: ''
 help: ''

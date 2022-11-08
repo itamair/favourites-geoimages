@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.historical_building.body
     - field.field.node.historical_building.field_geofied_view
     - field.field.node.historical_building.field_image
+    - field.field.node.historical_building.field_link
     - field.field.node.historical_building.field_locations
+    - field.field.node.historical_building.field_place_type
     - node.type.historical_building
   module:
     - imagefield_slideshow
@@ -61,4 +63,6 @@ content:
     weight: 3
     region: content
 hidden:
+  field_link: true
   field_locations: true
+  field_place_type: true

@@ -1,4 +1,4 @@
-uuid: a54ba80e-d0cf-4ed1-b9b1-137453289161
+uuid: fd556bd7-0793-487f-868d-2bbe75476dbf
 langcode: en
 status: true
 dependencies:
@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: geoplaces
+  file_directory: historical_buildings
   file_extensions: 'png gif jpg jpeg'
   max_filesize: 5MB
   max_resolution: ''

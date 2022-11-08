@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.location.field_location_icon_width
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
+    - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - image.style.thumbnail
@@ -29,6 +30,7 @@ third_party_settings:
         - field_classname
         - field_location_icon_width
         - field_zindex
+        - field_markercluster_exclude
       label: Attributes
       region: content
       parent_name: ''
@@ -140,6 +142,13 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_markercluster_exclude:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_title:
     type: string_textfield

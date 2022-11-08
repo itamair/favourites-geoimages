@@ -1280,7 +1280,6 @@ display:
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
           name_field: title
-          description_field: '#rendered_view_fields'
           view_mode: full
           leaflet_map: multilayers
           height: '800'
@@ -1348,6 +1347,7 @@ display:
               zoom: 16
               popup: false
               options: ''
+          description_field: '#rendered_view_fields'
           fullscreen_control: true
       row:
         type: fields

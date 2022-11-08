@@ -1,0 +1,23 @@
+uuid: e2afae09-933a-4325-a1f2-b127e82cd765
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.historical_building
+  module:
+    - link
+id: node.historical_building.field_link
+field_name: field_link
+entity_type: node
+bundle: historical_building
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
