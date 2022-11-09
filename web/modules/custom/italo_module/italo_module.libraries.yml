@@ -13,6 +13,7 @@ leaflet_map_interactions:
     js/leaflet_map_interactions.js: {}
   dependencies:
     - leaflet/leaflet
+    - geofield_311/geofield_311
 
 leaflet_geometry_util:
   remote: https://github.com/makinacorpus/Leaflet.GeometryUtil
