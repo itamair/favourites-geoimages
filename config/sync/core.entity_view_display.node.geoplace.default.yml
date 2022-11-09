@@ -133,6 +133,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          feb13734-621f-40b2-bc17-7c80f4ba46dd:
+            uuid: feb13734-621f-40b2-bc17-7c80f4ba46dd
+            region: second
+            configuration:
+              id: 'field_block:node:geoplace:field_locations'
+              label: Locations
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.geoplace.default
 targetEntityType: node

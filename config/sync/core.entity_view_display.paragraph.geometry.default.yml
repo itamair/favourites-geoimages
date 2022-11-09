@@ -45,10 +45,20 @@ content:
       disable_wheel: false
       gesture_handling: false
       reset_map:
-        control: false
-        position: topright
-      popup: true
-      popup_content: '[paragraph:field_title:value]'
+        control: true
+        options: '{"position":"topleft","title":"Reset View"}'
+      locate:
+        control: true
+        options: '{"position":"topleft","setView":"untilPanOrZoom","returnToPrevBounds":true,"strings":{"title":"Locate my position"}}'
+      leaflet_tooltip:
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
+      popup: false
+      popup_content: ''
+      leaflet_popup:
+        control: '1'
+        content: '[paragraph:field_title:value]'
+        options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
       map_position:
         force: false
         center:
@@ -86,9 +96,11 @@ content:
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
         include_path: false
       fullscreen:
-        control: false
+        control: true
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"[paragraph:field_stroke_opacity:value]","stroke":true,"weight":"[paragraph:field_stroke_weight:value]","fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"[paragraph:field_fill_opacity:value]","interactive":true,"arrowed":"[paragraph:field_arrowed:value]"}'
+      feature_properties:
+        values: ''
       geocoder:
         control: false
         settings:

@@ -1450,7 +1450,10 @@ display:
           gesture_handling: false
           reset_map:
             control: true
-            options: ''
+            options: '{"position":"topleft","title":"Reset View"}'
+          locate:
+            control: true
+            options: '{"position":"topright","setView":"untilPanOrZoom","keepCurrentZoomLevel":true,"initialZoomLevel":17,"returnToPrevBounds":true,"strings":{"title":"Locate my position"}}'
           map_position:
             force: false
             center:
