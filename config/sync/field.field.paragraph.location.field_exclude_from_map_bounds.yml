@@ -1,15 +1,15 @@
-uuid: 8bf7d4f4-57c0-4d91-9e86-2f6bc8dcb86a
+uuid: 46d3992c-60a9-4113-a8bb-e66f89e64b6a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_markercluster_exclude
+    - field.storage.paragraph.field_exclude_from_map_bounds
     - paragraphs.paragraphs_type.location
-id: paragraph.location.field_markercluster_exclude
-field_name: field_markercluster_exclude
+id: paragraph.location.field_exclude_from_map_bounds
+field_name: field_exclude_from_map_bounds
 entity_type: paragraph
 bundle: location
-label: 'Exclude from Markercluster '
+label: 'Exclude from Map Bounds'
 description: ''
 required: false
 translatable: false

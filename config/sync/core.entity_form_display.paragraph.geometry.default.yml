@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.geometry.field_arrowed
+    - field.field.paragraph.geometry.field_exclude_from_map_bounds
     - field.field.paragraph.geometry.field_fill_color
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
     - field.field.paragraph.geometry.field_stroke_opacity
@@ -32,6 +34,8 @@ third_party_settings:
         - field_fill_opacity
         - field_zindex
         - field_min_zoom_visibility
+        - field_markercluster_exclude
+        - field_exclude_from_map_bounds
       label: Attributes
       region: content
       parent_name: ''
@@ -55,6 +59,13 @@ content:
   field_arrowed:
     type: boolean_checkbox
     weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_exclude_from_map_bounds:
+    type: boolean_checkbox
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -141,6 +152,13 @@ content:
         bounds_limit_flag: '1'
         max_zoom_out: '-2'
         bounds_zoom_flag: 0
+    third_party_settings: {  }
+  field_markercluster_exclude:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_min_zoom_visibility:
     type: number

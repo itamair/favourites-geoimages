@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.location.field_classname
+    - field.field.paragraph.location.field_exclude_from_map_bounds
     - field.field.paragraph.location.field_geofield
     - field.field.paragraph.location.field_location_icon
     - field.field.paragraph.location.field_location_icon_width
@@ -31,6 +32,7 @@ third_party_settings:
         - field_location_icon_width
         - field_zindex
         - field_markercluster_exclude
+        - field_exclude_from_map_bounds
       label: Attributes
       region: content
       parent_name: ''
@@ -60,6 +62,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_exclude_from_map_bounds:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget

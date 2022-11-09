@@ -1,18 +1,18 @@
-uuid: 8bf7d4f4-57c0-4d91-9e86-2f6bc8dcb86a
+uuid: ab76ad4c-ee1a-4915-b700-f7e616131e24
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_markercluster_exclude
-    - paragraphs.paragraphs_type.location
-id: paragraph.location.field_markercluster_exclude
+    - paragraphs.paragraphs_type.geometry
+id: paragraph.geometry.field_markercluster_exclude
 field_name: field_markercluster_exclude
 entity_type: paragraph
-bundle: location
+bundle: geometry
 label: 'Exclude from Markercluster '
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_place_type
     - field.storage.paragraph.field_arrowed
     - field.storage.paragraph.field_classname
+    - field.storage.paragraph.field_exclude_from_map_bounds
     - field.storage.paragraph.field_fill_color
     - field.storage.paragraph.field_fill_opacity
     - field.storage.paragraph.field_geofield
@@ -1424,8 +1425,7 @@ display:
               field: field_location_type
               rendered: true
               overlays_options:
-                disabled_overlays:
-                  'Geo Image': 'Geo Image'
+                disabled_overlays: {  }
                 hidden_overlays_controls: {  }
           data_source:
             field_geofield: field_geofield
@@ -1449,6 +1449,7 @@ display:
           reset_map:
             control: true
             position: topright
+            options: ''
           map_position:
             force: false
             center:
@@ -1512,7 +1513,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"min_zoom_visibility":"{{ field_min_zoom_visibility }}"}'
+            values: '{"min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}"}'
       row:
         type: fields
       query:
@@ -5053,6 +5054,71 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_exclude_from_map_bounds:
+          id: field_exclude_from_map_bounds
+          table: paragraph__field_exclude_from_map_bounds
+          field: field_exclude_from_map_bounds
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: boolean
+            format_custom_false: ''
+            format_custom_true: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       exposed_form:
         type: bef
         options:
@@ -5111,7 +5177,6 @@ display:
           operator: in
           value:
             geoplace: geoplace
-            geoimage: geoimage
             historical_building: historical_building
           group: 1
           exposed: false
@@ -5224,6 +5289,7 @@ display:
         - 'config:field.storage.node.field_place_type'
         - 'config:field.storage.paragraph.field_arrowed'
         - 'config:field.storage.paragraph.field_classname'
+        - 'config:field.storage.paragraph.field_exclude_from_map_bounds'
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
