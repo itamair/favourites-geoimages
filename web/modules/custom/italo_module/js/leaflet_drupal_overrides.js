@@ -2,6 +2,27 @@
  * We are overriding the adding features functionality of the Leaflet module.
  */
 
+/**
+ * Extend Map Bounds with new lFeature/feature.
+ *
+ * @param lFeature
+ *   The Leaflet Feature
+ * @param feature
+ *   The Feature coming from Drupal settings.
+ *   (this parameter should be kept to eventually extend this method with
+ *   conditional logics on feature properties)
+ */
+Drupal.Leaflet.prototype.extend_map_bounds = function(lFeature, feature) {
+  const feature_properties = feature.hasOwnProperty('properties') ? JSON.parse(feature['properties']) : {
+    exclude_from_map_bounds: false,
+  };
+  if (feature.type === 'point' && !parseInt(feature_properties.exclude_from_map_bounds)) {
+    this.bounds.push([feature.lat, feature.lon]);
+  } else if (!parseInt(feature_properties.exclude_from_map_bounds)) {
+    this.bounds.push(lFeature.getBounds().getSouthWest(), lFeature.getBounds().getNorthEast());
+  }
+};
+
 (function($, Drupal) {
   Drupal.Leaflet.prototype.create_linestring = function(polyline) {
     let latlngs = [];
