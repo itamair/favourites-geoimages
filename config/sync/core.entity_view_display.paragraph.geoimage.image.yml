@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.image
+    - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geofield
     - field.field.paragraph.geoimage.field_image
     - field.field.paragraph.geoimage.field_location_icon_width
@@ -11,7 +12,7 @@ dependencies:
     - image.style.medium
     - paragraphs.paragraphs_type.geoimage
   module:
-    - image
+    - svg_image
 id: paragraph.geoimage.image
 targetEntityType: paragraph
 bundle: geoimage
@@ -29,6 +30,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_exclude_from_map_bounds: true
   field_geofield: true
   field_location_icon_width: true
   field_title: true

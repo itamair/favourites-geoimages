@@ -3,19 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geofield
     - field.field.paragraph.geoimage.field_image
     - field.field.paragraph.geoimage.field_location_icon_width
     - field.field.paragraph.geoimage.field_title
     - paragraphs.paragraphs_type.geoimage
   module:
-    - image
     - leaflet
+    - svg_image
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage
 mode: default
 content:
+  field_exclude_from_map_bounds:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_geofield:
     type: leaflet_formatter_default
     label: hidden

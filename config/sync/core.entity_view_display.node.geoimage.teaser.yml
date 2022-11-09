@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.geoimage.body
     - field.field.node.geoimage.field_classname
+    - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
@@ -32,5 +33,6 @@ content:
     region: content
 hidden:
   field_classname: true
+  field_exclude_from_map_bounds: true
   field_geoimage: true
   field_place_type: true

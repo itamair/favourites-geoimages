@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geofield
     - field.field.paragraph.geoimage.field_image
     - field.field.paragraph.geoimage.field_location_icon_width
@@ -13,13 +14,14 @@ dependencies:
     - field_group
     - field_layout
     - geofield_311
-    - image
     - layout_discovery
+    - svg_image
 third_party_settings:
   field_group:
     group_attributes:
       children:
         - field_location_icon_width
+        - field_exclude_from_map_bounds
       label: Attributes
       region: content
       parent_name: ''
@@ -40,6 +42,13 @@ targetEntityType: paragraph
 bundle: geoimage
 mode: default
 content:
+  field_exclude_from_map_bounds:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
     weight: 2
