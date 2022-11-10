@@ -74,7 +74,10 @@
           if (content.length) {
             let url = content.data('leaflet-ajax-popup');
             $.get({'url': url}).done(function (response) {
-              popup.setContent(response[2].data);
+              // Not super clear where and when data is coming from,
+              // so we check all the first 3 responses indexes.
+              const data = response[2].data ?? (response[1].data ?? response[0].data)
+              popup.setContent(data);
             })
           }
         }
