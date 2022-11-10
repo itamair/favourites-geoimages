@@ -1233,7 +1233,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       empty:
         area:
@@ -1439,7 +1439,7 @@ display:
             value: field_title
             options: '{"permanent":false,"direction":"top"}'
           leaflet_popup:
-            value: '#rendered_entity'
+            value: '#rendered_entity_ajax'
             options: '{"autoPan":true}'
             view_mode: leaflet_popup
           leaflet_map: multilayers
