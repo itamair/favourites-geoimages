@@ -14,12 +14,13 @@
         let features = Drupal.Leaflet[mapid].features;
         let markersOriginalSizes = self.setMarkersOriginalSizes(markers);
 
-        // Trigger the reaction
-        self.reactOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
+        // Trigger/Process Initial Actions
+        self.processInitialActions(mapid, map, features, markers, markersOriginalSizes);
 
-        // Resizing on zoom
+        // Set Actions on every Zoom End
         map.on('zoomend', function() {
-          self.reactOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
+          // Markers resize on Zoomend.
+          self.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
         });
       });
 
@@ -43,9 +44,42 @@
         });*/
       });
     },
-
     zoomDefaultIconSize: 18,
     hidden_markers: [],
+
+
+    /**
+     * Process all Initial Action.
+     *
+     * @param mapid
+     * @param map
+     * @param features
+     * @param markers
+     * @param markersOriginalSizes
+     */
+    processInitialActions: function(mapid, map, features, markers, markersOriginalSizes) {
+      // Trigger an Initial React on Zoom End function.
+      this.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
+      // Ajax Import all Markers Popups.
+      this.ajaxImportAllMarkersPopups(markers);
+    },
+
+    ajaxImportAllMarkersPopups: function(markers) {
+      for (let i in markers) {
+        let popup = markers[i].getPopup();
+        if (popup) {
+          let element = document.createElement('div');
+          element.innerHTML = popup._source._popup._content;
+          let content = $('[data-leaflet-ajax-popup]', element);
+          if (content.length) {
+            let url = content.data('leaflet-ajax-popup');
+            $.get({'url': url}).done(function (response) {
+              popup.setContent(response[2].data);
+            })
+          }
+        }
+      }
+    },
 
     /**
      * Update Icon Size.
@@ -105,7 +139,7 @@
      * @param markers
      * @param markersOriginalSizes
      */
-    reactOnZoomEnd: function(mapid, map, features, markers, markersOriginalSizes) {
+    markersResizeOnZoomEnd: function(mapid, map, features, markers, markersOriginalSizes) {
       let self = this;
       let iconSizeRate = this.getIconSizeRate(map);
       let zoomLevel = map.getZoom();
