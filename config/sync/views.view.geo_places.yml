@@ -1427,7 +1427,7 @@ display:
               rendered: true
               overlays_options:
                 disabled_overlays:
-                  'Geo Image': 'Geo Image'
+                  none: none
                 hidden_overlays_controls: {  }
           data_source:
             field_geofield: field_geofield

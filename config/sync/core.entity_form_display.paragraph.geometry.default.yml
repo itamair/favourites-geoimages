@@ -122,19 +122,20 @@ content:
         rotateMode: 0
       reset_map:
         control: '1'
-        position: topright
+        options: '{"position":"topleft","title":"Reset View"}'
       fullscreen:
         options: '{"position":"topleft","pseudoFullscreen":false}'
         control: 0
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
+        control: '1'
         settings:
           position: topright
           input_size: '25'
           providers:
             arcgisonline:
+              checked: '1'
               weight: '0'
-              checked: 0
             file:
               weight: '0'
               checked: 0
@@ -146,7 +147,6 @@ content:
           zoom: '16'
           options: ''
           popup: 0
-        control: 0
       geojson_app_limit:
         bounds_zoom_correction: '0'
         bounds_limit_flag: '1'

@@ -88,7 +88,7 @@
 }
 /* line 72, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50 {
-  opacity: 50% !important;
+  opacity: 30% !important;
 }
 /* line 75, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50:hover {
