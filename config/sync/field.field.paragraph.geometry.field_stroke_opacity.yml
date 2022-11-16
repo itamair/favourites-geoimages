@@ -12,7 +12,7 @@ bundle: geometry
 label: 'Stroke Opacity'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: !!float 1

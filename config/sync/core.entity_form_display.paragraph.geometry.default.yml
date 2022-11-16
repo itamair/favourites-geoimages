@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_color
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_link
     - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
@@ -20,8 +21,9 @@ dependencies:
     - color_field
     - field_group
     - field_layout
-    - geofield_311
     - layout_discovery
+    - leaflet
+    - link
 third_party_settings:
   field_group:
     group_attributes:
@@ -84,74 +86,154 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_geofield:
-    type: geofield_311_leaflet_widget
+    type: leaflet_widget_default
     weight: 2
     region: content
     settings:
-      geometry_validation: '1'
       map:
         leaflet_map: multilayers
-        height: '600'
-        locate: '1'
-        auto_center: '1'
+        height: 600
+        auto_center: 1
         map_position:
+          force: false
           center:
-            lat: '45'
-            lon: '27'
-          zoom: '12'
-          minZoom: '1'
-          maxZoom: '20'
-          zoomFiner: '0'
-          force: 0
-        scroll_zoom_enabled: '1'
+            lat: !!float 45
+            lon: !!float 27
+          zoom: 10
+          minZoom: 1
+          maxZoom: 20
+          zoomFiner: 0
+        scroll_zoom_enabled: 1
       input:
-        show: '1'
-        readonly: 0
+        show: true
+        readonly: false
       toolbar:
         position: topright
         marker: defaultMarker
-        drawPolyline: '1'
-        drawRectangle: '1'
-        drawPolygon: '1'
-        editMode: '1'
-        dragMode: '1'
-        cutPolygon: '1'
-        removalMode: '1'
+        drawPolyline: true
+        drawRectangle: true
+        drawPolygon: true
         drawCircle: false
         drawText: false
-        rotateMode: 0
+        editMode: true
+        dragMode: true
+        cutPolygon: true
+        removalMode: true
+        rotateMode: false
       reset_map:
-        control: '1'
+        control: true
         options: '{"position":"topleft","title":"Reset View"}'
+      locate:
+        control: true
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: false
       fullscreen:
+        control: true
         options: '{"position":"topleft","pseudoFullscreen":false}'
-        control: 0
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
-        control: '1'
+        control: false
         settings:
           position: topright
-          input_size: '25'
+          input_size: 25
           providers:
             arcgisonline:
-              checked: '1'
-              weight: '0'
+              weight: 0
+              checked: true
             file:
-              weight: '0'
-              checked: 0
+              weight: 0
+              checked: false
             googlemaps:
-              weight: '0'
-              checked: 0
-          min_terms: '4'
-          delay: '800'
-          zoom: '16'
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          popup: true
           options: ''
-          popup: 0
-      geojson_app_limit:
-        bounds_zoom_correction: '0'
-        bounds_limit_flag: '1'
-        max_zoom_out: '-2'
-        bounds_zoom_flag: 0
+      geometry_validation: '1'
+      multiple_map:
+        default: false
+      leaflet_map:
+        default: 'OSM Mapnik'
+      height:
+        default: 400
+      height_unit:
+        default: px
+      hide_empty_map:
+        default: false
+      disable_wheel:
+        default: false
+      gesture_handling:
+        default: false
+      popup:
+        default: false
+      popup_content:
+        default: ''
+      leaflet_popup:
+        default:
+          value: ''
+          options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
+          view_mode: full
+          control: false
+          content: ''
+      leaflet_tooltip:
+        default:
+          value: ''
+          options: '{"permanent":false,"direction":"center"}'
+      map_position:
+        default:
+          force: false
+          center:
+            lat: 0
+            lon: 0
+          zoom: 12
+          minZoom: 1
+          maxZoom: 18
+          zoomFiner: 0
+      weight:
+        default: null
+      icon:
+        default:
+          iconType: marker
+          iconUrl: ''
+          shadowUrl: ''
+          className: ''
+          iconSize:
+            x: null
+            'y': null
+          iconAnchor:
+            x: null
+            'y': null
+          shadowSize:
+            x: null
+            'y': null
+          shadowAnchor:
+            x: null
+            'y': null
+          popupAnchor:
+            x: null
+            'y': null
+          html: '<div></div>'
+          html_class: leaflet-map-divicon
+          circle_marker_options: '{"radius": 100, "color": "red", "fillColor": "#f03", "fillOpacity": 0.5}'
+      leaflet_markercluster:
+        default:
+          control: false
+          options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
+          excluded: false
+          include_path: false
+      feature_properties:
+        default:
+          values: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox
@@ -201,6 +283,11 @@ content:
     region: content
     settings:
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

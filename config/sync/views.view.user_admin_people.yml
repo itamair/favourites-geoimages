@@ -1,5 +1,5 @@
 uuid: b37eca07-b067-4fe4-bbcd-fb1afe50a1d4
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -134,7 +134,7 @@ display:
           entity_type: user
           entity_field: status
           plugin_id: field
-          label: Status
+          label: Stato
           exclude: false
           alter:
             alter_text: false
@@ -188,7 +188,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: user_roles
-          label: Roles
+          label: Ruoli
           exclude: false
           alter:
             alter_text: false
@@ -472,7 +472,7 @@ display:
             last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Voci per pagina'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -600,7 +600,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: Status
+            label: Stato
             description: ''
             identifier: status
             optional: true

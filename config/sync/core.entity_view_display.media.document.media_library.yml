@@ -1,5 +1,5 @@
 uuid: 28ead2b3-1c63-49df-b55a-98036be96fda
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -20,8 +20,8 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: ''
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -30,5 +30,6 @@ content:
 hidden:
   created: true
   field_media_document: true
+  langcode: true
   name: true
   uid: true

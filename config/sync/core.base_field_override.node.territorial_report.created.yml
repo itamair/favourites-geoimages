@@ -1,0 +1,18 @@
+uuid: d5dc1e23-f649-47b0-a62a-20cf34b63ac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.territorial_report
+id: node.territorial_report.created
+field_name: created
+entity_type: node
+bundle: territorial_report
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,5 +1,5 @@
 uuid: c21ef7ce-395e-4822-ae09-e569215780e3
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -12,9 +12,9 @@ dependencies:
   module:
     - comment
     - field_layout
-    - image
     - layout_discovery
     - path
+    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -67,6 +67,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

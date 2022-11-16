@@ -1,5 +1,5 @@
 uuid: 8dcf56a6-1672-4043-85ba-b3d2ae4c51cf
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -131,7 +131,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Applica
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'

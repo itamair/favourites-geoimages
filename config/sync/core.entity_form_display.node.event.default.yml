@@ -12,11 +12,11 @@ dependencies:
     - node.type.event
   module:
     - field_layout
-    - image
     - layout_discovery
     - link
     - paragraphs
     - path
+    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -78,6 +78,13 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

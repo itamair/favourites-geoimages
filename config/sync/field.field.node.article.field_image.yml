@@ -1,5 +1,5 @@
 uuid: 406240dc-069c-4cac-b711-b266213b96d5
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -16,7 +16,7 @@ bundle: article
 label: Image
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

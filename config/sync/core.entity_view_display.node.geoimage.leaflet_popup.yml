@@ -41,3 +41,4 @@ hidden:
   field_classname: true
   field_exclude_from_map_bounds: true
   field_place_type: true
+  langcode: true

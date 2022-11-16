@@ -1,0 +1,20 @@
+uuid: 95fd7c82-5c3c-405e-b483-ac6690d34e92
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.geoimage
+  module:
+    - path
+id: media.geoimage.path
+field_name: path
+entity_type: media
+bundle: geoimage
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

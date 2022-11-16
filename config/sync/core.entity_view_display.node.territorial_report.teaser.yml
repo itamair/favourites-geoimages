@@ -32,3 +32,4 @@ content:
 hidden:
   field_geofied_view: true
   field_locations: true
+  langcode: true

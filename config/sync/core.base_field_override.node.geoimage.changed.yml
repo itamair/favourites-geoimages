@@ -1,0 +1,18 @@
+uuid: b754db36-ad46-44ba-8bd0-2160e5b95069
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.geoimage
+id: node.geoimage.changed
+field_name: changed
+entity_type: node
+bundle: geoimage
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

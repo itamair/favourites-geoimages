@@ -1,5 +1,5 @@
 uuid: 8a700367-589f-4f70-9a53-afef319bd416
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -25,7 +25,7 @@ base_field: mid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -81,7 +81,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Azione
           include_exclude: exclude
           selected_actions: {  }
         rendered_entity:
@@ -147,7 +147,7 @@ display:
             previous: ‹‹
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Voci per pagina'
             items_per_page_options: '6, 12, 24, 48'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -260,7 +260,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: Published
+            label: Pubblicato
             description: ''
             identifier: status
             optional: true
@@ -271,11 +271,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Pubblicato
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: 'Non pubblicato'
                 operator: '='
                 value: '0'
         name:
@@ -294,7 +294,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nome
             description: ''
             use_operator: false
             operator: name_op
@@ -421,7 +421,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Lingua
             description: ''
             use_operator: false
             operator: langcode_op
@@ -542,7 +542,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Azione
           include_exclude: exclude
           selected_actions: {  }
         name:
@@ -660,7 +660,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: Edit
+          text: Modifica
           output_url_as_text: false
           absolute: false
         delete_media:
@@ -993,7 +993,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nome
             description: ''
             use_operator: false
             operator: name_op
@@ -1142,7 +1142,7 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: field
-          label: Name
+          label: Nome
           type: string
           settings:
             link_to_entity: false
@@ -1275,7 +1275,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nome
             description: ''
             use_operator: false
             operator: name_op

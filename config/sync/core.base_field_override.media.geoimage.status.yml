@@ -1,0 +1,22 @@
+uuid: 9f359113-96c1-4093-9613-01a5154f4375
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.geoimage
+id: media.geoimage.status
+field_name: status
+entity_type: media
+bundle: geoimage
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

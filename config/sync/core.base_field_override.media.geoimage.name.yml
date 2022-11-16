@@ -1,0 +1,20 @@
+uuid: 0c8bacc3-3028-403e-8b80-5824141b4c91
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.geoimage
+id: media.geoimage.name
+field_name: name
+entity_type: media
+bundle: geoimage
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

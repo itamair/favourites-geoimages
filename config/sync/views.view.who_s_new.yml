@@ -1,5 +1,5 @@
 uuid: 680e4e95-b237-4d39-958e-eb9edc539b64
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -64,7 +64,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Applica
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -187,7 +187,7 @@ display:
       display_description: 'A list of new users'
       display_extenders: {  }
       block_description: 'Who''s new'
-      block_category: User
+      block_category: Utente
     cache_metadata:
       max-age: -1
       contexts:

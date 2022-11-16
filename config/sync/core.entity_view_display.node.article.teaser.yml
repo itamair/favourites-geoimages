@@ -1,5 +1,5 @@
 uuid: be163120-ef77-445a-bb2b-5639ad6db4b8
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -11,7 +11,7 @@ dependencies:
     - image.style.medium
     - node.type.article
   module:
-    - image
+    - svg_image
     - text
     - user
 _core:
@@ -54,3 +54,4 @@ content:
 hidden:
   comment: true
   field_tags: true
+  langcode: true

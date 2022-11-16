@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.location.field_geofield
     - field.field.paragraph.location.field_location_icon
     - field.field.paragraph.location.field_location_icon_width
-    - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
@@ -131,14 +130,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_location_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_marker_icon_path:
     type: computed_string

@@ -1,0 +1,22 @@
+uuid: e7957bf2-da79-4866-ac3e-55f4612f4db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.territorial_report
+id: node.territorial_report.sticky
+field_name: sticky
+entity_type: node
+bundle: territorial_report
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

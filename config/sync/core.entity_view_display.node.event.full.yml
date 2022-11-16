@@ -13,8 +13,8 @@ dependencies:
     - node.type.event
   module:
     - entity_reference_revisions
-    - image
     - link
+    - svg_image
     - text
     - user
     - viewfield
@@ -77,4 +77,5 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-hidden: {  }
+hidden:
+  langcode: true

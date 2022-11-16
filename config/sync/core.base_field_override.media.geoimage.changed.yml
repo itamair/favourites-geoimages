@@ -1,0 +1,18 @@
+uuid: b4711442-557b-4f83-a12d-f9b841ede780
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.geoimage
+id: media.geoimage.changed
+field_name: changed
+entity_type: media
+bundle: geoimage
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

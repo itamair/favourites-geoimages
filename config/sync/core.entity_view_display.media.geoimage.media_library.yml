@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.geoimage.field_address
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_media_geoimage
+    - field.field.media.geoimage.field_media_image
     - image.style.medium
     - media.type.geoimage
   module:
@@ -36,5 +37,7 @@ hidden:
   field_address: true
   field_geofield: true
   field_media_geoimage: true
+  field_media_image: true
+  langcode: true
   name: true
   uid: true

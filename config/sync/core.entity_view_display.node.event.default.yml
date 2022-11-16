@@ -12,8 +12,8 @@ dependencies:
     - node.type.event
   module:
     - field_group
-    - image
     - link
+    - svg_image
     - text
     - user
     - viewfield
@@ -110,3 +110,4 @@ content:
     region: content
 hidden:
   field_locations: true
+  langcode: true

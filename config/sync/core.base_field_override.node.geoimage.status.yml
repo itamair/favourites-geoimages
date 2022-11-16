@@ -1,0 +1,22 @@
+uuid: 3a37f88c-9a62-4320-9f92-d989e45f5497
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.geoimage
+id: node.geoimage.status
+field_name: status
+entity_type: node
+bundle: geoimage
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,12 +1,12 @@
 uuid: c34dc8f0-ab1c-4ad4-94ae-c3f3dc0b6b8c
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
-    - image
+    - svg_image
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -34,4 +34,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  langcode: true

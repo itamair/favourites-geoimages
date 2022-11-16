@@ -12,7 +12,7 @@ bundle: geometry
 label: 'Exclude from Markercluster '
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 0

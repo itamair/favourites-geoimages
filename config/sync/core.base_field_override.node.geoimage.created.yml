@@ -1,0 +1,18 @@
+uuid: 8d42abc2-ef19-40ca-b7aa-a66bf2671f32
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.geoimage
+id: node.geoimage.created
+field_name: created
+entity_type: node
+bundle: geoimage
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

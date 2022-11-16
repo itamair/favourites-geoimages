@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.location.field_geofield
     - field.field.paragraph.location.field_location_icon
     - field.field.paragraph.location.field_location_icon_width
-    - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
@@ -39,7 +38,6 @@ hidden:
   field_exclude_from_map_bounds: true
   field_geofield: true
   field_location_icon_width: true
-  field_location_type: true
   field_marker_icon_path: true
   field_markercluster_exclude: true
   field_title: true

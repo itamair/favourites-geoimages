@@ -1,5 +1,5 @@
 uuid: 907ee97f-8838-419a-ba86-46838dacd215
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -16,7 +16,7 @@ bundle: video
 label: 'Video file'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

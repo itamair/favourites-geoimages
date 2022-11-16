@@ -1,5 +1,5 @@
 uuid: 6efa14f4-31ef-49bb-bcd9-c2cf7c59349c
-langcode: en
+langcode: it
 status: false
 dependencies:
   enforced:
@@ -10,7 +10,7 @@ _core:
 id: default
 name: default
 weight: -10
-label: Default
+label: Master
 group: ''
 skin: default
 breakpoints: 0

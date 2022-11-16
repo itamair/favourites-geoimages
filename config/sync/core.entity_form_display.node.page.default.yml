@@ -1,5 +1,5 @@
 uuid: b7376031-052b-4273-b010-54c5551b3361
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -37,6 +37,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

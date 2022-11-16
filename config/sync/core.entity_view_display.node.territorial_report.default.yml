@@ -40,3 +40,4 @@ content:
     region: content
 hidden:
   field_locations: true
+  langcode: true

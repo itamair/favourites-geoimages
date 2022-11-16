@@ -15,7 +15,7 @@ bundle: territorial_report
 label: 'Geofied View'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 3327a226-27f2-4bbf-b53c-2505c781f60a

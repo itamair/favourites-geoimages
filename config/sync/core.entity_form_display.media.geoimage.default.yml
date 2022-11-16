@@ -6,6 +6,7 @@ dependencies:
     - field.field.media.geoimage.field_address
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_media_geoimage
+    - field.field.media.geoimage.field_media_image
     - image.style.thumbnail
     - media.type.geoimage
   module:
@@ -26,13 +27,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
     type: string_textfield
-    weight: 2
+    weight: 4
     region: content
     settings:
       size: 60
@@ -40,7 +41,7 @@ content:
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
-    weight: 1
+    weight: 2
     region: content
     settings:
       map_geocoder:
@@ -101,22 +102,37 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_media_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

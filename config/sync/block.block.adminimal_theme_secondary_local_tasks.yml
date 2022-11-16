@@ -1,5 +1,5 @@
 uuid: 09d8be87-0758-4e1c-ad34-79396c614f91
-langcode: en
+langcode: it
 status: true
 dependencies:
   theme:
@@ -9,7 +9,7 @@ _core:
 id: adminimal_theme_secondary_local_tasks
 theme: adminimal_theme
 region: pre_content
-weight: 0
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

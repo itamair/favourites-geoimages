@@ -1,5 +1,5 @@
 uuid: 501137a1-6f75-47ad-a407-a1deaf9154d7
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -12,7 +12,7 @@ dependencies:
     - node.type.article
   module:
     - comment
-    - image
+    - svg_image
     - text
     - user
 _core:
@@ -62,4 +62,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  langcode: true

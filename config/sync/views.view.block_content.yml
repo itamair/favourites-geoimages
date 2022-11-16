@@ -1,5 +1,5 @@
 uuid: d43abd80-852e-4aa0-9af5-945e8906816e
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -272,7 +272,7 @@ display:
             previous: '‹ Previous'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Voci per pagina'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -281,7 +281,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Applica
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'

@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_color
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
+    - field.field.paragraph.geometry.field_link
     - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
@@ -18,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.geometry
   module:
     - leaflet
+    - link
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry
@@ -49,7 +51,8 @@ content:
         options: '{"position":"topleft","title":"Reset View"}'
       locate:
         control: true
-        options: '{"position":"topleft","setView":"untilPanOrZoom","returnToPrevBounds":true,"strings":{"title":"Locate my position"}}'
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: true
       leaflet_tooltip:
         value: ''
         options: '{"permanent":false,"direction":"center"}'
@@ -96,20 +99,20 @@ content:
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
         include_path: false
       fullscreen:
-        control: true
+        control: false
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"[paragraph:field_stroke_color:color]","opacity":"[paragraph:field_stroke_opacity:value]","stroke":true,"weight":"[paragraph:field_stroke_weight:value]","fill":"depends","fillColor":"[paragraph:field_fill_color:color]","fillOpacity":"[paragraph:field_fill_opacity:value]","interactive":true,"arrowed":"[paragraph:field_arrowed:value]"}'
       feature_properties:
         values: ''
       geocoder:
-        control: false
+        control: true
         settings:
           position: topright
           input_size: 25
           providers:
             arcgisonline:
               weight: 0
-              checked: false
+              checked: true
             file:
               weight: 0
               checked: false
@@ -124,6 +127,18 @@ content:
       weight: null
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_markercluster_exclude:
     type: boolean

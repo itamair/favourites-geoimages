@@ -1,0 +1,18 @@
+uuid: 370518b4-a65c-4be6-93ca-2931a2351b47
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+id: paragraphs_library_item.paragraphs_library_item.label
+field_name: label
+entity_type: paragraphs_library_item
+bundle: paragraphs_library_item
+label: Etichetta
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

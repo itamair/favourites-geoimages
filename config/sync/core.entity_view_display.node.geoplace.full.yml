@@ -61,3 +61,4 @@ hidden:
   field_link: true
   field_locations: true
   field_place_type: true
+  langcode: true

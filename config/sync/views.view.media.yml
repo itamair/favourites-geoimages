@@ -1,5 +1,5 @@
 uuid: a69ba5cc-7010-4101-80d7-c7d0f726a5e0
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -8,6 +8,7 @@ dependencies:
     - media
     - svg_image
     - user
+    - views_bulk_operations
 _core:
   default_config_hash: UZP23LgBdE1XbvscbLCdd9uTk5t4qqA1Z56koqbvYP0
 id: media
@@ -26,16 +27,15 @@ display:
     display_options:
       title: Media
       fields:
-        media_bulk_form:
-          id: media_bulk_form
-          table: media
-          field: media_bulk_form
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: media
-          plugin_id: bulk_form
-          label: ''
+          plugin_id: views_bulk_operations_bulk_form
+          label: 'Views bulk operations'
           exclude: false
           alter:
             alter_text: false
@@ -68,7 +68,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -76,9 +76,33 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
           action_title: Action
-          include_exclude: exclude
-          selected_actions: {  }
+          clear_on_exposed: true
+          force_selection_info: false
+          selected_actions:
+            -
+              action_id: views_bulk_edit
+              preconfiguration:
+                add_confirmation: false
+                get_bundles_from_results: true
+            -
+              action_id: views_bulk_operations_delete_entity
+            -
+              action_id: 'entity:publish_action:media'
+              preconfiguration:
+                add_confirmation: false
+            -
+              action_id: 'entity:save_action:media'
+              preconfiguration:
+                add_confirmation: false
+            -
+              action_id: 'entity:unpublish_action:media'
+              preconfiguration:
+                add_confirmation: false
         thumbnail__target_id:
           id: thumbnail__target_id
           table: media_field_data
@@ -208,7 +232,7 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: field
-          label: Type
+          label: Tipo
           exclude: false
           alter:
             alter_text: false
@@ -338,7 +362,7 @@ display:
           entity_type: media
           entity_field: status
           plugin_id: field
-          label: Status
+          label: Stato
           exclude: false
           alter:
             alter_text: false
@@ -383,8 +407,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Unpublished
-            format_custom_true: Published
+            format_custom_false: 'Non pubblicato'
+            format_custom_true: Pubblicato
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -527,7 +551,7 @@ display:
             last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Voci per pagina'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -640,7 +664,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Type
+            label: Tipo
             description: ''
             use_operator: false
             operator: bundle_op
@@ -708,11 +732,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Pubblicato
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: 'Non pubblicato'
                 operator: '='
                 value: '0'
         status_extra:
@@ -770,7 +794,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Lingua
             description: ''
             use_operator: false
             operator: langcode_op

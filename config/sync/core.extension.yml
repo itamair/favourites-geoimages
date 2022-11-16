@@ -1,5 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: it
 module:
   admin_toolbar: 0
   adminimal_admin_toolbar: 0
@@ -18,6 +19,7 @@ module:
   comment: 0
   computed_field: 0
   config: 0
+  config_translation: 0
   contact: 0
   contextual: 0
   datetime: 0
@@ -27,6 +29,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   entity_type_clone: 0
+  entity_usage: 0
   examples: 0
   field: 0
   field_group: 0
@@ -50,6 +53,7 @@ module:
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
+  language: 0
   layout_builder: 0
   layout_discovery: 0
   layout_paragraphs: 0
@@ -57,6 +61,7 @@ module:
   leaflet_markercluster: 0
   leaflet_views: 0
   link: 0
+  locale: 0
   masquerade: 0
   media: 0
   media_library: 0
@@ -67,6 +72,7 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_library: 0
   path: 0
   path_alias: 0
   quickedit: 0
@@ -87,8 +93,11 @@ module:
   update: 0
   user: 0
   viewfield: 0
+  views_bulk_edit: 0
+  views_bulk_operations: 0
   views_geojson: 0
   views_ui: 0
+  content_translation: 10
   views: 10
   paragraphs: 11
   standard: 1000

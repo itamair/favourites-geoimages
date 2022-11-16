@@ -1,5 +1,5 @@
 uuid: 6c621fd8-ad75-4cd9-8375-d7edd1020eda
-langcode: en
+langcode: it
 status: true
 dependencies:
   theme:
@@ -9,7 +9,7 @@ _core:
 id: adminimal_theme_page_title
 theme: adminimal_theme
 region: header
-weight: -30
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

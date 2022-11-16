@@ -1,0 +1,20 @@
+uuid: e1f95f3b-ea29-4ab3-8d43-02abc43ca940
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.geoimage
+id: media.geoimage.uid
+field_name: uid
+entity_type: media
+bundle: geoimage
+label: 'Authored by'
+description: 'The user ID of the author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference
