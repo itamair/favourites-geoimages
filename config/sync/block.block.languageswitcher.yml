@@ -8,8 +8,8 @@ dependencies:
     - bartik
 id: languageswitcher
 theme: bartik
-region: featured_top
-weight: -8
+region: header
+weight: -7
 provider: null
 plugin: 'language_block:language_interface'
 settings:

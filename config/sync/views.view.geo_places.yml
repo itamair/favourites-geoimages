@@ -1425,7 +1425,7 @@ display:
               rendered: true
               overlays_options:
                 disabled_overlays:
-                  '                    Geo Image                  ': '                    Geo Image                  '
+                  none: none
                 hidden_overlays_controls: {  }
           data_source:
             field_geofield: field_geofield
@@ -2198,8 +2198,7 @@ display:
           content: 'Displaying @start - @end of @total'
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
-      displays:
-        page_taranto_viva_map: page_taranto_viva_map
+      displays: {  }
       attachment_position: after
     cache_metadata:
       max-age: -1
