@@ -52,6 +52,7 @@ function geofield_311_leaflet_map_default_settings() {
     'layerControl' => TRUE,
     'layerControlOptions' => [
       'position' => 'topright',
+      'collapsed' => FALSE,
     ],
   ];
 }

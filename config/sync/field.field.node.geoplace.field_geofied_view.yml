@@ -15,7 +15,7 @@ bundle: geoplace
 label: 'Geofied View'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 179546c8-bbef-4b26-ae5d-825b910ecf75
