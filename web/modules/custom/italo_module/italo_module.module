@@ -5,11 +5,29 @@
  * Contains italo_module.module.
  */
 
+use Drupal\views\Plugin\views\query\Sql;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
 /**
  * Implements hook_page_attachments().
  */
 function italo_module_page_attachments(array &$page) {
   $page['#attached']['library'][] = 'italo_module/common';
   $page['#attached']['library'][] = 'italo_module/leaflet_map_interactions';
+  $page['#attached']['library'][] = 'italo_module/leaflet-arrowheads';
   $page['#attached']['library'][] = 'italo_module/leaflet_drupal_overrides';
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+
+  // Avoiding Paragraphs Duplications in Geoplaces Leaflet View Map.
+  // @see https://www.drupal.org/project/paragraphs/issues/2941499
+  if ($view->storage->id() == 'geo_places' && $query instanceof Sql) {
+    $query->addField('paragraphs_item_field_data_node__field_locations', 'id', '', ['function' => 'groupby']);
+    $query->addGroupBy('paragraphs_item_field_data_node__field_locations.id');
+  }
 }
