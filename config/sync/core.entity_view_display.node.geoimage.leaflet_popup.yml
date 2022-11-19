@@ -31,10 +31,26 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  geoimage_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  geoimage_credits:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   body: true

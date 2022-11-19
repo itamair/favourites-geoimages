@@ -2214,7 +2214,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Taranto  Viva'
+      title: ''
       fields:
         title:
           id: title
@@ -4099,25 +4099,15 @@ display:
           required: false
       group_by: false
       display_description: ''
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
+      header: {  }
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
-      path: taranto_viva_map
+      path: main_map
       menu:
         type: normal
-        title: 'Taranto Viva'
+        title: Map
         description: ''
-        weight: 30
+        weight: -45
         expanded: false
         menu_name: main
         parent: ''

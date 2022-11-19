@@ -1,0 +1,24 @@
+settings:
+  allowed_values:
+    -
+      label: Navigation
+    -
+      label: 'Secondary Header'
+    -
+      label: 'Page Title'
+    -
+      label: 'Hero Region'
+    -
+      label: Header
+    -
+      label: 'Content Top'
+    -
+      label: Content
+    -
+      label: 'Content Bottom'
+    -
+      label: Primary
+    -
+      label: Secondary
+    -
+      label: Footer

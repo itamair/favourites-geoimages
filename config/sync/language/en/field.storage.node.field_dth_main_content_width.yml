@@ -1,0 +1,12 @@
+settings:
+  allowed_values:
+    -
+      label: 'Full width content'
+    -
+      label: 'Squish content column to 1/3'
+    -
+      label: 'Squish content column to 1/2'
+    -
+      label: 'Squish content column to 2/3'
+    -
+      label: 'Squish content column to 5/6'

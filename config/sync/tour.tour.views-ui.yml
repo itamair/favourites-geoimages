@@ -81,7 +81,7 @@ tips:
   views-ui-preview:
     id: views-ui-preview
     plugin: text
-    label: Preview
+    label: Anteprima
     weight: 10
     position: left-start
     selector: '#preview-submit'

@@ -1,0 +1,10 @@
+uuid: 046f409f-0cea-4b67-b3f2-86a4dd15585e
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.leaflet_popup
+label: 'Leaflet Popup'
+targetEntityType: user
+cache: true

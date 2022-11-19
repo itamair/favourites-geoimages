@@ -1,0 +1,21 @@
+uuid: c4a15a60-b68d-4755-bfc9-d2052a4f9596
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_forename
+field_name: field_forename
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

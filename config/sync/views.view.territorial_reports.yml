@@ -2005,7 +2005,7 @@ display:
         type: normal
         title: 'My Territorial Reports'
         description: ''
-        weight: -45
+        weight: -46
         enabled: false
         expanded: false
         menu_name: main
@@ -2606,7 +2606,7 @@ display:
         type: normal
         title: 'Territorial Reports List'
         description: ''
-        weight: -46
+        weight: -47
         enabled: false
         expanded: false
         menu_name: main
@@ -2637,7 +2637,7 @@ display:
         type: normal
         title: 'Territorial Reports Map'
         description: ''
-        weight: -47
+        weight: -48
         enabled: false
         expanded: false
         menu_name: main

@@ -3,6 +3,8 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_forename
+    - field.field.user.user.field_surname
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -23,20 +25,44 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
-  language:
-    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_forename:
+    type: string_textfield
+    weight: 2
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_surname:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  language:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: -1
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
