@@ -12,10 +12,11 @@
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   width: auto !important;
   margin: 0;
+  /* Overrides the Olivero olivero_tarantoviva/css/components/text-content.css */
 }
 /* line 13, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .node__content {
-  font-size: 1em;
+  font-size: 0.8rem;
 }
 /* line 16, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .field--type-image {
@@ -46,20 +47,30 @@
 }
 /* line 37, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content h2 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin: 0.5em 0;
+  line-height: 1rem;
+  font-weight: normal;
 }
-/* line 41, ../sass/leaflet_map_interactions.scss */
+/* line 43, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content h3 {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  line-height: 1rem;
+  font-weight: normal;
 }
-/* line 44, ../sass/leaflet_map_interactions.scss */
+/* line 48, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content div {
   margin-bottom: 6px;
 }
-/* line 47, ../sass/leaflet_map_interactions.scss */
+/* line 51, ../sass/leaflet_map_interactions.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content div:last-child {
   margin-bottom: 0;
+}
+/* line 55, ../sass/leaflet_map_interactions.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .text-content,
+.leaflet-popup-content-wrapper .leaflet-popup-content .cke_editable {
+  font-size: 0.8rem !important;
+  line-height: 1.6rem !important;
 }
 @media only screen and (max-width: 992px) {
   /* line 10, ../sass/leaflet_map_interactions.scss */
@@ -68,29 +79,29 @@
     max-width: 400px;
     position: relative;
   }
-  /* line 54, ../sass/leaflet_map_interactions.scss */
+  /* line 64, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content .field--type-text-with-summary, .leaflet-popup-content-wrapper .leaflet-popup-content .field--name-body {
     display: none;
   }
-  /* line 57, ../sass/leaflet_map_interactions.scss */
+  /* line 67, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content h2 {
     font-size: 1.2em;
   }
-  /* line 60, ../sass/leaflet_map_interactions.scss */
+  /* line 70, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content img.image-style-map-scaled-cropped-image-600-400 {
     width: 395px;
   }
 }
 
-/* line 69, ../sass/leaflet_map_interactions.scss */
+/* line 79, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.up-to-the-top {
   z-index: 1000 !important;
 }
-/* line 72, ../sass/leaflet_map_interactions.scss */
+/* line 82, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50 {
   opacity: 30% !important;
 }
-/* line 75, ../sass/leaflet_map_interactions.scss */
+/* line 85, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50:hover {
   opacity: 100% !important;
 }

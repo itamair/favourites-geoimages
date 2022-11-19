@@ -8,6 +8,8 @@
 use Drupal\views\Plugin\views\query\Sql;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Implements hook_page_attachments().
@@ -29,5 +31,30 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
   if ($view->storage->id() == 'geo_places' && $query instanceof Sql) {
     $query->addField('paragraphs_item_field_data_node__field_locations', 'id', '', ['function' => 'groupby']);
     $query->addGroupBy('paragraphs_item_field_data_node__field_locations.id');
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ *
+ * Generate the Geoimage Caption computed field.
+ */
+function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'node') {
+    $fields = [];
+
+    // Add a field that shows a link to the user's current company.
+    $fields['geoimage_caption'] = BaseFieldDefinition::create('string')
+      ->setName('geoimage_caption')
+      ->setLabel(t('Geoimage Caption'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\italo_module\GeoimageCaptionFieldItemList')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -5,
+      ]);
+
+    return $fields;
   }
 }

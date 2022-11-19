@@ -1,10 +1,4 @@
-@media all and (min-width: 851px) {
-  /* line 2, ../sass/common.scss */
-  .layout-container {
-    max-width: 90% !important;
-  }
-}
-/* line 7, ../sass/common.scss */
+/* line 1, ../sass/common.scss */
 .views-ui-display-tab-setting.overridden,
 .views-ui-display-tab-bucket.overridden {
   font-style: italic;
@@ -12,13 +6,13 @@
   font-weight: bold;
 }
 
-/* line 14, ../sass/common.scss */
+/* line 8, ../sass/common.scss */
 .paragraphs-subform .field-group-details.geometry-attributes .details-wrapper {
   display: flex;
   justify-content: space-around;
 }
 
-/* line 19, ../sass/common.scss */
+/* line 13, ../sass/common.scss */
 a, a.link {
   border-bottom: none;
 }
@@ -31,7 +25,22 @@ a, a.link {
   }
 }
 */
-/* line 33, ../sass/common.scss */
+/* line 27, ../sass/common.scss */
 #views-form-media-media-page-list .views-field-thumbnail__target-id {
   max-width: 60px;
+}
+
+/* line 32, ../sass/common.scss */
+.node--view-mode-leaflet-popup .field--name-geoimage-caption {
+  padding-left: 0.5rem !important;
+  font-size: 0.8rem;
+  opacity: 70%;
+}
+/* line 37, ../sass/common.scss */
+.node--view-mode-leaflet-popup .field:not(:last-child) {
+  margin-bottom: 0.5rem !important;
+}
+/* line 40, ../sass/common.scss */
+.node--view-mode-leaflet-popup .node__content {
+  padding-bottom: 0.5rem !important;
 }

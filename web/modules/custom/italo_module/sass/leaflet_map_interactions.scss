@@ -11,7 +11,7 @@
     width: auto !important;
     margin: 0;
     .node__content {
-      font-size: 1em;
+      font-size: 0.8rem;
     }
     .field--type-image {
       float: none; // This is needed to move the Leaflet Popup to show all of it in the map container
@@ -35,17 +35,27 @@
       margin: 0;
     }
     h2 {
-      font-size: 1.4em;
+      font-size: 1.5em;
       margin: 0.5em 0;
+      line-height: 1rem;
+      font-weight: normal;
     }
     h3 {
-      font-size: 1.2em;
+      font-size: 1.3em;
+      line-height: 1rem;
+      font-weight: normal;
     }
     div {
       margin-bottom: 6px;
     }
     div:last-child {
       margin-bottom: 0;
+    }
+    /* Overrides the Olivero olivero_tarantoviva/css/components/text-content.css */
+    .text-content,
+    .cke_editable {
+      font-size: 0.8rem !important;
+      line-height: 1.6rem !important;
     }
     @media only screen and (max-width: 992px) {
       min-width: 80px;
@@ -76,3 +86,5 @@
     opacity: 100% !important;
   }
 }
+
+

@@ -1,9 +1,3 @@
-@media all and (min-width: 851px) {
-  .layout-container {
-    max-width: 90% !important;
-  }
-}
-
 .views-ui-display-tab-setting.overridden,
 .views-ui-display-tab-bucket.overridden {
   font-style: italic;
@@ -34,3 +28,16 @@ a, a.link {
   max-width: 60px;
 }
 
+.node--view-mode-leaflet-popup {
+  .field--name-geoimage-caption {
+    padding-left: 0.5rem !important;
+    font-size: 0.8rem;
+    opacity: 70%;
+  }
+  .field:not(:last-child) {
+    margin-bottom: 0.5rem !important;
+  }
+  .node__content {
+    padding-bottom: 0.5rem !important;
+  }
+}
