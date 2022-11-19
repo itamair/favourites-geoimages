@@ -38,7 +38,7 @@
         "drupal/geocoder": "^3.14",
         "drupal/geofield": "^1.44",
         "drupal/geofield_map": "^3.0",
-        "drupal/gin": "^3.0@alpha",
+        "drupal/gin": "^3.0@beta",
         "drupal/imagefield_slideshow": "^2.0",
         "drupal/layout_paragraphs": "^1.0@beta",
         "drupal/leaflet": "4.0.x-dev",
