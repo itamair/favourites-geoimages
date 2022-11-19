@@ -1,0 +1,4 @@
+[submodule "web/themes/custom/olivero_tarantoviva"]
+	path = web/themes/custom/olivero_tarantoviva
+	url = https://gitlab.com/drupal_itamair/olivero
+	branch = olivero_tarantoviva_customisation
