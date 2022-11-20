@@ -1,0 +1,20 @@
+uuid: 6df01171-2f5a-45ef-b068-3b0ad59f043f
+langcode: it
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - olivero_tarantoviva
+id: languageswitcherinterfacetext_2
+theme: olivero_tarantoviva
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher (Interface text)'
+  label_display: '0'
+  provider: language
+visibility: {  }
