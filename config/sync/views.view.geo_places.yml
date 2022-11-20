@@ -1546,6 +1546,7 @@ display:
           admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
+      css_class: leaflet-map-page
       use_ajax: false
       group_by: false
       header: {  }

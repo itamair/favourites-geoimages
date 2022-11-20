@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_locations
     - field.field.node.geoplace.field_place_type
-    - image.style.map_scaled_cropped_image_600_400
+    - image.style.cropped_map_image_
     - node.type.geoplace
   module:
     - single_image_formatter
@@ -33,8 +33,8 @@ content:
     type: single_image_formatter
     label: hidden
     settings:
+      image_style: cropped_map_image_
       image_link: ''
-      image_style: map_scaled_cropped_image_600_400
       image_loading:
         attribute: lazy
     third_party_settings: {  }
