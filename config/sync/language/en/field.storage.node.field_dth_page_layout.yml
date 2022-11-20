@@ -1,6 +1,0 @@
-settings:
-  allowed_values:
-    -
-      label: 'Full Width'
-    -
-      label: 'Boxed Layout'

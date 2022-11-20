@@ -24,7 +24,6 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
-  dxpr_theme_helper: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
