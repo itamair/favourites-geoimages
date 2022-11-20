@@ -36,11 +36,17 @@ a, a.link {
   font-size: 0.8rem;
   opacity: 70%;
 }
-/* line 37, ../sass/common.scss */
+/* line 36, ../sass/common.scss */
+.node--view-mode-leaflet-popup .field--name-geoimage-caption .geoimage-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+/* line 42, ../sass/common.scss */
 .node--view-mode-leaflet-popup .field:not(:last-child) {
   margin-bottom: 0.5rem !important;
 }
-/* line 40, ../sass/common.scss */
+/* line 45, ../sass/common.scss */
 .node--view-mode-leaflet-popup .node__content {
   padding-bottom: 0.5rem !important;
 }

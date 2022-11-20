@@ -88,7 +88,7 @@
     font-size: 1.2em;
   }
   /* line 70, ../sass/leaflet_map_interactions.scss */
-  .leaflet-popup-content-wrapper .leaflet-popup-content img.image-style-map-scaled-cropped-image-600-400 {
+  .leaflet-popup-content-wrapper .leaflet-popup-content .field--type-image img {
     width: 395px;
   }
 }

@@ -35,7 +35,7 @@ class GeoimageCaptionFieldItemList extends FieldItemList {
         $entity_author = $entity->getOwner();
         $forename = $entity_author->field_forename->value;
         $surname = $entity_author->field_surname->value;
-        $value = $this->t('<div>@title <span>(©Credits: @forename @surname)</span></div>', [
+        $value = $this->t('<div class="geoimage-caption"><span class="geoimage-title">@title</span> <span class="geoimage-credits">(©Credits: @forename @surname)</span></div>', [
           '@title' => $entity->label(),
           '@forename' => $forename,
           '@surname' => $surname,
