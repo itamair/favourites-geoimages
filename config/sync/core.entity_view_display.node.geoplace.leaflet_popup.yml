@@ -36,7 +36,7 @@ content:
       image_style: cropped_map_image_
       image_link: ''
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 1
     region: content
