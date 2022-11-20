@@ -1,6 +1,6 @@
 uuid: 2c868ee9-8ce4-45b2-884d-44bc186abc2f
 langcode: it
-status: true
+status: false
 dependencies:
   module:
     - language
