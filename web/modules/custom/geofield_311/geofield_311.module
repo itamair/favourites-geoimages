@@ -95,7 +95,7 @@ function geofield_311_leaflet_map_info() {
           "attribution" => "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
         ],
       ],
-      'Stamen Terrain' => [
+/*      'Stamen Terrain' => [
         'urlTemplate' => '//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}',
         'options' => [
           "subdomains" => "abcd",
@@ -104,7 +104,7 @@ function geofield_311_leaflet_map_info() {
           "ext" => "png",
           "attribution" => "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
         ],
-      ],
+      ],*/
     ],
   ];
 
