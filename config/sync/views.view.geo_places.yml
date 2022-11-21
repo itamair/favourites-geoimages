@@ -1458,7 +1458,7 @@ display:
             center:
               lat: !!float 42
               lon: !!float 12
-            zoom: 17
+            zoom: 18
             minZoom: 3
             maxZoom: 19
             zoomFiner: 0
@@ -1499,7 +1499,7 @@ display:
             control: true
             settings:
               position: topright
-              input_size: 20
+              input_size: 16
               providers:
                 arcgisonline:
                   weight: '0'

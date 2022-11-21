@@ -15,7 +15,7 @@ dependencies:
 _core:
   default_config_hash: P7F4DFe8BL31DRVqsvS-ix9KZZqvvaPjZ7zEvGo9yNM
 id: content
-label: Contenuto
+label: Content
 module: node
 description: 'Find and manage content.'
 tag: default
@@ -28,7 +28,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Contenuto
+      title: Content
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
