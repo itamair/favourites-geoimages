@@ -7,9 +7,12 @@
 
 .leaflet-popup-content-wrapper {
   border-radius: 1px;
+  padding: 0;
   .leaflet-popup-content {
     width: auto !important;
     margin: 0;
+    position: relative;
+
     .node__content {
       font-size: 0.8rem;
     }
@@ -19,7 +22,7 @@
     }
     .node--type-geoimage {
       width: 600px !important;
-      margin: 2px;
+      margin: 0;
       .node__content {
         margin: 0;
       }
@@ -37,12 +40,13 @@
     h2 {
       font-size: 1.5em;
       margin: 0.5em 0;
-      line-height: 1rem;
+      line-height: 1.5rem;
       font-weight: normal;
+      padding-top: 6px
     }
     h3 {
       font-size: 1.3em;
-      line-height: 1rem;
+      line-height: 1.4rem;
       font-weight: normal;
     }
     div {
@@ -60,18 +64,64 @@
     @media only screen and (max-width: 992px) {
       min-width: 80px;
       max-width: 400px;
-      position: relative;
+
       .field--type-text-with-summary, .field--name-body {
         display: none;
       }
       h2 {
         font-size: 1.2em
       }
-      .field--type-image img {
-        width: 395px;
+
+      .node--type-geoimage {
+        width: 400px !important;
+        .node__content {
+          margin: 0;
+        }
+        .node__title {
+          display: none;
+        }
+      }
+      .node--type-historical-building, .node--type-geoplace {
+        width: 300px !important;
+        margin: 2px;
       }
     }
+
+    @media only screen and (max-width: 500px) {
+      max-width: 360px;
+
+      .node--type-geoimage {
+        width: 360px !important;
+        margin: 0;
+      }
+      .node--type-historical-building, .node--type-geoplace {
+        width: 220px !important;
+      }
+    }
+
+    @media only screen and (max-width: 380px) {
+      max-width: 300px;
+
+      .node--type-geoimage {
+        width: 300px !important;
+      }
+      .node--type-historical-building, .node--type-geoplace {
+        width: 200px !important;
+      }
+    }
+
   }
+}
+
+// Move down the Leaflet Popup Close Button,
+// if we want the leaflet-popup-content-wrapper padding top is 0.
+.leaflet-container a.leaflet-popup-close-button {
+  top: 12px;
+}
+
+// Tune the Geocoder Control Input element font size.
+.leaflet-control-geocoder-container input {
+  font-size: 1rem;
 }
 
 // Customise Leaflet Marker Icons
@@ -87,4 +137,22 @@
   }
 }
 
-
+// Fine Style the Control Layer List.
+.leaflet-control-layers-list {
+  label {
+    margin-bottom: 4px;
+  }
+  input[type="radio"] {
+    margin-right: 4px;
+    height: 1.2rem;
+    width: 1.2rem;
+    &:checked {
+      background-size: 0.6rem;
+    }
+  }
+  input[type="checkbox"] {
+    margin-right: 4px;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
