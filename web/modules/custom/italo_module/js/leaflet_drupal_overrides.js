@@ -23,6 +23,24 @@ Drupal.Leaflet.prototype.extend_map_bounds = function(lFeature, feature) {
   }
 };
 
+/**
+ * Add Leaflet Tooltip to the Leaflet Feature.
+ * @param lFeature
+ *   The Leaflet Feature
+ * @param feature
+ *   The Feature coming from Drupal settings.
+ */
+Drupal.Leaflet.prototype.feature_bind_tooltip = function(lFeature, feature) {
+  const feature_properties = feature.hasOwnProperty('properties') ? JSON.parse(feature['properties']) : {};
+  // Set the Leaflet Tooltip, with its options,
+  // but omit in case of geimage comntent type.
+  if (feature_properties['content_type'] !== "geoimage" && feature.tooltip && feature.tooltip.value.replace(/(<([^>]+)>)/gi, "").trim().length > 0) {
+    const tooltip_options = feature.tooltip.options ? JSON.parse(feature.tooltip.options) : {};
+    lFeature.bindTooltip(feature.tooltip.value, tooltip_options).openTooltip()
+  }
+};
+
+
 (function($, Drupal) {
   Drupal.Leaflet.prototype.create_linestring = function(polyline) {
     let latlngs = [];
