@@ -1444,7 +1444,7 @@ display:
           height: '80'
           height_unit: vh
           hide_empty_map: true
-          disable_wheel: false
+          disable_wheel: true
           gesture_handling: false
           reset_map:
             control: true
@@ -1516,7 +1516,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}"}'
       row:
         type: fields
       query:
@@ -3597,9 +3597,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
+          type: entity_reference_entity_id
+          settings: {  }
           group_column: target_id
           group_columns: {  }
           group_rows: true
