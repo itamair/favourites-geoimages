@@ -1444,7 +1444,7 @@ display:
           height: '80'
           height_unit: vh
           hide_empty_map: true
-          disable_wheel: true
+          disable_wheel: false
           gesture_handling: false
           reset_map:
             control: true

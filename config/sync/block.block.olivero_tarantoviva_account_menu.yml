@@ -12,8 +12,8 @@ _core:
   default_config_hash: 8qpehlQwfYJws1aoib71zXGT6Lv6dIGO7QfrgYl9KGM
 id: olivero_tarantoviva_account_menu
 theme: olivero_tarantoviva
-region: secondary_menu
-weight: -4
+region: primary_menu
+weight: -5
 provider: null
 plugin: 'system_menu_block:account'
 settings:
