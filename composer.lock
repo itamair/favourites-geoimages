@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78bf3feaea522a224d9ee6c01f6e9121",
+    "content-hash": "f3e8f47fbe349767b456ebaa8a3eea67",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4423,27 +4423,30 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "dev-4.0.x",
+            "version": "10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "7e44bdf2df2195b9e458df247fa92fc3756afa55"
+                "reference": "10.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.0.zip",
+                "reference": "10.0.0",
+                "shasum": "93ccaf5ddbfa8dbd7114babf64e63847f28d9e63"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10",
+                "drupal/core": "^9 || ^10",
                 "drupal/geofield": "^1.31"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-4.0.x": "4.0.x-dev"
-                },
                 "drupal": {
-                    "version": "4.0.x-dev",
-                    "datestamp": "1668712637",
+                    "version": "10.0.0",
+                    "datestamp": "1669177848",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -11242,7 +11245,6 @@
         "drupal/entity_usage": 10,
         "drupal/feeds": 15,
         "drupal/gin": 10,
-        "drupal/leaflet": 20,
         "drupal/masquerade": 5,
         "drupal/media_library_importer": 10,
         "drupal/openstreetmap": 10,
