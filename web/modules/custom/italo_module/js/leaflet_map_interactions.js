@@ -6,9 +6,14 @@
     attach: function(context) {
       let self = this;
 
+      // React on leaflet.map event.
+      $(document).on('leafletMapInit_10', function (e, data) {
+        const my_data = data;
+      });
+
       // React on leafletMapInit event.
       // Resizing Markers.
-      $(context).on('leafletMapInit', function (e, settings, lMap, mapid) {
+      $(context).on('leafletMapInit', function (e, settings, lMap, mapid, data_markers) {
         let map = lMap;
         let markers = Drupal.Leaflet[mapid].markers;
         let features = Drupal.Leaflet[mapid].features;

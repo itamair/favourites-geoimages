@@ -35,27 +35,22 @@ a, a.link {
   padding-left: 0.5rem !important;
   font-size: 0.8rem;
   opacity: 70%;
+  line-height: 1.2rem;
 }
-/* line 36, ../sass/common.scss */
-.node--view-mode-leaflet-popup .field--name-geoimage-caption .geoimage-caption {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-/* line 42, ../sass/common.scss */
+/* line 38, ../sass/common.scss */
 .node--view-mode-leaflet-popup .field:not(:last-child) {
   margin-bottom: 0.5rem !important;
 }
-/* line 45, ../sass/common.scss */
+/* line 41, ../sass/common.scss */
 .node--view-mode-leaflet-popup .node__content {
   padding-bottom: 0.5rem !important;
 }
 
-/* line 50, ../sass/common.scss */
+/* line 46, ../sass/common.scss */
 .block-layout-builder {
   margin-bottom: 20px;
 }
-/* line 52, ../sass/common.scss */
+/* line 48, ../sass/common.scss */
 .block-layout-builder.node-title {
   font-size: 2.6rem;
   font-weight: bold;
