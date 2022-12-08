@@ -1,9 +1,9 @@
-uuid: c255cc76-2089-441c-9a19-5ad0eca8fcef
+uuid: 6785d8c1-94ba-4f0b-bfff-43bd91ee5be3
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.image
+    - core.entity_view_mode.paragraph.address
     - field.field.paragraph.location.field_address
     - field.field.paragraph.location.field_classname
     - field.field.paragraph.location.field_exclude_from_map_bounds
@@ -14,31 +14,31 @@ dependencies:
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
-    - image.style.geofield_map_default_icon_style
     - paragraphs.paragraphs_type.location
   module:
-    - svg_image
-id: paragraph.location.image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.location.address
 targetEntityType: paragraph
 bundle: location
-mode: image
+mode: address
 content:
-  field_location_icon:
-    type: image
+  field_address:
+    type: string
     label: hidden
     settings:
-      image_link: ''
-      image_style: geofield_map_default_icon_style
-      image_loading:
-        attribute: lazy
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  field_address: true
   field_classname: true
   field_exclude_from_map_bounds: true
   field_geofield: true
+  field_location_icon: true
   field_location_icon_width: true
   field_marker_icon_path: true
   field_markercluster_exclude: true

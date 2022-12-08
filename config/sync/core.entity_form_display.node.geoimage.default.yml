@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.geoimage.body
+    - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_geoimage
@@ -40,6 +41,16 @@ content:
     weight: 7
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_category_type:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_classname:
     type: string_textfield

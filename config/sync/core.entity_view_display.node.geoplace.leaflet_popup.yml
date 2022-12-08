@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.leaflet_popup
     - field.field.node.geoplace.body
+    - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_geofied_view
     - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
@@ -13,22 +14,14 @@ dependencies:
     - image.style.cropped_map_image_
     - node.type.geoplace
   module:
+    - entity_reference_revisions
     - single_image_formatter
-    - text
     - user
 id: node.geoplace.leaflet_popup
 targetEntityType: node
 bundle: geoplace
 mode: leaflet_popup
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: visually_hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_image:
     type: single_image_formatter
     label: hidden
@@ -39,6 +32,15 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_locations:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: address
+      link: ''
+    third_party_settings: {  }
+    weight: 0
     region: content
   geoimage_caption:
     type: string
@@ -54,8 +56,9 @@ content:
     weight: 3
     region: content
 hidden:
+  body: true
+  field_category_type: true
   field_geofied_view: true
   field_link: true
-  field_locations: true
   field_place_type: true
   langcode: true

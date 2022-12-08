@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.geoimage.body
+    - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_geoimage
@@ -26,12 +27,21 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  geoimage_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_category_type: true
   field_classname: true
   field_exclude_from_map_bounds: true
   field_geoimage: true

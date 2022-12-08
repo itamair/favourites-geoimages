@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.geoplace.body
+    - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_geofied_view
     - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
@@ -52,12 +53,21 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  geoimage_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_category_type: true
   field_link: true
   field_locations: true
   field_place_type: true
