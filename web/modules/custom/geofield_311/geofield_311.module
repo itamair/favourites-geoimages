@@ -74,6 +74,13 @@ function geofield_311_leaflet_map_info() {
           'attribution' => '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
         ],
       ],
+      'Openstreetmap' => [
+        'urlTemplate' => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        'options' => [
+          "maxZoom" => 20,
+          'attribution' => '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        ],
+      ],
       'Google Roads' => [
         'type' => 'google',
         'urlTemplate' => '//mt{s}.googleapis.com/vt?x={x}&y={y}&z={z}',
