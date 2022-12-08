@@ -105,7 +105,7 @@
   /* line 85, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-historical-building, .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
     width: 300px !important;
-    margin: 2px;
+    margin: 8px;
   }
 }
 @media only screen and (max-width: 500px) {
