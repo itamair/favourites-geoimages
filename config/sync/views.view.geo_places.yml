@@ -1459,7 +1459,7 @@ display:
             center:
               lat: !!float 42
               lon: !!float 12
-            zoom: 18
+            zoom: 17
             minZoom: 3
             maxZoom: 19
             zoomFiner: 0
@@ -1548,7 +1548,7 @@ display:
           plugin_id: standard
           required: false
       css_class: leaflet-map-page
-      use_ajax: false
+      use_ajax: true
       group_by: false
       header: {  }
       footer: {  }
@@ -4001,7 +4001,7 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
-              reset_button_always_show: true
+              reset_button_always_show: false
             filter:
               title:
                 plugin_id: default
@@ -4097,6 +4097,49 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
