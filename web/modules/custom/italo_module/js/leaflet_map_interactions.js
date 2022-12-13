@@ -40,6 +40,20 @@
           }
         }
 
+        if (feature['properties'] && feature['properties'].length > 0) {
+          const properties = JSON.parse(feature['properties']);
+          if (properties['pulsing']) {
+            console.log("pulsing");
+            const pulsingMarker = new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
+              icon: L.divIcon({
+                className: 'map-marker ' + feature.specialCharClass + '-marker',
+                html: '<span class="pulsing-marker dot"><i></i></span>'
+              }),
+              iconSize: [15, 15]
+            }).addTo(add_features.lMap);
+          }
+        }
+
 /*        // Add an event listener on the popup open to dynamically pan to the center.
         lFeature.on('popupopen', function (popup) {
           const zoom = popup.target._map.getZoom();
