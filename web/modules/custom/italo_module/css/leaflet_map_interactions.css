@@ -184,67 +184,70 @@
 
 @-webkit-keyframes blink {
   50% {
-    height: 40px;
-    width: 40px;
-    border-width: 0;
-    border-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-  }
-  100% {
     height: 60px;
     width: 60px;
     border-width: 0;
     border-color: rgba(255, 255, 255, 0.5);
     border-radius: 30px;
-    margin-top: -30px;
-    margin-left: -30px;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    border-width: 0;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    margin-top: -60px;
+    margin-left: -60px;
   }
 }
 @-moz-keyframes blink {
   50% {
-    height: 40px;
-    width: 40px;
-    border-width: 0;
-    border-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-  }
-  100% {
     height: 60px;
     width: 60px;
     border-width: 0;
     border-color: rgba(255, 255, 255, 0.5);
     border-radius: 30px;
-    margin-top: -30px;
-    margin-left: -30px;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    border-width: 0;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    margin-top: -60px;
+    margin-left: -60px;
   }
 }
-/* line 198, ../sass/leaflet_map_interactions.scss */
-.leaflet-container .dot i,
-#mapbox-territorial-reports-map .dot i {
+/* line 202, ../sass/leaflet_map_interactions.scss */
+.leaflet-container .dot i {
   border-style: solid;
   display: inline-block;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  border-width: 10px;
-  border-radius: 10px;
+  border-width: 15px;
+  border-radius: 15px;
   -moz-animation: blink 3.5s infinite ease-in-out;
   -webkit-animation: blink 3.5s infinite ease-in-out;
   -webkit-font-smoothing: antialiased;
-  height: 20px;
-  width: 20px;
-  margin-top: -4px;
-  margin-left: -4px;
+  height: 30px;
+  width: 30px;
+  margin-top: -11px;
+  margin-left: -11px;
   z-index: 1000;
   pointer-events: none;
 }
 
-/* line 217, ../sass/leaflet_map_interactions.scss */
+/* line 220, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .pulsing-marker.dot i,
 #mapbox-territorial-reports-map .pulsing-marker .dot i {
   border-color: red;
 }
 
-/* line 222, ../sass/leaflet_map_interactions.scss */
+/* line 225, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .low-pulsing-marker.dot i,
 #mapbox-territorial-reports-map .low-pulsing-marker .dot i {
   border-color: orange;

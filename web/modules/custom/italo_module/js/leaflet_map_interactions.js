@@ -42,14 +42,13 @@
 
         if (feature['properties'] && feature['properties'].length > 0) {
           const properties = JSON.parse(feature['properties']);
-          if (properties['pulsing']) {
-            console.log("pulsing");
+          if (parseInt(properties['pulsing'])) {
             const pulsingMarker = new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
               icon: L.divIcon({
                 className: 'map-marker ' + feature.specialCharClass + '-marker',
                 html: '<span class="pulsing-marker dot"><i></i></span>'
               }),
-              iconSize: [15, 15]
+              iconSize: [100, 100]
             }).addTo(add_features.lMap);
           }
         }
