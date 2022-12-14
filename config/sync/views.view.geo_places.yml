@@ -11,7 +11,6 @@ dependencies:
     - field.storage.node.field_classname
     - field.storage.node.field_exclude_from_map_bounds
     - field.storage.node.field_image
-    - field.storage.node.field_place_type
     - field.storage.paragraph.field_arrowed
     - field.storage.paragraph.field_classname
     - field.storage.paragraph.field_exclude_from_map_bounds
@@ -23,12 +22,14 @@ dependencies:
     - field.storage.paragraph.field_location_icon_width
     - field.storage.paragraph.field_markercluster_exclude
     - field.storage.paragraph.field_min_zoom_visibility
+    - field.storage.paragraph.field_pulsing
     - field.storage.paragraph.field_stroke_color
     - field.storage.paragraph.field_stroke_opacity
     - field.storage.paragraph.field_stroke_weight
     - field.storage.paragraph.field_title
     - field.storage.paragraph.field_zindex
     - image.style.cropped_map_image_
+    - image.style.geofield_map_default_icon_style
     - image.style.image_map_marker
     - image.style.thumbnail
     - node.type.geoimage
@@ -38,7 +39,6 @@ dependencies:
     - better_exposed_filters
     - color_field
     - geofield
-    - italo_module
     - leaflet_views
     - media
     - node
@@ -1517,7 +1517,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing":"{{ field_pulsing }}"}'
       row:
         type: fields
       query:
@@ -3177,195 +3177,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_location_icon:
-          id: field_location_icon
-          table: paragraph__field_location_icon
-          field: field_location_icon
-          relationship: field_locations
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: '{{ field_icon }}'
-          hide_empty: false
-          empty_zero: true
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image_url
-          settings:
-            image_style: thumbnail
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_place_type:
-          id: field_place_type
-          table: node__field_place_type
-          field: field_place_type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: leaflet_layout_control
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_media_image:
-          id: field_media_image
-          table: media__field_media_image
-          field: field_media_image
-          relationship: field_place_type_icon_1
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image_url
-          settings:
-            image_style: image_map_marker
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_arrowed:
           id: field_arrowed
           table: paragraph__field_arrowed
@@ -3375,7 +3186,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -3441,7 +3252,7 @@ display:
           entity_type: node
           plugin_id: entity_link_edit
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -3484,19 +3295,19 @@ display:
           text: edit
           output_url_as_text: false
           absolute: false
-        field_media_geoimage:
-          id: field_media_geoimage
-          table: media__field_media_geoimage
-          field: field_media_geoimage
-          relationship: field_geoimage
+        field_media_image:
+          id: field_media_image
+          table: media__field_media_image
+          field: field_media_image
+          relationship: field_place_type_icon_1
           group_type: group
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
-            alter_text: true
-            text: 'sites/default/files/styles/image_map_marker/public/photo_albums/Taranto_Images/{{ field_media_geoimage }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -3534,8 +3345,135 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image_file_name
-          settings: {  }
+          type: image_url
+          settings:
+            image_style: image_map_marker
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_location_icon:
+          id: field_location_icon
+          table: paragraph__field_location_icon
+          field: field_location_icon
+          relationship: field_locations
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: '{{ field_media_image }}'
+          hide_empty: false
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_url
+          settings:
+            image_style: geofield_map_default_icon_style
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_media_geoimage:
+          id: field_media_geoimage
+          table: media__field_media_geoimage
+          field: field_media_geoimage
+          relationship: field_geoimage
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_url
+          settings:
+            image_style: image_map_marker
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -3681,7 +3619,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -3867,19 +3805,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
+        field_pulsing:
+          id: field_pulsing
+          table: paragraph__field_pulsing
+          field: field_pulsing
+          relationship: field_locations
           group_type: group
           admin_label: ''
-          plugin_id: custom
+          plugin_id: field
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: '{{ field_media_image }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -3912,7 +3850,72 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: '{{ field_media_geoimage }}'
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: boolean
+            format_custom_false: ''
+            format_custom_true: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_media_geoimage }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: '{{ field_location_icon }}'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
@@ -4036,6 +4039,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            geoimage: geoimage
             geoplace: geoplace
           group: 1
           exposed: false
@@ -4185,20 +4189,20 @@ display:
           admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
-        field_place_type:
-          id: field_place_type
-          table: node__field_place_type
-          field: field_place_type
-          relationship: none
+        field_location_type:
+          id: field_location_type
+          table: paragraph__field_location_type
+          field: field_location_type
+          relationship: field_locations
           group_type: group
-          admin_label: 'field_place_type: Taxonomy term'
+          admin_label: 'field_location_type: Taxonomy term'
           plugin_id: standard
           required: false
         field_place_type_icon_1:
           id: field_place_type_icon_1
           table: taxonomy_term__field_place_type_icon
           field: field_place_type_icon
-          relationship: field_place_type
+          relationship: field_location_type
           group_type: group
           admin_label: 'field_place_type_icon: Media'
           plugin_id: standard
@@ -4233,7 +4237,6 @@ display:
         - 'config:field.storage.node.field_classname'
         - 'config:field.storage.node.field_exclude_from_map_bounds'
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_place_type'
         - 'config:field.storage.paragraph.field_arrowed'
         - 'config:field.storage.paragraph.field_classname'
         - 'config:field.storage.paragraph.field_exclude_from_map_bounds'
@@ -4244,6 +4247,7 @@ display:
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_markercluster_exclude'
         - 'config:field.storage.paragraph.field_min_zoom_visibility'
+        - 'config:field.storage.paragraph.field_pulsing'
         - 'config:field.storage.paragraph.field_stroke_color'
         - 'config:field.storage.paragraph.field_stroke_opacity'
         - 'config:field.storage.paragraph.field_stroke_weight'

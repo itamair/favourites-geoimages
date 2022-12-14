@@ -9,8 +9,10 @@ dependencies:
     - field.field.paragraph.location.field_geofield
     - field.field.paragraph.location.field_location_icon
     - field.field.paragraph.location.field_location_icon_width
+    - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
+    - field.field.paragraph.location.field_pulsing
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
@@ -28,7 +30,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_exclude_from_map_bounds:
     type: boolean
@@ -38,7 +40,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_geofield:
     type: leaflet_formatter_default
@@ -152,7 +154,7 @@ content:
       cache_unit: -1
       cache_duration: 1
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_markercluster_exclude:
     type: boolean
@@ -162,7 +164,17 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
+    region: content
+  field_pulsing:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_title:
     type: string
@@ -179,8 +191,9 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
 hidden:
   field_classname: true
   field_location_icon: true
+  field_location_type: true

@@ -1,0 +1,12 @@
+uuid: b843d9af-16f1-423e-890b-bdea1dafcec7
+langcode: it
+status: true
+dependencies: {  }
+id: related_content
+label: 'Related Content'
+enabled: true
+first_field: field_related_content
+second_field: field_related_content
+bundles:
+  node:
+    - '*'

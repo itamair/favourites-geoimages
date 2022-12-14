@@ -21,8 +21,14 @@ options:
     mobileFirst: false
     asNavFor: ''
     accessibility: true
+    regionLabel: carousel
+    useGroupRole: true
+    instructionsText: ''
     adaptiveHeight: false
     autoplay: false
+    useAutoplayToggleButton: true
+    pauseIcon: slick-pause-icon
+    playIcon: slick-play-icon
     pauseOnHover: true
     pauseOnDotsHover: false
     pauseOnFocus: true
@@ -30,6 +36,7 @@ options:
     arrows: true
     prevArrow: Previous
     nextArrow: Next
+    arrowsPlacement: ''
     downArrow: false
     downArrowTarget: ''
     downArrowOffset: 0
@@ -69,10 +76,3 @@ options:
     vertical: false
     verticalSwiping: false
     waitForAnimate: true
-    regionLabel: carousel
-    useGroupRole: true
-    instructionsText: ''
-    useAutoplayToggleButton: true
-    pauseIcon: slick-pause-icon
-    playIcon: slick-play-icon
-    arrowsPlacement: ''

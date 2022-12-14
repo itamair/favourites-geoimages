@@ -1,0 +1,23 @@
+uuid: 3156c2c0-7fea-41ad-adc4-e2a34721a407
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pulsing
+    - paragraphs.paragraphs_type.location
+id: paragraph.location.field_pulsing
+field_name: field_pulsing
+entity_type: paragraph
+bundle: location
+label: Pulsing
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

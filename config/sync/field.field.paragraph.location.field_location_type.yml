@@ -1,16 +1,16 @@
-uuid: bd53ce96-820d-4ed2-9bbc-109ddb74f1e2
-langcode: en
+uuid: 3b9fdd4d-847e-41df-9533-ce6ae504778c
+langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_place_type
-    - node.type.geoplace
+    - field.storage.paragraph.field_location_type
+    - paragraphs.paragraphs_type.location
     - taxonomy.vocabulary.place_types
-id: node.geoplace.field_place_type
-field_name: field_place_type
-entity_type: node
-bundle: geoplace
-label: 'Place Type'
+id: paragraph.location.field_location_type
+field_name: field_location_type
+entity_type: paragraph
+bundle: location
+label: 'Location Type'
 description: ''
 required: false
 translatable: false
@@ -24,6 +24,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

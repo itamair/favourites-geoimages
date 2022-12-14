@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_locations
-    - field.field.node.geoplace.field_place_type
+    - field.field.node.geoplace.field_related_content
     - node.type.geoplace
   module:
     - imagefield_slideshow
@@ -104,6 +104,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+          f52ad1f2-8eeb-4ca2-80f7-10a4be49af8a:
+            uuid: f52ad1f2-8eeb-4ca2-80f7-10a4be49af8a
+            region: content
+            configuration:
+              id: 'field_block:node:geoplace:field_related_content'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -135,19 +151,22 @@ third_party_settings:
             region: first
             configuration:
               id: 'field_block:node:geoplace:field_image'
+              label: Image
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: imagefield_slideshow_field_formatter
                 label: hidden
                 settings:
-                  imagefield_slideshow_style: map_scaled_cropped_image_600_400
+                  imagefield_slideshow_style: map_scaled_cropped_image_900_600
                   imagefield_slideshow_style_effects: fade
                   imagefield_slideshow_style_pause: 'true'
+                  imagefield_slideshow_prev_next: 0
                   imagefield_slideshow_transition_speed: '300'
                   imagefield_slideshow_timeout: '4000'
-                  imagefield_slideshow_prev_next: 0
                   imagefield_slideshow_pager: 0
                 third_party_settings: {  }
             weight: 0
@@ -209,13 +228,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_place_type:
+  field_related_content:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 7
     region: content
   geoimage_caption:
     type: string

@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.geoimage.field_image
     - field.field.paragraph.geoimage.field_location_icon_width
     - field.field.paragraph.geoimage.field_title
-    - image.style.map_scaled_cropped_image_600_400
+    - image.style.map_scaled_cropped_image_900_600
     - paragraphs.paragraphs_type.geoimage
   module:
     - leaflet
@@ -127,7 +127,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: map_scaled_cropped_image_600_400
+      image_style: map_scaled_cropped_image_900_600
       svg_attributes:
         width: null
         height: null

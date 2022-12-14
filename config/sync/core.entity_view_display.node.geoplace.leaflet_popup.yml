@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_locations
-    - field.field.node.geoplace.field_place_type
+    - field.field.node.geoplace.field_related_content
     - image.style.cropped_map_image_
     - node.type.geoplace
   module:
@@ -60,5 +60,5 @@ hidden:
   field_category_type: true
   field_geofied_view: true
   field_link: true
-  field_place_type: true
+  field_related_content: true
   langcode: true
