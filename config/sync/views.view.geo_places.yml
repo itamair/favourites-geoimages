@@ -39,6 +39,7 @@ dependencies:
     - better_exposed_filters
     - color_field
     - geofield
+    - italo_module
     - leaflet_views
     - media
     - node
@@ -3433,7 +3434,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: ''
+            text: "sites/default/files/styles/image_map_marker/public/photo_albums/Taranto_Images/{{ field_media_geoimage }}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -3471,9 +3472,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image_url
-          settings:
-            image_style: image_map_marker
+          type: image_file_name
+          settings: {  }
           group_column: ''
           group_columns: {  }
           group_rows: true
