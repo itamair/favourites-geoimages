@@ -53,6 +53,7 @@
         "drupal/media_library_importer": "^1.0@beta",
         "drupal/openstreetmap": "^1.0@beta",
         "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.11",
         "drupal/single_image_formatter": "^1.6",
         "drupal/slick": "^2.6",
         "drupal/svg_image": "^1.16",
