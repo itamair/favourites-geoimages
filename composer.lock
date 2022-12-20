@@ -2210,17 +2210,17 @@
         },
         {
             "name": "drupal/backup_migrate",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/backup_migrate.git",
-                "reference": "5.0.2"
+                "reference": "5.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.2.zip",
-                "reference": "5.0.2",
-                "shasum": "940667093e327650a5840f04080df95bf70a7fa2"
+                "url": "https://ftp.drupal.org/files/projects/backup_migrate-5.0.3.zip",
+                "reference": "5.0.3",
+                "shasum": "bc263f601f7a21248d4000a372d04a417df7e326"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -2231,8 +2231,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.0.2",
-                    "datestamp": "1660935347",
+                    "version": "5.0.3",
+                    "datestamp": "1671366510",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4560,17 +4560,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.0.0",
+            "version": "10.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.0.0"
+                "reference": "10.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.0.zip",
-                "reference": "10.0.0",
-                "shasum": "93ccaf5ddbfa8dbd7114babf64e63847f28d9e63"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.3.zip",
+                "reference": "10.0.3",
+                "shasum": "551c6be685782859f832dbadf0c12f6c5f92994a"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -4579,8 +4579,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.0.0",
-                    "datestamp": "1669177848",
+                    "version": "10.0.3",
+                    "datestamp": "1671574858",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
