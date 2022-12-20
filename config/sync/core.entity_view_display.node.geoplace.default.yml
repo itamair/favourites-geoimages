@@ -34,9 +34,12 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:geoplace:field_link'
+              label: Links
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: link
                 label: above
@@ -44,8 +47,8 @@ third_party_settings:
                   trim_length: 80
                   url_only: false
                   url_plain: false
-                  rel: ''
-                  target: ''
+                  rel: '0'
+                  target: '0'
                 third_party_settings: {  }
             weight: 6
             additional: {  }
@@ -133,9 +136,12 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:geoplace:field_geofied_view'
+              label: 'Geofied View'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: viewfield_default
                 label: hidden

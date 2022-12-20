@@ -10,6 +10,9 @@ use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_page_attachments().
@@ -17,6 +20,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
 function italo_module_page_attachments(array &$page) {
   $page['#attached']['library'][] = 'italo_module/common';
   $page['#attached']['library'][] = 'italo_module/leaflet_map_interactions';
+  $page['#attached']['library'][] = 'italo_module/leaflet_node_forced_bounds';
   $page['#attached']['library'][] = 'italo_module/leaflet-arrowheads';
   $page['#attached']['library'][] = 'italo_module/leaflet_drupal_overrides';
 }
@@ -56,5 +60,30 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ]);
 
     return $fields;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities.
+ */
+function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode === 'full' && $node->bundle() === 'geoplace') {
+    $locations = $node->get('field_locations')->getValue();
+    $geofields = [];
+    /** @var Drupal\leaflet\LeafletService $leafletService */
+    $leafletService = \Drupal::service('leaflet.service');
+    foreach ($locations as $location) {
+      $paragraph = Paragraph::load($location['target_id']);
+      $geofields[] = $paragraph->field_geofield->value;
+    }
+    $geofields = $leafletService->leafletProcessGeofield($geofields);
+
+    // Add DrupalSettings for forcing bounds on this specific Node.
+    $build['#attached']['drupalSettings']['leaflet']['node_forced_bounds'] = [
+      'node_id' => $node->id(),
+      'currentPath' => 'node/' . $node->id(),
+      'geofields' => $geofields,
+    ];
+
   }
 }

@@ -46,3 +46,9 @@ leaflet_drupal_overrides:
   dependencies:
     - leaflet/leaflet-drupal
     - italo_module/leaflet-arrowheads
+
+leaflet_node_forced_bounds:
+  version: 1.x
+  js:
+    js/leaflet_node_forced_bounds.js: {}
+

@@ -92,14 +92,14 @@ content:
     settings:
       map:
         leaflet_map: multilayers
-        height: 600
+        height: 700
         auto_center: 1
         map_position:
           force: false
           center:
-            lat: !!float 45
-            lon: !!float 27
-          zoom: 10
+            lat: 40.47
+            lon: 17.24
+          zoom: 15
           minZoom: 1
           maxZoom: 20
           zoomFiner: 0
@@ -109,7 +109,7 @@ content:
         readonly: false
       toolbar:
         position: topright
-        marker: defaultMarker
+        marker: none
         drawPolyline: true
         drawRectangle: true
         drawPolygon: true
@@ -132,7 +132,7 @@ content:
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
       geocoder:
-        control: false
+        control: true
         settings:
           position: topright
           input_size: 25
@@ -140,10 +140,10 @@ content:
             arcgisonline:
               weight: 0
               checked: true
-            file:
-              weight: 0
-              checked: false
             googlemaps:
+              weight: 1
+              checked: true
+            file:
               weight: 0
               checked: false
           min_terms: 4
@@ -152,80 +152,64 @@ content:
           popup: true
           options: ''
       geometry_validation: '1'
-      multiple_map:
-        default: false
-      leaflet_map:
-        default: 'OSM Mapnik'
-      height:
-        default: 400
-      height_unit:
-        default: px
-      hide_empty_map:
-        default: false
-      disable_wheel:
-        default: false
-      gesture_handling:
-        default: false
-      popup:
-        default: false
-      popup_content:
-        default: ''
+      multiple_map: false
+      leaflet_map: 'OSM Mapnik'
+      height: 400
+      height_unit: px
+      hide_empty_map: false
+      disable_wheel: false
+      gesture_handling: false
+      popup: false
+      popup_content: ''
       leaflet_popup:
-        default:
-          value: ''
-          options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
-          view_mode: full
-          control: false
-          content: ''
+        value: ''
+        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
+        view_mode: full
+        control: false
+        content: ''
       leaflet_tooltip:
-        default:
-          value: ''
-          options: '{"permanent":false,"direction":"center"}'
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
       map_position:
-        default:
-          force: false
-          center:
-            lat: 0
-            lon: 0
-          zoom: 12
-          minZoom: 1
-          maxZoom: 18
-          zoomFiner: 0
-      weight:
-        default: null
+        force: false
+        center:
+          lat: 0
+          lon: 0
+        zoom: 12
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+      weight: null
       icon:
-        default:
-          iconType: marker
-          iconUrl: ''
-          shadowUrl: ''
-          className: ''
-          iconSize:
-            x: null
-            'y': null
-          iconAnchor:
-            x: null
-            'y': null
-          shadowSize:
-            x: null
-            'y': null
-          shadowAnchor:
-            x: null
-            'y': null
-          popupAnchor:
-            x: null
-            'y': null
-          html: '<div></div>'
-          html_class: leaflet-map-divicon
-          circle_marker_options: '{"radius": 100, "color": "red", "fillColor": "#f03", "fillOpacity": 0.5}'
+        iconType: marker
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        iconSize:
+          x: null
+          'y': null
+        iconAnchor:
+          x: null
+          'y': null
+        shadowSize:
+          x: null
+          'y': null
+        shadowAnchor:
+          x: null
+          'y': null
+        popupAnchor:
+          x: null
+          'y': null
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius": 100, "color": "red", "fillColor": "#f03", "fillOpacity": 0.5}'
       leaflet_markercluster:
-        default:
-          control: false
-          options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
-          excluded: false
-          include_path: false
+        control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
+        excluded: false
+        include_path: false
       feature_properties:
-        default:
-          values: ''
+        values: ''
     third_party_settings: {  }
   field_link:
     type: link_default

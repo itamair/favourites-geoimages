@@ -6,11 +6,6 @@
     attach: function(context) {
       let self = this;
 
-      // React on leaflet.map event.
-      $(document).on('leafletMapInit_10', function (e, data) {
-        const my_data = data;
-      });
-
       // React on leafletMapInit event.
       // Resizing Markers.
       $(context).on('leafletMapInit', function (e, settings, lMap, mapid, data_markers) {
@@ -35,15 +30,15 @@
         // Add Arrows effect to Paths.
         if (feature.type !== 'point' && feature.path) {
           const feature_path = feature.path instanceof Object ? feature.path : JSON.parse(feature.path);
-          if (feature_path['arrowed'] === "1") {
-            lFeature.arrowheads();
+          if (feature_path['arrowed'] === "1" && typeof lFeature.arrowheads !== "undefined") {
+            lFeature.arrowheads({size: '5%'});
           }
         }
 
         if (feature['properties'] && feature['properties'].length > 0) {
           const properties = JSON.parse(feature['properties']);
           if (parseInt(properties['pulsing'])) {
-            const pulsingMarker = new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
+            new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
               icon: L.divIcon({
                 className: 'map-marker ' + feature.specialCharClass + '-marker',
                 html: '<span class="pulsing-marker dot"><i></i></span>'
@@ -53,13 +48,13 @@
           }
         }
 
-/*        // Add an event listener on the popup open to dynamically pan to the center.
-        lFeature.on('popupopen', function (popup) {
-          const zoom = popup.target._map.getZoom();
-          const zoom_pow = Math.pow(zoom , 3);
-          const lat_addition = zoom < 17 ? 12/zoom_pow: 3/zoom_pow;
-          popup.target._map.panTo([popup.target._latlng.lat + lat_addition, popup.target._latlng.lng])
-        });*/
+        /*        // Add an event listener on the popup open to dynamically pan to the center.
+                lFeature.on('popupopen', function (popup) {
+                  const zoom = popup.target._map.getZoom();
+                  const zoom_pow = Math.pow(zoom , 3);
+                  const lat_addition = zoom < 17 ? 12/zoom_pow: 3/zoom_pow;
+                  popup.target._map.panTo([popup.target._latlng.lat + lat_addition, popup.target._latlng.lng])
+                });*/
       });
     },
     zoomDefaultIconSize: 18,
