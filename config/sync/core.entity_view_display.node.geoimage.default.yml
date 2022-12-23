@@ -23,33 +23,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
   field_category_type:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 5
-    region: content
-  field_classname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_exclude_from_map_bounds:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 7
+    weight: 0
     region: content
   field_geoimage:
     type: entity_reference_entity_view
@@ -60,14 +42,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_place_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
   geoimage_caption:
     type: string
     label: hidden
@@ -76,10 +50,9 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
 hidden:
+  field_classname: true
+  field_exclude_from_map_bounds: true
+  field_place_type: true
   langcode: true
+  links: true

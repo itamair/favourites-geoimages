@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
-    - node.type.territorial_report
   module:
     - comment
     - contact
@@ -29,9 +28,6 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'administer nodes'
-  - 'create territorial_report content'
-  - 'delete own territorial_report content'
-  - 'edit own territorial_report content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

@@ -20,8 +20,6 @@ dependencies:
   module:
     - color_field
     - field_group
-    - field_layout
-    - layout_discovery
     - leaflet
     - link
 third_party_settings:
@@ -49,10 +47,6 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.geometry.default
 targetEntityType: paragraph
 bundle: geometry

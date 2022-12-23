@@ -13,14 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.path
   module:
     - color_field
-    - field_layout
     - geofield_311
-    - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.path.default
 targetEntityType: paragraph
 bundle: path

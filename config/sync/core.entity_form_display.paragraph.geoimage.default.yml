@@ -12,9 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.geoimage
   module:
     - field_group
-    - field_layout
     - geofield_311
-    - layout_discovery
     - svg_image
 third_party_settings:
   field_group:
@@ -33,10 +31,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage

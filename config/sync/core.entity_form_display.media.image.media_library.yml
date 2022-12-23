@@ -4,18 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
   module:
-    - field_layout
-    - layout_discovery
     - svg_image
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
+    - text
 _core:
   default_config_hash: BMLrK4zKp8-FFnMseBdT_6h6YipUsKRfbDf_3WUB5HA
 id: media.image.media_library
@@ -23,6 +18,14 @@ targetEntityType: media
 bundle: image
 mode: media_library
 content:
+  field_image_caption:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 2
+      placeholder: 'Photo Credits: <a href="https://it.wikipedia.org/wiki/Utente:Maximix" target="_blank">Wikipedia - Utente Maximix</a>'
+    third_party_settings: {  }
   field_media_image:
     type: image_image
     weight: 1
@@ -33,7 +36,7 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true

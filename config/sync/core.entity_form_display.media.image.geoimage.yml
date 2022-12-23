@@ -4,19 +4,13 @@ status: false
 dependencies:
   config:
     - core.entity_form_mode.media.geoimage
+    - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
   module:
-    - field_layout
-    - layout_discovery
     - path
     - svg_image
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 _core:
   default_config_hash: WeM0d1VqhuyGELo4SRiDJfhDQSLqfKavISEbrnlcTaE
 id: media.image.geoimage
@@ -69,4 +63,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_image_caption: true
   name: true

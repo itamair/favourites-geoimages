@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_generate_host_content
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_media_geoimage
     - image.style.map_scaled_cropped_image_900_600
@@ -33,6 +34,7 @@ content:
 hidden:
   created: true
   field_address: true
+  field_generate_host_content: true
   field_geofield: true
   langcode: true
   name: true

@@ -11,16 +11,9 @@ dependencies:
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
-    - field_layout
-    - layout_discovery
     - media_library
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.geoimage.default
 targetEntityType: node
 bundle: geoimage

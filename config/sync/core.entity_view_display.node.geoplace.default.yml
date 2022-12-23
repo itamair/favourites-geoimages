@@ -9,13 +9,13 @@ dependencies:
     - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_locations
+    - field.field.node.geoplace.field_media_image
+    - field.field.node.geoplace.field_media_slideshow
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
   module:
-    - imagefield_slideshow
     - layout_builder
     - layout_discovery
-    - link
     - text
     - user
     - viewfield
@@ -29,8 +29,57 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          ef94d742-8302-4a66-83a8-cf0446895de2:
-            uuid: ef94d742-8302-4a66-83a8-cf0446895de2
+          99a8dacc-2d71-4878-bc8f-89e5d1ba862f:
+            uuid: 99a8dacc-2d71-4878-bc8f-89e5d1ba862f
+            region: content
+            configuration:
+              id: 'field_block:node:geoplace:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          a6c22de8-8481-4475-9650-e143118d688d:
+            uuid: a6c22de8-8481-4475-9650-e143118d688d
+            region: content
+            configuration:
+              id: 'field_block:node:geoplace:field_category_type'
+              label: 'Tipo Categoria'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          9ebcab73-4a1d-46a3-a0a8-065497ff00fb:
+            uuid: 9ebcab73-4a1d-46a3-a0a8-065497ff00fb
+            region: content
+            configuration:
+              id: 'extra_field_block:node:geoplace:links'
+              label: Links
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          7994fea5-edff-4fdf-8178-7605f4ecba98:
+            uuid: 7994fea5-edff-4fdf-8178-7605f4ecba98
             region: content
             configuration:
               id: 'field_block:node:geoplace:field_link'
@@ -44,16 +93,32 @@ third_party_settings:
                 type: link
                 label: above
                 settings:
-                  trim_length: 80
+                  trim_length: 200
                   url_only: false
                   url_plain: false
-                  rel: '0'
-                  target: '0'
+                  rel: nofollow
+                  target: _blank
                 third_party_settings: {  }
-            weight: 6
+            weight: 4
             additional: {  }
-          fcb4f2d1-f439-4502-b9c7-43c31232a0fe:
-            uuid: fcb4f2d1-f439-4502-b9c7-43c31232a0fe
+          d2944fbc-d32d-494a-ace3-5d7e5614fbfb:
+            uuid: d2944fbc-d32d-494a-ace3-5d7e5614fbfb
+            region: content
+            configuration:
+              id: 'field_block:node:geoplace:field_related_content'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          de421ce9-beb3-4bec-a153-b47a9fcb5ce6:
+            uuid: de421ce9-beb3-4bec-a153-b47a9fcb5ce6
             region: content
             configuration:
               id: 'field_block:node:geoplace:title'
@@ -69,60 +134,10 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 2
+            weight: 0
             additional:
               layout_builder_styles_style:
                 node_title: node_title
-          2a822d4a-88de-450a-8b48-5b5e551612f9:
-            uuid: 2a822d4a-88de-450a-8b48-5b5e551612f9
-            region: content
-            configuration:
-              id: 'field_block:node:geoplace:field_category_type'
-              label: Categoria
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: false
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          1916585c-4f01-4bf2-a5cb-62e130adfb1c:
-            uuid: 1916585c-4f01-4bf2-a5cb-62e130adfb1c
-            region: content
-            configuration:
-              id: 'field_block:node:geoplace:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: visually_hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          f52ad1f2-8eeb-4ca2-80f7-10a4be49af8a:
-            uuid: f52ad1f2-8eeb-4ca2-80f7-10a4be49af8a
-            region: content
-            configuration:
-              id: 'field_block:node:geoplace:field_related_content'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 7
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -131,12 +146,30 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 50-50
         components:
-          e48205e4-c9b4-4acb-888e-c0e7a7b60c70:
-            uuid: e48205e4-c9b4-4acb-888e-c0e7a7b60c70
+          aaf72266-743f-4f4e-80bc-f434b3eed85c:
+            uuid: aaf72266-743f-4f4e-80bc-f434b3eed85c
             region: second
             configuration:
               id: 'field_block:node:geoplace:field_geofied_view'
-              label: 'Geofied View'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewfield_default
+                label: hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          3cd6892f-f4ba-4d41-ac0e-ce7c4d9cd4bf:
+            uuid: 3cd6892f-f4ba-4d41-ac0e-ce7c4d9cd4bf
+            region: first
+            configuration:
+              id: 'field_block:node:geoplace:field_media_slideshow'
+              label: 'Media Slideshow'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -150,32 +183,7 @@ third_party_settings:
                   always_build_output: false
                   empty_view_title: hidden
                 third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          e88c371f-7659-4c0f-ae79-07b3acd3fe53:
-            uuid: e88c371f-7659-4c0f-ae79-07b3acd3fe53
-            region: first
-            configuration:
-              id: 'field_block:node:geoplace:field_image'
-              label: Image
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: imagefield_slideshow_field_formatter
-                label: hidden
-                settings:
-                  imagefield_slideshow_style: map_scaled_cropped_image_900_600
-                  imagefield_slideshow_style_effects: fade
-                  imagefield_slideshow_style_pause: 'true'
-                  imagefield_slideshow_prev_next: 0
-                  imagefield_slideshow_transition_speed: '300'
-                  imagefield_slideshow_timeout: '4000'
-                  imagefield_slideshow_pager: 0
-                third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
 id: node.geoplace.default
@@ -196,7 +204,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_geofied_view:
     type: viewfield_default
@@ -206,33 +214,16 @@ content:
       always_build_output: false
       empty_view_title: hidden
     third_party_settings: {  }
-    weight: 3
+    weight: 1
     region: content
-  field_image:
-    type: imagefield_slideshow_field_formatter
-    label: hidden
-    settings:
-      imagefield_slideshow_style: map_scaled_cropped_image_600_400
-      imagefield_slideshow_style_effects: fade
-      imagefield_slideshow_style_pause: 'true'
-      imagefield_slideshow_transition_speed: '300'
-      imagefield_slideshow_timeout: '4000'
-      imagefield_slideshow_prev_next: 0
-      imagefield_slideshow_pager: 0
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_link:
-    type: link
+  field_media_image:
+    type: entity_reference_entity_view
     label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_related_content:
     type: entity_reference_label
@@ -240,21 +231,13 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
-    region: content
-  geoimage_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -5
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
 hidden:
+  field_image: true
+  field_link: true
   field_locations: true
+  field_media_slideshow: true
+  geoimage_caption: true
   langcode: true
+  links: true
