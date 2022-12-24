@@ -30,8 +30,12 @@
         display: none;
       }
     }
-    .node--type-historical-building, .node--type-geoplace {
+    .node--type-geoplace {
       width: 300px !important;
+      margin: 12px 8px 0;
+    }
+    .node--type-territorial-report {
+      width: 600px !important;
       margin: 12px 8px 0;
     }
     .field--type-image img, .field--name-user-picture img {
@@ -199,7 +203,7 @@
     margin-left: -60px;
   }
 }
-.leaflet-container .dot i {
+.leaflet-container .dot {
   border-style: solid;
   display: inline-block;
   box-sizing: border-box;
@@ -217,12 +221,15 @@
   pointer-events: none;
 }
 
-.leaflet-container .pulsing-marker.dot i,
-#mapbox-territorial-reports-map .pulsing-marker .dot i {
-  border-color: red;
-}
-
-.leaflet-container .low-pulsing-marker.dot i,
-#mapbox-territorial-reports-map .low-pulsing-marker .dot i {
-  border-color: orange;
+.leaflet-container .leaflet-marker-icon.pulsing-marker {
+  z-index: 1000 !important;
+  &.negative .dot {
+    border-color: orange;
+  }
+  &.very_negative .dot {
+    border-color: red;
+  }
+  &.positive .dot {
+    border-color: limegreen;
+  }
 }

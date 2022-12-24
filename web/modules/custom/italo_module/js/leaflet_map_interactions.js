@@ -35,13 +35,15 @@
           }
         }
 
+        // Pulsing Markers.
         if (feature['properties'] && feature['properties'].length > 0) {
           const properties = JSON.parse(feature['properties']);
-          if (parseInt(properties['pulsing'])) {
+          if (properties['pulsing_level'] && properties['pulsing_level'].length > 0) {
+            const pulsing_level = properties['pulsing_level'];
             new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
               icon: L.divIcon({
-                className: 'map-marker ' + feature.specialCharClass + '-marker',
-                html: '<span class="pulsing-marker dot"><i></i></span>'
+                className: pulsing_level + ' pulsing-marker',
+                html: '<span class="dot"></span>'
               }),
               iconSize: [100, 100]
             }).addTo(add_features.lMap);

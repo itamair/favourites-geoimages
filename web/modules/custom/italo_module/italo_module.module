@@ -44,9 +44,8 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
  * Generate the Geoimage Caption computed field.
  */
 function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
   if ($entity_type->id() === 'node') {
-    $fields = [];
-
     // Add a field that shows a link to the user's current company.
     $fields['geoimage_caption'] = BaseFieldDefinition::create('string')
       ->setName('geoimage_caption')
@@ -59,7 +58,49 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
         'weight' => -5,
       ]);
 
-    return $fields;
+    // Add a field that defines the Geoimage Storing Folder.
+    $fields['geoimage_storing_folder'] = BaseFieldDefinition::create('string')
+      ->setName('geoimage_storing_folder')
+      ->setLabel(t('Geoimage Storing Folder'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\italo_module\GeoimageStoringFolderFieldItemList')
+      ->setDisplayConfigurable('view', FALSE);
+
+    // Add a field that defines the Territorial Report Level, if active.
+    $fields['territorial_report_active_level'] = BaseFieldDefinition::create('string')
+      ->setName('territorial_report_active_level')
+      ->setLabel(t('Territorial Report Active Level'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\italo_module\TerritorialReportActiveLevelFieldItemList')
+      ->setDisplayConfigurable('view', TRUE);
+
+  }
+  return $fields;
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function italo_module_views_data_alter(array &$data) {
+  if (isset($data['node'])) {
+    // Add the geoimage_storing_folder field to Views.
+    $data['node']['geoimage_storing_folder'] = [
+      'title' => t('Geoimage Storing Folder'),
+      'field' => [
+        'id' => 'field',
+        'default_formatter' => 'string',
+        'field_name' => 'geoimage_storing_folder',
+      ],
+    ];
+
+    $data['node']['territorial_report_active_level'] = [
+      'title' => t('Territorial Report Active Level'),
+      'field' => [
+        'id' => 'field',
+        'default_formatter' => 'string',
+        'field_name' => 'territorial_report_active_level',
+      ],
+    ];
   }
 }
 

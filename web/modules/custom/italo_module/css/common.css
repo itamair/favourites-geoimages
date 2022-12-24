@@ -57,3 +57,18 @@ a, a.link {
   margin: 20px 0;
   line-height: 3rem;
 }
+
+/* line 58, ../sass/common.scss */
+.views-field.views-field-field-media-image .field--type-image:not(:last-child), .field--name-field-media-image .field--type-image:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+/* line 61, ../sass/common.scss */
+.views-field.views-field-field-media-image .text-content.field--name-field-image-caption, .field--name-field-media-image .text-content.field--name-field-image-caption {
+  font-size: 0.9rem;
+  color: slategray;
+}
+
+/* line 68, ../sass/common.scss */
+.media--type-image .wide-image.field--type-image {
+  margin-left: unset;
+}

@@ -29,18 +29,29 @@ class GeoimageCaptionFieldItemList extends FieldItemList {
   protected function computeValue() {
     if (!$this->isCalculated) {
       $entity = $this->getEntity();
-      if ($entity instanceof NodeInterface && $entity->bundle() === "geoimage") {
-        /** @var \Drupal\node\NodeInterface $enity */
+      $entity_bundles = ['geoimage', 'territorial_report'];
+      if ($entity instanceof NodeInterface && in_array($entity->bundle(), $entity_bundles)) {
+        /** @var \Drupal\node\NodeInterface $entity */
         /** @var \Drupal\user\UserInterface $entity_author */
         $entity_author = $entity->getOwner();
         $forename = $entity_author->field_forename->value;
         $surname = $entity_author->field_surname->value;
-        $value = $this->t('<div class="geoimage-caption"><span class="geoimage-title">@title</span> <span class="geoimage-credits">(©Credits: @forename @surname)</span></div>', [
-          '@title' => $entity->label(),
-          '@forename' => $forename,
-          '@surname' => $surname,
-        ]);
-        // $this->setValue($value);
+        switch ($entity->bundle()) {
+          case 'geoimage':
+            $value = $this->t('<div class="geoimage-caption"><span class="geoimage-title">@title</span> - <span class="geoimage-credits">Credits: @forename @surname</span></div>', [
+              '@title' => $entity->label(),
+              '@forename' => $forename,
+              '@surname' => $surname,
+            ]);
+            break;
+
+          case 'territorial_report':
+            $value = $this->t('<div class="geoimage-caption"><span class="geoimage-credits">Credits: @forename @surname</span></div>', [
+              '@forename' => $forename,
+              '@surname' => $surname,
+            ]);
+            break;
+        }
         $this->list[0] = $this->createItem(0, $value);
         $this->isCalculated = TRUE;
       }

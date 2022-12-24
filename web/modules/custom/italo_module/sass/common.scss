@@ -52,3 +52,19 @@ a, a.link {
     line-height: 3rem;
   }
 }
+
+// Media Images Captions Styling.
+.views-field.views-field-field-media-image, .field--name-field-media-image {
+  .field--type-image:not(:last-child) {
+    margin-bottom: 0.4rem;
+  }
+  .text-content.field--name-field-image-caption {
+    font-size: 0.9rem;
+    color: slategray;
+  }
+}
+
+// Media Images View
+.media--type-image .wide-image.field--type-image {
+  margin-left: unset;
+}
