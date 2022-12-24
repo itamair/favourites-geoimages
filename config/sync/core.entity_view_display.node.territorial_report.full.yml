@@ -1,0 +1,83 @@
+uuid: accc39b1-6826-40b3-b719-db1b3c02d6bc
+langcode: it
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.territorial_report.body
+    - field.field.node.territorial_report.field_active
+    - field.field.node.territorial_report.field_category_type
+    - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_geoimage
+    - field.field.node.territorial_report.field_image
+    - field.field.node.territorial_report.field_link
+    - field.field.node.territorial_report.field_locations
+    - field.field.node.territorial_report.field_media_slideshow
+    - field.field.node.territorial_report.field_related_content
+    - field.field.node.territorial_report.field_territorial_reports_type
+    - node.type.territorial_report
+  module:
+    - imagefield_slideshow
+    - text
+    - user
+    - viewfield
+id: node.territorial_report.full
+targetEntityType: node
+bundle: territorial_report
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_geofied_view:
+    type: viewfield_default
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: true
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: imagefield_slideshow_field_formatter
+    label: hidden
+    settings:
+      imagefield_slideshow_style: big
+      imagefield_slideshow_style_effects: scrollHorz
+      imagefield_slideshow_style_pause: 'false'
+      imagefield_slideshow_prev_next: '1'
+      imagefield_slideshow_transition_speed: '100'
+      imagefield_slideshow_timeout: '0'
+      imagefield_slideshow_pager: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  geoimage_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_active: true
+  field_category_type: true
+  field_geoimage: true
+  field_link: true
+  field_locations: true
+  field_media_slideshow: true
+  field_related_content: true
+  field_territorial_reports_type: true
+  langcode: true
+  territorial_report_active_level: true

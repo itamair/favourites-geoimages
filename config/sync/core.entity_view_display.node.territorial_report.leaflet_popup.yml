@@ -1,0 +1,65 @@
+uuid: d510acb7-92c0-411f-b150-82b1fed75c6d
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.leaflet_popup
+    - field.field.node.territorial_report.body
+    - field.field.node.territorial_report.field_active
+    - field.field.node.territorial_report.field_category_type
+    - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_geoimage
+    - field.field.node.territorial_report.field_image
+    - field.field.node.territorial_report.field_link
+    - field.field.node.territorial_report.field_locations
+    - field.field.node.territorial_report.field_media_slideshow
+    - field.field.node.territorial_report.field_related_content
+    - field.field.node.territorial_report.field_territorial_reports_type
+    - node.type.territorial_report
+  module:
+    - field_formatter_range
+    - user
+id: node.territorial_report.leaflet_popup
+targetEntityType: node
+bundle: territorial_report
+mode: leaflet_popup
+content:
+  field_geoimage:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: leaflet_popup
+      link: false
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 1
+        offset: 0
+    weight: 0
+    region: content
+  geoimage_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_active: true
+  field_category_type: true
+  field_geofied_view: true
+  field_image: true
+  field_link: true
+  field_locations: true
+  field_media_slideshow: true
+  field_related_content: true
+  field_territorial_reports_type: true
+  langcode: true
+  territorial_report_active_level: true

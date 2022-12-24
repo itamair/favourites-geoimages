@@ -1,0 +1,23 @@
+uuid: 5d5da807-27e0-4646-9a54-6ebd1c3ae86a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.territorial_report
+id: node.territorial_report.field_active
+field_name: field_active
+entity_type: node
+bundle: territorial_report
+label: Active
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

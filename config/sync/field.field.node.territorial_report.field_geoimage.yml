@@ -1,0 +1,29 @@
+uuid: 4356985f-8f59-4dbe-9902-e3f79e1035ae
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geoimage
+    - media.type.geoimage
+    - node.type.territorial_report
+id: node.territorial_report.field_geoimage
+field_name: field_geoimage
+entity_type: node
+bundle: territorial_report
+label: GeoImage
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      geoimage: geoimage
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

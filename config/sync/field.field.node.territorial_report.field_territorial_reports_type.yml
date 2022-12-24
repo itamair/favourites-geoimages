@@ -1,0 +1,23 @@
+uuid: 6433cfd0-310b-4b0a-80f3-3510517c7e8f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_territorial_reports_type
+    - node.type.territorial_report
+  module:
+    - options
+id: node.territorial_report.field_territorial_reports_type
+field_name: field_territorial_reports_type
+entity_type: node
+bundle: territorial_report
+label: 'Territorial Reports Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: negative
+default_value_callback: ''
+settings: {  }
+field_type: list_string

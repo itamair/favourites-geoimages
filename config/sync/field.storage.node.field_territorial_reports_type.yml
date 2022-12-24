@@ -1,0 +1,30 @@
+uuid: 3c6ec18d-47cc-46e8-b878-4b3c7be993ae
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_territorial_reports_type
+field_name: field_territorial_reports_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: positive
+      label: Positive
+    -
+      value: negative
+      label: Negative
+    -
+      value: very_negative
+      label: 'Very Negative'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
