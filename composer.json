@@ -39,23 +39,26 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/examples": "^3.0",
         "drupal/feeds": "^3.0@alpha",
+        "drupal/field_formatter_range": "^1.4",
         "drupal/field_group": "^3.4",
         "drupal/geocoder": "^3.14",
         "drupal/geofield": "^1.44",
         "drupal/geofield_map": "^3.0",
         "drupal/gin": "^3.0@beta",
+        "drupal/image_field_caption": "^1.2",
         "drupal/imagefield_slideshow": "^2.0",
         "drupal/jquery_ui": "^1.6",
         "drupal/layout_builder_styles": "^2.0",
         "drupal/layout_paragraphs": "^2.0",
         "drupal/leaflet": "^10.0",
         "drupal/masquerade": "^2.0@RC",
+        "drupal/media_entity_slideshow": "^2.5",
         "drupal/media_library_importer": "^1.0@beta",
         "drupal/openstreetmap": "^1.0@beta",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.11",
         "drupal/single_image_formatter": "^1.6",
-        "drupal/slick": "^2.6",
+        "drupal/slick": "^2.7",
         "drupal/svg_image": "^1.16",
         "drupal/token": "^1.11",
         "drupal/upgrade_status": "^3.17",
@@ -63,6 +66,7 @@
         "drupal/views_bulk_edit": "^2.8",
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_geojson": "^1.2",
+        "drupal/views_slideshow": "^4.8",
         "drupal/webprofiler": "^9.0",
         "drush/drush": "^11.0",
         "geocoder-php/arcgis-online-provider": "^4.2",
@@ -137,7 +141,9 @@
         },
         "patches": {
             "drupal/core": {
-                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch"
+                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
+                "#3145190 PHP warnings in array_flip in Drupal\\Core\\Entity\\EntityStorageBase->loadMultiple()": "https://www.drupal.org/files/issues/2022-08-17/php_warnings_in_array_flip_3145190.patch",
+                "#3302838 Querying with NULL values results in warning mb_strtolower(): Passing null to parameter is deprecated": "https://www.drupal.org/files/issues/2022-08-23/3302838-13.patch"
             },
             "drupal/color_field": {
                 "#3312329 PHP8.1 compatibility": "https://www.drupal.org/files/issues/2022-09-28/php81-compatibility-3312329-2.patch"
