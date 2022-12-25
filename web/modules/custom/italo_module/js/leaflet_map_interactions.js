@@ -25,7 +25,7 @@
       });
 
       // Interact with each feature created and added to the map.
-      $(context).on('leaflet.feature', function(e, lFeature, feature, add_features) {
+      $(context).on('leaflet.feature', function(e, lFeature, feature, add_features, layers_groups = null) {
 
         // Add Arrows effect to Paths.
         if (feature.type !== 'point' && feature.path) {
@@ -40,13 +40,23 @@
           const properties = JSON.parse(feature['properties']);
           if (properties['pulsing_level'] && properties['pulsing_level'].length > 0) {
             const pulsing_level = properties['pulsing_level'];
-            new L.Marker(new L.LatLng(feature.lat, feature.lon ), {
+            const pulsing_marker = new L.Marker(new L.LatLng(feature.lat, feature.lon), {
               icon: L.divIcon({
                 className: pulsing_level + ' pulsing-marker',
-                html: '<span class="dot"></span>'
+                html: '<span class="pulsing-marker dot"></span>',
               }),
               iconSize: [100, 100]
-            }).addTo(add_features.lMap);
+            })
+            Drupal.Leaflet.prototype.feature_bind_popup(pulsing_marker, feature);
+            if (layers_groups && layers_groups.unclustered && feature.group_label && layers_groups.unclustered.hasOwnProperty(feature.group_label)) {
+              pulsing_marker.addTo(layers_groups.unclustered[feature.group_label]);
+            }
+            else if (layers_groups && feature.group_label && layers_groups.hasOwnProperty(feature.group_label)) {
+              pulsing_marker.addTo(layers_groups[feature.group_label]);
+            }
+            else {
+              pulsing_marker.addTo(add_features.lMap);
+            }
           }
         }
 

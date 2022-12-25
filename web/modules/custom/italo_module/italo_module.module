@@ -13,6 +13,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\media\Entity\Media;
 
 /**
  * Implements hook_page_attachments().
@@ -108,23 +109,39 @@ function italo_module_views_data_alter(array &$data) {
  * Implements hook_ENTITY_TYPE_view() for node entities.
  */
 function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
-  if ($view_mode === 'full' && $node->bundle() === 'geoplace') {
-    $locations = $node->get('field_locations')->getValue();
+  $node_bundles = ['geoplace', 'territorial_report'];
+  if ($view_mode === 'full' && in_array($node->bundle(), $node_bundles)) {
     $geofields = [];
-    /** @var Drupal\leaflet\LeafletService $leafletService */
-    $leafletService = \Drupal::service('leaflet.service');
-    foreach ($locations as $location) {
-      $paragraph = Paragraph::load($location['target_id']);
-      $geofields[] = $paragraph->field_geofield->value;
+    switch ($node->bundle()) {
+      case 'geoplace':
+        $locations = $node->get('field_locations')->getValue();
+        foreach ($locations as $location) {
+          /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+          $paragraph = Paragraph::load($location['target_id']);
+          $geofields[] = $paragraph->field_geofield->value;
+        }
+        break;
+
+      case 'territorial_report':
+        $locations = $node->get('field_geoimage')->getValue();
+        foreach ($locations as $location) {
+          /** @var  \Drupal\media\Entity\Media $geo_image_media */
+          $geo_image_media = Media::load($location['target_id']);
+          $geofields[] = $geo_image_media->field_geofield->value;
+        }
+        break;
     }
-    $geofields = $leafletService->leafletProcessGeofield($geofields);
+    if (!empty($geofields)) {
+      /** @var Drupal\leaflet\LeafletService $leafletService */
+      $leafletService = \Drupal::service('leaflet.service');
+      $geofields = $leafletService->leafletProcessGeofield($geofields);
 
-    // Add DrupalSettings for forcing bounds on this specific Node.
-    $build['#attached']['drupalSettings']['leaflet']['node_forced_bounds'] = [
-      'node_id' => $node->id(),
-      'currentPath' => 'node/' . $node->id(),
-      'geofields' => $geofields,
-    ];
-
+      // Add DrupalSettings for forcing bounds on this specific Node.
+      $build['#attached']['drupalSettings']['leaflet']['node_forced_bounds'] = [
+        'node_id' => $node->id(),
+        'currentPath' => 'node/' . $node->id(),
+        'geofields' => $geofields,
+      ];
+    }
   }
 }

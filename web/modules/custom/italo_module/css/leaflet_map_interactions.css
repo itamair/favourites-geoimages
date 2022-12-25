@@ -242,23 +242,18 @@
   width: 30px;
   margin-top: -11px;
   margin-left: -11px;
-  z-index: 1000;
   pointer-events: none;
 }
 
 /* line 224, ../sass/leaflet_map_interactions.scss */
-.leaflet-container .leaflet-marker-icon.pulsing-marker {
-  z-index: 1000 !important;
-}
-/* line 226, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.negative .dot {
   border-color: orange;
 }
-/* line 229, ../sass/leaflet_map_interactions.scss */
+/* line 227, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.very_negative .dot {
   border-color: red;
 }
-/* line 232, ../sass/leaflet_map_interactions.scss */
+/* line 230, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.positive .dot {
   border-color: limegreen;
 }

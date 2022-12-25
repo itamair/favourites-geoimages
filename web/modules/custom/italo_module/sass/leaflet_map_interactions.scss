@@ -217,12 +217,10 @@
   width: 30px;
   margin-top: -11px;
   margin-left: -11px;
-  z-index: 1000;
   pointer-events: none;
 }
 
 .leaflet-container .leaflet-marker-icon.pulsing-marker {
-  z-index: 1000 !important;
   &.negative .dot {
     border-color: orange;
   }
