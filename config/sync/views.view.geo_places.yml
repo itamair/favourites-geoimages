@@ -1425,8 +1425,7 @@ display:
               field: field_category_type
               rendered: true
               overlays_options:
-                disabled_overlays:
-                  none: none
+                disabled_overlays: {  }
                 hidden_overlays_controls: {  }
           data_source:
             field_geofield: field_geofield
@@ -3057,6 +3056,70 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        geoimage_storing_folder:
+          id: geoimage_storing_folder
+          table: node
+          field: geoimage_storing_folder
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: standard
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: '{{ geoimage_storing_folder }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: 0
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
         field_classname:
           id: field_classname
           table: paragraph__field_classname
@@ -3438,7 +3501,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "sites/default/files/styles/image_map_marker/public/photo_albums/Taranto_Images/{{ field_media_geoimage }}\r\n"
+            text: 'sites/default/files/styles/image_map_marker/public/{{ geoimage_storing_folder }}/{{ field_media_geoimage }}'
             make_link: false
             path: ''
             absolute: false
@@ -3809,6 +3872,70 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        territorial_report_active_level:
+          id: territorial_report_active_level
+          table: node
+          field: territorial_report_active_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_pulsing:
           id: field_pulsing
           table: paragraph__field_pulsing
@@ -4045,6 +4172,7 @@ display:
           operator: in
           value:
             geoplace: geoplace
+            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
@@ -4129,8 +4257,7 @@ display:
               field: field_category_type
               rendered: true
               overlays_options:
-                disabled_overlays:
-                  none: none
+                disabled_overlays: {  }
                 hidden_overlays_controls: {  }
           data_source:
             field_geofield: field_geofield
@@ -4146,7 +4273,7 @@ display:
             options: '{"autoPan":true}'
             view_mode: leaflet_popup
           leaflet_map: multilayers
-          height: '500'
+          height: '600'
           height_unit: px
           hide_empty_map: true
           disable_wheel: false
@@ -4221,13 +4348,16 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing":"{{ field_pulsing }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing_level":"{{ territorial_report_active_level }}"}'
       row:
         type: fields
-        options: {  }
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
         title: false
-        use_ajax: false
         exposed_form: false
         group_by: false
         style: false
@@ -4276,7 +4406,6 @@ display:
           admin_label: 'field_place_type_icon: Media'
           plugin_id: standard
           required: false
-      use_ajax: false
       group_by: false
       display_description: ''
       header: {  }

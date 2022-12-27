@@ -3,8 +3,10 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.storage.node.field_geoimage
     - field.storage.node.field_media_image
     - node.type.geoplace
+    - node.type.territorial_report
   module:
     - node
     - user
@@ -24,6 +26,69 @@ display:
     position: 0
     display_options:
       fields:
+        field_geoimage:
+          id: field_geoimage
+          table: node__field_geoimage
+          field: field_geoimage
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: default
+          group_column: target_id
+          group_columns: {  }
+          group_rows: false
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_media_image:
           id: field_media_image
           table: node__field_media_image
@@ -195,14 +260,45 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          operator: in
           value:
             geoplace: geoplace
+            territorial_report: territorial_report
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         field_media_image_target_id:
           id: field_media_image_target_id
           table: node__field_media_image
@@ -216,7 +312,7 @@ display:
             min: ''
             max: ''
             value: ''
-          group: 1
+          group: 2
           exposed: false
           expose:
             operator_id: ''
@@ -247,6 +343,55 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_geoimage_target_id:
+          id: field_geoimage_target_id
+          table: node__field_geoimage
+          field: field_geoimage_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
       style:
         type: slideshow
         options:
@@ -275,6 +420,7 @@ display:
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
                     field_media_image: 0
+                    field_geoimage: 0
                   views_slideshow_pager_fields_hover: 0
             bottom:
               views_slideshow_controls:
@@ -296,6 +442,7 @@ display:
                 views_slideshow_pager_fields:
                   views_slideshow_pager_fields_fields:
                     field_media_image: 0
+                    field_geoimage: 0
                   views_slideshow_pager_fields_hover: 0
           views_slideshow_cycle:
             effect: fade
@@ -331,6 +478,7 @@ display:
         options:
           default_field_elements: true
           inline:
+            field_geoimage: field_geoimage
             field_media_image: field_media_image
           separator: ''
           hide_empty: false
@@ -356,9 +504,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_geoimage'
         - 'config:field.storage.node.field_media_image'
-  block_1:
-    id: block_1
+  block_media_slideshow:
+    id: block_media_slideshow
     display_title: 'Block Media Slideshow'
     display_plugin: block
     position: 1
@@ -376,4 +525,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_geoimage'
         - 'config:field.storage.node.field_media_image'

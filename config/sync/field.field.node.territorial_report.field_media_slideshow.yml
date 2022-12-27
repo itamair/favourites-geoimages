@@ -19,7 +19,7 @@ translatable: false
 default_value:
   -
     target_uuid: c699fc87-9892-437d-bd7a-3208f055949b
-    display_id: block_1
+    display_id: block_media_slideshow
     arguments: '[node:nid]'
     items_to_display: ''
     token_help: ''
@@ -46,7 +46,6 @@ settings:
     comments_recent: '0'
     content_recent: '0'
     taxonomy_term: '0'
-    territorial_reports: '0'
     view_geojson: '0'
     watchdog: '0'
     who_s_new: '0'

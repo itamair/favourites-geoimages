@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.territorial_report.field_category_type
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_geoimage
-    - field.field.node.territorial_report.field_image
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_locations
     - field.field.node.territorial_report.field_media_slideshow
@@ -17,7 +16,6 @@ dependencies:
     - field.field.node.territorial_report.field_territorial_reports_type
     - node.type.territorial_report
   module:
-    - imagefield_slideshow
     - text
     - user
     - viewfield
@@ -42,20 +40,6 @@ content:
       empty_view_title: hidden
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_image:
-    type: imagefield_slideshow_field_formatter
-    label: hidden
-    settings:
-      imagefield_slideshow_style: big
-      imagefield_slideshow_style_effects: scrollHorz
-      imagefield_slideshow_style_pause: 'false'
-      imagefield_slideshow_prev_next: '1'
-      imagefield_slideshow_transition_speed: '100'
-      imagefield_slideshow_timeout: '0'
-      imagefield_slideshow_pager: '0'
-    third_party_settings: {  }
-    weight: 1
     region: content
   geoimage_caption:
     type: string

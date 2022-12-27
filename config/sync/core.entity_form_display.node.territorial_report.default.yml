@@ -11,11 +11,10 @@ dependencies:
     - field.field.node.territorial_report.field_image
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_locations
+    - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
-    - field.field.node.territorial_report.field_territorial_report_level
     - field.field.node.territorial_report.field_territorial_reports_type
-    - field.field.node.territorial_report.field_territorial_reports_types
     - image.style.thumbnail
     - node.type.territorial_report
   module:
@@ -101,11 +100,14 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_media_image:
-    type: media_library_widget
-    weight: 5
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
     settings:
-      media_types: {  }
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_place_type:
     type: options_select

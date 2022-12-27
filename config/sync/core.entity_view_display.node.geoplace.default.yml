@@ -63,21 +63,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          9ebcab73-4a1d-46a3-a0a8-065497ff00fb:
-            uuid: 9ebcab73-4a1d-46a3-a0a8-065497ff00fb
-            region: content
-            configuration:
-              id: 'extra_field_block:node:geoplace:links'
-              label: Links
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
           7994fea5-edff-4fdf-8178-7605f4ecba98:
             uuid: 7994fea5-edff-4fdf-8178-7605f4ecba98
             region: content
@@ -138,6 +123,21 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 node_title: node_title
+          9ebcab73-4a1d-46a3-a0a8-065497ff00fb:
+            uuid: 9ebcab73-4a1d-46a3-a0a8-065497ff00fb
+            region: content
+            configuration:
+              id: 'extra_field_block:node:geoplace:links'
+              label: Links
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -241,3 +241,4 @@ hidden:
   geoimage_caption: true
   langcode: true
   links: true
+  territorial_report_active_level: true
