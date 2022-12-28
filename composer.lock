@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30095685b796a9040ea44c1e7caf2476",
+    "content-hash": "d02eab99fe2ca1fec21ce3dab4bb2100",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5441,6 +5441,70 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/uikit",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/uikit.git",
+                "reference": "5981edf2a11abaffba8409331de7d6ee1b769afe"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.15+7-dev",
+                    "datestamp": "1622399919",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/ScriptHandler.php"
+                ]
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "subtheme": [
+                    "Drupal\\uikit\\ScriptHandler::subtheme"
+                ]
+            },
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Richard Buchanan (richard-buchanan)",
+                    "homepage": "https://www.drupal.org/u/richard-buchanan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andy Blum (andy-blum)",
+                    "homepage": "https://www.drupal.org/u/andy-blum",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Philip Frilling (pfrilling)",
+                    "homepage": "https://www.drupal.org/u/pfrilling",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A lightweight frontend framework with a comprehensive collection of HTML, CSS, and JS components.",
+            "homepage": "https://www.drupal.org/project/uikit",
+            "support": {
+                "source": "http://cgit.drupalcode.org/uikit",
+                "docs": "http://uikit-drupal.com",
+                "issues": "https://www.drupal.org/project/issues/uikit"
             }
         },
         {
@@ -11904,6 +11968,7 @@
         "drupal/masquerade": 5,
         "drupal/media_library_importer": 10,
         "drupal/openstreetmap": 10,
+        "drupal/uikit": 20,
         "drupal/viewfield": 10
     },
     "prefer-stable": true,
