@@ -108,9 +108,13 @@
     display: none;
   }
   /* line 89, ../sass/leaflet_map_interactions.scss */
-  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-historical-building, .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
     width: 300px !important;
     margin: 8px;
+  }
+  /* line 93, ../sass/leaflet_map_interactions.scss */
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-territorial-report {
+    width: 360px !important;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -118,14 +122,18 @@
   .leaflet-popup-content-wrapper .leaflet-popup-content {
     max-width: 360px;
   }
-  /* line 98, ../sass/leaflet_map_interactions.scss */
+  /* line 101, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoimage {
     width: 360px !important;
     margin: 0;
   }
-  /* line 102, ../sass/leaflet_map_interactions.scss */
-  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-historical-building, .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
+  /* line 105, ../sass/leaflet_map_interactions.scss */
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
     width: 220px !important;
+  }
+  /* line 108, ../sass/leaflet_map_interactions.scss */
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-territorial-report {
+    width: 320px !important;
   }
 }
 @media only screen and (max-width: 380px) {
@@ -133,54 +141,58 @@
   .leaflet-popup-content-wrapper .leaflet-popup-content {
     max-width: 300px;
   }
-  /* line 110, ../sass/leaflet_map_interactions.scss */
+  /* line 116, ../sass/leaflet_map_interactions.scss */
   .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoimage {
     width: 300px !important;
   }
-  /* line 113, ../sass/leaflet_map_interactions.scss */
-  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-historical-building, .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
+  /* line 119, ../sass/leaflet_map_interactions.scss */
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-geoplace {
     width: 200px !important;
+  }
+  /* line 122, ../sass/leaflet_map_interactions.scss */
+  .leaflet-popup-content-wrapper .leaflet-popup-content .node--type-territorial-report {
+    width: 320px !important;
   }
 }
 
-/* line 123, ../sass/leaflet_map_interactions.scss */
+/* line 132, ../sass/leaflet_map_interactions.scss */
 .leaflet-container a.leaflet-popup-close-button {
   top: 12px;
 }
 
-/* line 128, ../sass/leaflet_map_interactions.scss */
+/* line 137, ../sass/leaflet_map_interactions.scss */
 .leaflet-control-geocoder-container input {
   font-size: 1rem;
 }
 
-/* line 134, ../sass/leaflet_map_interactions.scss */
+/* line 143, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.up-to-the-top {
   z-index: 1000 !important;
 }
-/* line 137, ../sass/leaflet_map_interactions.scss */
+/* line 146, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50 {
   opacity: 30% !important;
 }
-/* line 140, ../sass/leaflet_map_interactions.scss */
+/* line 149, ../sass/leaflet_map_interactions.scss */
 .leaflet-pane .leaflet-marker-icon.opacity-50:hover {
   opacity: 100% !important;
 }
 
-/* line 147, ../sass/leaflet_map_interactions.scss */
+/* line 156, ../sass/leaflet_map_interactions.scss */
 .leaflet-control-layers-list label {
   margin-bottom: 4px;
 }
-/* line 150, ../sass/leaflet_map_interactions.scss */
+/* line 159, ../sass/leaflet_map_interactions.scss */
 .leaflet-control-layers-list input[type="radio"] {
   margin-right: 4px;
   height: 1.2rem;
   width: 1.2rem;
 }
-/* line 154, ../sass/leaflet_map_interactions.scss */
+/* line 163, ../sass/leaflet_map_interactions.scss */
 .leaflet-control-layers-list input[type="radio"]:checked {
   background-size: 0.6rem;
 }
-/* line 158, ../sass/leaflet_map_interactions.scss */
+/* line 167, ../sass/leaflet_map_interactions.scss */
 .leaflet-control-layers-list input[type="checkbox"] {
   margin-right: 4px;
   height: 1.2rem;
@@ -227,7 +239,7 @@
     margin-left: -60px;
   }
 }
-/* line 206, ../sass/leaflet_map_interactions.scss */
+/* line 215, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .dot {
   border-style: solid;
   display: inline-block;
@@ -245,15 +257,15 @@
   pointer-events: none;
 }
 
-/* line 224, ../sass/leaflet_map_interactions.scss */
+/* line 233, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.negative .dot {
   border-color: orange;
 }
-/* line 227, ../sass/leaflet_map_interactions.scss */
+/* line 236, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.very_negative .dot {
   border-color: red;
 }
-/* line 230, ../sass/leaflet_map_interactions.scss */
+/* line 239, ../sass/leaflet_map_interactions.scss */
 .leaflet-container .leaflet-marker-icon.pulsing-marker.positive .dot {
   border-color: limegreen;
 }

@@ -86,9 +86,12 @@
           display: none;
         }
       }
-      .node--type-historical-building, .node--type-geoplace {
+      .node--type-geoplace {
         width: 300px !important;
         margin: 8px;
+      }
+      .node--type-territorial-report {
+        width: 360px !important;
       }
     }
 
@@ -99,8 +102,11 @@
         width: 360px !important;
         margin: 0;
       }
-      .node--type-historical-building, .node--type-geoplace {
+      .node--type-geoplace {
         width: 220px !important;
+      }
+      .node--type-territorial-report {
+        width: 320px !important;
       }
     }
 
@@ -110,8 +116,11 @@
       .node--type-geoimage {
         width: 300px !important;
       }
-      .node--type-historical-building, .node--type-geoplace {
+      .node--type-geoplace {
         width: 200px !important;
+      }
+      .node--type-territorial-report {
+        width: 320px !important;
       }
     }
 
