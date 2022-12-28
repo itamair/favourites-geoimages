@@ -9,7 +9,7 @@ id: node.geoplace.field_related_content
 field_name: field_related_content
 entity_type: node
 bundle: geoplace
-label: 'Related Content'
+label: 'Contenuto Correlato'
 description: ''
 required: false
 translatable: false

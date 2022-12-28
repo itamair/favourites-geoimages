@@ -4172,7 +4172,6 @@ display:
           operator: in
           value:
             geoplace: geoplace
-            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
