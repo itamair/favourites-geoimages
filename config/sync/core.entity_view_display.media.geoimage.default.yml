@@ -18,7 +18,7 @@ mode: default
 content:
   field_media_geoimage:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
       image_style: map_scaled_cropped_image_900_600

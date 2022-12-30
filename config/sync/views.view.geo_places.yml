@@ -17,7 +17,6 @@ dependencies:
     - field.storage.paragraph.field_fill_color
     - field.storage.paragraph.field_fill_opacity
     - field.storage.paragraph.field_geofield
-    - field.storage.paragraph.field_image
     - field.storage.paragraph.field_location_icon
     - field.storage.paragraph.field_location_icon_width
     - field.storage.paragraph.field_markercluster_exclude
@@ -511,76 +510,6 @@ display:
             svg_render_as_image: true
             image_loading:
               attribute: lazy
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_image_1:
-          id: field_image_1
-          table: paragraph__field_image
-          field: field_image
-          relationship: field_locations
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: '{{ field_image_2 }}'
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: content
-            image_style: cropped_map_image_
-            svg_attributes:
-              width: null
-              height: null
-            svg_render_as_image: true
-            image_loading:
-              attribute: eager
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1425,11 +1354,14 @@ display:
               field: field_category_type
               rendered: true
               overlays_options:
-                disabled_overlays: {  }
-                hidden_overlays_controls: {  }
+                disabled_overlays:
+                  none: none
+                hidden_overlays_controls:
+                  none: none
           data_source:
             field_geofield: field_geofield
             field_geofield_1: field_geofield_1
+            field_geofield_2: field_geofield_2
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
           name_field: title
@@ -1521,7 +1453,8 @@ display:
         type: fields
         options:
           default_field_elements: true
-          inline: {  }
+          inline:
+            field_media_geoimage_1: field_media_geoimage_1
           separator: ''
           hide_empty: false
       query:
@@ -1574,7 +1507,6 @@ display:
         - 'config:field.storage.paragraph.field_fill_color'
         - 'config:field.storage.paragraph.field_fill_opacity'
         - 'config:field.storage.paragraph.field_geofield'
-        - 'config:field.storage.paragraph.field_image'
         - 'config:field.storage.paragraph.field_location_icon'
         - 'config:field.storage.paragraph.field_location_icon_width'
         - 'config:field.storage.paragraph.field_stroke_color'
@@ -4172,6 +4104,7 @@ display:
           operator: in
           value:
             geoplace: geoplace
+            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
@@ -4716,6 +4649,70 @@ display:
           plugin_id: field
           label: ''
           exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: geofield_default
+          settings:
+            output_format: wkt
+            output_escape: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_geofield_2:
+          id: field_geofield_2
+          table: media__field_geofield
+          field: field_geofield
+          relationship: field_geoimage_1
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -5716,6 +5713,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_media_geoimage_1:
+          id: field_media_geoimage_1
+          table: media__field_media_geoimage
+          field: field_media_geoimage
+          relationship: field_geoimage_1
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: 'sites/default/files/styles/image_map_marker/public/{{ geoimage_storing_folder }}/{{ field_media_geoimage_1 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: '{{ field_location_icon }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image_file_name
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_media_geoimage:
           id: field_media_geoimage
           table: media__field_media_geoimage
@@ -6273,7 +6332,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: '{{ field_location_icon }}'
+          empty: '{{ field_media_geoimage_1 }}'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
@@ -6564,6 +6623,15 @@ display:
           relationship: field_location_type
           group_type: group
           admin_label: 'field_place_type_icon: Media'
+          plugin_id: standard
+          required: false
+        field_geoimage_1:
+          id: field_geoimage_1
+          table: paragraph__field_geoimage
+          field: field_geoimage
+          relationship: field_locations
+          group_type: group
+          admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
       group_by: false

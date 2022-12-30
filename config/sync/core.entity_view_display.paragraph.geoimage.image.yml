@@ -5,32 +5,21 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.image
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
-    - field.field.paragraph.geoimage.field_geofield
-    - field.field.paragraph.geoimage.field_image
-    - field.field.paragraph.geoimage.field_location_icon_width
-    - field.field.paragraph.geoimage.field_title
-    - image.style.medium
+    - field.field.paragraph.geoimage.field_geoimage
     - paragraphs.paragraphs_type.geoimage
-  module:
-    - svg_image
 id: paragraph.geoimage.image
 targetEntityType: paragraph
 bundle: geoimage
 mode: image
 content:
-  field_image:
-    type: image
+  field_geoimage:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: medium
-      image_loading:
-        attribute: lazy
+      view_mode: leaflet_popup
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   field_exclude_from_map_bounds: true
-  field_geofield: true
-  field_location_icon_width: true
-  field_title: true

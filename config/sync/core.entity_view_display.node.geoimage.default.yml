@@ -6,11 +6,14 @@ dependencies:
     - field.field.node.geoimage.body
     - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
+    - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
+    - entity_reference_revisions
+    - field_formatter_range
     - text
     - user
 id: node.geoimage.default
@@ -23,7 +26,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_category_type:
     type: entity_reference_label
@@ -32,6 +35,19 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 3
     region: content
   field_geoimage:
     type: entity_reference_entity_view
@@ -48,7 +64,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   field_classname: true
@@ -56,3 +72,4 @@ hidden:
   field_place_type: true
   langcode: true
   links: true
+  territorial_report_active_level: true

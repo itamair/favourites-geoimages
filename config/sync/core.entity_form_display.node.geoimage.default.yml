@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.geoimage.body
     - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
+    - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
     - media_library
+    - paragraphs
     - path
     - text
 id: node.geoimage.default
@@ -52,6 +54,24 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_components:
+    type: paragraphs
+    weight: 27
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_exclude_from_map_bounds:
     type: boolean_checkbox

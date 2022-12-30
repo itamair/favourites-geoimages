@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_locations
+    - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_territorial_reports_type
@@ -51,6 +52,7 @@ hidden:
   field_geoimage: true
   field_link: true
   field_locations: true
+  field_media_image: true
   field_media_slideshow: true
   field_related_content: true
   field_territorial_reports_type: true

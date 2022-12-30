@@ -11,11 +11,13 @@ dependencies:
     - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_locations
+    - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_territorial_reports_type
     - node.type.territorial_report
   module:
+    - entity_reference_revisions
     - field_formatter_range
     - user
 id: node.territorial_report.leaflet_popup
@@ -36,18 +38,31 @@ content:
         offset: 0
     weight: 0
     region: content
+  field_locations:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: image
+      link: ''
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 1
+        offset: 0
+    weight: 1
+    region: content
   geoimage_caption:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   body: true
@@ -55,7 +70,7 @@ hidden:
   field_category_type: true
   field_geofied_view: true
   field_link: true
-  field_locations: true
+  field_media_image: true
   field_media_slideshow: true
   field_related_content: true
   field_territorial_reports_type: true

@@ -1,20 +1,18 @@
-uuid: ca61966d-4377-4a5b-a470-20f08c7c738b
-langcode: en
+uuid: 8455d3e8-d691-4352-9be0-7312d4570037
+langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_locations
-    - node.type.territorial_report
+    - field.storage.node.field_components
+    - node.type.geoimage
     - paragraphs.paragraphs_type.geoimage
-    - paragraphs.paragraphs_type.geometry
-    - paragraphs.paragraphs_type.location
   module:
     - entity_reference_revisions
-id: node.territorial_report.field_locations
-field_name: field_locations
+id: node.geoimage.field_components
+field_name: field_components
 entity_type: node
-bundle: territorial_report
-label: Locations
+bundle: geoimage
+label: Components
 description: ''
 required: false
 translatable: false
@@ -25,23 +23,21 @@ settings:
   handler_settings:
     target_bundles:
       geoimage: geoimage
-      geometry: geometry
-      location: location
     negate: 0
     target_bundles_drag_drop:
       from_library:
         weight: 6
         enabled: false
       geoimage:
-        weight: 5
-        enabled: true
-      geometry:
-        weight: 6
-        enabled: true
-      location:
         weight: 7
         enabled: true
-      path:
+      geometry:
         weight: 8
+        enabled: false
+      location:
+        weight: 9
+        enabled: false
+      path:
+        weight: 10
         enabled: false
 field_type: entity_reference_revisions

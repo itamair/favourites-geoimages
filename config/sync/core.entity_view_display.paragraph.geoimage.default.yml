@@ -4,15 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
-    - field.field.paragraph.geoimage.field_geofield
-    - field.field.paragraph.geoimage.field_image
-    - field.field.paragraph.geoimage.field_location_icon_width
-    - field.field.paragraph.geoimage.field_title
-    - image.style.map_scaled_cropped_image_900_600
+    - field.field.paragraph.geoimage.field_geoimage
     - paragraphs.paragraphs_type.geoimage
-  module:
-    - leaflet
-    - svg_image
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage
@@ -20,130 +13,21 @@ mode: default
 content:
   field_exclude_from_map_bounds:
     type: boolean
-    label: above
+    label: inline
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
-  field_geofield:
-    type: leaflet_formatter_default
+  field_geoimage:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      multiple_map: false
-      leaflet_map: multilayers
-      height: 600
-      height_unit: px
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
-      reset_map:
-        control: false
-        position: topright
-      locate:
-        control: false
-        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
-        automatic: false
-      leaflet_tooltip:
-        value: ''
-        options: '{"permanent":false,"direction":"center"}'
-      popup: false
-      popup_content: ''
-      leaflet_popup:
-        control: ''
-        content: ''
-        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
-        value: ''
-        view_mode: full
-      map_position:
-        force: false
-        center:
-          lat: !!float 0
-          lon: !!float 0
-        zoom: 14
-        minZoom: 4
-        maxZoom: 18
-        zoomFiner: 0
-      icon:
-        iconType: marker
-        iconUrl: ''
-        shadowUrl: ''
-        className: ''
-        iconSize:
-          x: ''
-          'y': ''
-        iconAnchor:
-          x: ''
-          'y': ''
-        shadowSize:
-          x: ''
-          'y': ''
-        shadowAnchor:
-          x: ''
-          'y': ''
-        popupAnchor:
-          x: ''
-          'y': ''
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
-      leaflet_markercluster:
-        control: false
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
-      fullscreen:
-        control: false
-        options: '{"position":"topleft","pseudoFullscreen":false}'
-      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2"}'
-      feature_properties:
-        values: ''
-      geocoder:
-        control: false
-        settings:
-          position: topright
-          input_size: 25
-          providers:
-            arcgisonline:
-              weight: 0
-              checked: false
-            file:
-              weight: 0
-              checked: false
-            googlemaps:
-              weight: 0
-              checked: false
-          min_terms: 4
-          delay: 800
-          zoom: 16
-          popup: false
-          options: ''
-      weight: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: map_scaled_cropped_image_900_600
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_loading:
-        attribute: eager
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
-  field_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-hidden:
-  field_location_icon_width: true
+hidden: {  }

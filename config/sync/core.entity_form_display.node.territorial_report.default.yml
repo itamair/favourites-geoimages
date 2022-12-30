@@ -8,14 +8,12 @@ dependencies:
     - field.field.node.territorial_report.field_category_type
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_geoimage
-    - field.field.node.territorial_report.field_image
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_locations
     - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_territorial_reports_type
-    - image.style.thumbnail
     - node.type.territorial_report
   module:
     - field_layout
@@ -23,7 +21,6 @@ dependencies:
     - media_library
     - paragraphs
     - path
-    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -94,14 +91,15 @@ content:
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: geoimage
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
   field_media_image:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 27
     region: content
     settings:
       match_operator: CONTAINS
