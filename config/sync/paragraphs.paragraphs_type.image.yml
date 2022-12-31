@@ -1,0 +1,15 @@
+uuid: 7663e43c-f95e-4f27-bac2-050085c3544b
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: image
+label: Image
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

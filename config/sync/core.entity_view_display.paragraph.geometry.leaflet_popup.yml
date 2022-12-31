@@ -1,9 +1,9 @@
-uuid: b4ef20a7-debd-4008-9876-eb99cd0c0548
+uuid: 12ab4b37-e9cb-43be-a7e9-c739a1007d7f
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.address
+    - core.entity_view_mode.paragraph.leaflet_popup
     - field.field.paragraph.geometry.field_arrowed
     - field.field.paragraph.geometry.field_exclude_from_map_bounds
     - field.field.paragraph.geometry.field_fill_color
@@ -24,10 +24,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.geometry.address
+id: paragraph.geometry.leaflet_popup
 targetEntityType: paragraph
 bundle: geometry
-mode: address
+mode: leaflet_popup
 content: {  }
 hidden:
   field_arrowed: true

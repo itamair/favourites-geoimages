@@ -1,9 +1,9 @@
-uuid: 6785d8c1-94ba-4f0b-bfff-43bd91ee5be3
+uuid: 8f9c2c5f-5665-4177-a813-d96ce96a96ee
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.address
+    - core.entity_view_mode.paragraph.leaflet_popup
     - field.field.paragraph.location.field_address
     - field.field.paragraph.location.field_classname
     - field.field.paragraph.location.field_exclude_from_map_bounds
@@ -23,10 +23,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.location.address
+id: paragraph.location.leaflet_popup
 targetEntityType: paragraph
 bundle: location
-mode: address
+mode: leaflet_popup
 content:
   field_address:
     type: string
