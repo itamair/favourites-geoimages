@@ -34,8 +34,8 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
   // Avoiding Paragraphs Duplications in Geoplaces Leaflet View Map.
   // @see https://www.drupal.org/project/paragraphs/issues/2941499
   if ($view->storage->id() == 'geo_places' && $query instanceof Sql) {
-    $query->addField('paragraphs_item_field_data_node__field_locations', 'id', '', ['function' => 'groupby']);
-    $query->addGroupBy('paragraphs_item_field_data_node__field_locations.id');
+    $query->addField('paragraphs_item_field_data_node__field_components', 'id', '', ['function' => 'groupby']);
+    $query->addGroupBy('paragraphs_item_field_data_node__field_components.id');
   }
 }
 
