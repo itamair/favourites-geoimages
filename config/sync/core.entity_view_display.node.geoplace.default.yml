@@ -153,9 +153,12 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:geoplace:field_geofied_view'
+              label: 'Geofied View'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: viewfield_default
                 label: hidden

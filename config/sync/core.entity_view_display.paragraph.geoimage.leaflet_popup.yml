@@ -1,21 +1,28 @@
-uuid: 7d54a790-9a3e-4716-bbf2-716179eb3c7e
+uuid: 2ef541bb-7b33-46ef-a0b2-fab0ad9cd603
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.leaflet_popup
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geoimage
     - paragraphs.paragraphs_type.geoimage
-id: paragraph.geoimage.default
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.geoimage.leaflet_popup
 targetEntityType: paragraph
 bundle: geoimage
-mode: default
+mode: leaflet_popup
 content:
   field_geoimage:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: leaflet_popup
       link: false
     third_party_settings: {  }
     weight: 0

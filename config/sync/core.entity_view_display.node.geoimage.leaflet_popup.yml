@@ -13,6 +13,8 @@ dependencies:
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
+    - entity_reference_revisions
+    - field_formatter_range
     - layout_builder
     - user
 third_party_settings:
@@ -24,13 +26,17 @@ targetEntityType: node
 bundle: geoimage
 mode: leaflet_popup
 content:
-  field_geoimage:
-    type: entity_reference_entity_view
+  field_components:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: leaflet_popup
-      link: false
-    third_party_settings: {  }
+      link: ''
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
     weight: 0
     region: content
   geoimage_caption:
@@ -58,8 +64,8 @@ hidden:
   body: true
   field_category_type: true
   field_classname: true
-  field_components: true
   field_exclude_from_map_bounds: true
+  field_geoimage: true
   field_place_type: true
   langcode: true
   territorial_report_active_level: true

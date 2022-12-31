@@ -1,6 +1,6 @@
 uuid: 9d288eb5-63d4-4c06-b8ad-faeec9acd0e5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.paragraph.image
