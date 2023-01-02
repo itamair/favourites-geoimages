@@ -107,30 +107,48 @@ function italo_module_views_data_alter(array &$data) {
 
 /**
  * Implements hook_ENTITY_TYPE_view() for node entities.
+ *
+ * Define leaflet 'node_forced_bounds' for specific Node Bundles to dynamically
+ * zoom the Leaflet Map on those referenced by the Node being Viewed.
  */
 function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  // Define an array on Node Bundles to which apply this functional logic.
   $node_bundles = ['geoplace', 'territorial_report'];
   if ($view_mode === 'full' && in_array($node->bundle(), $node_bundles)) {
+    // Initialise a geofield array that will be populated with Geo Points of
+    // Forced Leaflet Map Bounds.
     $geofields = [];
     switch ($node->bundle()) {
       case 'geoplace':
-        $locations = $node->get('field_locations')->getValue();
-        foreach ($locations as $location) {
-          /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-          $paragraph = Paragraph::load($location['target_id']);
-          $geofields[] = $paragraph->field_geofield->value;
-        }
-        break;
-
       case 'territorial_report':
-        $locations = $node->get('field_geoimage')->getValue();
-        foreach ($locations as $location) {
-          /** @var  \Drupal\media\Entity\Media $geo_image_media */
-          $geo_image_media = Media::load($location['target_id']);
-          $geofields[] = $geo_image_media->field_geofield->value;
+        // Extract Paragraphs components from the field_components.
+        $components = $node->get('field_components')->getValue();
+        foreach ($components as $component) {
+          /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+          $paragraph = Paragraph::load($component['target_id']);
+
+          // If the Component paragraph already contains a geofield use and
+          // add it.
+          if ($paragraph->field_geofield) {
+            $geofields[] = $paragraph->field_geofield->value;
+          }
+          // Otherwise look for the field_geoimage that should contain Geoimage
+          // Media reference, with geofield into it.
+          else if ($paragraph->field_geoimage) {
+            $media_references = $paragraph->get('field_geoimage')->getValue();
+            foreach ($media_references as $media_reference) {
+              /** @var \Drupal\media\Entity\Media $paragraph */
+              $media = Media::load($media_reference['target_id']);
+              if ($media->field_geofield) {
+                $geofields[] = $media->field_geofield->value;
+              }
+            }
+          }
         }
         break;
     }
+    // if the geofields array is not empty, use it to generate the Forced
+    // Leaflet Map Bounds, and pass it into attached js drupalsettings.
     if (!empty($geofields)) {
       /** @var Drupal\leaflet\LeafletService $leafletService */
       $leafletService = \Drupal::service('leaflet.service');
