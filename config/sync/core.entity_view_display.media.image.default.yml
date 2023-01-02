@@ -41,7 +41,9 @@ content:
     region: content
 hidden:
   created: true
+  geoimage_caption: true
   langcode: true
   name: true
+  territorial_report_active_level: true
   thumbnail: true
   uid: true

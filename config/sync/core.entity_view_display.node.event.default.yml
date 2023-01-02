@@ -3,17 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.node.event.title
     - field.field.node.event.body
+    - field.field.node.event.field_category_type
+    - field.field.node.event.field_components
     - field.field.node.event.field_geofied_view
-    - field.field.node.event.field_image
     - field.field.node.event.field_link
-    - field.field.node.event.field_locations
-    - image.style.large
+    - field.field.node.event.field_media_slideshow
     - node.type.event
   module:
+    - entity_reference_revisions
     - field_group
+    - layout_builder
+    - layout_discovery
     - link
-    - svg_image
     - text
     - user
     - viewfield
@@ -21,12 +24,12 @@ third_party_settings:
   field_group:
     group_tabs:
       children:
-        - group_main_view_map
         - group_field_map
+        - group_main_view_map
       label: Tabs
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: accordion
       format_settings:
         classes: ''
@@ -34,12 +37,11 @@ third_party_settings:
         effect: bounceslide
     group_field_map:
       children:
-        - field_image
         - body
       label: 'Field Map'
       parent_name: group_tabs
       region: content
-      weight: 3
+      weight: 0
       format_type: accordion_item
       format_settings:
         classes: ''
@@ -58,6 +60,151 @@ third_party_settings:
         classes: ''
         id: ''
         formatter: closed
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          6daa3c2b-f2df-400e-a467-c7cf0b311e18:
+            uuid: 6daa3c2b-f2df-400e-a467-c7cf0b311e18
+            region: content
+            configuration:
+              id: 'field_block:node:event:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          4a663e63-7149-4300-bc33-c141698a3185:
+            uuid: 4a663e63-7149-4300-bc33-c141698a3185
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          017de955-1e0c-4b0a-b3ed-f2e9f4d550b9:
+            uuid: 017de955-1e0c-4b0a-b3ed-f2e9f4d550b9
+            region: content
+            configuration:
+              id: 'extra_field_block:node:event:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 5
+            additional: {  }
+          3e4204d6-88f7-4909-8df7-e77b4f6ac173:
+            uuid: 3e4204d6-88f7-4909-8df7-e77b4f6ac173
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_category_type'
+              label: 'Category Type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          1981cabe-4693-42dc-95ef-745c022ede72:
+            uuid: 1981cabe-4693-42dc-95ef-745c022ede72
+            region: content
+            configuration:
+              id: 'field_block:node:event:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                node_title: node_title
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          0ed34853-bfe4-4839-98eb-c63b533813e4:
+            uuid: 0ed34853-bfe4-4839-98eb-c63b533813e4
+            region: first
+            configuration:
+              id: 'field_block:node:event:field_media_slideshow'
+              label: 'Media Slideshow'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: viewfield_default
+                label: hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          022abc90-198e-4830-8792-2f2a46c16e68:
+            uuid: 022abc90-198e-4830-8792-2f2a46c16e68
+            region: second
+            configuration:
+              id: 'field_block:node:event:field_geofied_view'
+              label: 'Geofied View'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: viewfield_default
+                label: hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -70,6 +217,23 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_category_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_geofied_view:
     type: viewfield_default
     label: hidden
@@ -79,17 +243,6 @@ content:
       empty_view_title: hidden
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: large
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_link:
     type: link
@@ -103,11 +256,21 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_media_slideshow:
+    type: viewfield_default
+    label: above
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 6
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
 hidden:
-  field_locations: true
   langcode: true
+  territorial_report_active_level: true

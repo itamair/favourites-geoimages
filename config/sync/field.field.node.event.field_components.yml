@@ -1,46 +1,54 @@
-uuid: 9b8fc200-dd8f-49f9-a72d-51898c192307
-langcode: en
+uuid: 5de73736-5a30-4cdd-a3ac-02f610c05785
+langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_locations
+    - field.storage.node.field_components
     - node.type.event
     - paragraphs.paragraphs_type.geoimage
     - paragraphs.paragraphs_type.geometry
+    - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.location
     - paragraphs.paragraphs_type.path
   module:
     - entity_reference_revisions
-id: node.event.field_locations
-field_name: field_locations
+id: node.event.field_components
+field_name: field_components
 entity_type: node
 bundle: event
-label: Locations
+label: Components
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      location: location
-      geometry: geometry
       geoimage: geoimage
+      geometry: geometry
+      image: image
+      location: location
       path: path
     negate: 0
     target_bundles_drag_drop:
+      from_library:
+        weight: 7
+        enabled: false
       geoimage:
-        weight: 5
+        weight: 8
         enabled: true
       geometry:
-        weight: 3
+        weight: 9
+        enabled: true
+      image:
+        weight: 10
         enabled: true
       location:
-        weight: 2
+        weight: 11
         enabled: true
       path:
-        weight: 6
+        weight: 12
         enabled: true
 field_type: entity_reference_revisions

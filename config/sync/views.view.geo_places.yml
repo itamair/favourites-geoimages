@@ -27,6 +27,7 @@ dependencies:
     - field.storage.paragraph.field_zindex
     - image.style.cropped_map_image_
     - image.style.image_map_marker
+    - node.type.event
     - node.type.geoimage
     - node.type.geoplace
     - node.type.territorial_report
@@ -3204,6 +3205,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            event: event
             geoplace: geoplace
             territorial_report: territorial_report
           group: 1
@@ -5166,6 +5168,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            event: event
             geoimage: geoimage
             geoplace: geoplace
             territorial_report: territorial_report

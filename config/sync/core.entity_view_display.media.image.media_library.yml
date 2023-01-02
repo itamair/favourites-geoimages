@@ -43,6 +43,8 @@ content:
 hidden:
   created: true
   field_media_image: true
+  geoimage_caption: true
   langcode: true
   name: true
+  territorial_report_active_level: true
   uid: true

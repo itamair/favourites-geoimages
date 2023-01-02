@@ -12,7 +12,6 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
-    - field.field.paragraph.location.field_pulsing
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
@@ -165,16 +164,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_pulsing:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_title:
     type: string

@@ -13,7 +13,6 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
-    - field.field.paragraph.location.field_pulsing
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - image.style.geofield_map_default_icon_style
@@ -45,6 +44,5 @@ hidden:
   field_location_type: true
   field_marker_icon_path: true
   field_markercluster_exclude: true
-  field_pulsing: true
   field_title: true
   field_zindex: true

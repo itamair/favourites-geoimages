@@ -12,7 +12,6 @@ dependencies:
     - field.field.paragraph.location.field_location_type
     - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
-    - field.field.paragraph.location.field_pulsing
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - image.style.thumbnail
@@ -161,13 +160,6 @@ content:
   field_markercluster_exclude:
     type: boolean_checkbox
     weight: 14
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_pulsing:
-    type: boolean_checkbox
-    weight: 17
     region: content
     settings:
       display_label: true
