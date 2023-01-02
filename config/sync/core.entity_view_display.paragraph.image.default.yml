@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
+  module:
+    - field_formatter_range
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
@@ -12,11 +14,15 @@ mode: default
 content:
   field_image:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
     weight: 0
     region: content
 hidden: {  }

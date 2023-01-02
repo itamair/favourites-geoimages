@@ -3,14 +3,16 @@ langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_geoimage
-    - field.storage.node.field_media_image
     - field.storage.paragraph.field_geoimage
+    - field.storage.paragraph.field_image
+    - image.style.map_scaled_cropped_image_900_600
     - node.type.geoplace
     - node.type.territorial_report
   module:
+    - media
     - node
     - paragraphs
+    - slick
     - user
     - views_slideshow
 id: media_slideshow
@@ -28,137 +30,11 @@ display:
     position: 0
     display_options:
       fields:
-        field_geoimage:
-          id: field_geoimage
-          table: node__field_geoimage
-          field: field_geoimage
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: default
-          group_column: target_id
-          group_columns: {  }
-          group_rows: false
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_media_image:
-          id: field_media_image
-          table: node__field_media_image
-          field: field_media_image
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
-          settings:
-            view_mode: default
-          group_column: target_id
-          group_columns: {  }
-          group_rows: false
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_geoimage_1:
           id: field_geoimage_1
           table: paragraph__field_geoimage
           field: field_geoimage
-          relationship: field_locations
+          relationship: field_components
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -204,9 +80,121 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_view
+          type: media_thumbnail
           settings:
-            view_mode: default
+            image_link: ''
+            image_style: map_scaled_cropped_image_900_600
+            image_loading:
+              attribute: lazy
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_image:
+          id: field_image
+          table: paragraph__field_image
+          field: field_image
+          relationship: field_components
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: slick_media
+          settings:
+            caption:
+              field_media_document: '0'
+              field_address: '0'
+              field_generate_host_content: '0'
+              field_geofield: '0'
+              field_media_geoimage: '0'
+              field_image_caption: '0'
+              title: '0'
+              alt: '0'
+            optionset: default
+            class: ''
+            image: ''
+            link: ''
+            title: ''
+            vanilla: false
+            layout: ''
+            view_mode: full
+            cache: 0
+            skin: ''
+            style: ''
+            background: false
+            loading: ''
+            preload: false
+            image_style: ''
+            media_switch: ''
+            ratio: ''
+            thumbnail_style: ''
+            grid: ''
+            grid_medium: ''
+            grid_small: ''
+            overridables:
+              arrows: '0'
+              autoplay: '0'
+              dots: '0'
+              draggable: '0'
+              infinite: '0'
+              mouseWheel: '0'
+              randomize: '0'
+              variableWidth: '0'
+            optionset_thumbnail: ''
+            skin_thumbnail: ''
+            thumbnail_caption: ''
+            thumbnail_effect: ''
+            thumbnail_position: ''
+            override: false
+            preserve_keys: false
+            visible_items: null
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -371,8 +359,10 @@ display:
       style:
         type: slideshow
         options:
+          grouping: {  }
           row_class: ''
           default_row_class: true
+          uses_fields: false
           slideshow_skin: default
           slideshow_type: views_slideshow_cycle
           widgets:
@@ -381,7 +371,7 @@ display:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
+                type: '0'
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -390,20 +380,20 @@ display:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
-                type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    field_media_image: 0
-                    field_geoimage: 0
-                  views_slideshow_pager_fields_hover: 0
+                type: '0'
+                views_slideshow_pager_numbered_hover: 0
+                views_slideshow_pager_numbered_click_to_page: 0
+                views_slideshow_pager_thumbnails_hover: 0
+                views_slideshow_pager_thumbnails_click_to_page: 0
+                views_slideshow_pager_bullets_hover: 0
+                views_slideshow_pager_fields_fields: {  }
+                views_slideshow_pager_fields_hover: 0
             bottom:
               views_slideshow_controls:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
+                type: '0'
               views_slideshow_slide_counter:
                 enable: false
                 weight: '1'
@@ -412,20 +402,22 @@ display:
                 enable: false
                 weight: '1'
                 hide_on_single_slide: '0'
-                type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    field_media_image: 0
-                    field_geoimage: 0
-                  views_slideshow_pager_fields_hover: 0
+                type: '0'
+                views_slideshow_pager_numbered_hover: 0
+                views_slideshow_pager_numbered_click_to_page: 0
+                views_slideshow_pager_thumbnails_hover: 0
+                views_slideshow_pager_thumbnails_click_to_page: 0
+                views_slideshow_pager_bullets_hover: 0
+                views_slideshow_pager_fields_fields: {  }
+                views_slideshow_pager_fields_hover: 0
+          row_class_custom: ''
+          row_class_default: true
           views_slideshow_cycle:
             effect: fade
-            transition_advanced: 1
-            timeout: '4000'
-            speed: '700'
-            delay: '0'
+            transition_advanced: 0
+            timeout: 5000
+            speed: 700
+            delay: 0
             sync: 1
             random: 0
             pause: 1
@@ -433,29 +425,26 @@ display:
             action_advanced: 0
             start_paused: 0
             remember_slide: 0
-            remember_slide_days: '1'
+            remember_slide_days: 1
+            pause_in_middle: 0
             pause_when_hidden: 0
             pause_when_hidden_type: full
             amount_allowed_visible: ''
             nowrap: 0
             fixed_height: 1
-            items_per_slide: '1'
-            items_per_slide_first: 0
-            items_per_slide_first_number: '1'
+            items_per_slide: 1
+            items_per_slide_first: false
+            items_per_slide_first_number: 1
             wait_for_image_load: 1
-            wait_for_image_load_timeout: '3000'
-            cleartype: 0
-            cleartypenobg: 0
-            advanced_options_choices: '0'
-            advanced_options_entry: ''
+            wait_for_image_load_timeout: 3000
+            cleartype: 'true'
+            cleartypenobg: 'false'
             advanced_options: '{}'
       row:
         type: fields
         options:
           default_field_elements: true
           inline:
-            field_geoimage: field_geoimage
-            field_media_image: field_media_image
             field_geoimage_1: field_geoimage_1
           separator: ''
           hide_empty: false
@@ -468,13 +457,13 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        field_locations:
-          id: field_locations
-          table: node__field_locations
-          field: field_locations
+        field_components:
+          id: field_components
+          table: node__field_components
+          field: field_components
           relationship: none
           group_type: group
-          admin_label: 'field_locations: Paragraph'
+          admin_label: 'field_components: Paragraph'
           plugin_id: standard
           required: false
       header: {  }
@@ -490,9 +479,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_geoimage'
-        - 'config:field.storage.node.field_media_image'
         - 'config:field.storage.paragraph.field_geoimage'
+        - 'config:field.storage.paragraph.field_image'
   block_media_slideshow:
     id: block_media_slideshow
     display_title: 'Block Media Slideshow'
@@ -512,6 +500,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_geoimage'
-        - 'config:field.storage.node.field_media_image'
         - 'config:field.storage.paragraph.field_geoimage'
+        - 'config:field.storage.paragraph.field_image'

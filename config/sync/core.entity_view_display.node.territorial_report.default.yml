@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.territorial_report.body
     - field.field.node.territorial_report.field_active
     - field.field.node.territorial_report.field_category_type
+    - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
@@ -16,6 +17,7 @@ dependencies:
     - field.field.node.territorial_report.field_territorial_reports_type
     - node.type.territorial_report
   module:
+    - entity_reference_revisions
     - layout_builder
     - layout_discovery
     - options
@@ -133,6 +135,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          d475a3ad-4ea6-4a10-ba53-db1e87f8f794:
+            uuid: d475a3ad-4ea6-4a10-ba53-db1e87f8f794
+            region: content
+            configuration:
+              id: 'field_block:node:territorial_report:field_components'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -210,6 +229,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_geofied_view:
     type: viewfield_default

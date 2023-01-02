@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_media_slideshow
     - node.type.geoplace
-    - views.view.media_slideshow
+    - views.view.paragraphs_media_slideshow
   module:
     - viewfield
 id: node.geoplace.field_media_slideshow
@@ -18,8 +18,8 @@ required: false
 translatable: false
 default_value:
   -
-    target_uuid: c699fc87-9892-437d-bd7a-3208f055949b
-    display_id: block_media_slideshow
+    target_uuid: 2447ed9f-af67-4f19-9a95-c31821d3c183
+    display_id: block_paragraphs_media_slideshow
     arguments: '[node:nid]'
     items_to_display: ''
     token_help: ''
@@ -27,11 +27,10 @@ default_value_callback: ''
 settings:
   force_default: true
   allowed_views:
-    media_slideshow: media_slideshow
+    paragraphs_media_slideshow: paragraphs_media_slideshow
     comment: '0'
     content: '0'
     block_content: '0'
-    events: '0'
     files: '0'
     frontpage: '0'
     geo_images_list: '0'
@@ -39,6 +38,7 @@ settings:
     geo_places: '0'
     media: '0'
     media_library: '0'
+    media_slideshow: '0'
     paragraphs: '0'
     paragraphs_library: '0'
     user_admin_people: '0'
@@ -52,7 +52,6 @@ settings:
     who_s_online: '0'
   allowed_display_types:
     block: block
-    attachment: '0'
     feed: '0'
     geojson_export: '0'
     default: '0'

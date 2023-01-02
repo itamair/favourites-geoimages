@@ -3205,7 +3205,6 @@ display:
           operator: in
           value:
             geoplace: geoplace
-            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
@@ -3282,10 +3281,121 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: leaflet_map
+        options:
+          grouping:
+            -
+              field: field_category_type
+              rendered: true
+              overlays_options:
+                disabled_overlays:
+                  none: none
+                hidden_overlays_controls:
+                  none: none
+          data_source:
+            field_geofield: field_geofield
+            field_geofield_1: field_geofield_1
+          entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
+          name_field: title
+          leaflet_tooltip:
+            value: title
+            options: '{"permanent":false,"direction":"top"}'
+          leaflet_popup:
+            value: '#rendered_entity'
+            options: '{"autoPan":true}'
+            view_mode: leaflet_popup
+          leaflet_map: multilayers
+          height: '600'
+          height_unit: px
+          hide_empty_map: true
+          disable_wheel: false
+          gesture_handling: false
+          reset_map:
+            control: true
+            options: '{"position":"topleft","title":"Reset View"}'
+          locate:
+            control: true
+            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+            automatic: false
+          map_position:
+            force: false
+            center:
+              lat: !!float 42
+              lon: !!float 12
+            zoom: 17
+            minZoom: 3
+            maxZoom: 19
+            zoomFiner: 0
+          weight: '{{ field_zindex }}'
+          icon:
+            iconType: marker
+            iconUrl: '{{ nothing }}'
+            shadowUrl: ''
+            className: '{{ field_classname_1 }}'
+            iconSize:
+              x: '{{ field_location_icon_width }}'
+              'y': '{{ field_location_icon_width }}'
+            iconAnchor:
+              x: ''
+              'y': ''
+            shadowSize:
+              x: ''
+              'y': ''
+            shadowAnchor:
+              x: ''
+              'y': ''
+            popupAnchor:
+              x: ''
+              'y': ''
+            html: '<div></div>'
+            html_class: leaflet-map-divicon
+            circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+          leaflet_markercluster:
+            control: true
+            include_path: false
+            options: '{"spiderfyOnMaxZoom":false,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"maxClusterRadius":60,"disableClusteringAtZoom":17}'
+            excluded: field_markercluster_exclude
+          fullscreen:
+            control: true
+            options: '{"position":"topleft","pseudoFullscreen":false}'
+          path: '{"dashArray":0,"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true,"arrowed":"{{ field_arrowed }}"}'
+          geocoder:
+            control: true
+            settings:
+              position: topright
+              input_size: 16
+              providers:
+                arcgisonline:
+                  weight: '0'
+                  checked: 1
+                file:
+                  weight: '0'
+                  checked: 0
+                googlemaps:
+                  weight: '0'
+                  checked: 0
+              min_terms: 4
+              delay: 800
+              zoom: 16
+              popup: true
+              options: ''
+          feature_properties:
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing_level":"{{ territorial_report_active_level }}"}'
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
         title: false
         exposed_form: false
         group_by: false
+        style: false
+        row: false
         relationships: false
         fields: false
         sorts: false
