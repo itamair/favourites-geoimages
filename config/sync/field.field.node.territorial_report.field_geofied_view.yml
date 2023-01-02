@@ -19,7 +19,7 @@ translatable: false
 default_value:
   -
     target_uuid: 179546c8-bbef-4b26-ae5d-825b910ecf75
-    display_id: block_geolocation
+    display_id: block_single_location
     arguments: '[node:nid]'
     items_to_display: ''
     token_help: ''
@@ -31,7 +31,6 @@ settings:
     comment: '0'
     content: '0'
     block_content: '0'
-    events: '0'
     files: '0'
     frontpage: '0'
     geo_images_list: '0'
@@ -41,6 +40,8 @@ settings:
     media_slideshow: '0'
     paragraphs: '0'
     paragraphs_library: '0'
+    paragraphs_media_slideshow: '0'
+    paragraphs_revs_media_slideshow: '0'
     user_admin_people: '0'
     places_types: '0'
     comments_recent: '0'
@@ -52,7 +53,6 @@ settings:
     who_s_online: '0'
   allowed_display_types:
     block: block
-    attachment: '0'
     feed: '0'
     geojson_export: '0'
     default: '0'

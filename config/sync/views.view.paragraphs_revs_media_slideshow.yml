@@ -1,20 +1,17 @@
-uuid: 2447ed9f-af67-4f19-9a95-c31821d3c183
+uuid: 0f0fcff4-9d92-4d12-833d-9c49d0276826
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_geoimage
     - field.storage.paragraph.field_image
-  module:
-    - paragraphs
-    - views_slideshow
-id: paragraphs_media_slideshow
-label: 'Paragraphs Media Slideshow'
+id: paragraphs_revs_media_slideshow
+label: 'Paragraphs Revs Media Slideshow'
 module: views
 description: ''
 tag: ''
-base_table: paragraphs_item_field_data
-base_field: id
+base_table: paragraphs_item_revision_field_data
+base_field: revision_id
 display:
   default:
     id: default
@@ -22,18 +19,82 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Paragraphs Media Slideshow'
+      title: 'Paragraphs Revs Media Slideshow'
       fields:
-        field_image:
-          id: field_image
-          table: paragraph__field_image
-          field: field_image
+        id:
+          id: id
+          table: paragraphs_item_revision_field_data
+          field: id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: null
+          entity_field: id
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_geoimage-revision_id:
+          id: field_geoimage-revision_id
+          table: paragraph_revision__field_geoimage
+          field: field_geoimage-revision_id
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -79,18 +140,18 @@ display:
             view_mode: default
           group_column: target_id
           group_columns: {  }
-          group_rows: false
+          group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: ol
+          multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_geoimage:
-          id: field_geoimage
-          table: paragraph__field_geoimage
-          field: field_geoimage
+        field_image-revision_id:
+          id: field_image-revision_id
+          table: paragraph_revision__field_image
+          field: field_image-revision_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -132,7 +193,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: '{{ field_image }}'
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -176,7 +237,7 @@ display:
       arguments:
         parent_id:
           id: parent_id
-          table: paragraphs_item_field_data
+          table: paragraphs_item_revision_field_data
           field: parent_id
           relationship: none
           group_type: group
@@ -217,7 +278,7 @@ display:
       filters:
         status:
           id: status
-          table: paragraphs_item_field_data
+          table: paragraphs_item_revision_field_data
           field: status
           entity_type: paragraph
           entity_field: status
@@ -228,20 +289,19 @@ display:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-        field_image_target_id:
-          id: field_image_target_id
-          table: paragraph__field_image
-          field: field_image_target_id
+        revision_translation_affected:
+          id: revision_translation_affected
+          table: paragraphs_item_revision_field_data
+          field: revision_translation_affected
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 2
+          entity_type: paragraph
+          entity_field: revision_translation_affected
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
           exposed: false
           expose:
             operator_id: ''
@@ -257,9 +317,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -272,145 +329,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_geoimage_target_id:
-          id: field_geoimage_target_id
-          table: paragraph__field_geoimage
-          field: field_geoimage_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 2
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-          2: OR
       style:
-        type: slideshow
-        options:
-          row_class: ''
-          default_row_class: true
-          slideshow_skin: default
-          slideshow_type: views_slideshow_cycle
-          widgets:
-            top:
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
-              views_slideshow_slide_counter:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-              views_slideshow_pager:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    field_image: 0
-                    field_geoimage: 0
-                  views_slideshow_pager_fields_hover: 0
-            bottom:
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_controls_text
-              views_slideshow_slide_counter:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-              views_slideshow_pager:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: views_slideshow_pager_bullets
-                views_slideshow_pager_bullets:
-                  views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields:
-                  views_slideshow_pager_fields_fields:
-                    field_image: 0
-                    field_geoimage: 0
-                  views_slideshow_pager_fields_hover: 0
-          views_slideshow_cycle:
-            effect: fade
-            transition_advanced: 0
-            timeout: '5000'
-            speed: '700'
-            delay: '0'
-            sync: 1
-            random: 0
-            pause: 1
-            pause_on_click: 0
-            action_advanced: 0
-            start_paused: 0
-            remember_slide: 0
-            remember_slide_days: '1'
-            pause_when_hidden: 0
-            pause_when_hidden_type: full
-            amount_allowed_visible: ''
-            nowrap: 0
-            fixed_height: 1
-            items_per_slide: '1'
-            items_per_slide_first: 0
-            items_per_slide_first_number: '1'
-            wait_for_image_load: 1
-            wait_for_image_load_timeout: '3000'
-            cleartype: 0
-            cleartypenobg: 0
-            advanced_options_choices: '0'
-            advanced_options_entry: ''
-            advanced_options: '{}'
+        type: default
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline:
-            field_image: field_image
-            field_geoimage: field_geoimage
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
@@ -420,7 +342,6 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -433,15 +354,13 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_geoimage'
         - 'config:field.storage.paragraph.field_image'
-  block_paragraphs_media_slideshow:
-    id: block_paragraphs_media_slideshow
-    display_title: 'Block Paragraphs Media Slideshow'
+  block_1:
+    id: block_1
+    display_title: Block
     display_plugin: block
     position: 1
     display_options:
-      display_description: ''
       display_extenders: {  }
-      block_description: 'Block Paragraphs Media Slideshow'
     cache_metadata:
       max-age: -1
       contexts:

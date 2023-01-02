@@ -26,12 +26,12 @@ targetEntityType: node
 bundle: territorial_report
 mode: leaflet_popup
 content:
-  field_geoimage:
-    type: entity_reference_entity_view
+  field_components:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: leaflet_popup
-      link: false
+      link: ''
     third_party_settings:
       field_formatter_range:
         order: 0
@@ -39,39 +39,27 @@ content:
         offset: 0
     weight: 0
     region: content
-  field_locations:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: image
-      link: ''
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 1
-        offset: 0
-    weight: 1
-    region: content
   geoimage_caption:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   body: true
   field_active: true
   field_category_type: true
-  field_components: true
   field_geofied_view: true
+  field_geoimage: true
   field_link: true
+  field_locations: true
   field_media_image: true
   field_media_slideshow: true
   field_related_content: true
