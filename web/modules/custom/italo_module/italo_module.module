@@ -46,7 +46,7 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
  */
 function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
   $fields = [];
-  if ($entity_type->id() === 'node') {
+  if ($entity_type->id() === 'media') {
     // Add a field that shows a link to the user's current company.
     $fields['geoimage_caption'] = BaseFieldDefinition::create('string')
       ->setName('geoimage_caption')
@@ -56,9 +56,11 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
-        'weight' => -5,
+        'region' => 'hidden'
       ]);
+  }
 
+  if ($entity_type->id() === 'node') {
     // Add a field that defines the Geoimage Storing Folder.
     $fields['geoimage_storing_folder'] = BaseFieldDefinition::create('string')
       ->setName('geoimage_storing_folder')
