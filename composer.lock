@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d02eab99fe2ca1fec21ce3dab4bb2100",
+    "content-hash": "861b87ecd143637dc13d1f846f76388c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5821,29 +5821,26 @@
         },
         {
             "name": "drupal/views_slideshow",
-            "version": "4.8.0",
+            "version": "dev-4.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_slideshow.git",
-                "reference": "8.x-4.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_slideshow-8.x-4.8.zip",
-                "reference": "8.x-4.8",
-                "shasum": "88104843df5e2eaa7e70b796a80573d844583e42"
+                "reference": "af3d33d8aa1b465d25807ae0d59a0f782baa846e"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-4.8",
-                    "datestamp": "1601309285",
+                    "version": "8.x-4.8+5-dev",
+                    "datestamp": "1645636432",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -11969,7 +11966,8 @@
         "drupal/media_library_importer": 10,
         "drupal/openstreetmap": 10,
         "drupal/uikit": 20,
-        "drupal/viewfield": 10
+        "drupal/viewfield": 10,
+        "drupal/views_slideshow": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
