@@ -115,7 +115,7 @@ function italo_module_views_data_alter(array &$data) {
  */
 function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
   // Define an array on Node Bundles to which apply this functional logic.
-  $node_bundles = ['geoplace', 'territorial_report'];
+  $node_bundles = ['geoplace', 'territorial_report', 'event'];
   if ($view_mode === 'full' && in_array($node->bundle(), $node_bundles)) {
     // Initialise a geofield array that will be populated with Geo Points of
     // Forced Leaflet Map Bounds.
@@ -123,6 +123,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
     switch ($node->bundle()) {
       case 'geoplace':
       case 'territorial_report':
+      case 'event':
         // Extract Paragraphs components from the field_components.
         $components = $node->get('field_components')->getValue();
         foreach ($components as $component) {

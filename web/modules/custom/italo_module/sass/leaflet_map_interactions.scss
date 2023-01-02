@@ -30,7 +30,7 @@
         display: none;
       }
     }
-    .node--type-geoplace {
+    .node--type-geoplace, .node--type-event{
       width: 300px !important;
       margin: 12px 8px 0;
     }
@@ -86,7 +86,7 @@
           display: none;
         }
       }
-      .node--type-geoplace {
+      .node--type-geoplace, .node--type-event {
         width: 300px !important;
         margin: 8px;
       }
@@ -102,7 +102,7 @@
         width: 360px !important;
         margin: 0;
       }
-      .node--type-geoplace {
+      .node--type-geoplace, .node--type-event {
         width: 220px !important;
       }
       .node--type-territorial-report {
@@ -116,7 +116,7 @@
       .node--type-geoimage {
         width: 300px !important;
       }
-      .node--type-geoplace {
+      .node--type-geoplace, .node--type-event {
         width: 200px !important;
       }
       .node--type-territorial-report {

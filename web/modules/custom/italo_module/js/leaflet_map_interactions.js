@@ -31,7 +31,7 @@
         if (feature.type !== 'point' && feature.path) {
           const feature_path = feature.path instanceof Object ? feature.path : JSON.parse(feature.path);
           if (feature_path['arrowed'] === "1" && typeof lFeature.arrowheads !== "undefined") {
-            lFeature.arrowheads({size: '5%'});
+            lFeature.arrowheads({size: '7%'});
           }
         }
 

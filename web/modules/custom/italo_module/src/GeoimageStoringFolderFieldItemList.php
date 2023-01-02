@@ -31,12 +31,13 @@ class GeoimageStoringFolderFieldItemList extends FieldItemList {
       $entity = $this->getEntity();
       if ($entity instanceof NodeInterface) {
         $value = match($entity->bundle()) {
-        "geoimage" => 'photo_albums/Taranto_Images',
-        'territorial_report' => 'media_geoimage',
+          "geoimage" => 'photo_albums/Taranto_Images',
+          'territorial_report' => 'media_geoimage',
+          'event' => 'photo_albums/Taranto_Images',
           default => '',
         };
-          $this->list[0] = $this->createItem(0, $value);
-          $this->isCalculated = TRUE;
+        $this->list[0] = $this->createItem(0, $value);
+        $this->isCalculated = TRUE;
       }
     }
   }
