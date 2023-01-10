@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.paragraph.leaflet_popup
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geoimage
+    - field.field.paragraph.geoimage.field_location_type
     - paragraphs.paragraphs_type.geoimage
   module:
     - layout_builder
@@ -29,3 +30,4 @@ content:
     region: content
 hidden:
   field_exclude_from_map_bounds: true
+  field_location_type: true

@@ -24,6 +24,7 @@ module:
   contact: 0
   contextual: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
@@ -70,6 +71,7 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  optional_end_date: 0
   options: 0
   page_cache: 0
   paragraphs_library: 0

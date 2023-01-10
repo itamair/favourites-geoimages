@@ -4,9 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.territorial_report.body
-    - field.field.node.territorial_report.field_active
+    - field.field.node.territorial_report.field_active_type
     - field.field.node.territorial_report.field_category_type
     - field.field.node.territorial_report.field_components
+    - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
@@ -14,9 +15,9 @@ dependencies:
     - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
-    - field.field.node.territorial_report.field_territorial_reports_type
     - node.type.territorial_report
   module:
+    - datetime_range
     - layout_builder
     - layout_discovery
     - options
@@ -62,7 +63,7 @@ third_party_settings:
                 label: visually_hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 2
+            weight: 3
             additional: {  }
           4b6617d5-6c71-4b1b-b0e6-a07613f7153b:
             uuid: 4b6617d5-6c71-4b1b-b0e6-a07613f7153b
@@ -117,6 +118,27 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             weight: 5
+            additional: {  }
+          fd91e8fa-6366-4656-b03b-704bbf6262a5:
+            uuid: fd91e8fa-6366-4656-b03b-704bbf6262a5
+            region: content
+            configuration:
+              id: 'field_block:node:territorial_report:field_date_range'
+              label: 'Date Range'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: custom_daterange
+                label: inline
+                settings:
+                  timezone_override: ''
+                  date_format: d-m-Y
+                  separator: '-'
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -181,15 +203,12 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_active:
-    type: boolean
-    label: inline
-    settings:
-      format: true-false
-      format_custom_false: ''
-      format_custom_true: ''
+  field_active_type:
+    type: list_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 11
     region: content
   field_category_type:
     type: entity_reference_label
@@ -198,6 +217,16 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_date_range:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_geofied_view:
     type: viewfield_default
@@ -235,13 +264,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_territorial_reports_type:
-    type: list_default
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -256,6 +278,7 @@ content:
     weight: 3
     region: content
 hidden:
+  active_level: true
   field_components: true
   field_geoimage: true
   field_link: true

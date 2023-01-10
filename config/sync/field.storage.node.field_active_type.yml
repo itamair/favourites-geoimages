@@ -1,12 +1,12 @@
-uuid: 3c6ec18d-47cc-46e8-b878-4b3c7be993ae
+uuid: 7dd01177-e14f-44bd-ae4c-16eaffb9d4ea
 langcode: it
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_territorial_reports_type
-field_name: field_territorial_reports_type
+id: node.field_active_type
+field_name: field_active_type
 entity_type: node
 type: list_string
 settings:

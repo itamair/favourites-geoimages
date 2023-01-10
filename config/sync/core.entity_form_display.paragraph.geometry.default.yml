@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
     - field.field.paragraph.geometry.field_link
+    - field.field.paragraph.geometry.field_location_type
     - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
@@ -39,7 +40,7 @@ third_party_settings:
       label: Attributes
       region: content
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: details
       format_settings:
         classes: geometry-attributes
@@ -81,7 +82,7 @@ content:
     third_party_settings: {  }
   field_geofield:
     type: leaflet_widget_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       map:
@@ -207,11 +208,17 @@ content:
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 3
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_location_type:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox

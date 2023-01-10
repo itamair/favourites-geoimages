@@ -70,11 +70,11 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setDisplayConfigurable('view', FALSE);
 
     // Add a field that defines the Territorial Report Level, if active.
-    $fields['territorial_report_active_level'] = BaseFieldDefinition::create('string')
-      ->setName('territorial_report_active_level')
-      ->setLabel(t('Territorial Report Active Level'))
+    $fields['active_level'] = BaseFieldDefinition::create('string')
+      ->setName('active_level')
+      ->setLabel(t('Active Level'))
       ->setComputed(TRUE)
-      ->setClass('\Drupal\italo_module\TerritorialReportActiveLevelFieldItemList')
+      ->setClass('\Drupal\italo_module\ActiveLevelFieldItemList')
       ->setDisplayConfigurable('view', TRUE);
 
   }
@@ -96,12 +96,12 @@ function italo_module_views_data_alter(array &$data) {
       ],
     ];
 
-    $data['node']['territorial_report_active_level'] = [
-      'title' => t('Territorial Report Active Level'),
+    $data['node']['active_level'] = [
+      'title' => t('Active Level'),
       'field' => [
         'id' => 'field',
         'default_formatter' => 'string',
-        'field_name' => 'territorial_report_active_level',
+        'field_name' => 'active_level',
       ],
     ];
   }

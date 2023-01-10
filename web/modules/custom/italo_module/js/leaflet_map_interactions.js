@@ -38,8 +38,8 @@
         // Pulsing Markers.
         if (feature['properties'] && feature['properties'].length > 0) {
           const properties = JSON.parse(feature['properties']);
-          if (properties['pulsing_level'] && properties['pulsing_level'].length > 0) {
-            const pulsing_level = properties['pulsing_level'];
+          if (properties['active_level'] && properties['active_level'].length > 0) {
+            const pulsing_level = properties['active_level'];
             const pulsing_marker = new L.Marker(new L.LatLng(feature.lat, feature.lon), {
               icon: L.divIcon({
                 className: pulsing_level + ' pulsing-marker',

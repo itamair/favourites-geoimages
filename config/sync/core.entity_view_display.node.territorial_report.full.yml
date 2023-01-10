@@ -5,9 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.territorial_report.body
-    - field.field.node.territorial_report.field_active
+    - field.field.node.territorial_report.field_active_type
     - field.field.node.territorial_report.field_category_type
     - field.field.node.territorial_report.field_components
+    - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
@@ -15,7 +16,6 @@ dependencies:
     - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
-    - field.field.node.territorial_report.field_territorial_reports_type
     - node.type.territorial_report
   module:
     - text
@@ -57,15 +57,16 @@ content:
     weight: 100
     region: content
 hidden:
-  field_active: true
+  active_level: true
+  field_active_type: true
   field_category_type: true
   field_components: true
+  field_date_range: true
   field_geoimage: true
   field_link: true
   field_locations: true
   field_media_image: true
   field_media_slideshow: true
   field_related_content: true
-  field_territorial_reports_type: true
   langcode: true
   territorial_report_active_level: true

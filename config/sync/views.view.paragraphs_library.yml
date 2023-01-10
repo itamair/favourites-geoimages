@@ -486,7 +486,7 @@ display:
           admin_label: ''
           entity_type: paragraphs_library_item
           plugin_id: entity_operations
-          label: Operations
+          label: Operazioni
           exclude: false
           alter:
             alter_text: false

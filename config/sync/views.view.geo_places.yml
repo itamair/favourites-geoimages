@@ -32,6 +32,7 @@ dependencies:
     - node.type.geoplace
     - node.type.territorial_report
     - system.menu.main
+    - taxonomy.vocabulary.place_types
   module:
     - better_exposed_filters
     - color_field
@@ -1446,7 +1447,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing_level":"{{ territorial_report_active_level }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_level":"{{ active_level }}"}'
       row:
         type: fields
         options:
@@ -2971,10 +2972,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        territorial_report_active_level:
-          id: territorial_report_active_level
+        active_level:
+          id: active_level
           table: node
-          field: territorial_report_active_level
+          field: active_level
           relationship: none
           group_type: group
           admin_label: ''
@@ -3385,7 +3386,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","pulsing_level":"{{ territorial_report_active_level }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_level":"{{ active_level }}"}'
       row:
         type: fields
         options:
@@ -4935,10 +4936,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        territorial_report_active_level:
-          id: territorial_report_active_level
+        active_level:
+          id: active_level
           table: node
-          field: territorial_report_active_level
+          field: active_level
           relationship: none
           group_type: group
           admin_label: ''
@@ -5287,6 +5288,53 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_location_type_target_id:
+          id: field_location_type_target_id
+          table: paragraph__field_location_type
+          field: field_location_type_target_id
+          relationship: field_components
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_location_type_target_id_op
+            label: 'Location Type'
+            description: ''
+            use_operator: false
+            operator: field_location_type_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_location_type_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: place_types
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -5340,7 +5388,17 @@ display:
           required: false
       group_by: false
       display_description: ''
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
       path: main_map
@@ -5358,6 +5416,7 @@ display:
       contexts:
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
