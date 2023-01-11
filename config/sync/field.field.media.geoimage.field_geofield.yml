@@ -12,7 +12,7 @@ third_party_settings:
   geocoder_field:
     method: geocode
     weight: 1
-    field: field_media_geoimage
+    field: field_media_image
     skip_not_empty_value: false
     disabled: false
     hidden: false

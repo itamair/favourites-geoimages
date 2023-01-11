@@ -1,26 +1,33 @@
-uuid: 41dfa835-ed2e-43fe-b998-cdeb63080489
-langcode: en
+uuid: 4a7b489c-1974-43ff-a593-5c02150f5ee3
+langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_geoimage
+    - field.storage.media.field_media_image
     - media.type.geoimage
   module:
+    - content_translation
     - image
-id: media.geoimage.field_media_geoimage
-field_name: field_media_geoimage
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: media.geoimage.field_media_image
+field_name: field_media_image
 entity_type: media
 bundle: geoimage
 label: Image
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: media_geoimage
+  file_directory: media_image
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''

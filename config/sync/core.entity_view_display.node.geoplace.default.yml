@@ -137,29 +137,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
-          3921530c-680f-4b62-9235-9276ab51f0b4:
-            uuid: 3921530c-680f-4b62-9235-9276ab51f0b4
-            region: content
-            configuration:
-              id: 'field_block:node:geoplace:field_components'
-              label: Components
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: inline
-                settings:
-                  view_mode: leaflet_popup
-                third_party_settings:
-                  field_formatter_range:
-                    order: 0
-                    limit: 0
-                    offset: 0
-            weight: 7
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section

@@ -4,8 +4,8 @@ namespace Drupal\italo_module;
 
 use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
+use Drupal\media\MediaInterface;
 use Drupal\paragraphs\ParagraphInterface;
-use Drupal\media\Entity\Media;
 use Drupal\image\Entity\ImageStyle;
 
 /**
@@ -25,7 +25,7 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
   /**
    * {@inheritdoc}
    *
-   * Generate the Value for the Geoimage Storing Folder, only for Nodes.
+   * Generate the Value for the Geo Marker Icon Url Path.
    */
   protected function computeValue() {
     if (!$this->isCalculated) {
@@ -46,11 +46,14 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
             break;
 
           case "location":
-            $media = $entity->field_location_type->entity->field_place_type_icon->entity;
+            $media = $entity->field_image->entity;
+            if (!$media instanceof MediaInterface) {
+              $media = $entity->field_location_type->entity->field_place_type_icon->entity;
+            }
             break;
         }
 
-        if (isset($media) && $media instanceof Media && isset($media->field_media_image)) {
+        if (isset($media) && $media instanceof MediaInterface && isset($media->field_media_image)) {
           $image_uri = $media->field_media_image->entity->getFileUri();
           if (isset($image_style)) {
             $style = ImageStyle::load('image_map_marker');
