@@ -31,4 +31,5 @@ content:
         offset: 0
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  geomarker_icon_url: true

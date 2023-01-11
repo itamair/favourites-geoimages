@@ -7,16 +7,14 @@ dependencies:
     - field.field.paragraph.location.field_classname
     - field.field.paragraph.location.field_exclude_from_map_bounds
     - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_location_icon
+    - field.field.paragraph.location.field_image
     - field.field.paragraph.location.field_location_icon_width
     - field.field.paragraph.location.field_location_type
-    - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
   module:
-    - computed_field
     - leaflet
 id: paragraph.location.default
 targetEntityType: paragraph
@@ -145,16 +143,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_marker_icon_path:
-    type: computed_string
-    label: above
-    settings:
-      sanitized: true
-      cache_unit: -1
-      cache_duration: 1
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_markercluster_exclude:
     type: boolean
     label: above
@@ -184,5 +172,6 @@ content:
     region: content
 hidden:
   field_classname: true
-  field_location_icon: true
+  field_image: true
   field_location_type: true
+  geomarker_icon_url: true

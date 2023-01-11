@@ -23,8 +23,7 @@ class GeoimageStoringFolderFieldItemList extends FieldItemList {
   /**
    * {@inheritdoc}
    *
-   * Generate the Value for the Geoimage Caption Field,
-   * only for the Geoimage Node Bundle.
+   * Generate the Value for the Geoimage Storing Folder, only for Nodes.
    */
   protected function computeValue() {
     if (!$this->isCalculated) {
@@ -32,12 +31,12 @@ class GeoimageStoringFolderFieldItemList extends FieldItemList {
       if ($entity instanceof NodeInterface) {
         switch ($entity->bundle()) {
           case "geoimage":
-          case "event":
             $value = 'photo_albums/Taranto_Images';
             break;
 
           case "territorial_report":
-            $value = 'media_geoimage';
+          case "event":
+            $value = 'media_image';
             break;
 
           default:

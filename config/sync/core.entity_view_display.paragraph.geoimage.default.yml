@@ -24,3 +24,4 @@ content:
 hidden:
   field_exclude_from_map_bounds: true
   field_location_type: true
+  geomarker_icon_url: true

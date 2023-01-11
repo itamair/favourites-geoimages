@@ -47,12 +47,26 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
 function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
   $fields = [];
   if ($entity_type->id() === 'media') {
-    // Add a field that shows a link to the user's current company.
+    // Add a field that shows a Geoimage Caption.
     $fields['geoimage_caption'] = BaseFieldDefinition::create('string')
       ->setName('geoimage_caption')
       ->setLabel(t('Geoimage Caption'))
       ->setComputed(TRUE)
       ->setClass('\Drupal\italo_module\GeoimageCaptionFieldItemList')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'region' => 'hidden'
+      ]);
+  }
+
+  if ($entity_type->id() === 'paragraph') {
+    // Add a field that represent the Paragraph Geofield Marker Uri path.
+    $fields['geomarker_icon_url'] = BaseFieldDefinition::create('string')
+      ->setName('geomarker_icon_url')
+      ->setLabel(t('Geo Marker Icon Url'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\italo_module\GeoMarkerIconUrlFieldItemList')
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
@@ -85,6 +99,18 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
  * Implements hook_views_data_alter().
  */
 function italo_module_views_data_alter(array &$data) {
+  if (isset($data['paragraphs_item'])) {
+    // Add the Geo Marker Icon Url field to Views.
+    $data['paragraphs_item']['geomarker_icon_url'] = [
+      'title' => t('Geo Marker Icon Url'),
+      'field' => [
+        'id' => 'field',
+        'default_formatter' => 'string',
+        'field_name' => 'geomarker_icon_url',
+      ],
+    ];
+  }
+
   if (isset($data['node'])) {
     // Add the geoimage_storing_folder field to Views.
     $data['node']['geoimage_storing_folder'] = [

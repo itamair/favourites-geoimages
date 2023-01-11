@@ -8,41 +8,27 @@ dependencies:
     - field.field.paragraph.location.field_classname
     - field.field.paragraph.location.field_exclude_from_map_bounds
     - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_location_icon
+    - field.field.paragraph.location.field_image
     - field.field.paragraph.location.field_location_icon_width
     - field.field.paragraph.location.field_location_type
-    - field.field.paragraph.location.field_marker_icon_path
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
-    - image.style.geofield_map_default_icon_style
     - paragraphs.paragraphs_type.location
-  module:
-    - svg_image
 id: paragraph.location.image
 targetEntityType: paragraph
 bundle: location
 mode: image
-content:
-  field_location_icon:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: geofield_map_default_icon_style
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   field_address: true
   field_classname: true
   field_exclude_from_map_bounds: true
   field_geofield: true
+  field_image: true
   field_location_icon_width: true
   field_location_type: true
-  field_marker_icon_path: true
   field_markercluster_exclude: true
   field_title: true
   field_zindex: true
+  geomarker_icon_url: true
