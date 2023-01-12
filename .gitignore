@@ -16,7 +16,6 @@ node_modules
 /web/themes/unity/build
 /web/profiles/contrib
 /web/sites/*/files
-/web/libraries
 /private
 /tmp
 
