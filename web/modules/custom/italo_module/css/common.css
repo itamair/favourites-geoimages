@@ -58,19 +58,28 @@ a, a.link {
   line-height: 3rem;
 }
 
-/* line 59, ../sass/common.scss */
+/* line 60, ../sass/common.scss */
 .views-field.views-field-field-image .field--type-image:not(:last-child),
+.views-field.views-field-field-geoimage .field--type-image:not(:last-child),
 .field--name-field-media-image .field--type-image:not(:last-child) {
   margin-bottom: 0.4rem;
 }
-/* line 62, ../sass/common.scss */
+/* line 63, ../sass/common.scss */
 .views-field.views-field-field-image .text-content.field--name-field-image-caption,
+.views-field.views-field-field-geoimage .text-content.field--name-field-image-caption,
 .field--name-field-media-image .text-content.field--name-field-image-caption {
   font-size: 0.9rem;
   color: slategray;
 }
 
-/* line 69, ../sass/common.scss */
+/* line 70, ../sass/common.scss */
 .media--type-image .wide-image.field--type-image {
   margin-left: unset;
+}
+
+@media (min-width: 43.75rem) {
+  /* line 76, ../sass/common.scss */
+  .view > * {
+    margin-bottom: 1rem !important;
+  }
 }

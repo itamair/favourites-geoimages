@@ -55,6 +55,7 @@ a, a.link {
 
 // Media Images Captions Styling.
 .views-field.views-field-field-image,
+.views-field.views-field-field-geoimage,
 .field--name-field-media-image {
   .field--type-image:not(:last-child) {
     margin-bottom: 0.4rem;
@@ -68,4 +69,11 @@ a, a.link {
 // Media Images View
 .media--type-image .wide-image.field--type-image {
   margin-left: unset;
+}
+
+// View Filters
+@media (min-width: 43.75rem) {
+  .view > * {
+    margin-bottom: 1rem !important;
+  }
 }
