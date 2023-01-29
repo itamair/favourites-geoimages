@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
-    - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
@@ -42,11 +41,11 @@ content:
     weight: 100
     region: content
 hidden:
+  active_level: true
   field_category_type: true
   field_classname: true
   field_components: true
   field_exclude_from_map_bounds: true
-  field_geoimage: true
   field_place_type: true
   langcode: true
   territorial_report_active_level: true

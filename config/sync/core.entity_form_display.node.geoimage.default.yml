@@ -8,11 +8,9 @@ dependencies:
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
-    - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
-    - media_library
     - paragraphs
     - path
     - text
@@ -79,13 +77,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_geoimage:
-    type: media_library_widget
-    weight: 3
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   field_place_type:
     type: options_select

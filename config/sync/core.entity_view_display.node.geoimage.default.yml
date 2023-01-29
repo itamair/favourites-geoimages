@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
-    - field.field.node.geoimage.field_geoimage
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
@@ -49,15 +48,6 @@ content:
         offset: 0
     weight: 3
     region: content
-  field_geoimage:
-    type: entity_reference_entity_view
-    label: visually_hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   geoimage_caption:
     type: string
     label: hidden
@@ -67,6 +57,7 @@ content:
     weight: 4
     region: content
 hidden:
+  active_level: true
   field_classname: true
   field_exclude_from_map_bounds: true
   field_place_type: true
