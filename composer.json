@@ -85,7 +85,8 @@
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -153,6 +154,7 @@
         }
     },
     "require-dev": {
+        "drupal/coder": "8.3.16",
         "drupal/devel": "^5.0"
     }
 }
