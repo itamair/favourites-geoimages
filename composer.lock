@@ -6889,16 +6889,16 @@
         },
         {
             "name": "itamair/geophp",
-            "version": "1.3",
+            "version": "1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itamair/geoPHP.git",
-                "reference": "d7bccf9902a62430ceb2ac0771bb1e9d1deac4e9"
+                "reference": "ced300d09ddda1b7212ebe1a9a53aa065e5f9585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/d7bccf9902a62430ceb2ac0771bb1e9d1deac4e9",
-                "reference": "d7bccf9902a62430ceb2ac0771bb1e9d1deac4e9",
+                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/ced300d09ddda1b7212ebe1a9a53aa065e5f9585",
+                "reference": "ced300d09ddda1b7212ebe1a9a53aa065e5f9585",
                 "shasum": ""
             },
             "require-dev": {
@@ -6929,9 +6929,9 @@
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/itamair/geoPHP",
             "support": {
-                "source": "https://github.com/itamair/geoPHP/tree/1.3"
+                "source": "https://github.com/itamair/geoPHP/tree/1.4"
             },
-            "time": "2022-07-04T23:09:18+00:00"
+            "time": "2023-02-05T00:00:51+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
