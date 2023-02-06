@@ -45,6 +45,7 @@
               node_markers.push(node_marker);
             }
           }
+          // Force an initially open tooltip for each marker, path.
           if (node_markers.length > 0) {
             node_markers.forEach(marker => {
               marker.bindTooltip(marker._tooltip._content, {

@@ -72,7 +72,6 @@
     zoomDefaultIconSize: 18,
     hidden_markers: [],
 
-
     /**
      * Process all Initial Action.
      *
