@@ -1,0 +1,8 @@
+uuid: b7eb80be-4250-4157-b551-984ead782db6
+langcode: it
+status: true
+dependencies: {  }
+id: custom_comments
+label: 'Custom Comments'
+target_entity_type_id: node
+description: ''

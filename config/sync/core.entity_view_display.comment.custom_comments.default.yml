@@ -1,0 +1,22 @@
+uuid: b343cfdf-791a-43ed-99f9-dbb9e2bb1579
+langcode: it
+status: true
+dependencies:
+  config:
+    - comment.type.custom_comments
+    - field.field.comment.custom_comments.field_comment_plain
+id: comment.custom_comments.default
+targetEntityType: comment
+bundle: custom_comments
+mode: default
+content:
+  field_comment_plain:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true

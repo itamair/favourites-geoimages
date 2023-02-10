@@ -3,9 +3,11 @@ langcode: it
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.territorial_report.body
     - field.field.node.territorial_report.field_active_type
     - field.field.node.territorial_report.field_category_type
+    - field.field.node.territorial_report.field_comments
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
@@ -16,6 +18,7 @@ dependencies:
     - field.field.node.territorial_report.field_related_content
     - node.type.territorial_report
   module:
+    - comment
     - datetime_range
     - layout_builder
     - layout_discovery
@@ -190,6 +193,33 @@ third_party_settings:
             weight: 0
             additional: {  }
         third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          20139230-1c13-4d9a-90fa-071e868c3866:
+            uuid: 20139230-1c13-4d9a-90fa-071e868c3866
+            region: content
+            configuration:
+              id: 'field_block:node:territorial_report:field_comments'
+              label: Comments
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: comment_default
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.territorial_report.default
 targetEntityType: node
 bundle: territorial_report
@@ -216,6 +246,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 12
     region: content
   field_date_range:
     type: daterange_default

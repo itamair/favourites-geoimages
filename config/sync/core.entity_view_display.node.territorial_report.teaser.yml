@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.territorial_report.body
     - field.field.node.territorial_report.field_active_type
     - field.field.node.territorial_report.field_category_type
+    - field.field.node.territorial_report.field_comments
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
@@ -49,6 +50,7 @@ hidden:
   active_level: true
   field_active_type: true
   field_category_type: true
+  field_comments: true
   field_components: true
   field_date_range: true
   field_geofied_view: true
