@@ -56,6 +56,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  rate_thumbs_up:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   active_level: true
   field_active_type: true

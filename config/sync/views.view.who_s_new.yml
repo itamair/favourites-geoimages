@@ -64,7 +64,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Applica
+          submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -187,7 +187,7 @@ display:
       display_description: 'A list of new users'
       display_extenders: {  }
       block_description: 'Who''s new'
-      block_category: Utente
+      block_category: User
     cache_metadata:
       max-age: -1
       contexts:

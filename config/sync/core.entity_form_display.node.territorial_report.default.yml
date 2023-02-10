@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
+    - field.field.node.territorial_report.field_vote
     - node.type.territorial_report
   module:
     - comment
@@ -25,6 +26,7 @@ dependencies:
     - paragraphs
     - path
     - text
+    - votingapi_widgets
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -198,6 +200,13 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_vote:
+    type: voting_api_widget
+    weight: 28
+    region: content
+    settings:
+      show_initial_vote: '1'
     third_party_settings: {  }
   langcode:
     type: language_select

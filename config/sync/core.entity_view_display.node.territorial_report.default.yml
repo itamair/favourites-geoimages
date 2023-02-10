@@ -3,7 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.custom_comments.default
     - field.field.node.territorial_report.body
     - field.field.node.territorial_report.field_active_type
     - field.field.node.territorial_report.field_category_type
@@ -111,16 +111,6 @@ third_party_settings:
                     offset: 0
             weight: 4
             additional: {  }
-          af15e71f-5999-4a45-acb1-77b2db756e18:
-            uuid: af15e71f-5999-4a45-acb1-77b2db756e18
-            region: content
-            configuration:
-              id: 'extra_field_block:node:territorial_report:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 5
-            additional: {  }
           fd91e8fa-6366-4656-b03b-704bbf6262a5:
             uuid: fd91e8fa-6366-4656-b03b-704bbf6262a5
             region: content
@@ -141,6 +131,21 @@ third_party_settings:
                   separator: '-'
                 third_party_settings: {  }
             weight: 2
+            additional: {  }
+          eb784b17-3d24-4835-a684-6afa63081378:
+            uuid: eb784b17-3d24-4835-a684-6afa63081378
+            region: content
+            configuration:
+              id: 'extra_field_block:node:territorial_report:rate_thumbs_up'
+              label: 'Rate Thumbs Up'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
             additional: {  }
         third_party_settings: {  }
       -
@@ -306,6 +311,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 8
+    region: content
+  rate_emotion:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  rate_thumbs_up:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
     region: content
   territorial_report_active_level:
     type: string

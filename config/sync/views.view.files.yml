@@ -456,11 +456,11 @@ display:
           total_pages: 0
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Seguente ›'
+            previous: '‹ Precedente'
           expose:
             items_per_page: false
-            items_per_page_label: 'Voci per pagina'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
@@ -991,11 +991,11 @@ display:
           total_pages: 0
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Seguente ›'
+            previous: '‹ Precedente'
           expose:
             items_per_page: false
-            items_per_page_label: 'Voci per pagina'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'

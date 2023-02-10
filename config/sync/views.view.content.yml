@@ -460,8 +460,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Seguente ›'
+            previous: '‹ Precedente'
             first: '« First'
             last: 'Last »'
           expose:
