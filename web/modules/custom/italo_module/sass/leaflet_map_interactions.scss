@@ -35,8 +35,10 @@
       margin: 12px 8px 0;
     }
     .node--type-territorial-report {
-      width: 600px !important;
       margin: 12px 8px 0;
+      img {
+        max-width: none !important;
+      }
     }
     .field--type-image img, .field--name-user-picture img {
       margin: 0;
