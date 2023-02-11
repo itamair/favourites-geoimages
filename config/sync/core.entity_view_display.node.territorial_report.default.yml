@@ -147,6 +147,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+          5a99905b-eeb4-4f0f-9460-030c97d8f5cd:
+            uuid: 5a99905b-eeb4-4f0f-9460-030c97d8f5cd
+            region: content
+            configuration:
+              id: 'extra_field_block:node:territorial_report:links'
+              label: Links
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section

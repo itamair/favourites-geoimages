@@ -50,12 +50,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
-  rate_thumbs_up:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
 hidden:
   active_level: true
@@ -71,4 +66,5 @@ hidden:
   field_media_slideshow: true
   field_related_content: true
   langcode: true
+  rate_thumbs_up: true
   territorial_report_active_level: true
