@@ -31,13 +31,15 @@
       }
     }
     .node--type-geoplace, .node--type-event{
-      width: 300px !important;
       margin: 12px 8px 0;
+      img {
+        max-width: 300px !important;
+      }
     }
     .node--type-territorial-report {
       margin: 12px 8px 0;
       img {
-        max-width: none !important;
+        max-width: 400px !important;
       }
     }
     .field--type-image img, .field--name-user-picture img {
@@ -89,40 +91,48 @@
         }
       }
       .node--type-geoplace, .node--type-event {
-        width: 300px !important;
         margin: 8px;
+        img {
+          max-width: 300px !important;
+        }
       }
       .node--type-territorial-report {
-        width: 360px !important;
+        img {
+          max-width: 340px !important;
+        }
       }
     }
 
     @media only screen and (max-width: 500px) {
-      max-width: 360px;
-
       .node--type-geoimage {
-        width: 360px !important;
+        max-width: 360px !important;
         margin: 0;
       }
       .node--type-geoplace, .node--type-event {
-        width: 220px !important;
+        img {
+          max-width: 220px !important;
+        }
       }
       .node--type-territorial-report {
-        width: 320px !important;
+        img {
+          max-width: 300px !important;
+        }
       }
     }
 
     @media only screen and (max-width: 380px) {
-      max-width: 300px;
-
       .node--type-geoimage {
         width: 300px !important;
       }
       .node--type-geoplace, .node--type-event {
-        width: 200px !important;
+        img {
+          max-width: 200px !important;
+        }
       }
       .node--type-territorial-report {
-        width: 320px !important;
+        img {
+          max-width: 300px !important;
+        }
       }
     }
 
