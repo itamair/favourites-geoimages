@@ -1,17 +1,23 @@
-uuid: a5558bb6-4553-4dd7-b987-3076042ef1e7
+uuid: f9bc3e46-a7a3-4ba4-9cad-9640ea89469b
 langcode: it
 status: true
 dependencies: {  }
-id: thumbs_up
-label: 'Thumbs Up'
-template: thumbsup
+id: thumbs_up_down
+label: 'Thumbs Up/Down'
+template: thumbsupdown
 value_type: points
-entity_types: {  }
-comment_types: {  }
+entity_types:
+  - node.territorial_report
+comment_types:
+  - node.territorial_report
 options:
   -
     value: '1'
     label: up
+    class: ''
+  -
+    value: '-1'
+    label: down
     class: ''
 voting:
   use_deadline: 0
@@ -20,11 +26,11 @@ voting:
 display:
   display_label: ''
   label_class: ''
-  label_position: above
+  label_position: hidden
   description: ''
   description_class: ''
   description_position: below
   readonly: 0
 results:
   result_type: vote_average
-  result_position: hidden
+  result_position: below

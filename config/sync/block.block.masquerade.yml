@@ -1,0 +1,20 @@
+uuid: c3173007-7956-481c-830e-8bcfc1f3f72d
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - olivero_tarantoviva
+id: masquerade
+theme: olivero_tarantoviva
+region: primary_menu
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+visibility: {  }

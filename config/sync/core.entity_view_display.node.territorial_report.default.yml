@@ -132,21 +132,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-          eb784b17-3d24-4835-a684-6afa63081378:
-            uuid: eb784b17-3d24-4835-a684-6afa63081378
-            region: content
-            configuration:
-              id: 'extra_field_block:node:territorial_report:rate_thumbs_up'
-              label: 'Rate Thumbs Up'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
           5a99905b-eeb4-4f0f-9460-030c97d8f5cd:
             uuid: 5a99905b-eeb4-4f0f-9460-030c97d8f5cd
             region: content

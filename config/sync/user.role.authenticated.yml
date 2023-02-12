@@ -10,10 +10,10 @@ dependencies:
     - filter
     - media
     - node
+    - rate
     - search
     - shortcut
     - system
-    - toolbar
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
@@ -26,8 +26,9 @@ permissions:
   - 'access content overview'
   - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'access toolbar'
-  - 'administer nodes'
+  - 'cast rate vote on field_comments on node of territorial_report'
+  - 'cast rate vote on node of territorial_report'
+  - 'edit own comments'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
