@@ -56,7 +56,7 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
-        'region' => 'hidden'
+        'region' => 'hidden',
       ]);
   }
 
@@ -70,11 +70,12 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
-        'region' => 'hidden'
+        'region' => 'hidden',
       ]);
   }
 
   if ($entity_type->id() === 'node') {
+
     // Add a field that defines the Geoimage Storing Folder.
     $fields['geoimage_storing_folder'] = BaseFieldDefinition::create('string')
       ->setName('geoimage_storing_folder')
@@ -83,13 +84,17 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setClass('\Drupal\italo_module\GeoimageStoringFolderFieldItemList')
       ->setDisplayConfigurable('view', FALSE);
 
-    // Add a field that defines the Territorial Report Level, if active.
-    $fields['active_level'] = BaseFieldDefinition::create('string')
-      ->setName('active_level')
-      ->setLabel(t('Active Level'))
+    // Add a field that defines the Active Status of node.
+    $fields['active_status'] = BaseFieldDefinition::create('boolean')
+      ->setName('active_status')
+      ->setLabel(t('Active Status'))
       ->setComputed(TRUE)
-      ->setClass('\Drupal\italo_module\ActiveLevelFieldItemList')
-      ->setDisplayConfigurable('view', TRUE);
+      ->setClass('\Drupal\italo_module\ActiveStatusFieldItemList')
+      ->setDisplayConfigurable('form', FALSE)
+      ->setDisplayConfigurable('view', FALSE)
+      ->setTranslatable(FALSE)
+      ->setRevisionable(FALSE)
+      ->setCardinality(1);
 
   }
   return $fields;
@@ -99,6 +104,8 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
  * Implements hook_views_data_alter().
  */
 function italo_module_views_data_alter(array &$data) {
+
+  // In case of Paragraphs based views.
   if (isset($data['paragraphs_item'])) {
     // Add the Geo Marker Icon Url field to Views.
     $data['paragraphs_item']['geomarker_icon_url'] = [
@@ -111,7 +118,9 @@ function italo_module_views_data_alter(array &$data) {
     ];
   }
 
+  // In case of Nodes based views.
   if (isset($data['node'])) {
+
     // Add the geoimage_storing_folder field to Views.
     $data['node']['geoimage_storing_folder'] = [
       'title' => t('Geoimage Storing Folder'),
@@ -122,12 +131,16 @@ function italo_module_views_data_alter(array &$data) {
       ],
     ];
 
-    $data['node']['active_level'] = [
-      'title' => t('Active Level'),
+    $data['node']['active_status'] = [
+      'title' => t('Active Status'),
       'field' => [
         'id' => 'field',
-        'default_formatter' => 'string',
-        'field_name' => 'active_level',
+        'default_formatter' => 'boolean',
+        'field_name' => 'active_status',
+      ],
+      'filter' => [
+        'id' => 'boolean',
+        'type' => 'yes-no',
       ],
     ];
   }
@@ -163,7 +176,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
           }
           // Otherwise look for the field_geoimage that should contain Geoimage
           // Media reference, with geofield into it.
-          else if ($paragraph->field_geoimage) {
+          elseif ($paragraph->field_geoimage) {
             $media_references = $paragraph->get('field_geoimage')->getValue();
             foreach ($media_references as $media_reference) {
               /** @var \Drupal\media\Entity\Media $paragraph */
@@ -176,7 +189,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
         }
         break;
     }
-    // if the geofields array is not empty, use it to generate the Forced
+    // If the geofields array is not empty, use it to generate the Forced
     // Leaflet Map Bounds, and pass it into attached js drupalsettings.
     if (!empty($geofields)) {
       /** @var Drupal\leaflet\LeafletService $leafletService */

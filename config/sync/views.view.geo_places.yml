@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_geofield
+    - field.storage.node.field_active_type
     - field.storage.node.field_category_type
     - field.storage.node.field_classname
     - field.storage.paragraph.field_arrowed
@@ -33,6 +34,7 @@ dependencies:
     - leaflet_views
     - media
     - node
+    - options
     - paragraphs
     - taxonomy
     - user
@@ -480,7 +482,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_level":"{{ active_level }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_type":"{{ field_active_type }}","active_status":"{{ active_status }}","active_level":"{{ active_level }}"}'
       row:
         type: fields
         options:
@@ -1829,10 +1831,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        active_level:
-          id: active_level
+        field_active_type:
+          id: field_active_type
+          table: node__field_active_type
+          field: field_active_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        active_status:
+          id: active_status
           table: node
-          field: active_level
+          field: active_status
           relationship: none
           group_type: group
           admin_label: ''
@@ -1874,15 +1938,17 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: boolean
           settings:
-            link_to_entity: false
+            format: boolean
+            format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2256,7 +2322,7 @@ display:
               popup: true
               options: ''
           feature_properties:
-            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_level":"{{ active_level }}"}'
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_type":"{{ field_active_type }}","active_status":"{{ active_status }}","active_level":"{{ active_level }}"}'
       row:
         type: fields
         options:
@@ -2291,6 +2357,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.media.field_geofield'
+        - 'config:field.storage.node.field_active_type'
         - 'config:field.storage.node.field_category_type'
         - 'config:field.storage.node.field_classname'
         - 'config:field.storage.paragraph.field_arrowed'
@@ -3578,10 +3645,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        active_level:
-          id: active_level
+        field_active_type:
+          id: field_active_type
+          table: node__field_active_type
+          field: field_active_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        active_status:
+          id: active_status
           table: node
-          field: active_level
+          field: active_status
           relationship: none
           group_type: group
           admin_label: ''
@@ -3629,9 +3758,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: boolean
           settings:
-            link_to_entity: false
+            format: boolean
+            format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -4040,6 +4171,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.media.field_geofield'
+        - 'config:field.storage.node.field_active_type'
         - 'config:field.storage.node.field_category_type'
         - 'config:field.storage.node.field_classname'
         - 'config:field.storage.paragraph.field_arrowed'
