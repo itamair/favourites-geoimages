@@ -59,6 +59,8 @@
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.11",
         "drupal/rate": "^3.0",
+        "drupal/replicate": "^1.0",
+        "drupal/replicate_ui": "^1.0",
         "drupal/single_image_formatter": "^1.6",
         "drupal/slick": "^2.7",
         "drupal/svg_image": "^1.16",
