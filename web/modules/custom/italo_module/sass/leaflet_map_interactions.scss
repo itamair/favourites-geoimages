@@ -242,6 +242,7 @@
 }
 
 .leaflet-container .leaflet-marker-icon.pulsing-marker {
+  z-index: 500 !important;
   &.negative .dot {
     border-color: orange;
   }

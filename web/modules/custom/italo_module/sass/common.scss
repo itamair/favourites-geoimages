@@ -43,6 +43,13 @@ a, a.link {
   }
 }
 
+.user-profile-section .block-layout-builder {
+  margin-bottom: 10px;
+  &.block-field-blockuseruseruser-picture {
+    margin-bottom: 20px;
+  }
+}
+
 .block-layout-builder {
   margin-bottom: 20px;
   &.node-title {

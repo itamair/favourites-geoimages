@@ -132,17 +132,26 @@ function italo_module_views_data_alter(array &$data) {
     ];
 
     $data['node']['active_status'] = [
-      'title' => t('Active Status'),
+      'title' => t('Status'),
       'field' => [
         'id' => 'field',
         'default_formatter' => 'boolean',
         'field_name' => 'active_status',
       ],
+    ];
+
+    // Custom views filter for an existing date range field.
+    // @see https://www.lilengine.co/articles/custom-views-filter-existing-daterange-field
+    $data['node__field_date_range']['active_status'] = [
       'filter' => [
-        'id' => 'boolean',
-        'type' => 'yes-no',
+        'title' => t('Status'),
+        'group' => t('Content'),
+        'help' => t('Show Active / Inactive Status Contents with a filter.'),
+        'field' => 'field_date_range_value',
+        'id' => 'date_range_active_status_filter',
       ],
     ];
+
   }
 }
 
