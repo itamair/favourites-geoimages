@@ -7,9 +7,154 @@ dependencies:
     - field.field.user.user.field_surname
     - field.field.user.user.user_picture
     - image.style.thumbnail
+    - views.view.territorial_reports
   module:
+    - layout_builder
+    - layout_discovery
     - svg_image
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          layout_builder_styles_style:
+            user_profile_section_style: user_profile_section_style
+        components:
+          7a7ef625-b42f-4541-82f0-88555ce1ddf0:
+            uuid: 7a7ef625-b42f-4541-82f0-88555ce1ddf0
+            region: content
+            configuration:
+              id: 'field_block:user:user:user_picture'
+              label: Picture
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          8b3e6984-bfd6-45e0-9769-ac0aad1deabe:
+            uuid: 8b3e6984-bfd6-45e0-9769-ac0aad1deabe
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:member_for'
+              label: 'Member for'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          1938b18f-67da-4064-8a1e-334cb4765787:
+            uuid: 1938b18f-67da-4064-8a1e-334cb4765787
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:masquerade'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 5
+            additional: {  }
+          3070717f-55bc-49a2-93fa-461db5eaf961:
+            uuid: 3070717f-55bc-49a2-93fa-461db5eaf961
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_forename'
+              label: Forename
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          e4573d5c-1d54-4d19-8b97-c2d0320d917f:
+            uuid: e4573d5c-1d54-4d19-8b97-c2d0320d917f
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_surname'
+              label: Surname
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          601b6244-7eff-4fdf-a50b-6135e60d568e:
+            uuid: 601b6244-7eff-4fdf-a50b-6135e60d568e
+            region: content
+            configuration:
+              id: 'field_block:user:user:mail'
+              label: Email
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: inline
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Segnalazioni Territoriali'
+          context_mapping: {  }
+        components:
+          efb5c67b-8173-4904-8f6c-4e614b2cec80:
+            uuid: efb5c67b-8173-4904-8f6c-4e614b2cec80
+            region: content
+            configuration:
+              id: 'views_block:territorial_reports-block_territorial_reports'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default

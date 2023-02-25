@@ -179,7 +179,7 @@ display:
           settings:
             format: custom
             format_custom_false: Blocked
-            format_custom_true: Active
+            format_custom_true: Attive
         roles_target_id:
           id: roles_target_id
           table: user__roles
@@ -475,7 +475,7 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Tutte -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -611,7 +611,7 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Active
+                title: Attive
                 operator: '='
                 value: '1'
               2:

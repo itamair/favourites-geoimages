@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: positive
-      label: Positive
+      label: Positiva
     -
       value: negative
-      label: Negative
+      label: Negativa
     -
       value: very_negative
-      label: 'Very Negative'
+      label: 'Molto Negativa'
   allowed_values_function: ''
 module: options
 locked: false

@@ -2380,7 +2380,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: ''
+      title: Mappa
       fields:
         title:
           id: title
@@ -4048,7 +4048,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Titolo
             description: ''
             use_operator: false
             operator: title_op
@@ -4089,7 +4089,7 @@ display:
           exposed: true
           expose:
             operator_id: field_location_type_target_id_op
-            label: 'Location Type'
+            label: 'Tipo di Luogo'
             description: ''
             use_operator: false
             operator: field_location_type_target_id_op

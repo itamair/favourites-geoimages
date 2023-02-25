@@ -11,9 +11,7 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
-    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
-    - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - node.type.territorial_report
@@ -51,6 +49,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  rate_thumbs_up_down:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   active_level: true
   field_active_type: true
@@ -59,9 +62,7 @@ hidden:
   field_components: true
   field_date_range: true
   field_geofied_view: true
-  field_geoimage: true
   field_link: true
-  field_media_image: true
   field_media_slideshow: true
   field_related_content: true
   langcode: true

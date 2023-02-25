@@ -79,6 +79,8 @@ module:
   path_alias: 0
   rate: 0
   rdf: 0
+  replicate: 0
+  replicate_ui: 0
   rest: 0
   search: 0
   serialization: 0
@@ -98,6 +100,7 @@ module:
   viewfield: 0
   views_bulk_edit: 0
   views_bulk_operations: 0
+  views_daterange_filters: 0
   views_geojson: 0
   views_slideshow: 0
   views_slideshow_cycle: 0

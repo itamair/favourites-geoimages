@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
-    - field.field.node.territorial_report.field_vote
     - node.type.territorial_report
   module:
     - comment
@@ -26,7 +25,6 @@ dependencies:
     - paragraphs
     - path
     - text
-    - votingapi_widgets
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -79,9 +77,9 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: all
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default

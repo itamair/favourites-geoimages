@@ -11,9 +11,7 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
-    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
-    - field.field.node.territorial_report.field_media_image
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - node.type.territorial_report
@@ -146,6 +144,16 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 6
+            additional: {  }
+          4cf47ea7-41b5-426b-8836-11ec33124157:
+            uuid: 4cf47ea7-41b5-426b-8836-11ec33124157
+            region: content
+            configuration:
+              id: 'extra_field_block:node:territorial_report:rate_thumbs_up_down'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 7
             additional: {  }
         third_party_settings: {  }
       -
@@ -281,14 +289,6 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-  field_media_image:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
-    region: content
   field_media_slideshow:
     type: viewfield_default
     label: hidden
@@ -322,6 +322,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  rate_thumbs_up_down:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
   territorial_report_active_level:
     type: string
     label: inline
@@ -333,7 +338,6 @@ content:
 hidden:
   active_level: true
   field_components: true
-  field_geoimage: true
   field_link: true
   geoimage_caption: true
   langcode: true
