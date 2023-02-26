@@ -91,11 +91,16 @@ a, a.link {
   margin-bottom: 1rem !important;
 }
 
-/* line 87, ../sass/common.scss */
+/* line 86, ../sass/common.scss */
+.view > .view-header {
+  margin-bottom: 0.5rem !important;
+}
+
+/* line 91, ../sass/common.scss */
 #header #block-pagetitle {
   margin: 70px 0 0 40px;
 }
-/* line 89, ../sass/common.scss */
+/* line 93, ../sass/common.scss */
 #header #block-pagetitle h1.page-title {
   font-size: 2.5rem;
 }
