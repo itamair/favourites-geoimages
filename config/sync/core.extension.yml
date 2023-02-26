@@ -111,7 +111,6 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  seven: 0
   olivero_tarantoviva: 0
   mediteran: 0
   stable: 0
