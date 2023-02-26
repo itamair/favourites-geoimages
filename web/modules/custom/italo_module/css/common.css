@@ -86,9 +86,16 @@ a, a.link {
   margin-left: unset;
 }
 
-@media (min-width: 43.75rem) {
-  /* line 83, ../sass/common.scss */
-  .view > * {
-    margin-bottom: 1rem !important;
-  }
+/* line 82, ../sass/common.scss */
+.view > * {
+  margin-bottom: 1rem !important;
+}
+
+/* line 87, ../sass/common.scss */
+#header #block-pagetitle {
+  margin: 70px 0 0 40px;
+}
+/* line 89, ../sass/common.scss */
+#header #block-pagetitle h1.page-title {
+  font-size: 2.5rem;
 }
