@@ -31,12 +31,19 @@ function italo_module_page_attachments(array &$page) {
  */
 function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
 
-  // Avoiding Paragraphs Duplications in Geoplaces Leaflet View Map.
+  // Avoiding Paragraphs Duplications in Geoplaces Leaflet Map View.
   // @see https://www.drupal.org/project/paragraphs/issues/2941499
   if ($view->storage->id() == 'geo_places' && $query instanceof Sql) {
     $query->addField('paragraphs_item_field_data_node__field_components', 'id', '', ['function' => 'groupby']);
     $query->addGroupBy('paragraphs_item_field_data_node__field_components.id');
   }
+
+  // Avoiding Contents Duplications in Territorial Reports View.
+  if ($view->storage->id() == 'territorial_reports' && $query instanceof Sql) {
+    $query->addField('node_field_data', 'nid', '', ['function' => 'groupby']);
+    $query->addGroupBy('node_field_data.nid');
+  }
+
 }
 
 /**
