@@ -22,6 +22,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'cast rate vote on node of territorial_report'
   - 'search content'
   - 'use text format restricted_html'

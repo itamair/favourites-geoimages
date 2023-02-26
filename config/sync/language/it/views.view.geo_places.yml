@@ -6,8 +6,3 @@ display:
           content:
             value: "<p>No Results found</p>\r\n"
             format: basic_html
-  page_taranto_viva_map:
-    display_options:
-      header:
-        result:
-          content: 'Visualizza @start - @end di @total'

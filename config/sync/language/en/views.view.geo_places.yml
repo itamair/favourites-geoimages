@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<p>No Results found</p>\r\n"
+            format: basic_html
+  page_main_map:
+    display_options:
+      title: Map
+      header:
+        result:
+          content: 'Display @start - @end of @total'
+      filters:
+        title:
+          expose:
+            label: Title
+        field_location_type_target_id:
+          expose:
+            label: 'Location Type'

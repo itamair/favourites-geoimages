@@ -1,0 +1,27 @@
+uuid: b38e70f8-1599-429b-b7c8-f36bd56a0da8
+langcode: it
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - uikit
+_core:
+  default_config_hash: nqwvWcXslLfSHAjUNfYcFNZb4MWpDDSdDqOoK1HpHmo
+id: uikit_footer
+theme: uikit
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

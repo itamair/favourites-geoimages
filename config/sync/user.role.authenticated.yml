@@ -26,6 +26,7 @@ permissions:
   - 'access content overview'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'cast rate vote on field_comments on node of territorial_report'
   - 'cast rate vote on node of territorial_report'
   - 'edit own comments'
@@ -35,3 +36,4 @@ permissions:
   - 'use text format basic_html'
   - 'view media'
   - 'view own unpublished content'
+  - 'view user email addresses'

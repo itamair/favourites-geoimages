@@ -1,17 +1,17 @@
-uuid: 06143d83-d371-4f74-9cf2-49e7fb6add54
+uuid: b558d0ac-d1e3-491a-a4fb-b2522c964e99
 langcode: it
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero_tarantoviva
+    - uikit
 _core:
-  default_config_hash: sMKFgJswD9JRcFvwLHBFKlD9vTvAlETPQPjBZhsrj1M
-id: olivero_tarantoviva_content
-theme: olivero_tarantoviva
+  default_config_hash: c9MHdJfZE73cY5KUYM-G2UK2VE5OY55E9vNXEwh2AYc
+id: uikit_content
+theme: uikit
 region: content
-weight: -6
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

@@ -1,0 +1,22 @@
+uuid: bad5a9b0-5ae2-4ba0-8913-d08ff3f0b95e
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uikit
+_core:
+  default_config_hash: VnM5gDVhaGBSS_iJ9xYL_05LT9eezSBGYSPV4AWf6AU
+id: uikit_powered
+theme: uikit
+region: footer
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

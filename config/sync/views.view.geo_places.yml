@@ -1,5 +1,5 @@
 uuid: 179546c8-bbef-4b26-ae5d-825b910ecf75
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -2374,8 +2374,8 @@ display:
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
-  page_taranto_viva_map:
-    id: page_taranto_viva_map
+  page_main_map:
+    id: page_main_map
     display_title: 'Page Taranto Viva'
     display_plugin: page
     position: 1
@@ -4148,7 +4148,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: 'Displaying @start - @end of @total'
+          content: 'Visualizza @start - @end di @total'
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
       path: main_map

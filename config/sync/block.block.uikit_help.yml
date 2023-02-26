@@ -1,0 +1,22 @@
+uuid: cb7e3436-01c1-401a-8d43-5433b5b4dc74
+langcode: it
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - uikit
+_core:
+  default_config_hash: cvy9DU9bYGqyjbt7NGUl11SYO_uykgva2-234h5DQsU
+id: uikit_help
+theme: uikit
+region: content
+weight: -1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
