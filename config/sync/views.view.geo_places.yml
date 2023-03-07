@@ -4154,7 +4154,7 @@ display:
       path: main_map
       menu:
         type: normal
-        title: Map
+        title: Mappa
         description: ''
         weight: -45
         expanded: false

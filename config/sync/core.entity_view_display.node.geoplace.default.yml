@@ -101,27 +101,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-          de421ce9-beb3-4bec-a153-b47a9fcb5ce6:
-            uuid: de421ce9-beb3-4bec-a153-b47a9fcb5ce6
-            region: content
-            configuration:
-              id: 'field_block:node:geoplace:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional:
-              layout_builder_styles_style:
-                node_title: node_title
           9ebcab73-4a1d-46a3-a0a8-065497ff00fb:
             uuid: 9ebcab73-4a1d-46a3-a0a8-065497ff00fb
             region: content

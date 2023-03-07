@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: ''
+      title: Immagini
       fields:
         title:
           id: title
@@ -180,18 +180,18 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_images_list:
-    id: page_images_list
-    display_title: 'Page Images List'
+  page_geo_images:
+    id: page_geo_images
+    display_title: 'Page Geo Images List'
     display_plugin: page
     position: 1
     display_options:
       display_description: ''
       display_extenders: {  }
-      path: geo-images-list
+      path: geo-images
       menu:
         type: normal
-        title: 'Images List'
+        title: Immagini
         description: ''
         weight: -44
         expanded: false

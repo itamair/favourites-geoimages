@@ -19,3 +19,5 @@ display:
         field_location_type_target_id:
           expose:
             label: 'Location Type'
+      menu:
+        title: Map

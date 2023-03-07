@@ -13,7 +13,7 @@ _core:
 id: olivero_tarantoviva_account_menu
 theme: olivero_tarantoviva
 region: primary_menu
-weight: -5
+weight: -6
 provider: null
 plugin: 'system_menu_block:account'
 settings:

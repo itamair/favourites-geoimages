@@ -8,8 +8,8 @@ dependencies:
     - olivero_tarantoviva
 id: masquerade
 theme: olivero_tarantoviva
-region: primary_menu
-weight: 0
+region: footer_bottom
+weight: -6
 provider: null
 plugin: masquerade
 settings:

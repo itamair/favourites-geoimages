@@ -9,7 +9,7 @@ dependencies:
 id: languageswitcherinterfacetext_2
 theme: olivero_tarantoviva
 region: secondary_menu
-weight: -5
+weight: -6
 provider: null
 plugin: 'language_block:language_interface'
 settings:
