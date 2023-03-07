@@ -3,7 +3,7 @@ type: drupal9
 docroot: web
 php_version: "8.1"
 webserver_type: nginx-fpm
-router_http_port: "80"
+router_http_port: "8082"
 router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
@@ -126,8 +126,8 @@ web_environment: []
 # phpmyadmin_https_port: "8037"
 # The PHPMyAdmin ports can be changed from the default 8036 and 8037
 
-# mailhog_port: "8025"
-# mailhog_https_port: "8026"
+mailhog_port: "8027"
+mailhog_https_port: "8028"
 # The MailHog ports can be changed from the default 8025 and 8026
 
 # webimage_extra_packages: [php7.4-tidy, php-bcmath]
