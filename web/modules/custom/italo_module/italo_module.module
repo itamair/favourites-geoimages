@@ -39,6 +39,9 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
   }
 
   // Avoiding Contents Duplications in Territorial Reports View.
+  // Without these, items in the view would be duplicated for each Media Image
+  // added into the Content.
+  // @see https://www.drupal.org/project/paragraphs/issues/2941499
   if ($view->storage->id() == 'territorial_reports' && $query instanceof Sql) {
     $query->addField('node_field_data', 'nid', '', ['function' => 'groupby']);
     $query->addGroupBy('node_field_data.nid');

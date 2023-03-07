@@ -76,6 +76,7 @@ class DateRangeActiveStatusFilter extends FilterPluginBase {
           'inactive' => $this->t('Inactive'),
         ],
         '#default_value' => !empty($this->value['status']) ? $this->value['status'] : 'all',
+        '#title' => $exposed_info['label'],
         '#description' => $exposed_info['description'],
       ],
     ];

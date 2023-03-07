@@ -95,12 +95,3 @@ a, a.link {
 .view > .view-header {
   margin-bottom: 0.5rem !important;
 }
-
-/* line 91, ../sass/common.scss */
-#header #block-pagetitle {
-  margin: 70px 0 0 40px;
-}
-/* line 93, ../sass/common.scss */
-#header #block-pagetitle h1.page-title {
-  font-size: 2.5rem;
-}
