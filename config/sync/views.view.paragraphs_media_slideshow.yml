@@ -7,7 +7,6 @@ dependencies:
     - image.style.map_scaled_cropped_image_900_600
     - paragraphs.paragraphs_type.geoimage
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.location
   module:
     - media
     - paragraphs
@@ -261,7 +260,6 @@ display:
           value:
             geoimage: geoimage
             image: image
-            location: location
           group: 1
           exposed: false
           expose:
