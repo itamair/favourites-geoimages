@@ -150,7 +150,8 @@
             "drupal/core": {
                 "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
                 "#3145190 PHP warnings in array_flip in Drupal\\Core\\Entity\\EntityStorageBase->loadMultiple()": "https://www.drupal.org/files/issues/2022-08-17/php_warnings_in_array_flip_3145190.patch",
-                "#3302838 Querying with NULL values results in warning mb_strtolower(): Passing null to parameter is deprecated": "https://www.drupal.org/files/issues/2022-08-23/3302838-13.patch"
+                "#3302838 Querying with NULL values results in warning mb_strtolower(): Passing null to parameter is deprecated": "https://www.drupal.org/files/issues/2022-08-23/3302838-13.patch",
+                "#3183045 Cannot remove media on field, when there is a custom validation error": "https://git.drupalcode.org/project/drupal/-/merge_requests/2947.diff"
             },
             "drupal/color_field": {
                 "#3312329 PHP8.1 compatibility": "https://www.drupal.org/files/issues/2022-09-28/php81-compatibility-3312329-2.patch"

@@ -2,7 +2,7 @@ uuid: 3a4952d8-b9a4-4c6e-9653-811dc703b90f
 langcode: en
 status: true
 dependencies: {  }
-name: cropped_map_image_
+name: cropped_map_image
 label: 'Map Scaled & Cropped Image 240×160'
 effects:
   9d5c1879-a183-4ff5-8ad1-79e6565b4f03:

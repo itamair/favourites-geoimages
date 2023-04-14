@@ -26,7 +26,7 @@
           if (forced_bounds.length > 0) {
             forced_bounds = new L.LatLngBounds(forced_bounds);
             Drupal.Leaflet[mapid].start_center = forced_bounds.getCenter();
-            Drupal.Leaflet[mapid].start_zoom = lMap.getBoundsZoom(forced_bounds) -1;
+            Drupal.Leaflet[mapid].start_zoom = drupalSettings.leaflet.node_forced_bounds['zoom_start'] ?? 17;
             lMap.setView(Drupal.Leaflet[mapid].start_center, Drupal.Leaflet[mapid].start_zoom);
             let map_reset_view_options = Drupal.Leaflet[mapid].reset_view_control.options;
             map_reset_view_options.latlng = Drupal.Leaflet[mapid].start_center;

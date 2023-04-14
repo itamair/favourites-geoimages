@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.media.leaflet_popup
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
-    - image.style.cropped_map_image_
+    - image.style.cropped_map_image
     - media.type.image
   module:
     - layout_builder
@@ -34,7 +34,7 @@ content:
     type: single_image_formatter
     label: visually_hidden
     settings:
-      image_style: cropped_map_image_
+      image_style: cropped_map_image
       image_link: ''
       image_loading:
         attribute: lazy

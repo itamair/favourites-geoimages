@@ -174,10 +174,14 @@ function italo_module_views_data_alter(array &$data) {
 function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
   // Define an array on Node Bundles to which apply this functional logic.
   $node_bundles = ['geoplace', 'territorial_report', 'event'];
+  $node_bundles_start_zooms = [
+    'geoplace' => 15,
+    'territorial_report' => 15,
+    'event' => 15,
+  ];
   if ($view_mode === 'full' && in_array($node->bundle(), $node_bundles)) {
     // Initialise a geofield array that will be populated with Geo Points of
     // Forced Leaflet Map Bounds.
-    $geofields = [];
     switch ($node->bundle()) {
       case 'geoplace':
       case 'territorial_report':
@@ -220,6 +224,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
         'node_id' => $node->id(),
         'currentPath' => 'node/' . $node->id(),
         'geofields' => $geofields,
+        'zoom_start' => $node_bundles_start_zooms[$node->bundle()],
       ];
     }
   }
