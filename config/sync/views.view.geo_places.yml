@@ -481,6 +481,8 @@ display:
               zoom: 16
               popup: true
               options: ''
+          map_lazy_load:
+            lazy_load: true
           feature_properties:
             values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_type":"{{ field_active_type }}","active_status":"{{ active_status }}","active_level":"{{ active_level }}"}'
       row:
