@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f388450fa6973446bed83e6919c55de2",
+    "content-hash": "ea8ece7c247bfe99b679cfbb173e7b85",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4719,17 +4719,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.0.10",
+            "version": "10.0.12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.0.10"
+                "reference": "10.0.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.10.zip",
-                "reference": "10.0.10",
-                "shasum": "49a1770b30e7c90d5e927c385dea2ed8f44ce336"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.12.zip",
+                "reference": "10.0.12",
+                "shasum": "94612aff0e1bee28ad8d936393e30a223b0476e6"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -4738,8 +4738,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.0.10",
-                    "datestamp": "1679355397",
+                    "version": "10.0.12",
+                    "datestamp": "1681511192",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
