@@ -16,7 +16,7 @@
           for (let i = 0; i < features.length; i++) {
             let feature = features[i];
             if (feature.type === 'point') {
-              forced_bounds.push([feature.lat, feature.lon]);
+              forced_bounds.push(L.latLng(feature.lat, feature.lon));
             }
             else {
               const lFeature = Drupal.Leaflet.prototype.create_geometry(feature);

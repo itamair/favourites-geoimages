@@ -14,6 +14,7 @@ use Drupal\node\NodeInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\media\Entity\Media;
+use Drupal\Core\Field\FieldItemList;
 
 /**
  * Implements hook_page_attachments().
@@ -37,16 +38,6 @@ function italo_module_views_query_alter(ViewExecutable $view, QueryPluginBase $q
     $query->addField('paragraphs_item_field_data_node__field_components', 'id', '', ['function' => 'groupby']);
     $query->addGroupBy('paragraphs_item_field_data_node__field_components.id');
   }
-
-  // Avoiding Contents Duplications in Territorial Reports View.
-  // Without these, items in the view would be duplicated for each Media Image
-  // added into the Content.
-  // @see https://www.drupal.org/project/paragraphs/issues/2941499
-  if ($view->storage->id() == 'territorial_reports' && $query instanceof Sql) {
-    $query->addField('node_field_data', 'nid', '', ['function' => 'groupby']);
-    $query->addGroupBy('node_field_data.nid');
-  }
-
 }
 
 /**
@@ -70,7 +61,7 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ]);
   }
 
-  if ($entity_type->id() === 'paragraph') {
+  if (in_array($entity_type->id(), ['node', 'paragraph'])) {
     // Add a field that represent the Paragraph Geofield Marker Uri path.
     $fields['geomarker_icon_url'] = BaseFieldDefinition::create('string')
       ->setName('geomarker_icon_url')
@@ -131,6 +122,16 @@ function italo_module_views_data_alter(array &$data) {
   // In case of Nodes based views.
   if (isset($data['node'])) {
 
+    // Add the Geo Marker Icon Url field to Views.
+    $data['node']['geomarker_icon_url'] = [
+      'title' => t('Geo Marker Icon Url'),
+      'field' => [
+        'id' => 'field',
+        'default_formatter' => 'string',
+        'field_name' => 'geomarker_icon_url',
+      ],
+    ];
+
     // Add the geoimage_storing_folder field to Views.
     $data['node']['geoimage_storing_folder'] = [
       'title' => t('Geoimage Storing Folder'),
@@ -173,19 +174,28 @@ function italo_module_views_data_alter(array &$data) {
  */
 function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
   // Define an array on Node Bundles to which apply this functional logic.
-  $node_bundles = ['geoplace', 'territorial_report', 'event'];
   $node_bundles_start_zooms = [
-    'geoplace' => 15,
-    'territorial_report' => 15,
-    'event' => 15,
+    'geoplace' => 17,
+    'territorial_report' => 17,
+    'event' => 17,
   ];
-  if ($view_mode === 'full' && in_array($node->bundle(), $node_bundles)) {
+  if ($view_mode === 'full' && array_key_exists($node->bundle(), $node_bundles_start_zooms)) {
     // Initialise a geofield array that will be populated with Geo Points of
     // Forced Leaflet Map Bounds.
     switch ($node->bundle()) {
       case 'geoplace':
       case 'territorial_report':
       case 'event':
+
+        $geofields = [];
+
+        // Intersect eventual Geofield on the node itself.
+        if ($node->field_geofield instanceof FieldItemList) {
+          foreach ($node->get('field_geofield')->getValue() as $geofield) {
+            $geofields[] = $geofield['value'];
+          }
+        }
+
         // Extract Paragraphs components from the field_components.
         $components = $node->get('field_components')->getValue();
         foreach ($components as $component) {

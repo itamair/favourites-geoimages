@@ -36,7 +36,7 @@
         }
 
         // Pulsing Markers.
-        if (feature['properties'] && feature['properties'].length > 0) {
+        else if (feature['properties'] && feature['properties'].length > 0) {
           const properties = JSON.parse(feature['properties']);
           if ((properties['active_status'] && parseInt(properties['active_status']) === 1) && (properties['active_type'] && properties['active_type'].length > 0)) {
             const pulsing_type = properties['active_type'];
