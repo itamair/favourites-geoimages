@@ -1,0 +1,60 @@
+uuid: c4fc0137-c920-4e06-8eb9-86cd1261e992
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.territorial_report_type.field_place_type_icon
+    - taxonomy.vocabulary.territorial_report_type
+  module:
+    - media_library
+    - path
+    - text
+id: taxonomy_term.territorial_report_type.default
+targetEntityType: taxonomy_term
+bundle: territorial_report_type
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_place_type_icon:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

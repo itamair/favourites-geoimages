@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_location_type
     - paragraphs.paragraphs_type.location
     - taxonomy.vocabulary.place_types
+    - taxonomy.vocabulary.territorial_report_type
 id: paragraph.location.field_location_type
 field_name: field_location_type
 entity_type: paragraph
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       place_types: place_types
+      territorial_report_type: territorial_report_type
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: place_types
 field_type: entity_reference

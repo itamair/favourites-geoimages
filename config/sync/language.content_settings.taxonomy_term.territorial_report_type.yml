@@ -1,0 +1,11 @@
+uuid: 3bdcebdd-0c5c-4bd1-91e2-155396a4dbd3
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.territorial_report_type
+id: taxonomy_term.territorial_report_type
+target_entity_type_id: taxonomy_term
+target_bundle: territorial_report_type
+default_langcode: site_default
+language_alterable: false

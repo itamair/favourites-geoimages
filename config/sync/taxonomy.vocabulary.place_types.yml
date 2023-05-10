@@ -1,8 +1,8 @@
 uuid: 43267b18-3d31-4d23-8f61-7883479d3e60
-langcode: en
+langcode: it
 status: true
 dependencies: {  }
-name: 'Place Types'
+name: 'Tipo di Luoghi'
 vid: place_types
 description: ''
 weight: 0

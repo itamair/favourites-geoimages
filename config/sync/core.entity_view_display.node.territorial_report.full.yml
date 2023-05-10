@@ -11,9 +11,13 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_geofield
+    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
+    - field.field.node.territorial_report.field_source_is_external
+    - field.field.node.territorial_report.field_source_link
     - node.type.territorial_report
   module:
     - text
@@ -71,8 +75,12 @@ hidden:
   field_comments: true
   field_components: true
   field_date_range: true
+  field_geofield: true
+  field_geoimage: true
   field_link: true
   field_media_slideshow: true
   field_related_content: true
+  field_source_is_external: true
+  field_source_link: true
   langcode: true
   territorial_report_active_level: true

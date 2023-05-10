@@ -24,7 +24,6 @@ third_party_settings:
       children:
         - field_location_type
         - field_image
-        - field_location_icon
         - field_classname
         - field_location_icon_width
         - field_zindex

@@ -11,25 +11,36 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
+    - field.field.node.territorial_report.field_geofield
+    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
+    - field.field.node.territorial_report.field_source_is_external
+    - field.field.node.territorial_report.field_source_link
+    - image.style.cropped_map_image
     - node.type.territorial_report
   module:
-    - entity_reference_revisions
     - field_formatter_range
+    - svg_image
     - user
 id: node.territorial_report.leaflet_popup
 targetEntityType: node
 bundle: territorial_report
 mode: leaflet_popup
 content:
-  field_components:
-    type: entity_reference_revisions_entity_view
+  field_geoimage:
+    type: image
     label: hidden
     settings:
-      view_mode: leaflet_popup
-      link: ''
+      image_link: ''
+      image_style: cropped_map_image
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_range:
         order: 0
@@ -56,11 +67,16 @@ hidden:
   field_active_type: true
   field_category_type: true
   field_comments: true
+  field_components: true
   field_date_range: true
   field_geofied_view: true
+  field_geofield: true
   field_link: true
   field_media_slideshow: true
   field_related_content: true
+  field_source_is_external: true
+  field_source_link: true
+  geomarker_icon_url: true
   langcode: true
   rate_thumbs_up: true
   rate_thumbs_up_down: true
