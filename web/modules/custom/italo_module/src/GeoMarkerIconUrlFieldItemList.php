@@ -85,11 +85,11 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
     if (isset($image_style)) {
       $style = ImageStyle::load($image_style);
       $value = \Drupal::service('file_url_generator')
-        ->generateAbsoluteString($style->buildUri($image_uri));
+        ->generateString($style->buildUri($image_uri));
     }
     else {
       $value = \Drupal::service('file_url_generator')
-        ->generateAbsoluteString($image_uri);
+        ->generateString($image_uri);
     }
     return $value;
   }
