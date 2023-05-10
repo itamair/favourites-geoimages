@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea8ece7c247bfe99b679cfbb173e7b85",
+    "content-hash": "6e7d4344170299a31c7f3a1cee15e772",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2831,6 +2831,85 @@
             "time": "2020-05-27T22:07:14+00:00"
         },
         {
+            "name": "drupal/conditional_fields",
+            "version": "4.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/conditional_fields.git",
+                "reference": "4.0.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/conditional_fields-4.0.0-alpha2.zip",
+                "reference": "4.0.0-alpha2",
+                "shasum": "acc5658cb370583449d119a4172b7e0c2d81c86a"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.0-alpha2",
+                    "datestamp": "1677271425",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "ergonlogic",
+                    "homepage": "https://www.drupal.org/user/368613"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "heddn",
+                    "homepage": "https://www.drupal.org/user/1463982"
+                },
+                {
+                    "name": "itsekhmistro",
+                    "homepage": "https://www.drupal.org/user/928152"
+                },
+                {
+                    "name": "mparker17",
+                    "homepage": "https://www.drupal.org/user/536298"
+                },
+                {
+                    "name": "OlgaRabodzei",
+                    "homepage": "https://www.drupal.org/user/3389198"
+                },
+                {
+                    "name": "peterpoe",
+                    "homepage": "https://www.drupal.org/user/55674"
+                },
+                {
+                    "name": "thalles",
+                    "homepage": "https://www.drupal.org/user/3589086"
+                }
+            ],
+            "description": "Define dependencies between fields based on their states and values.",
+            "homepage": "https://www.drupal.org/project/conditional_fields",
+            "support": {
+                "source": "https://git.drupalcode.org/project/conditional_fields"
+            }
+        },
+        {
             "name": "drupal/config_inspector",
             "version": "1.3.0",
             "source": {
@@ -4719,17 +4798,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.0.12",
+            "version": "10.0.13",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.0.12"
+                "reference": "10.0.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.12.zip",
-                "reference": "10.0.12",
-                "shasum": "94612aff0e1bee28ad8d936393e30a223b0476e6"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.13.zip",
+                "reference": "10.0.13",
+                "shasum": "f479fe6dbc5d6f96c26a70e366a8e2b77081456e"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -4738,8 +4817,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.0.12",
-                    "datestamp": "1681511192",
+                    "version": "10.0.13",
+                    "datestamp": "1683735578",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6220,6 +6299,10 @@
                     "homepage": "https://github.com/lussoluca",
                     "email": "lussoluca@gmail.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "drupalspoons",
+                    "homepage": "https://www.drupal.org/user/3647684"
                 },
                 {
                     "name": "lussoluca",
@@ -12604,6 +12687,7 @@
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
         "drupal/cer": 15,
+        "drupal/conditional_fields": 15,
         "drupal/entity_usage": 10,
         "drupal/feeds": 15,
         "drupal/gin": 5,
