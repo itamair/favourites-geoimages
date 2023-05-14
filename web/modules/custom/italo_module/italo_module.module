@@ -61,7 +61,7 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
       ]);
   }
 
-  if (in_array($entity_type->id(), ['node', 'paragraph'])) {
+  if ($entity_type->id() === 'paragraph') {
     // Add a field that represent the Paragraph Geofield Marker Uri path.
     $fields['geomarker_icon_url'] = BaseFieldDefinition::create('string')
       ->setName('geomarker_icon_url')
@@ -121,16 +121,6 @@ function italo_module_views_data_alter(array &$data) {
 
   // In case of Nodes based views.
   if (isset($data['node'])) {
-
-    // Add the Geo Marker Icon Url field to Views.
-    $data['node']['geomarker_icon_url'] = [
-      'title' => t('Geo Marker Icon Url'),
-      'field' => [
-        'id' => 'field',
-        'default_formatter' => 'string',
-        'field_name' => 'geomarker_icon_url',
-      ],
-    ];
 
     // Add the geoimage_storing_folder field to Views.
     $data['node']['geoimage_storing_folder'] = [

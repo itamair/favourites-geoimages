@@ -6,7 +6,6 @@ use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
 use Drupal\media\MediaInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\file\FileInterface;
 use Drupal\image\Entity\ImageStyle;
@@ -34,12 +33,8 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
     if (!$this->isCalculated) {
       $entity = $this->getEntity();
       $image_style = NULL;
-      $image_value = '';
-
-      if ($entity instanceof NodeInterface && $entity->field_geoimage instanceof FieldItemList && $entity->field_geoimage->entity instanceof FileInterface) {
-        $image_value = $this->getImageValue($entity->field_geoimage->entity, 'image_map_marker');
-      }
-      elseif ($entity instanceof ParagraphInterface) {
+      $value = '';
+      if ($entity instanceof ParagraphInterface) {
         $paragraph_type = $entity->bundle();
         switch ($paragraph_type) {
           case "geoimage":
@@ -54,6 +49,7 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
 
           case "location":
             $media = $entity->field_image->entity;
+            $image_style = 'image_map_marker';
             if (!$media instanceof MediaInterface && $entity->field_location_type->entity instanceof ContentEntityInterface) {
               $media = $entity->field_location_type->entity->field_place_type_icon->entity;
             }
@@ -61,10 +57,10 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
         }
 
         if (isset($media) && $media instanceof MediaInterface && isset($media->field_media_image) && $media->field_media_image->entity instanceof FileInterface) {
-          $image_value = $this->getImageValue($media->field_media_image->entity, $image_style);
+          $value = $this->getImageValue($media->field_media_image->entity, $image_style);
         }
       }
-      $this->list[0] = $this->createItem(0, $image_value);
+      $this->list[0] = $this->createItem(0, $value);
       $this->isCalculated = TRUE;
     }
   }
@@ -82,14 +78,19 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
    */
   protected function getImageValue(FileInterface $file_entity, ?string $image_style) {
     $image_uri = $file_entity->getFileUri();
-    if (isset($image_style)) {
+    // If there is an image style requested, and it is not an SVG file.
+    if (isset($image_style) && strpos($file_entity->getMimeType(), 'svg') === FALSE) {
       $style = ImageStyle::load($image_style);
       $value = \Drupal::service('file_url_generator')
-        ->generateString($style->buildUri($image_uri));
+        // Generate Absolute Path to fix the pan of geoimages under their
+        // location. Would align to the up-left corner of the image, otherwise.
+        ->generateAbsoluteString($style->buildUri($image_uri));
     }
     else {
       $value = \Drupal::service('file_url_generator')
-        ->generateString($image_uri);
+        // Generate Absolute Path to fix the pan of geoimages under their
+        // location. Would align to the up-left corner of the image, otherwise.
+        ->generateAbsoluteString($image_uri);
     }
     return $value;
   }

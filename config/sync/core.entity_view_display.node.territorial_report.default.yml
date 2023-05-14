@@ -13,8 +13,6 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
-    - field.field.node.territorial_report.field_geofield
-    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
@@ -24,12 +22,10 @@ dependencies:
   module:
     - comment
     - datetime_range
-    - geofield
     - layout_builder
     - layout_discovery
     - link
     - options
-    - svg_image
     - text
     - user
     - viewfield
@@ -124,46 +120,6 @@ third_party_settings:
                   target: ''
                 third_party_settings: {  }
             weight: 4
-            additional: {  }
-          90631680-7f56-4b4b-b1c5-3c96c160a8a7:
-            uuid: 90631680-7f56-4b4b-b1c5-3c96c160a8a7
-            region: content
-            configuration:
-              id: 'field_block:node:territorial_report:field_geofield'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: geofield_default
-                label: above
-                settings:
-                  output_format: wkt
-                  output_escape: true
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          fe9e0161-c1da-4549-afb4-a8a13f084265:
-            uuid: fe9e0161-c1da-4549-afb4-a8a13f084265
-            region: content
-            configuration:
-              id: 'field_block:node:territorial_report:field_geoimage'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: above
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  svg_attributes:
-                    width: null
-                    height: null
-                  svg_render_as_image: true
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 6
             additional: {  }
         third_party_settings: {  }
       -
@@ -388,30 +344,6 @@ content:
       empty_view_title: hidden
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_geofield:
-    type: geofield_default
-    label: above
-    settings:
-      output_format: wkt
-      output_escape: true
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  field_geoimage:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 105
     region: content
   field_media_slideshow:
     type: viewfield_default

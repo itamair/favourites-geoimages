@@ -64,7 +64,7 @@
         "drupal/replicate_ui": "^1.0",
         "drupal/single_image_formatter": "^1.6",
         "drupal/slick": "^2.7",
-        "drupal/svg_image": "^1.16",
+        "drupal/svg_image": "^3.0",
         "drupal/token": "^1.11",
         "drupal/uikit": "dev-3.x",
         "drupal/upgrade_status": "^3.17",
