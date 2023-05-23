@@ -43,12 +43,12 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
             break;
 
           case "image":
-            $media = $entity->field_image->entity;
+            $media = isset($entity->field_image) ? $entity->field_image->entity : NULL;
             $image_style = 'image_map_marker';
             break;
 
           case "location":
-            $media = $entity->field_image->entity;
+            $media = isset($entity->field_marker_image) ? $entity->field_marker_image->entity : NULL;
             $image_style = 'image_map_marker';
             if (!$media instanceof MediaInterface && $entity->field_location_type->entity instanceof ContentEntityInterface) {
               $media = $entity->field_location_type->entity->field_place_type_icon->entity;

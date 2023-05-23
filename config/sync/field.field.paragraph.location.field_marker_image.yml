@@ -1,19 +1,19 @@
-uuid: 61c84556-dc36-449e-812a-b61c7b7e35a0
+uuid: d21d4e86-8412-4cdb-b708-6d35920f3809
 langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_image
+    - field.storage.paragraph.field_marker_image
     - media.type.image
     - paragraphs.paragraphs_type.location
-id: paragraph.location.field_image
-field_name: field_image
+id: paragraph.location.field_marker_image
+field_name: field_marker_image
 entity_type: paragraph
 bundle: location
 label: 'Marker Image'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

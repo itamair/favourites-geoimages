@@ -403,7 +403,7 @@ display:
             value: title
             options: '{"permanent":false,"direction":"top"}'
           leaflet_popup:
-            value: '#rendered_entity'
+            value: '#rendered_entity_ajax'
             options: '{"autoPan":true}'
             view_mode: leaflet_popup
           leaflet_map: multilayers
@@ -497,7 +497,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       relationships:
@@ -2240,49 +2240,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-          operator: in
-          value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
-            zxx: zxx
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -2300,7 +2257,6 @@ display:
                 hidden_overlays_controls:
                   none: none
           data_source:
-            field_geofield_2: field_geofield_2
             field_geofield: field_geofield
             field_geofield_1: field_geofield_1
           entity_source: __base_table
@@ -2334,7 +2290,7 @@ display:
             zoom: 17
             minZoom: 3
             maxZoom: 19
-            zoomFiner: 0
+            zoomFiner: -1
           weight: '{{ field_zindex }}'
           icon:
             iconType: marker

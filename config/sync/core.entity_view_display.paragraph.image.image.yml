@@ -7,9 +7,7 @@ dependencies:
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
   module:
-    - field_formatter_range
     - layout_builder
-    - slick
 third_party_settings:
   layout_builder:
     enabled: false
@@ -20,68 +18,13 @@ bundle: image
 mode: image
 content:
   field_image:
-    type: slick_media
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      caption:
-        field_image_caption: '0'
-        title: '0'
-        alt: '0'
-      optionset: default
-      class: ''
-      id: ''
-      image: ''
-      link: ''
-      overlay: ''
-      title: ''
-      vanilla: false
-      layout: ''
-      view_mode: default
-      cache: 0
-      skin: ''
-      lazy: ''
-      style: ''
-      background: false
-      box_caption: ''
-      box_caption_custom: ''
-      box_media_style: ''
-      loading: ''
-      preload: false
-      responsive_image_style: ''
-      box_style: ''
-      image_style: ''
-      media_switch: ''
-      ratio: ''
-      thumbnail_style: ''
-      grid: ''
-      grid_medium: ''
-      grid_small: ''
-      overridables:
-        arrows: '0'
-        autoplay: '0'
-        dots: '0'
-        draggable: '0'
-        infinite: '0'
-        mouseWheel: '0'
-        randomize: '0'
-        variableWidth: '0'
-      thumbnail: ''
-      optionset_thumbnail: ''
-      skin_thumbnail: ''
-      thumbnail_caption: ''
-      thumbnail_effect: ''
-      thumbnail_position: ''
-      override: false
-      skin_arrows: ''
-      skin_dots: ''
-      use_theme_field: false
-      preserve_keys: false
-      visible_items: null
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 0
-        offset: 0
+      view_mode: image
+      link: false
+    third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  geomarker_icon_url: true

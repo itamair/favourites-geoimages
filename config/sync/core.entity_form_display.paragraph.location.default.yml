@@ -7,9 +7,9 @@ dependencies:
     - field.field.paragraph.location.field_classname
     - field.field.paragraph.location.field_exclude_from_map_bounds
     - field.field.paragraph.location.field_geofield
-    - field.field.paragraph.location.field_image
     - field.field.paragraph.location.field_location_icon_width
     - field.field.paragraph.location.field_location_type
+    - field.field.paragraph.location.field_marker_image
     - field.field.paragraph.location.field_markercluster_exclude
     - field.field.paragraph.location.field_title
     - field.field.paragraph.location.field_zindex
@@ -23,7 +23,7 @@ third_party_settings:
     group_attributes:
       children:
         - field_location_type
-        - field_image
+        - field_marker_image
         - field_classname
         - field_location_icon_width
         - field_zindex
@@ -48,7 +48,7 @@ mode: default
 content:
   field_address:
     type: string_textfield
-    weight: 17
+    weight: 16
     region: content
     settings:
       size: 60
@@ -56,7 +56,7 @@ content:
     third_party_settings: {  }
   field_classname:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -66,7 +66,7 @@ content:
     third_party_settings: {  }
   field_exclude_from_map_bounds:
     type: boolean_checkbox
-    weight: 16
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -126,16 +126,9 @@ content:
         bounds_limit_flag: false
         max_zoom_out: -2
     third_party_settings: {  }
-  field_image:
-    type: media_library_widget
-    weight: 10
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_location_icon_width:
     type: number
-    weight: 13
+    weight: 12
     region: content
     settings:
       placeholder: ''
@@ -146,9 +139,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_marker_image:
+    type: media_library_widget
+    weight: 10
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -163,7 +163,7 @@ content:
     third_party_settings: {  }
   field_zindex:
     type: number
-    weight: 14
+    weight: 13
     region: content
     settings:
       placeholder: ''

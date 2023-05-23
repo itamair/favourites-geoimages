@@ -18,7 +18,7 @@ dependencies:
     - field.field.node.territorial_report.field_source_link
     - node.type.territorial_report
   module:
-    - entity_reference_revisions
+    - field_formatter
     - field_formatter_range
     - user
 id: node.territorial_report.leaflet_popup
@@ -27,11 +27,15 @@ bundle: territorial_report
 mode: leaflet_popup
 content:
   field_components:
-    type: entity_reference_revisions_entity_view
+    type: field_formatter_with_inline_settings
     label: hidden
     settings:
-      view_mode: leaflet_popup
-      link: ''
+      field_name: field_geoimage
+      type: entity_reference_entity_view
+      settings:
+        view_mode: image
+      label: hidden
+      link_to_entity: false
     third_party_settings:
       field_formatter_range:
         order: 0

@@ -1,22 +1,18 @@
-uuid: c699fc87-9892-437d-bd7a-3208f055949b
+uuid: 27ac9050-b316-4153-9d28-9f38bb66a54c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_geoimage
     - field.storage.paragraph.field_image
-    - image.style.map_scaled_cropped_image_900_600
     - node.type.geoplace
     - node.type.territorial_report
   module:
-    - media
     - node
     - paragraphs
-    - slick
     - user
-    - views_slideshow
-id: media_slideshow
-label: 'Media Slideshow'
+id: content_media_images
+label: 'Content Media Images'
 module: views
 description: ''
 tag: ''
@@ -29,9 +25,10 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: 'Content Media Images'
       fields:
-        field_geoimage_1:
-          id: field_geoimage_1
+        field_geoimage:
+          id: field_geoimage
           table: paragraph__field_geoimage
           field: field_geoimage
           relationship: field_components
@@ -80,12 +77,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: media_thumbnail
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: map_scaled_cropped_image_900_600
-            image_loading:
-              attribute: lazy
+            view_mode: image
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -146,55 +140,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: slick_media
+          type: entity_reference_entity_view
           settings:
-            caption:
-              field_media_document: '0'
-              field_address: '0'
-              field_generate_host_content: '0'
-              field_geofield: '0'
-              field_media_geoimage: '0'
-              field_image_caption: '0'
-              title: '0'
-              alt: '0'
-            optionset: default
-            class: ''
-            image: ''
-            link: ''
-            title: ''
-            vanilla: false
-            layout: ''
-            view_mode: full
-            cache: 0
-            skin: ''
-            style: ''
-            background: false
-            loading: ''
-            preload: false
-            image_style: ''
-            media_switch: ''
-            ratio: ''
-            thumbnail_style: ''
-            grid: ''
-            grid_medium: ''
-            grid_small: ''
-            overridables:
-              arrows: '0'
-              autoplay: '0'
-              dots: '0'
-              draggable: '0'
-              infinite: '0'
-              mouseWheel: '0'
-              randomize: '0'
-              variableWidth: '0'
-            optionset_thumbnail: ''
-            skin_thumbnail: ''
-            thumbnail_caption: ''
-            thumbnail_effect: ''
-            thumbnail_position: ''
-            override: false
-            preserve_keys: false
-            visible_items: null
+            view_mode: image
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -206,27 +154,14 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: none
         options:
           offset: 0
           items_per_page: 0
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Voci per pagina'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       exposed_form:
         type: basic
         options:
-          submit_button: Applica
+          submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -242,6 +177,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        delta:
+          id: delta
+          table: node__field_components
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
@@ -357,103 +305,19 @@ display:
         groups:
           1: AND
       style:
-        type: slideshow
+        type: default
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
-          uses_fields: false
-          slideshow_skin: default
-          slideshow_type: views_slideshow_cycle
-          widgets:
-            top:
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: '0'
-              views_slideshow_slide_counter:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-              views_slideshow_pager:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: '0'
-                views_slideshow_pager_numbered_hover: 0
-                views_slideshow_pager_numbered_click_to_page: 0
-                views_slideshow_pager_thumbnails_hover: 0
-                views_slideshow_pager_thumbnails_click_to_page: 0
-                views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields_fields: {  }
-                views_slideshow_pager_fields_hover: 0
-            bottom:
-              views_slideshow_controls:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: '0'
-              views_slideshow_slide_counter:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-              views_slideshow_pager:
-                enable: false
-                weight: '1'
-                hide_on_single_slide: '0'
-                type: '0'
-                views_slideshow_pager_numbered_hover: 0
-                views_slideshow_pager_numbered_click_to_page: 0
-                views_slideshow_pager_thumbnails_hover: 0
-                views_slideshow_pager_thumbnails_click_to_page: 0
-                views_slideshow_pager_bullets_hover: 0
-                views_slideshow_pager_fields_fields: {  }
-                views_slideshow_pager_fields_hover: 0
-          row_class_custom: ''
-          row_class_default: true
-          views_slideshow_cycle:
-            effect: fade
-            transition_advanced: 0
-            timeout: 5000
-            speed: 700
-            delay: 0
-            sync: 1
-            random: 0
-            pause: 1
-            pause_on_click: 0
-            action_advanced: 0
-            start_paused: 0
-            remember_slide: 0
-            remember_slide_days: 1
-            pause_in_middle: 0
-            pause_when_hidden: 0
-            pause_when_hidden_type: full
-            amount_allowed_visible: ''
-            nowrap: 0
-            fixed_height: 1
-            items_per_slide: 1
-            items_per_slide_first: false
-            items_per_slide_first_number: 1
-            wait_for_image_load: 1
-            wait_for_image_load_timeout: 3000
-            cleartype: 'true'
-            cleartypenobg: 'false'
-            advanced_options: '{}'
+          default_row_class: false
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline:
-            field_geoimage_1: field_geoimage_1
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       relationships:
@@ -475,28 +339,25 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.paragraph.field_geoimage'
         - 'config:field.storage.paragraph.field_image'
-  block_media_slideshow:
-    id: block_media_slideshow
-    display_title: 'Block Media Slideshow'
+  block_content_media_images:
+    id: block_content_media_images
+    display_title: Block
     display_plugin: block
     position: 1
     display_options:
-      display_description: ''
       display_extenders: {  }
-      block_description: 'Block Media Slideshow'
+      block_description: 'Content Media Images'
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:

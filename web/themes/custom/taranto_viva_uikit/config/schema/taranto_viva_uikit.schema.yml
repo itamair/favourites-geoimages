@@ -1,5 +1,0 @@
-# Schema for the configuration files of the taranto_viva_uikit theme.
-
-taranto_viva_uikit.settings:
-  type: theme_settings
-  label: 'taranto_viva_uikit settings'

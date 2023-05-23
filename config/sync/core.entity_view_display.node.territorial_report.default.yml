@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.territorial_report.field_source_is_external
     - field.field.node.territorial_report.field_source_link
     - node.type.territorial_report
+    - views.view.content_media_images
   module:
     - comment
     - datetime_range
@@ -29,6 +30,7 @@ dependencies:
     - text
     - user
     - viewfield
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -240,26 +242,18 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          52809e49-8f2b-44bd-aa0e-f4ec9a87e292:
-            uuid: 52809e49-8f2b-44bd-aa0e-f4ec9a87e292
+          691f046e-1371-4c3a-ae73-41218032b7c9:
+            uuid: 691f046e-1371-4c3a-ae73-41218032b7c9
             region: first
             configuration:
-              id: 'field_block:node:territorial_report:field_media_slideshow'
-              label: 'Media Slideshow'
+              id: 'views_block:content_media_images-block_content_media_images'
+              label: ''
               label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: viewfield_default
-                label: hidden
-                settings:
-                  view_title: hidden
-                  always_build_output: false
-                  empty_view_title: hidden
-                third_party_settings: {  }
-            weight: 0
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -

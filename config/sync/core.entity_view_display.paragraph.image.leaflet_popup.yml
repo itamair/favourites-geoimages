@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
   module:
-    - field_formatter_range
     - layout_builder
 third_party_settings:
   layout_builder:
@@ -24,11 +23,7 @@ content:
     settings:
       view_mode: leaflet_popup
       link: false
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 1
-        offset: 0
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:

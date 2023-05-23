@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
   module:
-    - entity_reference_revisions
+    - field_formatter
     - field_formatter_range
     - user
 id: node.geoplace.leaflet_popup
@@ -22,15 +22,19 @@ bundle: geoplace
 mode: leaflet_popup
 content:
   field_components:
-    type: entity_reference_revisions_entity_view
+    type: field_formatter_with_inline_settings
     label: hidden
     settings:
-      view_mode: leaflet_popup
-      link: ''
+      field_name: field_image
+      type: entity_reference_entity_view
+      settings:
+        view_mode: image
+      label: hidden
+      link_to_entity: false
     third_party_settings:
       field_formatter_range:
         order: 0
-        limit: 0
+        limit: 2
         offset: 0
     weight: 0
     region: content

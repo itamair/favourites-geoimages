@@ -1,8 +1,9 @@
-uuid: 51e55ecf-5c12-43b5-a002-8fb2c2815873
+uuid: 28b268fb-30ee-43b3-b48e-f6d934e7b2e7
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.geoimage
     - field.field.media.geoimage.field_address
     - field.field.media.geoimage.field_generate_host_content
     - field.field.media.geoimage.field_geofield
@@ -11,11 +12,16 @@ dependencies:
     - image.style.map_scaled_cropped_image_900_600
     - media.type.geoimage
   module:
+    - layout_builder
     - svg_image
-id: media.geoimage.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.geoimage.geoimage
 targetEntityType: media
 bundle: geoimage
-mode: default
+mode: geoimage
 content:
   field_media_image:
     type: image

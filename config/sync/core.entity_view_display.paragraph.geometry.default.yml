@@ -125,6 +125,8 @@ content:
           zoom: 16
           popup: false
           options: ''
+      map_lazy_load:
+        lazy_load: false
       weight: null
     third_party_settings: {  }
     weight: 1
@@ -177,3 +179,4 @@ hidden:
   field_stroke_opacity: true
   field_stroke_weight: true
   field_zindex: true
+  geomarker_icon_url: true
