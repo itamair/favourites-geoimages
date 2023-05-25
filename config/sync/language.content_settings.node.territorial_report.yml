@@ -1,0 +1,11 @@
+uuid: e0a7cacf-113f-4d34-9fc3-30117700d207
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.territorial_report
+id: node.territorial_report
+target_entity_type_id: node
+target_bundle: territorial_report
+default_langcode: site_default
+language_alterable: false

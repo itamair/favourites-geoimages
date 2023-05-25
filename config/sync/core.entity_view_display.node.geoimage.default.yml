@@ -12,7 +12,6 @@ dependencies:
     - node.type.geoimage
   module:
     - entity_reference_revisions
-    - field_formatter_range
     - text
     - user
 id: node.geoimage.default
@@ -41,11 +40,7 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 0
-        offset: 0
+    third_party_settings: {  }
     weight: 3
     region: content
   geoimage_caption:

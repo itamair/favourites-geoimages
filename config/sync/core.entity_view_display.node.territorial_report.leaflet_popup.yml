@@ -18,8 +18,7 @@ dependencies:
     - field.field.node.territorial_report.field_source_link
     - node.type.territorial_report
   module:
-    - field_formatter
-    - field_formatter_range
+    - italo_module
     - user
 id: node.territorial_report.leaflet_popup
 targetEntityType: node
@@ -27,20 +26,12 @@ bundle: territorial_report
 mode: leaflet_popup
 content:
   field_components:
-    type: field_formatter_with_inline_settings
+    type: leaflet_popup_components_entity_view
     label: hidden
     settings:
-      field_name: field_geoimage
-      type: entity_reference_entity_view
-      settings:
-        view_mode: image
-      label: hidden
-      link_to_entity: false
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 1
-        offset: 0
+      view_mode: leaflet_popup
+      link: ''
+    third_party_settings: {  }
     weight: 0
     region: content
   geoimage_caption:

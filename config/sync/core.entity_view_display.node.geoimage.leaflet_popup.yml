@@ -13,7 +13,6 @@ dependencies:
     - node.type.geoimage
   module:
     - entity_reference_revisions
-    - field_formatter_range
     - layout_builder
     - user
 third_party_settings:
@@ -31,11 +30,7 @@ content:
     settings:
       view_mode: leaflet_popup
       link: ''
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 0
-        offset: 0
+    third_party_settings: {  }
     weight: 0
     region: content
   geoimage_caption:
