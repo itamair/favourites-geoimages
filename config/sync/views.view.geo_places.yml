@@ -417,7 +417,7 @@ display:
             options: '{"position":"topleft","title":"Reset View"}'
           locate:
             control: true
-            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"},"cacheLocation":false,"tap":false}'
             automatic: false
           map_position:
             force: false
