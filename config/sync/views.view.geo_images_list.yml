@@ -8,6 +8,7 @@ dependencies:
     - system.menu.main
   module:
     - node
+    - paragraphs
     - user
 id: geo_images_list
 label: 'Geo Images List'
@@ -149,9 +150,14 @@ display:
           plugin_id: bundle
           value:
             geoimage: geoimage
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: grid
       row:
@@ -167,7 +173,16 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        field_components:
+          id: field_components
+          table: node__field_components
+          field: field_components
+          relationship: none
+          group_type: group
+          admin_label: 'field_components: Paragraph'
+          plugin_id: standard
+          required: true
       header: {  }
       footer: {  }
       display_extenders: {  }

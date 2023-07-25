@@ -100,3 +100,20 @@ a, a.link {
 .view-content-media-images .field-content .media {
   margin-bottom: 20px;
 }
+
+/* line 97, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid header {
+  height: 100px;
+}
+/* line 99, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid header h2 {
+  font-size: 1.4rem;
+}
+/* line 103, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .paragraph--type--location.paragraph--view-mode--leaflet-popup {
+  height: 40px;
+}
+/* line 106, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .field--name-field-image-caption {
+  font-size: 0.7rem;
+}

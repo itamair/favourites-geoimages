@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.leaflet_popup
     - field.storage.media.field_geofield
     - field.storage.node.field_active_type
     - field.storage.node.field_category_type
@@ -25,6 +26,9 @@ dependencies:
     - node.type.geoimage
     - node.type.geoplace
     - node.type.territorial_report
+    - paragraphs.paragraphs_type.geoimage
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.location
     - system.menu.main
     - taxonomy.vocabulary.place_types
   module:
@@ -390,7 +394,7 @@ display:
               rendered: true
               overlays_options:
                 disabled_overlays:
-                  none: none
+                  Immagini: Immagini
                 hidden_overlays_controls:
                   none: none
           data_source:
@@ -2399,9 +2403,362 @@ display:
         - 'config:field.storage.paragraph.field_stroke_weight'
         - 'config:field.storage.paragraph.field_title'
         - 'config:field.storage.paragraph.field_zindex'
-  page_main_map:
-    id: page_main_map
-    display_title: 'Page Taranto Viva'
+  page_geoplaces_grid:
+    id: page_geoplaces_grid
+    display_title: 'Page Luoghi di Interesse Grid'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Luoghi di Interesse'
+      fields: {  }
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              title:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            geoplace: geoplace
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            zxx: zxx
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Titolo
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type_1:
+          id: type_1
+          table: paragraphs_item_field_data
+          field: type
+          relationship: field_components
+          group_type: group
+          admin_label: ''
+          entity_type: paragraph
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            geoimage: geoimage
+            image: image
+            location: location
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        delta:
+          id: delta
+          table: node__field_components
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: '1'
+            max: '1'
+            value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: grid
+        options:
+          uses_fields: false
+          columns: 4
+          automatic_width: false
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: false
+          col_class_custom: ''
+          col_class_default: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: leaflet_popup
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
+      defaults:
+        query: false
+        title: false
+        exposed_form: false
+        group_by: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+      relationships:
+        field_components:
+          id: field_components
+          table: node__field_components
+          field: field_components
+          relationship: none
+          group_type: group
+          admin_label: 'field_components: Paragraph'
+          plugin_id: standard
+          required: true
+      group_by: false
+      display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Visualizza @start - @end di @total'
+      rendering_language: '***LANGUAGE_language_interface***'
+      display_extenders: {  }
+      path: luoghi_di_interesse
+      menu:
+        type: normal
+        title: 'Luoghi di Interesse'
+        description: ''
+        weight: -45
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_map_taranto_viva:
+    id: page_map_taranto_viva
+    display_title: 'Page Map Taranto Viva'
     display_plugin: page
     position: 1
     display_options:
@@ -4197,10 +4554,123 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: leaflet_map
+        options:
+          grouping:
+            -
+              field: field_category_type
+              rendered: true
+              overlays_options:
+                disabled_overlays:
+                  Immagini: Immagini
+                hidden_overlays_controls:
+                  none: none
+          data_source:
+            field_geofield: field_geofield
+            field_geofield_1: field_geofield_1
+          entity_source: __base_table
+          entity_source_submit: 'Update Entity Source'
+          name_field: title
+          leaflet_tooltip:
+            value: title
+            options: '{"permanent":false,"direction":"top"}'
+          leaflet_popup:
+            value: '#rendered_entity'
+            options: '{"autoPan":true}'
+            view_mode: leaflet_popup
+          leaflet_map: multilayers
+          height: '80'
+          height_unit: vh
+          hide_empty_map: true
+          disable_wheel: false
+          gesture_handling: false
+          reset_map:
+            control: true
+            options: '{"position":"topleft","title":"Reset View"}'
+          locate:
+            control: true
+            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"},"cacheLocation":false,"tap":false}'
+            automatic: false
+          map_position:
+            force: false
+            center:
+              lat: !!float 42
+              lon: !!float 12
+            zoom: 17
+            minZoom: 3
+            maxZoom: 19
+            zoomFiner: 0
+          weight: '{{ field_zindex }}'
+          icon:
+            iconType: marker
+            iconUrl: '{{ geomarker_icon_url }}'
+            shadowUrl: ''
+            className: '{{ field_classname_1 }}'
+            iconSize:
+              x: '{{ field_location_icon_width }}'
+              'y': '{{ field_location_icon_width }}'
+            iconAnchor:
+              x: ''
+              'y': ''
+            shadowSize:
+              x: ''
+              'y': ''
+            shadowAnchor:
+              x: ''
+              'y': ''
+            popupAnchor:
+              x: ''
+              'y': ''
+            html: '<div></div>'
+            html_class: leaflet-map-divicon
+            circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+          leaflet_markercluster:
+            control: true
+            include_path: false
+            options: '{"spiderfyOnMaxZoom":false,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"maxClusterRadius":60,"disableClusteringAtZoom":17}'
+            excluded: field_markercluster_exclude
+          fullscreen:
+            control: true
+            options: '{"position":"topleft","pseudoFullscreen":false}'
+          path: '{"dashArray":0,"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true,"arrowed":"{{ field_arrowed }}"}'
+          geocoder:
+            control: true
+            settings:
+              position: topright
+              input_size: 16
+              providers:
+                arcgisonline:
+                  weight: '0'
+                  checked: 1
+                file:
+                  weight: '0'
+                  checked: 0
+                googlemaps:
+                  weight: '0'
+                  checked: 0
+              min_terms: 4
+              delay: 800
+              zoom: 16
+              popup: true
+              options: ''
+          map_lazy_load:
+            lazy_load: true
+          feature_properties:
+            values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_type":"{{ field_active_type }}","active_status":"{{ active_status }}","active_level":"{{ active_level }}"}'
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
         title: false
         exposed_form: false
         group_by: false
+        style: false
+        row: false
         relationships: true
         fields: false
         sorts: false

@@ -35,9 +35,9 @@ content:
     label: visually_hidden
     settings:
       image_style: cropped_map_image
-      image_link: ''
+      image_link: content
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content

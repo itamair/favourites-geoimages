@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_media_image
-    - image.style.map_scaled_cropped_image_900_600
+    - image.style.map_scaled_cropped_image_800_500
     - media.type.image
   module:
     - svg_image
@@ -29,7 +29,7 @@ content:
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: map_scaled_cropped_image_900_600
+      image_style: map_scaled_cropped_image_800_500
       image_loading:
         attribute: lazy
       svg_attributes:

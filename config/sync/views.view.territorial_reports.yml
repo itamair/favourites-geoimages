@@ -157,12 +157,12 @@ display:
           settings:
             image_link: ''
             image_style: cropped_map_image
+            image_loading:
+              attribute: lazy
             svg_attributes:
               width: null
               height: null
             svg_render_as_image: true
-            image_loading:
-              attribute: lazy
           group_column: entity_id
           group_columns: {  }
           group_rows: true
@@ -227,12 +227,12 @@ display:
           settings:
             image_link: ''
             image_style: cropped_map_image
+            image_loading:
+              attribute: lazy
             svg_attributes:
               width: null
               height: null
             svg_render_as_image: true
-            image_loading:
-              attribute: lazy
           group_column: entity_id
           group_columns: {  }
           group_rows: true
