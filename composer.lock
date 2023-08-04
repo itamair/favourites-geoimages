@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ff51c0cd76c0c21a07e71118bee0896",
+    "content-hash": "a94ec70b21fefe7631cbd6857405858f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4636,17 +4636,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.0.13",
+            "version": "10.0.19",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.0.13"
+                "reference": "10.0.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.13.zip",
-                "reference": "10.0.13",
-                "shasum": "f479fe6dbc5d6f96c26a70e366a8e2b77081456e"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.19.zip",
+                "reference": "10.0.19",
+                "shasum": "16194181219bb197b4260ad82519bb114ffdbb8a"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -4655,8 +4655,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.0.13",
-                    "datestamp": "1683735578",
+                    "version": "10.0.19",
+                    "datestamp": "1690895717",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8704,6 +8704,57 @@
                 "source": "https://github.com/politsin/jquery-ui-touch-punch/tree/1.0"
             },
             "time": "2020-12-15T10:26:18+00:00"
+        },
+        {
+            "name": "pschocke/google-maps-links",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pschocke/google-maps-links.git",
+                "reference": "cde4135eec3acda5d3c15c6ec0dcff05af9a1652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pschocke/google-maps-links/zipball/cde4135eec3acda5d3c15c6ec0dcff05af9a1652",
+                "reference": "cde4135eec3acda5d3c15c6ec0dcff05af9a1652",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pschocke\\GoogleMapsLinks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Schocke",
+                    "email": "patrick@ausbildung-ms.de",
+                    "homepage": "https://github.com/pschocke",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "easily create google maps links to link to a map",
+            "homepage": "https://github.com/pschocke/google-maps-links",
+            "keywords": [
+                "Google Maps links",
+                "google maps"
+            ],
+            "support": {
+                "issues": "https://github.com/pschocke/google-maps-links/issues",
+                "source": "https://github.com/pschocke/google-maps-links/tree/v1.0"
+            },
+            "time": "2020-10-02T12:24:36+00:00"
         },
         {
             "name": "psr/cache",

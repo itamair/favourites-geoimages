@@ -93,17 +93,26 @@ a, a.link {
 }
 
 // view view-geo-places view-id-geo_places
+
 .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid {
-  header {
-    height: 100px;
-    h2 {
-      font-size: 1.4rem;
-    }
-  }
-  .paragraph--type--location.paragraph--view-mode--leaflet-popup {
-    height: 40px;
-  }
   .field--name-field-image-caption {
     font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 43.75rem) {
+
+  .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid {
+    header {
+      height: 80px;
+      h2 {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+    }
+
+    .paragraph--type--location.paragraph--view-mode--leaflet-popup {
+      height: 40px;
+    }
   }
 }

@@ -17,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.location
   module:
     - layout_builder
+    - link
 third_party_settings:
   layout_builder:
     enabled: false
@@ -33,6 +34,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  geofield_googlemaps_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_classname: true

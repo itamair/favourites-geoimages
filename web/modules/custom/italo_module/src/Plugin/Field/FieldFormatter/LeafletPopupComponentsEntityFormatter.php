@@ -7,7 +7,7 @@ use Drupal\entity_reference_revisions\Plugin\Field\FieldFormatter\EntityReferenc
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
- * Plugin implementation of the 'entity reference rendered entity' formatter.
+ * Plugin implementation of the 'Leaflet Popup Components' formatter.
  *
  * @FieldFormatter(
  *   id = "leaflet_popup_components_entity_view",

@@ -2282,6 +2282,9 @@ display:
           reset_map:
             control: true
             options: '{"position":"topleft","title":"Reset View"}'
+          map_scale:
+            control: false
+            options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
           locate:
             control: true
             options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
@@ -2291,9 +2294,10 @@ display:
             center:
               lat: !!float 42
               lon: !!float 12
+            zoomControlPosition: topleft
             zoom: 17
             minZoom: 3
-            maxZoom: 19
+            maxZoom: 20
             zoomFiner: -1
           weight: '{{ field_zindex }}'
           icon:
@@ -2331,6 +2335,9 @@ display:
           geocoder:
             control: true
             settings:
+              autocomplete:
+                placeholder: 'Search Address'
+                title: 'Search an Address on the Map'
               position: topright
               input_size: 16
               providers:

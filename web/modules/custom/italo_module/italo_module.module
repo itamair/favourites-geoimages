@@ -77,6 +77,19 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
         'label' => 'hidden',
         'region' => 'hidden',
       ]);
+
+    // Add a field that generates the Link to Google Maps location.
+    $fields['geofield_googlemaps_link'] = BaseFieldDefinition::create('link')
+      ->setName('geofield_googlemaps_link')
+      ->setLabel(t('Geofield Google Maps Link'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\italo_module\GeofieldGoogleMapsLinkFieldItemList')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'region' => 'hidden',
+      ]);
+
   }
 
   if ($entity_type->id() === 'node') {
@@ -121,6 +134,17 @@ function italo_module_views_data_alter(array &$data) {
         'field_name' => 'geomarker_icon_url',
       ],
     ];
+
+    // Add the Geo Marker Icon Url field to Views.
+    $data['paragraphs_item']['geofield_googlemaps_link'] = [
+      'title' => t('Geofield Google Maps Link'),
+      'field' => [
+        'id' => 'field',
+        'default_formatter' => 'link',
+        'field_name' => 'geofield_googlemaps_link',
+      ],
+    ];
+
   }
 
   // In case of Nodes based views.

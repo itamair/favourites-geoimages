@@ -135,7 +135,14 @@
         }
       }
     }
-
+    .field--name-field-image-caption {
+      font-size: 0.6rem !important;
+      color: darkgray;
+    }
+    .field--name-geofield-googlemaps-link {
+      display: inline-block;
+      margin-right: 20px;
+    }
   }
 }
 
