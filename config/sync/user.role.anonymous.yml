@@ -9,6 +9,7 @@ dependencies:
     - contact
     - filter
     - media
+    - paragraphs_type_permissions
     - rate
     - search
     - system
@@ -27,3 +28,8 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
+  - 'view paragraph content geoimage'
+  - 'view paragraph content geometry'
+  - 'view paragraph content image'
+  - 'view paragraph content location'
+  - 'view paragraph content path'

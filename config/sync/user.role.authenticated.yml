@@ -10,6 +10,7 @@ dependencies:
     - filter
     - media
     - node
+    - paragraphs_type_permissions
     - rate
     - search
     - shortcut
@@ -29,11 +30,17 @@ permissions:
   - 'access user profiles'
   - 'cast rate vote on field_comments on node of territorial_report'
   - 'cast rate vote on node of territorial_report'
+  - 'create paragraph content geoimage'
   - 'edit own comments'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'update paragraph content geoimage'
   - 'use text format basic_html'
   - 'view media'
   - 'view own unpublished content'
+  - 'view paragraph content geoimage'
+  - 'view paragraph content geometry'
+  - 'view paragraph content location'
+  - 'view paragraph content path'
   - 'view user email addresses'
