@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - media.type.geoimage
+    - node.type.territorial_report
   module:
     - comment
     - contact
@@ -15,6 +17,7 @@ dependencies:
     - search
     - shortcut
     - system
+    - toolbar
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
@@ -27,11 +30,19 @@ permissions:
   - 'access content overview'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access toolbar'
   - 'access user profiles'
   - 'cast rate vote on field_comments on node of territorial_report'
   - 'cast rate vote on node of territorial_report'
+  - 'create geoimage media'
   - 'create paragraph content geoimage'
+  - 'create territorial_report content'
+  - 'delete own geoimage media'
+  - 'delete own territorial_report content'
+  - 'delete paragraph content geoimage'
   - 'edit own comments'
+  - 'edit own geoimage media'
+  - 'edit own territorial_report content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
@@ -41,6 +52,7 @@ permissions:
   - 'view own unpublished content'
   - 'view paragraph content geoimage'
   - 'view paragraph content geometry'
+  - 'view paragraph content image'
   - 'view paragraph content location'
   - 'view paragraph content path'
   - 'view user email addresses'

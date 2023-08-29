@@ -674,7 +674,7 @@ display:
           exposed: true
           expose:
             operator_id: permission_op
-            label: Permission
+            label: Permesso
             description: ''
             use_operator: false
             operator: permission_op

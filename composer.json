@@ -40,6 +40,7 @@
         "drupal/examples": "^3.0",
         "drupal/feeds": "^3.0@alpha",
         "drupal/field_group": "^3.4",
+        "drupal/field_permissions": "^1.2",
         "drupal/geocoder": "^3.14",
         "drupal/geofield": "^1.44",
         "drupal/geofield_map": "^3.0",

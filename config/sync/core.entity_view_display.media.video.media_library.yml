@@ -30,6 +30,7 @@ content:
 hidden:
   created: true
   field_media_video_file: true
+  geoimage_caption: true
   langcode: true
   name: true
   uid: true

@@ -82,6 +82,7 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
     $fields['geofield_googlemaps_link'] = BaseFieldDefinition::create('link')
       ->setName('geofield_googlemaps_link')
       ->setLabel(t('Geofield Google Maps Link'))
+      ->setCardinality(-1)
       ->setComputed(TRUE)
       ->setClass('\Drupal\italo_module\GeofieldGoogleMapsLinkFieldItemList')
       ->setDisplayConfigurable('view', TRUE)
@@ -241,7 +242,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
         break;
     }
     // If the geofields array is not empty, use it to generate the Forced
-    // Leaflet Map Bounds, and pass it into attached js drupalsettings.
+    // Leaflet Map Bounds, and pass it into attached js drupal settings.
     if (!empty($geofields)) {
       /** @var Drupal\leaflet\LeafletService $leafletService */
       $leafletService = \Drupal::service('leaflet.service');

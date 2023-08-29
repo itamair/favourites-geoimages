@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_address
     - node.type.geoplace
-    - node.type.territorial_report
   module:
     - link
     - node
@@ -274,7 +273,6 @@ display:
           operator: in
           value:
             geoplace: geoplace
-            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
@@ -312,7 +310,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: numeric
-          operator: '='
+          operator: '>='
           value:
             min: ''
             max: ''
