@@ -9,6 +9,7 @@ dependencies:
   module:
     - comment
     - contact
+    - field_permissions
     - filter
     - media
     - node
@@ -48,6 +49,8 @@ permissions:
   - 'skip comment approval'
   - 'update paragraph content geoimage'
   - 'use text format basic_html'
+  - 'view field_exclude_from_map_bounds'
+  - 'view field_location_type'
   - 'view media'
   - 'view own unpublished content'
   - 'view paragraph content geoimage'

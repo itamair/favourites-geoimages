@@ -10,15 +10,15 @@ use Drupal\paragraphs\Entity\Paragraph;
  * Plugin implementation of the 'Leaflet Popup Components' formatter.
  *
  * @FieldFormatter(
- *   id = "leaflet_popup_components_entity_view",
- *   label = @Translation("Leaflet Popup Components"),
- *   description = @Translation("Display the Leaflet Popup Components rendered by entity_view()."),
+ *   id = "components_with_title_entity_view",
+ *   label = @Translation("Components with Title"),
+ *   description = @Translation("Display the Components Field with parent Entity Title."),
  *   field_types = {
  *     "entity_reference_revisions"
  *   }
  * )
  */
-class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEntityFormatter {
+class ComponentsWithTitleEntityFormatter extends EntityReferenceRevisionsEntityFormatter {
 
   /**
    * {@inheritdoc}
@@ -30,7 +30,10 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
     $locations_limit_reached = FALSE;
     $images_limit_reached = FALSE;
 
+    $parent_entity = NULL;
+
     foreach ($this->getEntitiesToView($items, $langcode) as $delta => $entity) {
+
       // Protect ourselves from recursive rendering.
       static $depth = 0;
       $depth++;
@@ -46,6 +49,11 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
       if ($entity instanceof Paragraph &&
         in_array($entity->bundle(), ['image', 'location', 'geoimage'])
       ) {
+        /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+        if (!isset($parent_entity)) {
+          $parent_entity = $entity->getParentEntity();
+        }
+
         if (in_array($entity->bundle(), ['image', 'geoimage'])) {
           if ($images_limit_reached) {
             continue;
@@ -85,7 +93,24 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
       }
     }
 
-    return $elements;
+    if (isset($parent_entity)) {
+      $title_array = [
+        '#type' => 'html_tag',
+        '#tag' => 'h2',
+        [
+          '#type' => 'link',
+          '#title' => $parent_entity->label(),
+          '#url' => $parent_entity->toUrl(),
+          '#cache' => ['tags' => $parent_entity->getCacheTags()],
+        ],
+        '#attributes' => [
+          'class' => 'node_title',
+        ],
+      ];
+      $elements_titled = array_merge(array_splice($elements, 0, 1, TRUE), [$title_array], array_splice($elements, 1, 2, TRUE));
+    }
+
+    return $elements_titled;
   }
 
 }

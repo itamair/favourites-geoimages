@@ -42,8 +42,8 @@ content:
       trim_length: 80
       url_only: false
       url_plain: false
-      rel: '0'
-      target: _blank
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 1
     region: content

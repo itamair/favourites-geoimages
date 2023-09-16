@@ -7,6 +7,7 @@ dependencies:
   module:
     - comment
     - contact
+    - field_permissions
     - filter
     - media
     - paragraphs_type_permissions
@@ -27,6 +28,8 @@ permissions:
   - 'cast rate vote on node of territorial_report'
   - 'search content'
   - 'use text format restricted_html'
+  - 'view field_exclude_from_map_bounds'
+  - 'view field_location_type'
   - 'view media'
   - 'view paragraph content geoimage'
   - 'view paragraph content geometry'

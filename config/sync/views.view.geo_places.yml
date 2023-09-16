@@ -3,7 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.leaflet_popup
+    - core.entity_view_mode.node.geoplace_tile
     - field.storage.media.field_geofield
     - field.storage.node.field_active_type
     - field.storage.node.field_category_type
@@ -2743,7 +2743,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: leaflet_popup
+          view_mode: geoplace_tile
       query:
         type: views_query
         options:

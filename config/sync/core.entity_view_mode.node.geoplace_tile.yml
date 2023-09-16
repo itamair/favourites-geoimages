@@ -1,0 +1,10 @@
+uuid: c186f1da-d344-46a5-b49a-683a602a61e7
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.geoplace_tile
+label: 'Geoplace Tile'
+targetEntityType: node
+cache: true

@@ -101,22 +101,46 @@ a, a.link {
   margin-bottom: 20px;
 }
 
-/* line 98, ../sass/common.scss */
+/* line 99, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .node_title a {
+  padding-bottom: 0.1875rem;
+  transition: background-size 0.2s, color 0.2s;
+  text-decoration: none;
+  color: #0d1214;
+  background-color: transparent;
+  background-image: linear-gradient(#2494db, #2494db);
+  /* Two values are needed for IE11 support. */
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  /* LTR */
+  background-size: 0 0.1875rem;
+  font-size: 1.5rem;
+}
+/* line 112, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .field--name-field-media-image {
+  margin-bottom: .25rem;
+}
+/* line 116, ../sass/common.scss */
 .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .field--name-field-image-caption {
   font-size: 0.7rem;
 }
+/* line 120, ../sass/common.scss */
+.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .field--name-field-address {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
 
 @media (min-width: 43.75rem) {
-  /* line 106, ../sass/common.scss */
-  .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid header {
-    height: 80px;
+  /* line 131, ../sass/common.scss */
+  .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid article header {
+    height: 20px;
   }
-  /* line 108, ../sass/common.scss */
-  .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid header h2 {
+  /* line 133, ../sass/common.scss */
+  .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid article header h2 {
     font-size: 1.4rem;
     line-height: 1.8rem;
   }
-  /* line 114, ../sass/common.scss */
+  /* line 140, ../sass/common.scss */
   .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid .paragraph--type--location.paragraph--view-mode--leaflet-popup {
     height: 40px;
   }
