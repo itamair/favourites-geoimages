@@ -2814,7 +2814,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: Mappa
+      title: 'Mappa | Luoghi d''Interesse'
       fields:
         title:
           id: title
@@ -4791,9 +4791,10 @@ display:
       path: main_map
       menu:
         type: normal
-        title: Mappa
+        title: 'Home ! Mappa'
         description: ''
         weight: -45
+        enabled: true
         expanded: false
         menu_name: main
         parent: ''

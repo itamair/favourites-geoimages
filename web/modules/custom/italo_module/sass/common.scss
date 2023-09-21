@@ -142,3 +142,21 @@ a, a.link {
     }
   }
 }
+
+// view-id-geo_images_list
+
+.view-id-geo_images_list {
+  .views-view-grid__item {
+    margin-bottom: 2rem;
+  }
+  .views-field-field-components {
+    a {
+      text-decoration: none;
+      color: #0d1214;
+      font-size: 0.8rem;
+      .field--name-field-media-image {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

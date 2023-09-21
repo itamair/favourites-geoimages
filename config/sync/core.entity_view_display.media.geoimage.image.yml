@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.image
     - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_exif_creation_date
     - field.field.media.geoimage.field_generate_host_content
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_image_caption
@@ -49,6 +50,7 @@ content:
 hidden:
   created: true
   field_address: true
+  field_exif_creation_date: true
   field_generate_host_content: true
   field_geofield: true
   field_image_caption: true

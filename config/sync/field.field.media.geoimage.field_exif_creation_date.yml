@@ -1,0 +1,21 @@
+uuid: 1b7f53cb-2386-45d2-94b2-37e55c4aa44c
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_exif_creation_date
+    - media.type.geoimage
+  module:
+    - datetime
+id: media.geoimage.field_exif_creation_date
+field_name: field_exif_creation_date
+entity_type: media
+bundle: geoimage
+label: 'Exif Creation Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.geoimage.body
     - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_components
@@ -12,21 +11,12 @@ dependencies:
     - field.field.node.geoimage.field_place_type
     - node.type.geoimage
   module:
-    - text
     - user
 id: node.geoimage.teaser
 targetEntityType: node
 bundle: geoimage
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   geoimage_caption:
     type: string
     label: hidden

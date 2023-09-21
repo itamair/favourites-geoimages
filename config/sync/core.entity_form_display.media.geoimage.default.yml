@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.geoimage.field_address
+    - field.field.media.geoimage.field_exif_creation_date
     - field.field.media.geoimage.field_generate_host_content
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_image_caption
@@ -11,6 +12,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.geoimage
   module:
+    - datetime
     - geofield_311
     - path
     - svg_image
@@ -28,11 +30,17 @@ content:
     third_party_settings: {  }
   field_address:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_exif_creation_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_generate_host_content:
     type: boolean_checkbox
@@ -43,7 +51,7 @@ content:
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
-    weight: 3
+    weight: 2
     region: content
     settings:
       map_geocoder:
@@ -95,10 +103,11 @@ content:
       hide_coordinates: 0
       map_google_api_key: ''
       zoom_level: 5
+      click_to_remove_marker: false
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
-    weight: 2
+    weight: 1
     region: content
     settings:
       rows: 2
@@ -106,7 +115,7 @@ content:
     third_party_settings: {  }
   field_media_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
