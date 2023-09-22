@@ -37,15 +37,7 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 1
-    region: content
-  geoimage_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
 hidden:
   created: true
@@ -54,6 +46,7 @@ hidden:
   field_generate_host_content: true
   field_geofield: true
   field_image_caption: true
+  geoimage_caption: true
   langcode: true
   name: true
   territorial_report_active_level: true
