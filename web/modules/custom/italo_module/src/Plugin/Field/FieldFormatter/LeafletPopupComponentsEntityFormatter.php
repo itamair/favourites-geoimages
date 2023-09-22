@@ -30,6 +30,8 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
     $locations_limit_reached = FALSE;
     $images_limit_reached = FALSE;
 
+    $parent_entity = NULL;
+
     foreach ($this->getEntitiesToView($items, $langcode) as $delta => $entity) {
       // Protect ourselves from recursive rendering.
       static $depth = 0;
@@ -51,6 +53,10 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
             continue;
           }
           else {
+            /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+            if (!isset($parent_entity)) {
+              $parent_entity = $entity->getParentEntity();
+            }
             $images_limit_reached = TRUE;
           }
         }
@@ -62,11 +68,20 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
             $locations_limit_reached = TRUE;
           }
         }
+
         $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity->getEntityTypeId());
 
         // Set image or geoimage always first in the order.
         if (in_array($entity->bundle(), ['image', 'geoimage'])) {
-          array_unshift($elements, $view_builder->view($entity, $view_mode, $entity->language()->getId()));
+
+          $image_element = isset($parent_entity) ? [
+            '#type' => 'link',
+            '#title' => $view_builder->view($entity, $view_mode, $entity->language()->getId()),
+            '#url' => $parent_entity->toUrl(),
+            '#cache' => ['tags' => $parent_entity->getCacheTags()],
+          ] : $view_builder->view($entity, $view_mode, $entity->language()->getId());
+
+          array_unshift($elements, $image_element);
         }
         else {
           $elements[$delta] = $view_builder->view($entity, $view_mode, $entity->language()->getId());

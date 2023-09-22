@@ -43,7 +43,7 @@ a, a.link {
 }
 /* line 41, ../sass/common.scss */
 .node--view-mode-leaflet-popup .node__content {
-  padding-bottom: 0.5rem !important;
+  padding-bottom: 0 !important;
 }
 
 /* line 46, ../sass/common.scss */
