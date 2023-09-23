@@ -13,8 +13,19 @@
     margin: 0;
     position: relative;
 
+    .field--name-geoimage-caption {
+      padding-left: 0.5rem !important;
+      font-size: 0.8rem;
+      opacity: 70%;
+      line-height: 1.2rem;
+    }
+    .field:not(:last-child) {
+      margin-bottom: 0.4rem !important;
+    }
+
     .node__content {
       font-size: 0.8rem;
+      padding-bottom: 0.5rem !important;
     }
     .field--type-image {
       float: none; // This is needed to move the Leaflet Popup to show all of it in the map container
@@ -25,6 +36,7 @@
       margin: 0;
       .node__content {
         margin: 0;
+        padding-bottom: 0rem !important;
       }
       .node__title {
         display: none;
