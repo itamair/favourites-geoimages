@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_generate_host_content
-    - image.style.image_map_marker
+    - image.style.thumbnail
   module:
     - better_exposed_filters
     - media
@@ -160,12 +160,12 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: image_map_marker
+            image_style: thumbnail
             image_loading:
-              attribute: lazy
+              attribute: eager
             svg_attributes:
-              width: null
-              height: null
+              width: 100
+              height: 100
             svg_render_as_image: true
           group_column: ''
           group_columns: {  }
