@@ -37,7 +37,7 @@ content:
       image_link: ''
       image_style: map_scaled_cropped_image_800_500
       image_loading:
-        attribute: lazy
+        attribute: eager
       svg_attributes:
         width: null
         height: null

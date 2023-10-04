@@ -53,6 +53,7 @@ module:
   help: 0
   history: 0
   image: 0
+  image_styles_generator: 0
   imagefield_slideshow: 0
   italo_module: 0
   jquery_ui: 0
