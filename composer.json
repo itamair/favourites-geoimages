@@ -159,6 +159,9 @@
             },
             "drupal/color_field": {
                 "#3312329 PHP8.1 compatibility": "https://www.drupal.org/files/issues/2022-09-28/php81-compatibility-3312329-2.patch"
+            },
+            "drupal/image_styles_generator": {
+                "#3341936 PHP 7.3 Compatibility" : "https://git.drupalcode.org/project/image_styles_generator/-/merge_requests/6/diffs.patch"
             }
         }
     },
