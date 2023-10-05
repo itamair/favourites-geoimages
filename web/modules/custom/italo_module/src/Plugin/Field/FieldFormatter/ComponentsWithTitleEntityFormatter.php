@@ -97,20 +97,22 @@ class ComponentsWithTitleEntityFormatter extends EntityReferenceRevisionsEntityF
       $title_array = [
         '#type' => 'html_tag',
         '#tag' => 'h2',
-        [
-          '#type' => 'link',
-          '#title' => $parent_entity->label(),
-          '#url' => $parent_entity->toUrl(),
-          '#cache' => ['tags' => $parent_entity->getCacheTags()],
-        ],
-        '#attributes' => [
-          'class' => 'node_title',
-        ],
+        '#value' => $parent_entity->label(),
+        '#cache' => ['tags' => $parent_entity->getCacheTags()],
       ];
       $elements_titled = array_merge(array_splice($elements, 0, 1, TRUE), [$title_array], array_splice($elements, 1, 2, TRUE));
     }
 
-    return $elements_titled;
+    return [
+      '#type' => 'link',
+      '#title' => [
+        $elements_titled,
+      ],
+      '#url' => $parent_entity->toUrl(),
+      '#attributes' => [
+        'class' => 'node_title',
+      ],
+    ];
   }
 
 }

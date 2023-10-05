@@ -81,7 +81,7 @@ a, a.link {
 
 .view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid {
 
-  .node_title a {
+  a.node_title {
     padding-bottom: 0.1875rem;
     transition: background-size 0.2s, color 0.2s;
     text-decoration: none;
@@ -92,6 +92,12 @@ a, a.link {
     background-position: bottom left; /* LTR */
     background-size: 0 0.1875rem;
     font-size: 1.5rem;
+    &:any-link {
+      text-decoration: none;
+    }
+    h2 {
+      margin-bottom: 6px;
+    }
   }
 
   .field--name-field-media-image {
