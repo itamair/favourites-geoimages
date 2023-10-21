@@ -18,14 +18,14 @@
         "ext-json": "*",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.2",
+        "drupal/admin_toolbar": "^3.4",
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/adminimal_theme": "^1.6",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/backup_migrate": "^5.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/blazy": "^2.13",
-        "drupal/cer": "^4.0@alpha",
+        "drupal/cer": "^5.0@beta",
         "drupal/chosen": "^3.0",
         "drupal/color_field": "^2.5",
         "drupal/colorbox": "^2.0",
@@ -37,15 +37,17 @@
         "drupal/core-recommended": "^9.2",
         "drupal/devel_entity_updates": "^4.1",
         "drupal/entity_reference_revisions": "^1.10",
-        "drupal/entity_type_clone": "^1.7",
+        "drupal/entity_type_clone": "^4.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/examples": "^3.0",
         "drupal/feeds": "^3.0@alpha",
         "drupal/field_group": "^3.4",
         "drupal/field_permissions": "^1.2",
-        "drupal/geocoder": "^3.14",
+        "drupal/geocoder": "^3.35",
         "drupal/geofield": "^1.44",
         "drupal/geofield_map": "^3.0",
+        "drupal/graphql": "^4.5",
+        "drupal/graphql_compose": "^1.0@beta",
         "drupal/image_field_caption": "^1.2",
         "drupal/image_styles_generator": "^1.2",
         "drupal/imagefield_slideshow": "^2.0",
@@ -94,7 +96,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
@@ -166,6 +169,12 @@
         }
     },
     "require-dev": {
-        "drupal/devel": "^5.0"
+        "drupal/coder": "^8.3",
+        "drupal/devel": "^5.0",
+        "mglaman/phpstan-drupal": "*",
+        "phpstan/extension-installer": "*",
+        "phpstan/phpstan": "*",
+        "phpstan/phpstan-deprecation-rules": "*",
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }

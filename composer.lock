@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c26c752f6262110dbe7d7282dc9183f7",
+    "content-hash": "29a7147c59b07a8e3a6d2569e887eebd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -125,16 +125,16 @@
         },
         {
             "name": "clue/stream-filter",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clue/stream-filter.git",
-                "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320"
+                "reference": "d6169430c7731d8509da7aecd0af756a5747b78e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
-                "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/d6169430c7731d8509da7aecd0af756a5747b78e",
+                "reference": "d6169430c7731d8509da7aecd0af756a5747b78e",
                 "shasum": ""
             },
             "require": {
@@ -145,12 +145,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Clue\\StreamFilter\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "Clue\\StreamFilter\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -173,7 +173,21 @@
                 "stream_filter_append",
                 "stream_filter_register"
             ],
-            "time": "2020-10-02T12:38:20+00:00"
+            "support": {
+                "issues": "https://github.com/clue/stream-filter/issues",
+                "source": "https://github.com/clue/stream-filter/tree/v1.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://clue.engineering/support",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/clue",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-21T13:15:14+00:00"
         },
         {
             "name": "composer/installers",
@@ -1972,17 +1986,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.3.0",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.3.0"
+                "reference": "3.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.3.0.zip",
-                "reference": "3.3.0",
-                "shasum": "8e61fba9c9d83a94a844cff96d00871878a7eb98"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.4.2.zip",
+                "reference": "3.4.2",
+                "shasum": "f5a008e5c73f5a11c6c8067c0ea6ebb76aa33854"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -1993,8 +2007,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.3.0",
-                    "datestamp": "1669567837",
+                    "version": "3.4.2",
+                    "datestamp": "1696006195",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2434,26 +2448,26 @@
         },
         {
             "name": "drupal/cer",
-            "version": "4.0.0-alpha3",
+            "version": "5.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/cer.git",
-                "reference": "8.x-4.0-alpha3"
+                "reference": "5.0.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cer-8.x-4.0-alpha3.zip",
-                "reference": "8.x-4.0-alpha3",
-                "shasum": "3c508e842a2c17235e4c9909ab64ef1aeb9d3ebe"
+                "url": "https://ftp.drupal.org/files/projects/cer-5.0.0-beta3.zip",
+                "reference": "5.0.0-beta3",
+                "shasum": "732e95528a8aa0771f38785a5db49861612da150"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.5 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.0-alpha3",
-                    "datestamp": "1620240213",
+                    "version": "5.0.0-beta3",
+                    "datestamp": "1679926745",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2465,6 +2479,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
                 {
                     "name": "bmcclure",
                     "homepage": "https://www.drupal.org/user/278485"
@@ -2480,6 +2498,10 @@
                 {
                     "name": "gregcube",
                     "homepage": "https://www.drupal.org/user/336930"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "jrglasgow",
@@ -3621,26 +3643,26 @@
         },
         {
             "name": "drupal/entity_type_clone",
-            "version": "1.7.0",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_type_clone.git",
-                "reference": "8.x-1.7"
+                "reference": "4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_type_clone-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "cad1536cbae4dd069bc78230fcd418ea07a6513c"
+                "url": "https://ftp.drupal.org/files/projects/entity_type_clone-4.0.3.zip",
+                "reference": "4.0.3",
+                "shasum": "684e81fcaa034bfb7a4ffdc3e81c040701fbd8b7"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1621579347",
+                    "version": "4.0.3",
+                    "datestamp": "1693947342",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3661,7 +3683,7 @@
                     "homepage": "https://www.drupal.org/user/3568458"
                 }
             ],
-            "description": "This module provide option to clone entity types.",
+            "description": "This module provide option to clone entity types and role.",
             "homepage": "https://www.drupal.org/project/entity_type_clone",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_type_clone"
@@ -4089,17 +4111,17 @@
         },
         {
             "name": "drupal/geocoder",
-            "version": "3.31.0",
+            "version": "3.35.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geocoder.git",
-                "reference": "8.x-3.31"
+                "reference": "8.x-3.35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.31.zip",
-                "reference": "8.x-3.31",
-                "shasum": "f6a24695f1fefa1c52a6119dd02c329410d22ce6"
+                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.35.zip",
+                "reference": "8.x-3.35",
+                "shasum": "3e63b48fedf4c720ec51f8c0d804bfbbbfc6829f"
             },
             "require": {
                 "davedevelopment/stiphle": "^0.9.2",
@@ -4142,8 +4164,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.31",
-                    "datestamp": "1663974561",
+                    "version": "8.x-3.35",
+                    "datestamp": "1697825623",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4166,40 +4188,12 @@
                     "role": "Co-maintainer"
                 },
                 {
-                    "name": "Dean Reilly",
-                    "homepage": "https://www.drupal.org/user/336031"
-                },
-                {
-                    "name": "gregseb",
-                    "homepage": "https://www.drupal.org/user/847848"
-                },
-                {
-                    "name": "indytechcook",
-                    "homepage": "https://www.drupal.org/user/245817"
-                },
-                {
-                    "name": "itamair",
-                    "homepage": "https://www.drupal.org/user/1179076"
-                },
-                {
                     "name": "michaelfavia",
                     "homepage": "https://www.drupal.org/user/49137"
                 },
                 {
-                    "name": "phayes",
-                    "homepage": "https://www.drupal.org/user/47098"
-                },
-                {
-                    "name": "Pol",
-                    "homepage": "https://www.drupal.org/user/47194"
-                },
-                {
-                    "name": "Simon Georges",
-                    "homepage": "https://www.drupal.org/user/172312"
-                },
-                {
-                    "name": "vidhatanand",
-                    "homepage": "https://www.drupal.org/user/585764"
+                    "name": "poker10",
+                    "homepage": "https://www.drupal.org/user/272316"
                 }
             ],
             "description": "Module and services based API to perform Geocode & Reverse Geocode operations among GIS data and addresses types & formats.",
@@ -4321,6 +4315,136 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/geofield_map",
                 "issues": "https://www.drupal.org/project/issues/geofield_map"
+            }
+        },
+        {
+            "name": "drupal/graphql",
+            "version": "4.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/graphql.git",
+                "reference": "8.x-4.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/graphql-8.x-4.5.zip",
+                "reference": "8.x-4.5",
+                "shasum": "2f08a45f51ffba915fabeba9d6ecde90f1406c98"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "drupal/typed_data": "*",
+                "php": ">=7.3",
+                "webonyx/graphql-php": "^14.8.0"
+            },
+            "require-dev": {
+                "drupal/node-node": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-4.5",
+                    "datestamp": "1681744536",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "fubhy",
+                    "homepage": "https://www.drupal.org/user/761344"
+                },
+                {
+                    "name": "hideaway",
+                    "homepage": "https://www.drupal.org/user/741876"
+                },
+                {
+                    "name": "joaogarin",
+                    "homepage": "https://www.drupal.org/user/612814"
+                },
+                {
+                    "name": "Kingdutch",
+                    "homepage": "https://www.drupal.org/user/1868952"
+                },
+                {
+                    "name": "klausi",
+                    "homepage": "https://www.drupal.org/user/262198"
+                },
+                {
+                    "name": "luigisa",
+                    "homepage": "https://www.drupal.org/user/1022312"
+                },
+                {
+                    "name": "pmelab",
+                    "homepage": "https://www.drupal.org/user/555322"
+                }
+            ],
+            "description": "Exposes your Drupal data model through a GraphQL schema.",
+            "homepage": "http://drupal.org/project/graphql",
+            "support": {
+                "source": "https://git.drupalcode.org/project/graphql"
+            }
+        },
+        {
+            "name": "drupal/graphql_compose",
+            "version": "1.0.0-beta32",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/graphql_compose.git",
+                "reference": "1.0.0-beta32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-1.0.0-beta32.zip",
+                "reference": "1.0.0-beta32",
+                "shasum": "5b4d39e2491fa8c5b6359731112d9846d2ca8e05"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/graphql": "^4.3",
+                "php": ">=7.3 || >=8.0",
+                "symfony/string": "^5.4 || ^6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta32",
+                    "datestamp": "1680806997",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "almunnings",
+                    "homepage": "https://www.drupal.org/user/2251362"
+                },
+                {
+                    "name": "jmolivas",
+                    "homepage": "https://www.drupal.org/user/678770"
+                },
+                {
+                    "name": "juanramonperez",
+                    "homepage": "https://www.drupal.org/user/549414"
+                }
+            ],
+            "description": "Toolkit for generating GraphQL schemas in Drupal.",
+            "homepage": "http://drupal.org/project/graphql_compose",
+            "support": {
+                "source": "http://cgit.drupalcode.org/graphql_compose",
+                "issues": "https://www.drupal.org/project/issues/graphql_compose"
             }
         },
         {
@@ -5906,6 +6030,60 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/typed_data",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/typed_data.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/typed_data-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "e0aa651b129d8dcd765ca49cba8682ebe09e6e73"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1679429196",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
+                }
+            ],
+            "description": "Extends the core Typed Data API with new APIs and features.",
+            "homepage": "https://www.drupal.org/project/typed_data",
+            "support": {
+                "source": "https://git.drupalcode.org/project/typed_data",
+                "issues": "https://www.drupal.org/project/issues/typed_data"
             }
         },
         {
@@ -8122,21 +8300,22 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "1.1.25",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "480245d5d0bd1858e01c43d738718dab85be0ad2"
+                "reference": "d721420086f146640acecebb7a678661a66e97d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/480245d5d0bd1858e01c43d738718dab85be0ad2",
-                "reference": "480245d5d0bd1858e01c43d738718dab85be0ad2",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/d721420086f146640acecebb7a678661a66e97d5",
+                "reference": "d721420086f146640acecebb7a678661a66e97d5",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^1.6.0",
+                "phpstan/phpstan": "^1.10.1",
+                "phpstan/phpstan-deprecation-rules": "^1.1.4",
                 "symfony/finder": "~3.4.5 ||^4.2 || ^5.0 || ^6.0",
                 "symfony/yaml": "~3.4.5 || ^4.2|| ^5.0 || ^6.0",
                 "webflo/drupal-finder": "^1.2"
@@ -8145,9 +8324,8 @@
                 "behat/mink": "^1.8",
                 "composer/installers": "^1.9",
                 "drupal/core-recommended": "^8.8@alpha || ^9.0",
-                "drush/drush": "^9.6 || ^10.0",
+                "drush/drush": "^9.6 || ^10.0 || ^11",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-strict-rules": "^1.0",
                 "phpunit/phpunit": "^6.5 || ^7.5 || ^8.0 || ^9",
                 "slevomat/coding-standard": "^7.1",
@@ -8206,7 +8384,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.1.25"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.2.0"
             },
             "funding": [
                 {
@@ -8222,7 +8400,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-18T17:17:55+00:00"
+            "time": "2023-08-24T20:32:56+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -8706,23 +8884,23 @@
         },
         {
             "name": "php-http/message",
-            "version": "1.10.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/message.git",
-                "reference": "39db36d5972e9e6d00ea852b650953f928d8f10d"
+                "reference": "2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/message/zipball/39db36d5972e9e6d00ea852b650953f928d8f10d",
-                "reference": "39db36d5972e9e6d00ea852b650953f928d8f10d",
+                "url": "https://api.github.com/repos/php-http/message/zipball/2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b",
+                "reference": "2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b",
                 "shasum": ""
             },
             "require": {
                 "clue/stream-filter": "^1.5",
                 "php": "^7.1 || ^8.0",
                 "php-http/message-factory": "^1.0.2",
-                "psr/http-message": "^1.0"
+                "psr/http-message": "^1.0 || ^2.0"
             },
             "provide": {
                 "php-http/message-factory-implementation": "1.0"
@@ -8731,29 +8909,24 @@
                 "ergebnis/composer-normalize": "^2.6",
                 "ext-zlib": "*",
                 "guzzlehttp/psr7": "^1.0",
-                "phpspec/phpspec": "^5.1 || ^6.3",
-                "slim/slim": "^3.0",
-                "zendframework/zend-diactoros": "^1.0"
+                "laminas/laminas-diactoros": "^2.0",
+                "phpspec/phpspec": "^5.1 || ^6.3 || ^7.1",
+                "slim/slim": "^3.0"
             },
             "suggest": {
                 "ext-zlib": "Used with compressor/decompressor streams",
                 "guzzlehttp/psr7": "Used with Guzzle PSR-7 Factories",
-                "slim/slim": "Used with Slim Framework PSR-7 implementation",
-                "zendframework/zend-diactoros": "Used with Diactoros Factories"
+                "laminas/laminas-diactoros": "Used with Diactoros Factories",
+                "slim/slim": "Used with Slim Framework PSR-7 implementation"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.10-dev"
-                }
-            },
             "autoload": {
-                "psr-4": {
-                    "Http\\Message\\": "src/"
-                },
                 "files": [
                     "src/filters.php"
-                ]
+                ],
+                "psr-4": {
+                    "Http\\Message\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -8772,7 +8945,11 @@
                 "message",
                 "psr-7"
             ],
-            "time": "2020-11-11T10:19:56+00:00"
+            "support": {
+                "issues": "https://github.com/php-http/message/issues",
+                "source": "https://github.com/php-http/message/tree/1.14.0"
+            },
+            "time": "2023-04-14T14:26:18+00:00"
         },
         {
             "name": "php-http/message-factory",
@@ -8879,16 +9056,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.2",
+            "version": "1.10.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "d6fdf01c53978b6429f1393ba4afeca39cc68afa"
+                "reference": "5302bb402c57f00fb3c2c015bac86e0827e4b691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d6fdf01c53978b6429f1393ba4afeca39cc68afa",
-                "reference": "d6fdf01c53978b6429f1393ba4afeca39cc68afa",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5302bb402c57f00fb3c2c015bac86e0827e4b691",
+                "reference": "5302bb402c57f00fb3c2c015bac86e0827e4b691",
                 "shasum": ""
             },
             "require": {
@@ -8917,8 +9094,11 @@
                 "static analysis"
             ],
             "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.2"
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
             },
             "funding": [
                 {
@@ -8934,36 +9114,34 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-10T09:56:11+00:00"
+            "time": "2023-10-06T14:19:14+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
-            "version": "1.0.0",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
-                "reference": "e5ccafb0dd8d835dd65d8d7a1a0d2b1b75414682"
+                "reference": "089d8a8258ed0aeefdc7b68b6c3d25572ebfdbaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/e5ccafb0dd8d835dd65d8d7a1a0d2b1b75414682",
-                "reference": "e5ccafb0dd8d835dd65d8d7a1a0d2b1b75414682",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/089d8a8258ed0aeefdc7b68b6c3d25572ebfdbaa",
+                "reference": "089d8a8258ed0aeefdc7b68b6c3d25572ebfdbaa",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0",
-                "phpstan/phpstan": "^1.0"
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.10.3"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/phpstan-php-parser": "^1.1",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "phpstan-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "rules.neon"
@@ -8982,9 +9160,9 @@
             "description": "PHPStan rules for detecting usage of deprecated classes, methods, properties, constants and traits.",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.0.0"
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.1.4"
             },
-            "time": "2021-09-23T11:02:21+00:00"
+            "time": "2023-08-05T09:02:04+00:00"
         },
         {
             "name": "politsin/jquery-ui-touch-punch",
@@ -12475,6 +12653,71 @@
             "time": "2020-10-27T09:42:17+00:00"
         },
         {
+            "name": "webonyx/graphql-php",
+            "version": "v14.11.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webonyx/graphql-php.git",
+                "reference": "d9c2fdebc6aa01d831bc2969da00e8588cffef19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/d9c2fdebc6aa01d831bc2969da00e8588cffef19",
+                "reference": "d9c2fdebc6aa01d831bc2969da00e8588cffef19",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8"
+            },
+            "require-dev": {
+                "amphp/amp": "^2.3",
+                "doctrine/coding-standard": "^6.0",
+                "nyholm/psr7": "^1.2",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "0.12.82",
+                "phpstan/phpstan-phpunit": "0.12.18",
+                "phpstan/phpstan-strict-rules": "0.12.9",
+                "phpunit/phpunit": "^7.2 || ^8.5",
+                "psr/http-message": "^1.0",
+                "react/promise": "2.*",
+                "simpod/php-coveralls-mirror": "^3.0"
+            },
+            "suggest": {
+                "psr/http-message": "To use standard GraphQL server",
+                "react/promise": "To leverage async resolving on React PHP platform"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP port of GraphQL reference implementation",
+            "homepage": "https://github.com/webonyx/graphql-php",
+            "keywords": [
+                "api",
+                "graphql"
+            ],
+            "support": {
+                "issues": "https://github.com/webonyx/graphql-php/issues",
+                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.10"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/webonyx-graphql-php",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2023-07-05T14:23:37+00:00"
+        },
+        {
             "name": "willdurand/geocoder",
             "version": "4.6.0",
             "source": {
@@ -12537,15 +12780,417 @@
             "time": "2022-07-30T11:09:43+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "dealerdirect/phpcodesniffer-composer-installer",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCSStandards/composer-installer.git",
+                "reference": "4be43904336affa5c2f70744a348312336afd0da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/4be43904336affa5c2f70744a348312336afd0da",
+                "reference": "4be43904336affa5c2f70744a348312336afd0da",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.4",
+                "squizlabs/php_codesniffer": "^2.0 || ^3.1.0 || ^4.0"
+            },
+            "require-dev": {
+                "composer/composer": "*",
+                "ext-json": "*",
+                "ext-zip": "*",
+                "php-parallel-lint/php-parallel-lint": "^1.3.1",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Franck Nijhof",
+                    "email": "franck.nijhof@dealerdirect.com",
+                    "homepage": "http://www.frenck.nl",
+                    "role": "Developer / IT Manager"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCSStandards/composer-installer/graphs/contributors"
+                }
+            ],
+            "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
+            "homepage": "http://www.dealerdirect.com",
+            "keywords": [
+                "PHPCodeSniffer",
+                "PHP_CodeSniffer",
+                "code quality",
+                "codesniffer",
+                "composer",
+                "installer",
+                "phpcbf",
+                "phpcs",
+                "plugin",
+                "qa",
+                "quality",
+                "standard",
+                "standards",
+                "style guide",
+                "stylecheck",
+                "tests"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCSStandards/composer-installer/issues",
+                "source": "https://github.com/PHPCSStandards/composer-installer"
+            },
+            "time": "2023-01-05T11:28:13+00:00"
+        },
+        {
+            "name": "drupal/coder",
+            "version": "8.3.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pfrenssen/coder.git",
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1 || ^1.0.0",
+                "ext-mbstring": "*",
+                "php": ">=7.2",
+                "sirbrillig/phpcs-variable-analysis": "^2.11.7",
+                "slevomat/coding-standard": "^8.11",
+                "squizlabs/php_codesniffer": "^3.7.1",
+                "symfony/yaml": ">=3.4.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.7.12",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\": "coder_sniffer/Drupal/",
+                    "DrupalPractice\\": "coder_sniffer/DrupalPractice/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Coder is a library to review Drupal code.",
+            "homepage": "https://www.drupal.org/project/coder",
+            "keywords": [
+                "code review",
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://www.drupal.org/project/issues/coder",
+                "source": "https://www.drupal.org/project/coder"
+            },
+            "time": "2023-07-17T15:36:49+00:00"
+        },
+        {
+            "name": "phpstan/extension-installer",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/extension-installer.git",
+                "reference": "f45734bfb9984c6c56c4486b71230355f066a58a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/f45734bfb9984c6c56c4486b71230355f066a58a",
+                "reference": "f45734bfb9984c6c56c4486b71230355f066a58a",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.9.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2.0",
+                "phpstan/phpstan-strict-rules": "^0.11 || ^0.12 || ^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PHPStan\\ExtensionInstaller\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\ExtensionInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Composer plugin for automatic installation of PHPStan extensions",
+            "support": {
+                "issues": "https://github.com/phpstan/extension-installer/issues",
+                "source": "https://github.com/phpstan/extension-installer/tree/1.3.1"
+            },
+            "time": "2023-05-24T08:59:17+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "1.24.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "bcad8d995980440892759db0c32acae7c8e79442"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/bcad8d995980440892759db0c32acae7c8e79442",
+                "reference": "bcad8d995980440892759db0c32acae7c8e79442",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0",
+                "nikic/php-parser": "^4.15",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.5",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/process": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "support": {
+                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.24.2"
+            },
+            "time": "2023-09-26T12:28:12+00:00"
+        },
+        {
+            "name": "sirbrillig/phpcs-variable-analysis",
+            "version": "v2.11.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sirbrillig/phpcs-variable-analysis.git",
+                "reference": "3b71162a6bf0cde2bff1752e40a1788d8273d049"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/3b71162a6bf0cde2bff1752e40a1788d8273d049",
+                "reference": "3b71162a6bf0cde2bff1752e40a1788d8273d049",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "squizlabs/php_codesniffer": "^3.5.6"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || ^1.0",
+                "phpcsstandards/phpcsdevcs": "^1.1",
+                "phpstan/phpstan": "^1.7",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.5 || ^7.0 || ^8.0 || ^9.0",
+                "sirbrillig/phpcs-import-detection": "^1.1",
+                "vimeo/psalm": "^0.2 || ^0.3 || ^1.1 || ^4.24 || ^5.0@beta"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "VariableAnalysis\\": "VariableAnalysis/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Graham",
+                    "email": "php-codesniffer-variableanalysis@illusori.co.uk"
+                },
+                {
+                    "name": "Payton Swick",
+                    "email": "payton@foolord.com"
+                }
+            ],
+            "description": "A PHPCS sniff to detect problems with variables.",
+            "keywords": [
+                "phpcs",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/sirbrillig/phpcs-variable-analysis/issues",
+                "source": "https://github.com/sirbrillig/phpcs-variable-analysis",
+                "wiki": "https://github.com/sirbrillig/phpcs-variable-analysis/wiki"
+            },
+            "time": "2023-08-05T23:46:11+00:00"
+        },
+        {
+            "name": "slevomat/coding-standard",
+            "version": "8.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slevomat/coding-standard.git",
+                "reference": "fea1fd6f137cc84f9cba0ae30d549615dbc6a926"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/fea1fd6f137cc84f9cba0ae30d549615dbc6a926",
+                "reference": "fea1fd6f137cc84f9cba0ae30d549615dbc6a926",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0",
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpdoc-parser": "^1.23.1",
+                "squizlabs/php_codesniffer": "^3.7.1"
+            },
+            "require-dev": {
+                "phing/phing": "2.17.4",
+                "php-parallel-lint/php-parallel-lint": "1.3.2",
+                "phpstan/phpstan": "1.10.37",
+                "phpstan/phpstan-deprecation-rules": "1.1.4",
+                "phpstan/phpstan-phpunit": "1.3.14",
+                "phpstan/phpstan-strict-rules": "1.5.1",
+                "phpunit/phpunit": "8.5.21|9.6.8|10.3.5"
+            },
+            "type": "phpcodesniffer-standard",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
+            "keywords": [
+                "dev",
+                "phpcs"
+            ],
+            "support": {
+                "issues": "https://github.com/slevomat/coding-standard/issues",
+                "source": "https://github.com/slevomat/coding-standard/tree/8.14.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kukulich",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/slevomat/coding-standard",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-10-08T07:28:08+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
+            "time": "2023-02-22T23:07:41+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
-        "drupal/cer": 15,
+        "drupal/cer": 10,
         "drupal/conditional_fields": 15,
         "drupal/entity_usage": 10,
         "drupal/feeds": 15,
+        "drupal/graphql_compose": 10,
         "drupal/masquerade": 5,
         "drupal/media_entity_image_exif": 5,
         "drupal/media_library_importer": 10,
