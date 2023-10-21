@@ -79,7 +79,9 @@
         "drupal/views_slideshow": "4.x-dev",
         "drupal/votingapi": "^3.0@beta",
         "drupal/webprofiler": "^9.0",
-        "drush/drush": "^11.0"
+        "drush/drush": "^11.0",
+        "geocoder-php/arcgis-online-provider": "^4.2",
+        "geocoder-php/google-maps-provider": "^4.7"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -94,7 +96,8 @@
             "drupal/core-project-message": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
