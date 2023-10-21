@@ -345,7 +345,7 @@ display:
           entity_type: file
           entity_field: changed
           plugin_id: field
-          label: 'Changed date'
+          label: 'Data di ultima modifica'
           exclude: false
           alter:
             alter_text: false

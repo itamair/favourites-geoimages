@@ -1,0 +1,24 @@
+uuid: 7c8a1275-4497-43da-83b0-cb2b8f387811
+langcode: it
+status: true
+dependencies: {  }
+name: italo_graphql_compose_server
+label: 'Italo GraphQL Compose - Server'
+endpoint: /graphql-compose-italo
+debug_flag: 1
+schema: alterable_composable
+caching: true
+batching: true
+disable_introspection: false
+query_depth: null
+query_complexity: null
+schema_configuration:
+  alterable_composable:
+    extensions:
+      user_schema_extension: user_schema_extension
+      node_schema_extension: node_schema_extension
+      media_schema_extension: media_schema_extension
+      taxonomy_schema_extension: taxonomy_schema_extension
+      paragraph_schema_extension: paragraph_schema_extension
+      example_extension: example_extension
+persisted_queries_settings: {  }
