@@ -10,26 +10,22 @@ dependencies:
     - field.field.node.territorial_report.field_components
     - field.field.node.territorial_report.field_date_range
     - field.field.node.territorial_report.field_geofied_view
-    - field.field.node.territorial_report.field_geofield
-    - field.field.node.territorial_report.field_geoimage
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_source_is_external
     - field.field.node.territorial_report.field_source_link
-    - image.style.thumbnail
     - node.type.territorial_report
   module:
     - comment
     - conditional_fields
     - datetime_range
     - field_layout
-    - geofield_311
     - link
     - paragraphs
     - path
-    - svg_image
     - text
+    - uuid_extra
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -52,7 +48,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -71,13 +67,13 @@ content:
     third_party_settings: {  }
   field_comments:
     type: comment_default
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_components:
     type: paragraphs
-    weight: 10
+    weight: 8
     region: content
     settings:
       title: Paragraph
@@ -236,7 +232,7 @@ content:
     third_party_settings: {  }
   field_related_content:
     type: options_select
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -335,27 +331,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 16
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 14
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 17
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 15
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -375,13 +371,19 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  uuid:
+    type: uuid
+    weight: 16
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_category_type: true
