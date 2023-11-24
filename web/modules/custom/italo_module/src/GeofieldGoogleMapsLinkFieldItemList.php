@@ -67,7 +67,7 @@ class GeofieldGoogleMapsLinkFieldItemList extends FieldItemList {
         }
       }
       $this->list[0] = $this->createItem(0, $value0);
-      // $this->list[1] = $this->createItem(1, $value1);
+      $this->list[1] = $this->createItem(1, $value1);
       $this->isCalculated = TRUE;
     }
   }

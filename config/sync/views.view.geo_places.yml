@@ -36,6 +36,7 @@ dependencies:
     - better_exposed_filters
     - color_field
     - geofield
+    - geofield_311
     - leaflet_views
     - media
     - node
@@ -4652,7 +4653,7 @@ display:
         groups:
           1: AND
       style:
-        type: leaflet_map
+        type: geofield_311_leaflet_map
         options:
           grouping:
             -
@@ -4669,40 +4670,25 @@ display:
           entity_source: __base_table
           entity_source_submit: 'Update Entity Source'
           name_field: title
-          leaflet_tooltip:
-            value: title
-            options: '{"permanent":false,"direction":"top","sticky":true}'
-          leaflet_popup:
-            value: '#rendered_entity'
-            options: '{"autoPan":true}'
-            view_mode: leaflet_popup
           leaflet_map: multilayers
           height: '80'
           height_unit: vh
           hide_empty_map: true
           disable_wheel: false
           gesture_handling: false
-          fitbounds_options: '{"padding":[0,0]}'
           reset_map:
             control: true
             options: '{"position":"topleft","title":"Reset View"}'
-          map_scale:
-            control: false
-            options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
-          locate:
-            control: true
-            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"},"cacheLocation":false,"tap":false}'
-            automatic: false
           map_position:
             force: false
             center:
               lat: !!float 42
               lon: !!float 12
-            zoomControlPosition: topleft
             zoom: 17
             minZoom: 3
             maxZoom: 19
             zoomFiner: 0
+            zoomControlPosition: topleft
           weight: '{{ field_zindex }}'
           icon:
             iconType: marker
@@ -4729,19 +4715,13 @@ display:
             circle_marker_options: '{"radius":20,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: true
-            include_path: false
             options: '{"spiderfyOnMaxZoom":false,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"maxClusterRadius":60,"disableClusteringAtZoom":17}'
             excluded: field_markercluster_exclude
-          fullscreen:
-            control: true
-            options: '{"position":"topleft","pseudoFullscreen":false}'
+            include_path: 0
           path: '{"dashArray":0,"color":"{{ field_stroke_color }}","opacity":"1.0","stroke":true,"weight":"{{ field_stroke_weight }}","fillColor":"{{ field_fill_color }}","fillOpacity":"{{ field_fill_opacity }}","interactive":true,"arrowed":"{{ field_arrowed }}"}'
           geocoder:
             control: true
             settings:
-              autocomplete:
-                placeholder: 'Search Address'
-                title: 'Search an Address on the Map'
               position: topright
               input_size: 16
               providers:
@@ -4759,10 +4739,36 @@ display:
               zoom: 16
               popup: true
               options: ''
-          map_lazy_load:
-            lazy_load: true
+              autocomplete:
+                placeholder: 'Search Address'
+                title: 'Search an Address on the Map'
+          geojson_app_limit:
+            bounds_zoom_flag: false
+            bounds_zoom_correction: '0'
+            bounds_limit_flag: true
+            max_zoom_out: '-2'
+          leaflet_tooltip:
+            value: title
+            options: '{"permanent":false,"direction":"top","sticky":true}'
+          leaflet_popup:
+            value: '#rendered_entity'
+            view_mode: leaflet_popup
+            options: '{"autoPan":true}'
+          fitbounds_options: '{"padding":[0,0]}'
+          map_scale:
+            control: 0
+            options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+          fullscreen:
+            control: 1
+            options: '{"position":"topleft","pseudoFullscreen":false}'
           feature_properties:
             values: '{"content_type":"{{ type }}","min_zoom_visibility":"{{ field_min_zoom_visibility }}","exclude_from_map_bounds":"{{ field_exclude_from_map_bounds }}","active_type":"{{ field_active_type }}","active_status":"{{ active_status }}","active_level":"{{ active_level }}"}'
+          locate:
+            control: 1
+            options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"},"cacheLocation":false,"tap":false}'
+            automatic: 0
+          map_lazy_load:
+            lazy_load: 1
       row:
         type: fields
         options:

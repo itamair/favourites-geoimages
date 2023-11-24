@@ -53,3 +53,4 @@ hidden:
   territorial_report_active_level: true
   thumbnail: true
   uid: true
+  uuid: true
