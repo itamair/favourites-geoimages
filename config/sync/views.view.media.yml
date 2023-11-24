@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_generate_host_content
-    - image.style.thumbnail
+    - image.style.image_map_marker
   module:
     - better_exposed_filters
     - media
@@ -160,7 +160,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: thumbnail
+            image_style: image_map_marker
             image_loading:
               attribute: eager
             svg_attributes:

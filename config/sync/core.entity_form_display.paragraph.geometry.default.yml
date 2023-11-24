@@ -118,14 +118,14 @@ content:
       reset_map:
         control: true
         options: '{"position":"topleft","title":"Reset View"}'
-      locate:
-        control: true
-        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
-        automatic: false
       fullscreen:
         control: true
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"[paragraph:field_stroke_color]","opacity":"[paragraph:field_stroke_opacity]","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color]","fillOpacity":"[paragraph:field_fill_opacity]","radius":"6"}'
+      locate:
+        control: true
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: false
       geocoder:
         control: true
         settings:
@@ -277,3 +277,4 @@ content:
 hidden:
   created: true
   status: true
+  uuid: true

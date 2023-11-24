@@ -2313,7 +2313,7 @@ display:
           name_field: title
           leaflet_tooltip:
             value: title
-            options: '{"permanent":false,"direction":"top"}'
+            options: '{"permanent":false,"direction":"top","sticky":true}'
           leaflet_popup:
             value: ''
             options: '{"autoPan":true}'
@@ -2324,6 +2324,7 @@ display:
           hide_empty_map: true
           disable_wheel: false
           gesture_handling: false
+          fitbounds_options: '{"padding":[0,0]}'
           reset_map:
             control: true
             options: '{"position":"topleft","title":"Reset View"}'
@@ -4670,7 +4671,7 @@ display:
           name_field: title
           leaflet_tooltip:
             value: title
-            options: '{"permanent":false,"direction":"top"}'
+            options: '{"permanent":false,"direction":"top","sticky":true}'
           leaflet_popup:
             value: '#rendered_entity'
             options: '{"autoPan":true}'
@@ -4681,9 +4682,13 @@ display:
           hide_empty_map: true
           disable_wheel: false
           gesture_handling: false
+          fitbounds_options: '{"padding":[0,0]}'
           reset_map:
             control: true
             options: '{"position":"topleft","title":"Reset View"}'
+          map_scale:
+            control: false
+            options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
           locate:
             control: true
             options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"},"cacheLocation":false,"tap":false}'
@@ -4693,6 +4698,7 @@ display:
             center:
               lat: !!float 42
               lon: !!float 12
+            zoomControlPosition: topleft
             zoom: 17
             minZoom: 3
             maxZoom: 19
@@ -4733,6 +4739,9 @@ display:
           geocoder:
             control: true
             settings:
+              autocomplete:
+                placeholder: 'Search Address'
+                title: 'Search an Address on the Map'
               position: topright
               input_size: 16
               providers:
