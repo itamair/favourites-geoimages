@@ -83,6 +83,7 @@
         "drush/drush": "^11.0",
         "geocoder-php/arcgis-online-provider": "^4.2",
         "geocoder-php/google-maps-provider": "^4.7",
+        "geocoder-php/photon-provider": "^0.6.0",
         "pschocke/google-maps-links": "dev-master"
     },
     "conflict": {
