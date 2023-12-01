@@ -53,7 +53,7 @@
         let geojsonFeatures = data;
         let myStyle = {
           color: geojsonAppLimitSettings.stroke_color,
-          weight: geojsonAppLimitSettings.stroke_weight,
+          weight: parseInt(geojsonAppLimitSettings.stroke_weight),
           opacity: 1,
           fillColor: "blue",
           fillOpacity: 0,
@@ -65,8 +65,8 @@
           onEachFeature: function (feature, layer) {
             let layerBounds = layer.getBounds();
             map.boundsCenter = layerBounds.getCenter();
-            map.boundsZoom = map.getBoundsZoom(layerBounds) + parseInt(geojsonAppLimitSettings.bounds_zoom_correction);
-            if (geojsonAppLimitSettings.bounds_zoom_flag ?? false) {
+            map.boundsZoom = map.getBoundsZoom(layerBounds) + (geojsonAppLimitSettings.bounds_zoom_correction ? parseInt(geojsonAppLimitSettings.bounds_zoom_correction) : 0);
+            if (geojsonAppLimitSettings.bounds_zoom_flag) {
               map.setView(map.boundsCenter, map.boundsZoom);
               if (Drupal.Leaflet[mapid]) {
                 // Set the Map Reset Control settings.
@@ -74,8 +74,8 @@
                 Drupal.Leaflet[mapid].start_zoom = map.boundsZoom;
               }
             }
-            if (geojsonAppLimitSettings.bounds_limit_flag ?? false) {
-              map.options.minZoom = map.boundsZoom + parseInt(geojsonAppLimitSettings.max_zoom_out);
+            if (geojsonAppLimitSettings.bounds_limit_flag) {
+              map.options.minZoom = map.boundsZoom + (geojsonAppLimitSettings.max_zoom_out ? parseInt(geojsonAppLimitSettings.max_zoom_out) : 0);
               // Set MaxBounds to a wider value of the geojson Feature bounds.
               let bounds_widing_val = 0.5;
               map.setMaxBounds(self.widerMapBounds(layerBounds, bounds_widing_val));
