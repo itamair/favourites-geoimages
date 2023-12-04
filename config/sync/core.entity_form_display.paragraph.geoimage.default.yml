@@ -6,27 +6,10 @@ dependencies:
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geoimage
     - field.field.paragraph.geoimage.field_location_type
+    - field.field.paragraph.geoimage.field_markercluster_exclude
     - paragraphs.paragraphs_type.geoimage
   module:
-    - field_group
     - media_library
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_exclude_from_map_bounds
-      label: Attributes
-      region: content
-      parent_name: ''
-      weight: 1
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
 id: paragraph.geoimage.default
 targetEntityType: paragraph
 bundle: geoimage
@@ -52,6 +35,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_markercluster_exclude:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
+  uuid: true

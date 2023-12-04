@@ -47,15 +47,17 @@
               }),
               iconSize: [100, 100]
             })
-            Drupal.Leaflet.prototype.feature_bind_popup(pulsing_marker, feature);
-            if (layers_groups && layers_groups.unclustered && feature.group_label && layers_groups.unclustered.hasOwnProperty(feature.group_label)) {
-              pulsing_marker.addTo(layers_groups.unclustered[feature.group_label]);
-            }
-            else if (layers_groups && feature.group_label && layers_groups.hasOwnProperty(feature.group_label)) {
-              pulsing_marker.addTo(layers_groups[feature.group_label]);
-            }
-            else {
-              pulsing_marker.addTo(add_features.lMap);
+            if (typeof pulsing_marker !== 'undefined') {
+              Drupal.Leaflet.prototype.feature_bind_popup(pulsing_marker, feature);
+              if (layers_groups && layers_groups.unclustered && feature.group_label && layers_groups.unclustered.hasOwnProperty(feature.group_label)) {
+                pulsing_marker.addTo(layers_groups.unclustered[feature.group_label]);
+              }
+              else if (layers_groups && feature.group_label && layers_groups.hasOwnProperty(feature.group_label)) {
+                pulsing_marker.addTo(layers_groups[feature.group_label]);
+              }
+              else {
+                pulsing_marker.addTo(add_features.lMap);
+              }
             }
           }
         }

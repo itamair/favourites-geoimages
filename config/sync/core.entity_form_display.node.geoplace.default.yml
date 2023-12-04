@@ -7,21 +7,15 @@ dependencies:
     - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_components
     - field.field.node.geoplace.field_geofied_view
-    - field.field.node.geoplace.field_image
     - field.field.node.geoplace.field_link
-    - field.field.node.geoplace.field_locations
-    - field.field.node.geoplace.field_media_image
     - field.field.node.geoplace.field_media_slideshow
     - field.field.node.geoplace.field_related_content
-    - image.style.thumbnail
     - node.type.geoplace
   module:
     - field_layout
     - link
-    - media_library
     - paragraphs
     - path
-    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -63,9 +57,9 @@ content:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: closed_expand_nested
-      closed_mode: summary
+      closed_mode: preview
       autocollapse: none
-      closed_mode_threshold: 0
+      closed_mode_threshold: 1
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: location
@@ -187,3 +181,4 @@ content:
 hidden:
   field_geofied_view: true
   field_media_slideshow: true
+  uuid: true

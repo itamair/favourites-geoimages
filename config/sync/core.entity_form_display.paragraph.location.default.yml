@@ -15,32 +15,8 @@ dependencies:
     - field.field.paragraph.location.field_zindex
     - paragraphs.paragraphs_type.location
   module:
-    - field_group
     - geofield_311
     - media_library
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_location_type
-        - field_marker_image
-        - field_classname
-        - field_location_icon_width
-        - field_zindex
-        - field_markercluster_exclude
-        - field_exclude_from_map_bounds
-        - field_address
-      label: Attributes
-      region: content
-      parent_name: ''
-      weight: 1
-      format_type: details
-      format_settings:
-        classes: ''
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
 id: paragraph.location.default
 targetEntityType: paragraph
 bundle: location
@@ -48,7 +24,7 @@ mode: default
 content:
   field_address:
     type: string_textfield
-    weight: 16
+    weight: 7
     region: content
     settings:
       size: 60
@@ -56,7 +32,7 @@ content:
     third_party_settings: {  }
   field_classname:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -66,20 +42,23 @@ content:
     third_party_settings: {  }
   field_exclude_from_map_bounds:
     type: boolean_checkbox
-    weight: 15
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
-    weight: 2
+    weight: 10
     region: content
     settings:
       map_geocoder:
         control: '1'
         settings:
           providers:
+            photon:
+              checked: '1'
+              weight: '0'
             arcgisonline:
               weight: '0'
               checked: 0
@@ -89,9 +68,6 @@ content:
             googlemaps:
               weight: '0'
               checked: 0
-            photon:
-              checked: '1'
-              weight: '0'
           min_terms: '4'
           delay: '800'
           options: ''
@@ -99,7 +75,7 @@ content:
         places_control: '1'
         places_additional_options: ''
       map_library: gmap
-      map_type_google: roadmap
+      map_type_google: hybrid
       map_type_leaflet: OpenStreetMap_Mapnik
       map_type_selector: '1'
       map_dimensions:
@@ -133,27 +109,27 @@ content:
     third_party_settings: {  }
   field_location_icon_width:
     type: number
-    weight: 12
+    weight: 3
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_location_type:
     type: options_select
-    weight: 9
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_marker_image:
     type: media_library_widget
-    weight: 10
+    weight: 2
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox
-    weight: 14
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -168,7 +144,7 @@ content:
     third_party_settings: {  }
   field_zindex:
     type: number
-    weight: 13
+    weight: 4
     region: content
     settings:
       placeholder: ''

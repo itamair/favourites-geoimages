@@ -461,7 +461,7 @@ display:
         type: normal
         title: Immagini
         description: ''
-        weight: -44
+        weight: -46
         expanded: false
         menu_name: main
         parent: ''

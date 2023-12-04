@@ -49,7 +49,7 @@ class ComponentsWithTitleEntityFormatter extends EntityReferenceRevisionsEntityF
       if ($entity instanceof Paragraph &&
         in_array($entity->bundle(), ['image', 'location', 'geoimage'])
       ) {
-        /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+        /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
         if (!isset($parent_entity)) {
           $parent_entity = $entity->getParentEntity();
         }
@@ -106,7 +106,7 @@ class ComponentsWithTitleEntityFormatter extends EntityReferenceRevisionsEntityF
     return [
       '#type' => 'link',
       '#title' => [
-        $elements_titled,
+        $elements_titled ?? '',
       ],
       '#url' => $parent_entity->toUrl(),
       '#attributes' => [

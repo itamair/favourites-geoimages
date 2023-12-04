@@ -8,6 +8,9 @@
 .paragraphs-subform .field-group-details.geometry-attributes .details-wrapper {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 20px;
 }
 
 a, a.link {
@@ -79,7 +82,8 @@ a, a.link {
 
 // view view-geo-places view-id-geo_places
 
-.view.view-geo-places.view-id-geo_places.view-display-id-page_geoplaces_grid {
+.view.view-geo-places.view-id-geo_places,
+.view-territorial-reports.view-id-territorial_reports {
 
   a.node_title {
     padding-bottom: 0.1875rem;
@@ -151,3 +155,4 @@ a, a.link {
     }
   }
 }
+

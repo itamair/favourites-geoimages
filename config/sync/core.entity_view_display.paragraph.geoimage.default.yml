@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.geoimage.field_exclude_from_map_bounds
     - field.field.paragraph.geoimage.field_geoimage
     - field.field.paragraph.geoimage.field_location_type
+    - field.field.paragraph.geoimage.field_markercluster_exclude
     - paragraphs.paragraphs_type.geoimage
 id: paragraph.geoimage.default
 targetEntityType: paragraph
@@ -21,7 +22,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_markercluster_exclude:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
 hidden:
   field_exclude_from_map_bounds: true
   field_location_type: true
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

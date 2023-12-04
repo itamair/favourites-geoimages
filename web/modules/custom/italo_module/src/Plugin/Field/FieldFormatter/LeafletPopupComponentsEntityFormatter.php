@@ -53,7 +53,7 @@ class LeafletPopupComponentsEntityFormatter extends EntityReferenceRevisionsEnti
             continue;
           }
           else {
-            /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+            /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
             if (!isset($parent_entity)) {
               $parent_entity = $entity->getParentEntity();
             }

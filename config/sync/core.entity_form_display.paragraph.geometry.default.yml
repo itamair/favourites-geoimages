@@ -35,8 +35,7 @@ third_party_settings:
         - field_fill_opacity
         - field_zindex
         - field_min_zoom_visibility
-        - field_markercluster_exclude
-        - field_exclude_from_map_bounds
+        - group_settings
       label: Attributes
       region: content
       parent_name: ''
@@ -46,6 +45,21 @@ third_party_settings:
         classes: geometry-attributes
         id: ''
         open: true
+        description: ''
+        required_fields: true
+    group_settings:
+      children:
+        - field_exclude_from_map_bounds
+        - field_markercluster_exclude
+      label: 'Map Bounds & Clustering'
+      region: content
+      parent_name: group_attributes
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
         description: ''
         required_fields: true
 id: paragraph.geometry.default
@@ -118,6 +132,9 @@ content:
       reset_map:
         control: true
         options: '{"position":"topleft","title":"Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
       fullscreen:
         control: true
         options: '{"position":"topleft","pseudoFullscreen":false}'
@@ -147,62 +164,6 @@ content:
           popup: true
           options: ''
       geometry_validation: '1'
-      multiple_map: false
-      leaflet_map: 'OSM Mapnik'
-      height: 400
-      height_unit: px
-      hide_empty_map: false
-      disable_wheel: false
-      gesture_handling: false
-      popup: false
-      popup_content: ''
-      leaflet_popup:
-        value: ''
-        options: '{"maxWidth":"300","minWidth":"50", "autoPan": true}'
-        view_mode: full
-        control: false
-        content: ''
-      leaflet_tooltip:
-        value: ''
-        options: '{"permanent":false,"direction":"center"}'
-      map_position:
-        force: false
-        center:
-          lat: 0
-          lon: 0
-        zoom: 12
-        minZoom: 1
-        maxZoom: 18
-        zoomFiner: 0
-      weight: null
-      icon:
-        iconType: marker
-        iconUrl: ''
-        shadowUrl: ''
-        className: ''
-        iconSize:
-          x: null
-          'y': null
-        iconAnchor:
-          x: null
-          'y': null
-        shadowSize:
-          x: null
-          'y': null
-        shadowAnchor:
-          x: null
-          'y': null
-        popupAnchor:
-          x: null
-          'y': null
-        html: '<div></div>'
-        html_class: leaflet-map-divicon
-        circle_marker_options: '{"radius": 100, "color": "red", "fillColor": "#f03", "fillOpacity": 0.5}'
-      leaflet_markercluster:
-        control: false
-        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
-        excluded: false
-        include_path: false
       feature_properties:
         values: ''
     third_party_settings: {  }
@@ -222,7 +183,7 @@ content:
     third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox
-    weight: 14
+    weight: 16
     region: content
     settings:
       display_label: true

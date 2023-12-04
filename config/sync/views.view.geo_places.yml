@@ -2797,7 +2797,7 @@ display:
         type: normal
         title: 'Luoghi di Interesse'
         description: ''
-        weight: -45
+        weight: -48
         expanded: false
         menu_name: main
         parent: ''
@@ -4808,7 +4808,7 @@ display:
         type: normal
         title: 'Home | Mappa'
         description: ''
-        weight: -45
+        weight: -49
         expanded: false
         menu_name: main
         parent: ''
