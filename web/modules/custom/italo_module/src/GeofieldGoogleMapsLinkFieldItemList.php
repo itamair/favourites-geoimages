@@ -4,9 +4,8 @@ namespace Drupal\italo_module;
 
 use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
+use Drupal\media\MediaInterface;
 use Drupal\paragraphs\ParagraphInterface;
-use Drupal\file\FileInterface;
-use Drupal\image\Entity\ImageStyle;
 use pschocke\GoogleMapsLinks\GMapsLocation;
 use pschocke\GoogleMapsLinks\GMapsStreetView;
 
@@ -34,7 +33,7 @@ class GeofieldGoogleMapsLinkFieldItemList extends FieldItemList {
       $entity = $this->getEntity();
       $value0 = '';
       $value1 = '';
-      if ($entity instanceof ParagraphInterface) {
+      if ($entity instanceof ParagraphInterface || $entity instanceof MediaInterface) {
         $paragraph_type = $entity->bundle();
         switch ($paragraph_type) {
           case "geoimage":

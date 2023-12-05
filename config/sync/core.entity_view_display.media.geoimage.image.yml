@@ -10,10 +10,11 @@ dependencies:
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_image_caption
     - field.field.media.geoimage.field_media_image
-    - image.style.cropped_map_image
+    - image.style.map_scaled_cropped_image_800_500
     - media.type.geoimage
   module:
     - layout_builder
+    - link
     - svg_image
 third_party_settings:
   layout_builder:
@@ -29,7 +30,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: cropped_map_image
+      image_style: map_scaled_cropped_image_800_500
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -37,7 +38,19 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
+    region: content
+  geofield_googlemaps_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   geoimage_caption:
     type: string
@@ -45,7 +58,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   created: true
@@ -59,3 +72,4 @@ hidden:
   territorial_report_active_level: true
   thumbnail: true
   uid: true
+  uuid: true

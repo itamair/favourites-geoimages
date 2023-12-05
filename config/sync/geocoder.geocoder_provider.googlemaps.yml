@@ -9,5 +9,7 @@ configuration:
   throttle:
     period: null
     limit: null
-  apiKey: AIzaSyBrgRz6hjg_5aUtKjCOU08g4P5iMpV8jko
+  geocoder:
+    locale: ''
+  apiKey: AIzaSyBtPK9Ws3rBQU5RRW2CZDNEccKl6olW0-4
   region: ''

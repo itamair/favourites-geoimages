@@ -77,7 +77,9 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
         'label' => 'hidden',
         'region' => 'hidden',
       ]);
+  }
 
+  if (in_array($entity_type->id(), ['paragraph', 'media'])) {
     // Add a field that generates the Link to Google Maps location.
     $fields['geofield_googlemaps_link'] = BaseFieldDefinition::create('link')
       ->setName('geofield_googlemaps_link')
@@ -90,7 +92,6 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
         'label' => 'hidden',
         'region' => 'hidden',
       ]);
-
   }
 
   if ($entity_type->id() === 'node') {

@@ -4,7 +4,6 @@ langcode: it
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
-  adminimal_admin_toolbar: 0
   ajax_example: 0
   auto_entitylabel: 0
   automated_cron: 0
@@ -20,7 +19,6 @@ module:
   chosen_lib: 0
   color_field: 0
   comment: 0
-  computed_field: 0
   conditional_fields: 0
   config: 0
   config_translation: 0
@@ -57,7 +55,6 @@ module:
   history: 0
   image: 0
   image_styles_generator: 0
-  imagefield_slideshow: 0
   italo_module: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
@@ -125,7 +122,6 @@ module:
   standard: 1000
 theme:
   olivero_tarantoviva: 0
-  mediteran: 0
   stable: 0
   claro: 0
 profile: standard

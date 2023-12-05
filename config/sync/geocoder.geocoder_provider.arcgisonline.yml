@@ -1,5 +1,5 @@
-uuid: 2d9551b7-ff20-4247-9bf7-42e73d4a46c1
-langcode: en
+uuid: 7ae349dc-cc6e-4504-bf22-ab0dc1992c0b
+langcode: it
 status: true
 dependencies: {  }
 id: arcgisonline
@@ -9,4 +9,6 @@ configuration:
   throttle:
     period: null
     limit: null
+  geocoder:
+    locale: ''
   sourceCountry: ''

@@ -52,7 +52,8 @@ a, a.link {
 .views-field.views-field-field-image,
 .views-field.views-field-field-geoimage,
 .field--name-field-media-image {
-  .field--type-image:not(:last-child) {
+  .field--type-image:not(:last-child),
+  .field--name-geoimage-caption:not(:last-child) {
     margin-bottom: 0.4rem;
   }
   .text-content.field--name-field-image-caption {

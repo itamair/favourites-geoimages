@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_address
+    - node.type.geoimage
     - node.type.geoplace
+    - node.type.territorial_report
+    - paragraphs.paragraphs_type.location
   module:
     - link
     - node
@@ -272,7 +275,9 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            geoimage: geoimage
             geoplace: geoplace
+            territorial_report: territorial_report
           group: 1
           exposed: false
           expose:
@@ -302,19 +307,19 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        delta:
-          id: delta
-          table: node__field_components
-          field: delta
-          relationship: none
+        type_1:
+          id: type_1
+          table: paragraphs_item_field_data
+          field: type
+          relationship: field_components
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: '='
+          entity_type: paragraph
+          entity_field: type
+          plugin_id: bundle
+          operator: in
           value:
-            min: ''
-            max: ''
-            value: '0'
+            location: location
           group: 1
           exposed: false
           expose:
@@ -331,9 +336,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
