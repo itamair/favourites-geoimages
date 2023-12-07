@@ -1,6 +1,6 @@
 {
     "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "description": "Project template for Drupal projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -16,7 +16,7 @@
     ],
     "require": {
         "ext-json": "*",
-        "composer/installers": "^1.9",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
         "drupal/auto_entitylabel": "^3.0@beta",
@@ -28,9 +28,9 @@
         "drupal/color_field": "^3.0",
         "drupal/colorbox": "^2.0",
         "drupal/conditional_fields": "^4.0@alpha",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-project-message": "^9",
-        "drupal/core-recommended": "dev-default",
+        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-project-message": "^10.1",
+        "drupal/core-recommended": "^10.1",
         "drupal/devel_entity_updates": "^4.1",
         "drupal/entity_reference_revisions": "^1.10",
         "drupal/entity_type_clone": "^4.0",
@@ -40,8 +40,7 @@
         "drupal/geocoder": "^4.10",
         "drupal/geofield": "^1.44",
         "drupal/geofield_map": "^3.0",
-        "drupal/graphql": "^4.5",
-        "drupal/graphql_compose": "^2.0@beta",
+        "drupal/graphql_compose": "^2.0",
         "drupal/image_styles_generator": "^1.2",
         "drupal/jquery_ui": "^1.6",
         "drupal/jsonapi_extras": "^3.23",
@@ -61,16 +60,16 @@
         "drupal/slick": "^2.7",
         "drupal/svg_image": "^3.0",
         "drupal/token": "^1.11",
-        "drupal/upgrade_status": "^3.17",
+        "drupal/upgrade_status": "^4.0",
         "drupal/uuid_extra": "^2.0",
         "drupal/viewfield": "^3.0@beta",
         "drupal/views_bulk_edit": "^2.8",
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_geojson": "^1.2",
-        "drupal/views_slideshow": "4.x-dev",
+        "drupal/views_slideshow": "^5.0",
         "drupal/votingapi": "^3.0@beta",
-        "drush/drush": "^11.0",
-        "geocoder-php/arcgis-online-provider": "^4.2",
+        "drush/drush": "^12.4",
+        "geocoder-php/arcgis-online-provider": "^4.4",
         "geocoder-php/google-maps-provider": "^4.7",
         "geocoder-php/photon-provider": "^0.6.0",
         "pschocke/google-maps-links": "dev-master"
@@ -81,16 +80,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cweagans/composer-patches": true,
             "php-http/discovery": true
-        }
+        },
+        "sort-packages": true
     },
     "extra": {
         "drupal-scaffold": {
@@ -120,6 +119,9 @@
             "web/modules/custom/{$name}": [
                 "type:drupal-custom-module"
             ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
@@ -136,7 +138,7 @@
                 "<bg=blue;fg=white>                                                         </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Install the site: https://www.drupal.org/docs/installing-drupal",
                 "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
                 "  * Get support: https://www.drupal.org/support",
                 "  * Get involved with the Drupal community:",
@@ -144,16 +146,6 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
-        },
-        "patches": {}
-    },
-    "require-dev": {
-        "drupal/coder": "^8.3",
-        "drupal/devel": "^5.0",
-        "mglaman/phpstan-drupal": "*",
-        "phpstan/extension-installer": "*",
-        "phpstan/phpstan": "*",
-        "phpstan/phpstan-deprecation-rules": "*",
-        "squizlabs/php_codesniffer": "^3.7"
+        }
     }
 }
