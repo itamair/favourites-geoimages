@@ -163,3 +163,10 @@ a, a.link {
 .view-id-geo_images_list .views-field-field-components a .field--name-field-media-image {
   margin-bottom: 1rem;
 }
+
+/* line 161, ../sass/common.scss */
+.field--name-geofield-googlemaps-link .field__item {
+  display: inline;
+  margin: 0 10px 0 0;
+  font-size: 0.8rem;
+}

@@ -58,7 +58,7 @@ class GeofieldGoogleMapsLinkFieldItemList extends FieldItemList {
                 $gMapsStreetView = new GMapsStreetView();
                 $value1 = [
                   'uri' => $gMapsStreetView->viewpoint($geom->y(), $geom->x())->get(),
-                  'title' => t('Open in Street View'),
+                  'title' => t('Street View'),
                 ];
               }
             }

@@ -148,6 +148,10 @@
             ]
         },
         "patches": {
+            "drupal/core": {
+                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
+                "#3301173 Allow starterkit theme generator tool to clone Olivero": "https://git.drupalcode.org/project/drupal/-/merge_requests/2996.diff"
+            },
             "drupal/votingapi": {
                 "#3341513 Voting Storages does not check access on entity query": "https://git.drupalcode.org/project/votingapi/-/merge_requests/5.diff"
             },

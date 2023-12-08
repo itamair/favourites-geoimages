@@ -1,0 +1,22 @@
+uuid: 71b2d6a0-2ef7-49bd-a658-0cf72bce0fa6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: 8HBdacLbMlwQ4VuJTmeWBN-GcGUzUwES5rMZ7v5mNWA
+id: taranto_viva_secondary_local_tasks
+theme: taranto_viva
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

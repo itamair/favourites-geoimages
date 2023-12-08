@@ -1,0 +1,23 @@
+uuid: 8bc3ffda-6e21-4b36-ad0a-e8be6ccff45e
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: yT2g7fJhh8Jlj5_dhBjGwwAdvUVkYmliyNfngD29-pU
+id: taranto_viva_search_form_wide
+theme: taranto_viva
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

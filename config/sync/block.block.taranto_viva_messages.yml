@@ -1,0 +1,22 @@
+uuid: 140d005e-4d0a-44f4-bff6-31570091ce5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: 0DZc1s7zTdR7JxLc82wWskwvV_i00JtRb8h3hGkLQrM
+id: taranto_viva_messages
+theme: taranto_viva
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

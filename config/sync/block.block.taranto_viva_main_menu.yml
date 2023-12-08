@@ -1,0 +1,27 @@
+uuid: 3ba4e772-2dbe-4e2f-b054-b667fe51c0c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: hdw6BbtpUomS4w0GCKokJ_FHfBIgm9G-UuHFDIIkSIU
+id: taranto_viva_main_menu
+theme: taranto_viva
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

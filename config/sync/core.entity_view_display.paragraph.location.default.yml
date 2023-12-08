@@ -50,9 +50,13 @@ content:
       hide_empty_map: false
       disable_wheel: false
       gesture_handling: false
+      fitbounds_options: '{"padding":[0,0]}'
       reset_map:
         control: false
         options: '{"position":"topleft","title":"Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
       locate:
         control: false
         options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
@@ -174,4 +178,6 @@ hidden:
   field_classname: true
   field_location_type: true
   field_marker_image: true
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

@@ -122,4 +122,5 @@ module:
 theme:
   claro: 0
   olivero: 0
+  taranto_viva: 0
 profile: standard

@@ -1,6 +1,6 @@
 uuid: 6785d8c1-94ba-4f0b-bfff-43bd91ee5be3
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.address
@@ -44,4 +44,6 @@ hidden:
   field_markercluster_exclude: true
   field_title: true
   field_zindex: true
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

@@ -20,4 +20,6 @@ content:
     weight: 0
     region: content
 hidden:
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

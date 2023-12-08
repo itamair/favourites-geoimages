@@ -1,0 +1,23 @@
+uuid: 728cdd45-dc30-4dd5-9ab4-452b2fa4b27e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: YvM8mv99OUBMPksq_862YtrOCwijZwD3YWwUHDatH80
+id: taranto_viva_syndicate
+theme: taranto_viva
+region: social
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - taranto_viva
+id: taranto_viva_medium
+label: 'Taranto Viva Medium'
+locked: false
+pattern: 'j  F,  Y'

@@ -1,0 +1,27 @@
+uuid: 4980cf60-c052-4c85-ba1b-3e7245c5762d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: xneV8AZhRvMCYVEZzOeYZqZK6AeUHvmy1G4G3jsKc3c
+id: taranto_viva_account_menu
+theme: taranto_viva
+region: secondary_menu
+weight: -4
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

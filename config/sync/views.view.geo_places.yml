@@ -5134,11 +5134,14 @@ display:
               providers:
                 arcgisonline:
                   weight: '0'
-                  checked: 1
+                  checked: 0
                 file:
                   weight: '0'
                   checked: 0
                 googlemaps:
+                  weight: '0'
+                  checked: 1
+                photon:
                   weight: '0'
                   checked: 0
               min_terms: 4
@@ -5163,7 +5166,7 @@ display:
             options: '{"autoPan":true}'
           fitbounds_options: '{"padding":[0,0]}'
           map_scale:
-            control: 0
+            control: 1
             options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
           fullscreen:
             control: 1

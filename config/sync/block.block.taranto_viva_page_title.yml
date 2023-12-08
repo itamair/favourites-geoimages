@@ -1,0 +1,20 @@
+uuid: 0b8eaeeb-1c4d-4be0-b5eb-a7ea399c20f3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - taranto_viva
+_core:
+  default_config_hash: JEsM9sn4_peUp-L3f5C_11XdUKoqzIL8pBwPETYL3-U
+id: taranto_viva_page_title
+theme: taranto_viva
+region: content_above
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

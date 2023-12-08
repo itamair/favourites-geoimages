@@ -4,24 +4,31 @@
 
   Drupal.behaviors.leafletInteractions = {
     attach: function(context) {
-      let self = this;
+      const self = this;
+      // Define a boolean leafletMapInit in the context, so not to perform same
+      // bind actions more than ones
+      context.leafletMapInit = false;
 
       // React on leafletMapInit event.
       // Resizing Markers.
       $(context).on('leafletMapInit', function (e, settings, lMap, mapid, data_markers) {
-        let map = lMap;
-        let markers = Drupal.Leaflet[mapid].markers;
-        let features = Drupal.Leaflet[mapid].features;
-        let markersOriginalSizes = self.setMarkersOriginalSizes(markers);
+        // If the leafletMapInit bidnn actions didn't run already.
+        if (!context.leafletMapInit) {
+          context.leafletMapInit = true;
+          const map = lMap;
+          const markers = Drupal.Leaflet[mapid].markers;
+          const features = Drupal.Leaflet[mapid].features;
+          const markersOriginalSizes = self.setMarkersOriginalSizes(markers);
 
-        // Trigger/Process Initial Actions
-        self.processInitialActions(mapid, map, features, markers, markersOriginalSizes);
+          // Trigger/Process Initial Actions
+          self.processInitialActions(mapid, map, features, markers, markersOriginalSizes);
 
-        // Set Actions on every Zoom End
-        map.on('zoomend', function() {
-          // Markers resize on Zoomend.
-          self.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
-        });
+          // Set Actions on every Zoom End
+          map.on('zoomend', function () {
+            // Markers resize on Zoomend.
+            self.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
+          });
+        }
       });
 
       // Interact with each feature created and added to the map.
@@ -84,10 +91,11 @@
      * @param markersOriginalSizes
      */
     processInitialActions: function(mapid, map, features, markers, markersOriginalSizes) {
+      const self = this;
       // Trigger an Initial React on Zoom End function.
-      this.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
+      self.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
       // Ajax Import all Markers Popups.
-      this.ajaxImportAllMarkersPopups(markers);
+      self.ajaxImportAllMarkersPopups(markers);
     },
 
     ajaxImportAllMarkersPopups: function(markers) {
@@ -122,21 +130,25 @@
      */
     updateIconSize: function(i, marker, iconSizeRate, markersOriginSizes) {
       let icon = marker.options.icon;
-      icon.options.iconSize.x = markersOriginSizes[i].x*iconSizeRate;
-      icon.options.iconSize.y = markersOriginSizes[i].y*iconSizeRate;
+      icon.options.iconSize.x = Math.ceil( markersOriginSizes[i].x*iconSizeRate);
+      icon.options.iconSize.y = Math.ceil( markersOriginSizes[i].y*iconSizeRate);
       //icon.options.iconAnchor = new L.Point(icon.options.iconSize.x/2, icon.options.iconSize.y);
+      if (i === "912-0") {
+        console.log([icon.options.iconSize.x, icon.options.iconSize.y]);
+      }
       marker.setIcon(icon);
     },
 
     /**
      * Get IconSizeRate.
      *
-     * @param map
+     * @param zoomLevel
      * @returns {number}
      */
-    getIconSizeRate: function(map) {
+    getIconSizeRate: function(zoomLevel) {
+      const self = this;
       //return Math.exp(Math.sqrt(map.getZoom()));
-      return Math.pow(map.getZoom()/this.zoomDefaultIconSize, 3);
+      return Math.pow(zoomLevel/self.zoomDefaultIconSize, 3);
     },
 
     /**
@@ -171,9 +183,9 @@
      * @param markersOriginalSizes
      */
     markersResizeOnZoomEnd: function(mapid, map, features, markers, markersOriginalSizes) {
-      let self = this;
-      let iconSizeRate = this.getIconSizeRate(map);
-      let zoomLevel = map.getZoom();
+      const self = this;
+      const zoomLevel = map.getZoom();
+      const iconSizeRate = this.getIconSizeRate(zoomLevel);
       for (let i in markers) {
         if (markers.hasOwnProperty(i)) {
           let hidden_marker_index = self.hidden_markers.indexOf(i);
