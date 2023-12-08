@@ -5,9 +5,9 @@ dependencies:
   module:
     - masquerade
   theme:
-    - olivero_tarantoviva
+    - olivero
 id: masquerade
-theme: olivero_tarantoviva
+theme: olivero
 region: footer_bottom
 weight: -6
 provider: null
@@ -17,4 +17,5 @@ settings:
   label: Masquerade
   label_display: visible
   provider: masquerade
+  show_unmasquerade_link: false
 visibility: {  }

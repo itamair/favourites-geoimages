@@ -429,8 +429,8 @@ display:
           map_position:
             force: false
             center:
-              lat: !!float 42
-              lon: !!float 12
+              lat: 42.0
+              lon: 12.0
             zoom: 17
             minZoom: 3
             maxZoom: 19
@@ -2340,8 +2340,8 @@ display:
           map_position:
             force: false
             center:
-              lat: !!float 42
-              lon: !!float 12
+              lat: 42.0
+              lon: 12.0
             zoomControlPosition: topleft
             zoom: 17
             minZoom: 3
@@ -5089,8 +5089,8 @@ display:
           map_position:
             force: false
             center:
-              lat: !!float 42
-              lon: !!float 12
+              lat: 42.0
+              lon: 12.0
             zoom: 17
             minZoom: 3
             maxZoom: 19

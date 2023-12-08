@@ -39,3 +39,4 @@ hidden:
   field_place_type: true
   langcode: true
   territorial_report_active_level: true
+  uuid: true

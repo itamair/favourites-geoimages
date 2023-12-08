@@ -13,8 +13,6 @@ disable_search: false
 allow_single_deselect: false
 disabled_themes:
   seven: '0'
-  adminimal_theme: '0'
-  olivero_tarantoviva: '0'
 chosen_include: 2
 placeholder_text_multiple: 'Choose some options'
 placeholder_text_single: 'Choose an option'

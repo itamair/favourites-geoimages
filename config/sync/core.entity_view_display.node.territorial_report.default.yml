@@ -117,9 +117,18 @@ third_party_settings:
                 type: timestamp
                 label: hidden
                 settings:
-                  date_format: olivero_tarantoviva_medium
+                  date_format: olivero_medium
                   custom_date_format: ''
                   timezone: ''
+                  tooltip:
+                    date_format: ''
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -218,8 +227,8 @@ third_party_settings:
         layout_id: layout_twocol_section
         layout_settings:
           label: ''
-          context_mapping: {  }
           column_widths: 50-50
+          context_mapping: {  }
         components:
           68d5338e-e684-4c41-92f6-3f1a403ff4ea:
             uuid: 68d5338e-e684-4c41-92f6-3f1a403ff4ea

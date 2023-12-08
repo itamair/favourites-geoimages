@@ -51,3 +51,4 @@ hidden:
   field_related_content: true
   langcode: true
   territorial_report_active_level: true
+  uuid: true

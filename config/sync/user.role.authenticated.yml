@@ -11,6 +11,7 @@ dependencies:
     - comment
     - contact
     - field_permissions
+    - file
     - filter
     - media
     - node
@@ -39,6 +40,7 @@ permissions:
   - 'create geoimage media'
   - 'create paragraph content geoimage'
   - 'create territorial_report content'
+  - 'delete own files'
   - 'delete own geoimage media'
   - 'delete own territorial_report content'
   - 'delete paragraph content geoimage'

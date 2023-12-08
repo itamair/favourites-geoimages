@@ -20,14 +20,18 @@ content:
     settings:
       max_width: 0
       max_height: 0
+      loading:
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   created: true
+  geofield_googlemaps_link: true
   geoimage_caption: true
   langcode: true
   name: true
   territorial_report_active_level: true
   thumbnail: true
   uid: true
+  uuid: true

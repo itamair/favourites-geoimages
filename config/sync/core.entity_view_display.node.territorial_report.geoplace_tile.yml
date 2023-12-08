@@ -68,11 +68,6 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  rate_thumbs_up_down:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
   territorial_report_active_level:
     type: string
     label: inline
@@ -95,4 +90,5 @@ hidden:
   geoimage_caption: true
   langcode: true
   links: true
+  rate_thumbs_up_down: true
   uuid: true

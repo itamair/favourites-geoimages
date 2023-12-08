@@ -65,3 +65,4 @@ hidden:
   rate_thumbs_up: true
   rate_thumbs_up_down: true
   territorial_report_active_level: true
+  uuid: true

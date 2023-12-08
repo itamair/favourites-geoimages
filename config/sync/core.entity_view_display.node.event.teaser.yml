@@ -40,3 +40,4 @@ hidden:
   field_media_slideshow: true
   langcode: true
   territorial_report_active_level: true
+  uuid: true

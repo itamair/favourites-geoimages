@@ -23,7 +23,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: olivero_tarantoviva_medium
+      format_type: olivero_medium
     third_party_settings: {  }
     weight: 2
     region: content
@@ -56,6 +56,7 @@ hidden:
   field_generate_host_content: true
   field_geofield: true
   field_image_caption: true
+  geofield_googlemaps_link: true
   langcode: true
   name: true
   territorial_report_active_level: true

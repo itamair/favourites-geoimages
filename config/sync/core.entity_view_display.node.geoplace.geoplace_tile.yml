@@ -46,3 +46,4 @@ hidden:
   langcode: true
   links: true
   territorial_report_active_level: true
+  uuid: true

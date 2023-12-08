@@ -80,3 +80,4 @@ hidden:
   field_source_link: true
   langcode: true
   territorial_report_active_level: true
+  uuid: true

@@ -5,9 +5,9 @@ dependencies:
   module:
     - language
   theme:
-    - olivero_tarantoviva
+    - olivero
 id: languageswitcherinterfacetext_2
-theme: olivero_tarantoviva
+theme: olivero
 region: secondary_menu
 weight: -6
 provider: null
