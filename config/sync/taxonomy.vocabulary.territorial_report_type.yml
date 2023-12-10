@@ -1,8 +1,0 @@
-uuid: 4f69c0d3-84c6-4af3-954b-f759e6556227
-langcode: it
-status: true
-dependencies: {  }
-name: 'Tipo di Segnalazione Territoriale'
-vid: territorial_report_type
-description: ''
-weight: 0
