@@ -1,0 +1,13 @@
+uuid: 87fd60d0-376c-41c0-8e57-5bdd6adb8f2b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - taranto_viva
+_core:
+  default_config_hash: yhzz5YtNmpMMwvFbaRhzcJkeOS5QdoF_fVk_8dMLbCI
+id: taranto_viva_medium
+label: 'Taranto Viva Medium'
+locked: false
+pattern: 'j  F,  Y'

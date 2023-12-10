@@ -1,0 +1,38 @@
+uuid: 2ef541bb-7b33-46ef-a0b2-fab0ad9cd603
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.leaflet_popup
+    - field.field.paragraph.geoimage.field_exclude_from_map_bounds
+    - field.field.paragraph.geoimage.field_geoimage
+    - field.field.paragraph.geoimage.field_location_type
+    - field.field.paragraph.geoimage.field_markercluster_exclude
+    - paragraphs.paragraphs_type.geoimage
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.geoimage.leaflet_popup
+targetEntityType: paragraph
+bundle: geoimage
+mode: leaflet_popup
+content:
+  field_geoimage:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: leaflet_popup
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_exclude_from_map_bounds: true
+  field_location_type: true
+  field_markercluster_exclude: true
+  geofield_googlemaps_link: true
+  geomarker_icon_url: true
+  uuid: true

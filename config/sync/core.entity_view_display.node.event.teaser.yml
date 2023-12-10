@@ -1,0 +1,43 @@
+uuid: b834cc16-d44f-452d-9aeb-e735fad06bbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_category_type
+    - field.field.node.event.field_components
+    - field.field.node.event.field_geofied_view
+    - field.field.node.event.field_link
+    - field.field.node.event.field_media_slideshow
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_category_type: true
+  field_components: true
+  field_geofied_view: true
+  field_link: true
+  field_media_slideshow: true
+  langcode: true
+  territorial_report_active_level: true
+  uuid: true

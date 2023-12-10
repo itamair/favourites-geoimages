@@ -1,0 +1,61 @@
+uuid: 8f9c2c5f-5665-4177-a813-d96ce96a96ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.leaflet_popup
+    - field.field.paragraph.location.field_address
+    - field.field.paragraph.location.field_classname
+    - field.field.paragraph.location.field_exclude_from_map_bounds
+    - field.field.paragraph.location.field_geofield
+    - field.field.paragraph.location.field_location_icon_width
+    - field.field.paragraph.location.field_location_type
+    - field.field.paragraph.location.field_marker_image
+    - field.field.paragraph.location.field_markercluster_exclude
+    - field.field.paragraph.location.field_title
+    - field.field.paragraph.location.field_zindex
+    - paragraphs.paragraphs_type.location
+  module:
+    - layout_builder
+    - link
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.location.leaflet_popup
+targetEntityType: paragraph
+bundle: location
+mode: leaflet_popup
+content:
+  field_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  geofield_googlemaps_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_classname: true
+  field_exclude_from_map_bounds: true
+  field_geofield: true
+  field_location_icon_width: true
+  field_location_type: true
+  field_marker_image: true
+  field_markercluster_exclude: true
+  field_title: true
+  field_zindex: true
+  geomarker_icon_url: true
+  uuid: true

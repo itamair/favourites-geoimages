@@ -1,0 +1,10 @@
+uuid: b644fc9f-5909-43f3-8a7f-ea713d41b0c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.leaflet_layout_control
+label: 'Leaflet Layout Control'
+targetEntityType: taxonomy_term
+cache: true

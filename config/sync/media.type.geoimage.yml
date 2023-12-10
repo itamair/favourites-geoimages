@@ -1,0 +1,16 @@
+uuid: 4221dcde-6f60-4538-93e0-306416d7b0cb
+langcode: en
+status: true
+dependencies: {  }
+id: geoimage
+label: 'Geo Image'
+description: 'Use local reusable media with geofield location.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+  gather_exif: '1'
+field_map:
+  name: name
+  created: field_exif_creation_date

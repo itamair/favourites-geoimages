@@ -1,0 +1,15 @@
+uuid: e22040ed-e096-4463-b923-34773a2fbfc2
+langcode: en
+status: true
+dependencies: {  }
+name: map_scaled_cropped_image_800_500
+label: 'Map Scaled & Cropped Image 800×500'
+effects:
+  51bbd28a-7c26-4dd3-8cd2-2793cd76971f:
+    uuid: 51bbd28a-7c26-4dd3-8cd2-2793cd76971f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 500
+      anchor: center-center

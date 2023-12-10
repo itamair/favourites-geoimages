@@ -1,0 +1,29 @@
+uuid: d21d4e86-8412-4cdb-b708-6d35920f3809
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_marker_image
+    - media.type.image
+    - paragraphs.paragraphs_type.location
+id: paragraph.location.field_marker_image
+field_name: field_marker_image
+entity_type: paragraph
+bundle: location
+label: 'Marker Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

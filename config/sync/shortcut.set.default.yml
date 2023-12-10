@@ -1,0 +1,8 @@
+uuid: 08ed7e7c-8dc7-4adb-bcb5-6412d0e9e52f
+langcode: it
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U5VlGjd_SfV0Qm_EfnaynOfc549cNscFAx48JfYoMRI
+id: default
+label: Master

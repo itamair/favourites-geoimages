@@ -1,0 +1,23 @@
+uuid: 1ec26724-0c75-4c9d-8a7c-613d670cd9d4
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_is_external
+    - node.type.territorial_report
+id: node.territorial_report.field_source_is_external
+field_name: field_source_is_external
+entity_type: node
+bundle: territorial_report
+label: 'Source is External'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

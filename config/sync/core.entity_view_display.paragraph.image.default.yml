@@ -1,0 +1,25 @@
+uuid: b8750024-6f23-4820-90b6-f91ca5dbef08
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image.field_image
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.default
+targetEntityType: paragraph
+bundle: image
+mode: default
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  geofield_googlemaps_link: true
+  geomarker_icon_url: true
+  uuid: true
