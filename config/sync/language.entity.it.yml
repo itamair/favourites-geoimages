@@ -1,9 +1,0 @@
-uuid: 29137db6-8333-4085-acfe-8f8f86d5fced
-langcode: it
-status: true
-dependencies: {  }
-id: it
-label: Italian
-direction: ltr
-weight: 1
-locked: false

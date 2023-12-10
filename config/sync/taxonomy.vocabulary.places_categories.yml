@@ -1,8 +1,0 @@
-uuid: eacbe3bb-6411-457d-aa7e-98563517d5f8
-langcode: en
-status: true
-dependencies: {  }
-name: 'Places Categories'
-vid: places_categories
-description: ''
-weight: 0

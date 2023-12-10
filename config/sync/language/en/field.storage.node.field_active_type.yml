@@ -1,8 +1,0 @@
-settings:
-  allowed_values:
-    -
-      label: Positive
-    -
-      label: Negative
-    -
-      label: 'Very Negative'
