@@ -7,7 +7,7 @@
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
-  grid-column: 2 / 6;
+  grid-column: 1 / 14;
   width: 100%;
 
   @media (--grid-md) {
@@ -16,20 +16,6 @@
 
   @media (--lg) {
     grid-column: 2 / 14;
-  }
-}
-
-.layout--pass--content-medium #block-taranto-viva-content {
-
-  grid-column: 1 / 16;
-  width: 100%;
-
-  @media (--grid-md) {
-    grid-column: 1 / 16;
-  }
-
-  @media (--lg) {
-    grid-column: 1 / 16;
   }
 }
 
