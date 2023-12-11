@@ -12,7 +12,7 @@
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
-  grid-column: 1 / 16;
+  grid-column: 2 / 6;
   width: 100%;
 }
 
@@ -27,6 +27,23 @@
   .layout--content-medium,
   .layout--pass--content-medium > * {
     grid-column: 2 / 14;
+  }
+}
+
+.layout--pass--content-medium #block-taranto-viva-content {
+  grid-column: 1 / 16;
+  width: 100%;
+}
+
+@media (min-width: 43.75rem) {
+  .layout--pass--content-medium #block-taranto-viva-content {
+    grid-column: 1 / 16;
+  }
+}
+
+@media (min-width: 62.5rem) {
+  .layout--pass--content-medium #block-taranto-viva-content {
+    grid-column: 1 / 16;
   }
 }
 
