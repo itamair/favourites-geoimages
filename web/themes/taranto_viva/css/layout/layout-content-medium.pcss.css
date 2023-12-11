@@ -19,6 +19,20 @@
   }
 }
 
+.layout--pass--content-medium #block-taranto-viva-content {
+
+  grid-column: 1 / 16;
+  width: 100%;
+
+  @media (--grid-md) {
+    grid-column: 1 / 16;
+  }
+
+  @media (--lg) {
+    grid-column: 1 / 16;
+  }
+}
+
 /*
   If .layout--content-medium is nested within itself, or an element that's inheriting the
   layout--content-medium styles from its parent region, go full width within its
