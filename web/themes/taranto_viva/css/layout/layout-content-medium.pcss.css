@@ -7,31 +7,18 @@
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
-  grid-column: 2 / 6;
-  width: 100%;
-
-  @media (--grid-md) {
-    grid-column: 2 / 14;
-  }
-
-  @media (--lg) {
-    grid-column: 2 / 14;
-  }
-}
-
-.layout--pass--content-medium #block-taranto-viva-content {
-
   grid-column: 1 / 16;
   width: 100%;
 
   @media (--grid-md) {
-    grid-column: 1 / 16;
+    grid-column: 2 / 14;
   }
 
   @media (--lg) {
-    grid-column: 1 / 16;
+    grid-column: 2 / 14;
   }
 }
+
 
 /*
   If .layout--content-medium is nested within itself, or an element that's inheriting the
