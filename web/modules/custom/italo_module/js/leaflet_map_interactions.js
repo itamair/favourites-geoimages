@@ -15,7 +15,7 @@
         // If the leafletMapInit bidnn actions didn't run already.
         if (!context.leafletMapInit) {
           context.leafletMapInit = true;
-          const map = lMap;
+          let map = lMap;
           const markers = Drupal.Leaflet[mapid].markers;
           const features = Drupal.Leaflet[mapid].features;
           const markersOriginalSizes = self.setMarkersOriginalSizes(markers);
@@ -28,6 +28,18 @@
             // Markers resize on Zoomend.
             self.markersResizeOnZoomEnd(mapid, map, features, markers, markersOriginalSizes);
           });
+
+          // `fullscreenchange` Event that's fired when entering or exiting fullscreen.
+          map.on('fullscreenchange', function () {
+            if (map.isFullscreen()) {
+              // Set to 1 the zIndex of the header not to stay over the fullscreen Leaflet Map.
+              $("header.site-header").css('z-index', 1);
+            } else {
+              // Set to 101 the zIndex of the header to stay over the fullscreen Leaflet Map.
+              $("header.site-header").css('z-index', 101);
+            }
+          });
+
         }
       });
 
@@ -133,9 +145,6 @@
       icon.options.iconSize.x = Math.ceil( markersOriginSizes[i].x*iconSizeRate);
       icon.options.iconSize.y = Math.ceil( markersOriginSizes[i].y*iconSizeRate);
       //icon.options.iconAnchor = new L.Point(icon.options.iconSize.x/2, icon.options.iconSize.y);
-      if (i === "912-0") {
-        console.log([icon.options.iconSize.x, icon.options.iconSize.y]);
-      }
       marker.setIcon(icon);
     },
 
