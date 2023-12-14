@@ -7,12 +7,10 @@
 
 .leaflet-popup-content-wrapper {
   border-radius: 1px;
-  padding: 0;
   .leaflet-popup-content {
     width: auto !important;
-    margin: 0;
     position: relative;
-
+    margin: 10px 10px 10px 10px;
     .field--name-geoimage-caption {
       padding-left: 0.5rem !important;
       font-size: 0.8rem;
