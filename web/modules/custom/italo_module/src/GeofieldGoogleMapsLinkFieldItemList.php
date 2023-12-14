@@ -53,7 +53,7 @@ class GeofieldGoogleMapsLinkFieldItemList extends FieldItemList {
                 $gMapsLocation = new GMapsLocation();
                 $value0 = [
                   'uri' => $gMapsLocation->coordinates($geom->y(), $geom->x()),
-                  'title' => t('Open in Google Maps'),
+                  'title' => t('Google Maps'),
                 ];
                 $gMapsStreetView = new GMapsStreetView();
                 $value1 = [
