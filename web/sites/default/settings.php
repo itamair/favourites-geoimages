@@ -708,11 +708,11 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-/*$settings['trusted_host_patterns'] = [
+$settings['trusted_host_patterns'] = [
   '^taranto-viva.ddev.site$',
   '^www.geodemocracy.com$',
-  '^www.taranto-viva.com$',
-];*/
+  '^.taranto-viva.com$',
+];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
@@ -784,3 +784,9 @@ if (file_exists(__DIR__ . '/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 
   include __DIR__ . '/settings.ddev.php';
 }
 
+// Serve Drupal pages after login from /web folder in production server
+// @see https://stackoverflow.com/questions/54588504/how-to-skip-web-directory-from-url-in-drupal-8-installation-using-htaccess-after
+if (isset($GLOBALS['request']) and
+  '/web/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME')) {
+  $GLOBALS['request']->server->set('SCRIPT_NAME', '/index.php');
+}
