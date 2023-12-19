@@ -73,6 +73,14 @@ function geofield_311_leaflet_map_info() {
           "maxZoom" => 20,
           'attribution' => '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
         ],
+
+      ],
+      'Stadia Alidade Smooth Dark Vector' => [
+        'type' => 'vector',
+        'urlTemplate' => '//tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
+        'options' => [
+          'attribution' => '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+        ],
       ],
       'Openstreetmap' => [
         'urlTemplate' => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
