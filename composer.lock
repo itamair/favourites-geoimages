@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52c91e77dfa5c31bb752d4ffbc7d24e7",
+    "content-hash": "39432b1512939b806fa0d5e414512bee",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4143,17 +4143,11 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.2.4",
+            "version": "dev-10.2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.2.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.2.4.zip",
-                "reference": "10.2.4",
-                "shasum": "5ee351109ad4667d3473cc4fe3f812bd09ffe470"
+                "reference": "a7654e6e6d1be3d45f302416ceab6ba8d50ce528"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -4161,12 +4155,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-10.2.x": "10.2.x-dev"
+                },
                 "drupal": {
-                    "version": "10.2.4",
-                    "datestamp": "1701127790",
+                    "version": "10.2.3+5-dev",
+                    "datestamp": "1701125174",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -11770,6 +11767,7 @@
         "drupal/cer": 10,
         "drupal/conditional_fields": 15,
         "drupal/entity_usage": 10,
+        "drupal/leaflet": 20,
         "drupal/masquerade": 5,
         "drupal/media_entity_image_exif": 5,
         "drupal/media_library_importer": 10,
