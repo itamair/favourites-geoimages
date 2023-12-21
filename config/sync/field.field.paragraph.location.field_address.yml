@@ -10,13 +10,13 @@ dependencies:
 third_party_settings:
   geocoder_field:
     method: reverse_geocode
-    weight: 0
+    weight: 2
     field: field_geofield
-    skip_not_empty_value: true
+    skip_not_empty_value: false
     disabled: false
     hidden: false
     providers:
-      - arcgisonline
+      - googlemaps
     dumper: addresstext
     delta_handling: default
     failure:

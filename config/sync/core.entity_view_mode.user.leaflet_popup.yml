@@ -6,5 +6,6 @@ dependencies:
     - user
 id: user.leaflet_popup
 label: 'Leaflet Popup'
+description: ''
 targetEntityType: user
 cache: true

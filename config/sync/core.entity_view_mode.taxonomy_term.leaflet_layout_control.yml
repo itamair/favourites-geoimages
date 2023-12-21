@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.leaflet_layout_control
 label: 'Leaflet Layout Control'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

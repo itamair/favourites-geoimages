@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.leaflet_popup
 label: 'Leaflet Popup'
+description: ''
 targetEntityType: paragraph
 cache: true

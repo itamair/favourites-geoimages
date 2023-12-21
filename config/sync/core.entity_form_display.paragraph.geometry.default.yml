@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
     - field.field.paragraph.geometry.field_link
-    - field.field.paragraph.geometry.field_location_type
     - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
@@ -174,12 +173,6 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  field_location_type:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_markercluster_exclude:
     type: boolean_checkbox

@@ -6,7 +6,25 @@ dependencies:
     - field.storage.paragraph.field_geofield
     - paragraphs.paragraphs_type.location
   module:
+    - geocoder_field
     - geofield
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    field: field_address
+    skip_not_empty_value: false
+    disabled: false
+    hidden: false
+    providers:
+      - photon
+      - googlemaps
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
 id: paragraph.location.field_geofield
 field_name: field_geofield
 entity_type: paragraph
@@ -19,8 +37,8 @@ default_value:
   -
     value: 'POINT (17.24 40.464361)'
     geo_type: Point
-    lat: 40.464361
     lon: 17.24
+    lat: 40.464361
     left: 17.24
     top: 40.464361
     right: 17.24
@@ -28,6 +46,5 @@ default_value:
     geohash: srhq0q3ccpee
     latlon: '40.464361,17.24'
 default_value_callback: ''
-settings:
-  backend: geofield_backend_default
+settings: {  }
 field_type: geofield

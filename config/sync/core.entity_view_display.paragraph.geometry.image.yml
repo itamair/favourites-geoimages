@@ -10,7 +10,6 @@ dependencies:
     - field.field.paragraph.geometry.field_fill_opacity
     - field.field.paragraph.geometry.field_geofield
     - field.field.paragraph.geometry.field_link
-    - field.field.paragraph.geometry.field_location_type
     - field.field.paragraph.geometry.field_markercluster_exclude
     - field.field.paragraph.geometry.field_min_zoom_visibility
     - field.field.paragraph.geometry.field_stroke_color
@@ -37,7 +36,6 @@ hidden:
   field_fill_opacity: true
   field_geofield: true
   field_link: true
-  field_location_type: true
   field_markercluster_exclude: true
   field_min_zoom_visibility: true
   field_stroke_color: true
@@ -45,4 +43,6 @@ hidden:
   field_stroke_weight: true
   field_title: true
   field_zindex: true
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

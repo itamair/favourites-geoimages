@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.leaflet_popup
 label: 'Leaflet Popup'
+description: ''
 targetEntityType: node
 cache: true
