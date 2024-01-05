@@ -14,7 +14,10 @@ use Drupal\node\NodeInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\media\Entity\Media;
+use Drupal\media\MediaInterface;
+use Drupal\node\Entity\Node;
 use Drupal\Core\Field\FieldItemList;
+use Drupal\views\Plugin\views\ViewsPluginInterface;
 
 /**
  * Implements hook_page_attachments().
@@ -258,4 +261,62 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
       ];
     }
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * Generate Geoimage Node with Paragraph referencing Geoimage Media, each time
+ * a Geoimage Media is generated with 'field_generate_host_content' value equal
+ * to TRUE.
+ */
+function italo_module_media_insert(MediaInterface $media) {
+  if ($media->bundle() === "geoimage" && $media->field_generate_host_content->value === TRUE && $title = $media->field_address->value) {
+
+    // Create/Save the Geoimage Paragraph, referencing the Geoimage Media.
+    $paragraph_geoimage = Paragraph::create([
+      'type' => 'geoimage',
+      'field_geoimage' => [
+        'target_id' => $media->id(),
+      ],
+    ]);
+    $paragraph_geoimage->save();
+
+    // Create the Geoimage Node data, with field_components referencing/holding
+    // the created Geoimage Paragraph.
+    $geoimage_node_data = [
+      'type' => "geoimage",
+      'title' => $title,
+      'uid' => \Drupal::currentUser()->id(),
+      'status' => 1,
+      'field_components' => [
+        [
+          'target_id' => $paragraph_geoimage->id(),
+          'target_revision_id' => $paragraph_geoimage->getRevisionId(),
+        ],
+      ],
+    ];
+    // Create/Save the Geoimage Node, with Geoimage Paragraph -> Geoimage Media.
+    $geoimage_node = Node::create($geoimage_node_data);
+    try {
+      $geoimage_node->save();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('media_library_importer')->error($e->getMessage());
+    }
+  }
+}
+
+/**
+ * Implements hook_leaflet_views_features_group_alter().
+ */
+function italo_module_leaflet_views_features_group_alter(array &$group, ViewsPluginInterface &$view_style) {
+  if ($group["group_label"] == 'Eventi') {
+    $group["group_label"] = 'italo';
+  }
+
+  if ($group["group_label"] == 'Segnalazione Territoriale') {
+    $group["weight"] = -10;
+  }
+
 }
