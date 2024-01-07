@@ -38,9 +38,10 @@ class Geofield311LeafletMap extends LeafletMap {
    */
   public function render() {
     $element = parent::render();
-    array_unshift($element["#attached"]["library"], 'geofield_311/geofield_311');
-    $this->setGeojsonAppLimitWidgetElementData($element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"], $this->options);
+    if ($element) {
+      array_unshift($element["#attached"]["library"], 'geofield_311/geofield_311');
+      $this->setGeojsonAppLimitWidgetElementData($element["#attached"]["drupalSettings"]["leaflet"][$element["#map_id"]]["map"]["geojson_app_limit"], $this->options);
+    }
     return $element;
   }
-
 }

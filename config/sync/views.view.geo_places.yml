@@ -4798,7 +4798,6 @@ display:
           plugin_id: bundle
           operator: in
           value:
-            event: event
             geoimage: geoimage
             geoplace: geoplace
             territorial_report: territorial_report
