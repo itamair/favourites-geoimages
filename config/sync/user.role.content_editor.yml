@@ -1,0 +1,13 @@
+uuid: e6a71739-e812-4f61-93c5-44c7396edb36
+langcode: it
+status: true
+dependencies:
+  module:
+    - media_library_importer
+id: content_editor
+label: 'Content Editor'
+weight: -8
+is_admin: null
+permissions:
+  - 'Configure media library importer'
+  - 'Import files into media library'

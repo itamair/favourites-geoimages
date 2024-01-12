@@ -85,6 +85,7 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  queue_ui: 0
   rate: 0
   replicate: 0
   replicate_ui: 0

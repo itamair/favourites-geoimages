@@ -4798,6 +4798,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            event: event
             geoimage: geoimage
             geoplace: geoplace
             territorial_report: territorial_report
@@ -5066,8 +5067,9 @@ display:
               rendered: true
               overlays_options:
                 disabled_overlays:
-                  'Segnalazione Territoriale': 'Segnalazione Territoriale'
-                hidden_overlays_controls: {  }
+                  Immagini: Immagini
+                hidden_overlays_controls:
+                  none: none
           data_source:
             field_geofield: field_geofield
             field_geofield_1: field_geofield_1
@@ -5129,15 +5131,15 @@ display:
               position: topright
               input_size: 16
               providers:
-                googlemaps:
-                  weight: '0'
-                  checked: 1
                 arcgisonline:
                   weight: '0'
                   checked: 0
                 file:
                   weight: '0'
                   checked: 0
+                googlemaps:
+                  weight: '0'
+                  checked: 1
                 photon:
                   weight: '0'
                   checked: 0
