@@ -7,15 +7,15 @@
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
-  grid-column: 1 / 14;
+  grid-column: 1 / 15;
   width: 100%;
 
   @media (--grid-md) {
-    grid-column: 2 / 14;
+    grid-column: 1 / 15;
   }
 
   @media (--lg) {
-    grid-column: 2 / 14;
+    grid-column: 1 / 15;
   }
 }
 

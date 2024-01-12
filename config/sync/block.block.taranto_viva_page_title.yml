@@ -2,6 +2,8 @@ uuid: 0b8eaeeb-1c4d-4be0-b5eb-a7ea399c20f3
 langcode: it
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - taranto_viva
 _core:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

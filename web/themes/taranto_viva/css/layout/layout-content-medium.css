@@ -12,21 +12,21 @@
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
-  grid-column: 1 / 14;
+  grid-column: 1 / 15;
   width: 100%;
 }
 
 @media (min-width: 43.75rem) {
   .layout--content-medium,
   .layout--pass--content-medium > * {
-    grid-column: 2 / 14;
+    grid-column: 1 / 15;
   }
 }
 
 @media (min-width: 62.5rem) {
   .layout--content-medium,
   .layout--pass--content-medium > * {
-    grid-column: 2 / 14;
+    grid-column: 1 / 15;
   }
 }
 

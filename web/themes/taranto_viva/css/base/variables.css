@@ -25,8 +25,8 @@
   --line-height-s: 1.125rem;
 
   /* Layout helpers. */
-  --max-width: 100rem;
-  --max-bg-color: 98.125rem; /* Width to which the background color extends to. */
+  --max-width: 137.5rem;
+  --max-bg-color: 137.5rem; /* Width to which the background color extends to. */
   --sp: 0.875rem;
   --content-left: 5.625rem;
   --site-header-height-wide: var(--sp10);
