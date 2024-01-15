@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "196ebc5cc2999afc9a22a8044ba8e1c6",
+    "content-hash": "b593187a3a2f382473af963bb5afd2fe",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4517,17 +4517,11 @@
         },
         {
             "name": "drupal/media_library_importer",
-            "version": "2.0.2",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_library_importer.git",
-                "reference": "2.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_importer-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "cbf73106d0eb36729327c01b798478fa3927cd18"
+                "reference": "fcfd69d8ac255466a2117892d8df626966296e70"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -4535,12 +4529,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1705069577",
+                    "version": "2.0.2+2-dev",
+                    "datestamp": "1705279884",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12082,6 +12079,7 @@
         "drupal/leaflet": 20,
         "drupal/masquerade": 5,
         "drupal/media_entity_image_exif": 5,
+        "drupal/media_library_importer": 20,
         "drupal/viewfield": 10,
         "drupal/votingapi": 10,
         "pschocke/google-maps-links": 20
