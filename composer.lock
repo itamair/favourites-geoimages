@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "196ebc5cc2999afc9a22a8044ba8e1c6",
+    "content-hash": "7cf1ef5a18345491fd89f4a5fdc50126",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3140,6 +3140,62 @@
             }
         },
         {
+            "name": "drupal/duplicate_role",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/duplicate_role.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/duplicate_role-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "ed294268052ef0d3d140286ea62cf708610168fb"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1688038399",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alexgon",
+                    "homepage": "https://www.drupal.org/user/250587"
+                },
+                {
+                    "name": "Matroskeen",
+                    "homepage": "https://www.drupal.org/user/3426249"
+                },
+                {
+                    "name": "migueltrindade",
+                    "homepage": "https://www.drupal.org/user/690418"
+                },
+                {
+                    "name": "Shreya Shetty",
+                    "homepage": "https://www.drupal.org/user/2943029"
+                }
+            ],
+            "description": "Allows duplicating an existing role and its permissions.",
+            "homepage": "https://www.drupal.org/project/duplicate_role",
+            "support": {
+                "source": "https://git.drupalcode.org/project/duplicate_role"
+            }
+        },
+        {
             "name": "drupal/entity_reference_revisions",
             "version": "1.10.0",
             "source": {
@@ -4249,27 +4305,30 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "dev-10.2.x",
+            "version": "10.2.10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "bdd78fcccd8604689a3091dbcc155ef3fcec3b97"
+                "reference": "10.2.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.2.10.zip",
+                "reference": "10.2.10",
+                "shasum": "c5b899a55785ce8907d3a052f10cbc0c2b04bf8a"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^9.3 || ^10",
                 "drupal/geofield": "^1.31"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-10.2.x": "10.2.x-dev"
-                },
                 "drupal": {
-                    "version": "10.2.7+16-dev",
-                    "datestamp": "1705104033",
+                    "version": "10.2.10",
+                    "datestamp": "1705405628",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -12079,7 +12138,6 @@
         "drupal/cer": 10,
         "drupal/conditional_fields": 15,
         "drupal/entity_usage": 10,
-        "drupal/leaflet": 20,
         "drupal/masquerade": 5,
         "drupal/media_entity_image_exif": 5,
         "drupal/viewfield": 10,
