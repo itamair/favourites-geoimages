@@ -1,9 +1,9 @@
-uuid: 28b268fb-30ee-43b3-b48e-f6d934e7b2e7
+uuid: c3d9d657-b5f0-4cfe-8a99-2dac7ffac4b3
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.geoimage
+    - core.entity_view_mode.media.leaflet_popup_2
     - field.field.media.geoimage.field_address
     - field.field.media.geoimage.field_exif_creation_date
     - field.field.media.geoimage.field_generate_host_content
@@ -12,53 +12,74 @@ dependencies:
     - field.field.media.geoimage.field_media_image
     - field.field.media.geoimage.field_place_type
     - field.field.media.geoimage.field_project_namespace
-    - image.style.cropped_map_image
+    - image.style.map_scaled_cropped_image_800_500
     - media.type.geoimage
   module:
+    - datetime
     - layout_builder
+    - link
     - svg_image
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: media.geoimage.geoimage
+id: media.geoimage.leaflet_popup_2
 targetEntityType: media
 bundle: geoimage
-mode: geoimage
+mode: leaflet_popup_2
 content:
-  field_media_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: cropped_map_image
-      image_loading:
-        attribute: lazy
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  geoimage_caption:
+  field_address:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
+  field_exif_creation_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: taranto_viva_medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: map_scaled_cropped_image_800_500
+      image_loading:
+        attribute: eager
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
     weight: 2
+    region: content
+  geofield_googlemaps_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: nofollow
+      target: _blank
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   created: true
-  field_address: true
-  field_exif_creation_date: true
   field_generate_host_content: true
   field_geofield: true
   field_image_caption: true
   field_place_type: true
   field_project_namespace: true
-  geofield_googlemaps_link: true
+  geoimage_caption: true
   langcode: true
   name: true
   territorial_report_active_level: true

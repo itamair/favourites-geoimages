@@ -1,17 +1,17 @@
-uuid: 3ad0f398-7467-41c8-8d6e-756f6508cdeb
-langcode: en
+uuid: 4302b4f9-7626-49d9-94d8-27d0d93cd49a
+langcode: it
 status: true
 dependencies:
   module:
     - field_permissions
-    - node
+    - media
     - taxonomy
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_place_type
-field_name: field_place_type
-entity_type: node
+id: media.field_project_namespace
+field_name: field_project_namespace
+entity_type: media
 type: entity_reference
 settings:
   target_type: taxonomy_term

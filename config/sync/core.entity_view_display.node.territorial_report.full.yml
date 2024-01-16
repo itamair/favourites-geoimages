@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
+    - field.field.node.territorial_report.field_project_namespace
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_source_is_external
     - field.field.node.territorial_report.field_source_link
@@ -75,6 +76,7 @@ hidden:
   field_date_range: true
   field_link: true
   field_media_slideshow: true
+  field_project_namespace: true
   field_related_content: true
   field_source_is_external: true
   field_source_link: true

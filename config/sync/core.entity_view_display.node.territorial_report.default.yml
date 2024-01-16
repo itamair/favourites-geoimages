@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.territorial_report.field_geofied_view
     - field.field.node.territorial_report.field_link
     - field.field.node.territorial_report.field_media_slideshow
+    - field.field.node.territorial_report.field_project_namespace
     - field.field.node.territorial_report.field_related_content
     - field.field.node.territorial_report.field_source_is_external
     - field.field.node.territorial_report.field_source_link
@@ -227,8 +228,8 @@ third_party_settings:
         layout_id: layout_twocol_section
         layout_settings:
           label: ''
-          column_widths: 50-50
           context_mapping: {  }
+          column_widths: 50-50
         components:
           68d5338e-e684-4c41-92f6-3f1a403ff4ea:
             uuid: 68d5338e-e684-4c41-92f6-3f1a403ff4ea
@@ -370,6 +371,14 @@ content:
       empty_view_title: hidden
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_project_namespace:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_related_content:
     type: entity_reference_label

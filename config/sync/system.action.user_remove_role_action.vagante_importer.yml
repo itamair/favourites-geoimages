@@ -1,0 +1,14 @@
+uuid: 5f2e90b5-3197-4461-a083-d0b0d8d0f295
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.vagante_importer
+  module:
+    - user
+id: user_remove_role_action.vagante_importer
+label: 'Remove the Vagante Importer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vagante_importer

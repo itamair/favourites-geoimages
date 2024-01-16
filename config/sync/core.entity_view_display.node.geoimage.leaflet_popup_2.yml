@@ -1,9 +1,9 @@
-uuid: 56abc155-d23d-4f14-9ffe-23c4f13e22cc
+uuid: ad814996-3780-46bb-b99d-f621f88a38e1
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.leaflet_popup
+    - core.entity_view_mode.node.leaflet_popup_2
     - field.field.node.geoimage.field_category_type
     - field.field.node.geoimage.field_classname
     - field.field.node.geoimage.field_components
@@ -12,23 +12,23 @@ dependencies:
     - field.field.node.geoimage.field_project_namespace
     - node.type.geoimage
   module:
-    - italo_module
+    - entity_reference_revisions
     - layout_builder
     - user
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.geoimage.leaflet_popup
+id: node.geoimage.leaflet_popup_2
 targetEntityType: node
 bundle: geoimage
-mode: leaflet_popup
+mode: leaflet_popup_2
 content:
   field_components:
-    type: leaflet_popup_components_entity_view
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      view_mode: leaflet_popup
+      view_mode: leaflet_popup_2
       link: ''
     third_party_settings: {  }
     weight: 0
@@ -39,20 +39,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
-    region: content
-  geoimage_credits:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   active_level: true
@@ -62,5 +49,6 @@ hidden:
   field_place_type: true
   field_project_namespace: true
   langcode: true
+  links: true
   territorial_report_active_level: true
   uuid: true

@@ -49,9 +49,9 @@
 }
 
 .main-content__container {
-  padding-block-start: var(--sp3);
+  padding-block-start: var(--sp);
 
   @media (--md) {
-    padding-block-start: var(--sp5);
+    padding-block-start: var(--sp3);
   }
 }

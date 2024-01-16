@@ -1,0 +1,11 @@
+uuid: fffd06c1-131a-497f-9914-419b2d980428
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.leaflet_popup_2
+label: 'Leaflet Popup #2'
+description: ''
+targetEntityType: paragraph
+cache: true

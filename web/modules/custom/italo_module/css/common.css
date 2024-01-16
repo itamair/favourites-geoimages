@@ -151,20 +151,18 @@ a, a.link {
 }
 /* line 145, ../sass/common.scss */
 .view-id-geo_images_list .views-view-grid__item {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 /* line 149, ../sass/common.scss */
 .view-id-geo_images_list .views-field-field-components a {
-  text-decoration: none;
-  color: #0d1214;
   font-size: 0.8rem;
 }
-/* line 153, ../sass/common.scss */
+/* line 151, ../sass/common.scss */
 .view-id-geo_images_list .views-field-field-components a .field--name-field-media-image {
   margin-bottom: 1rem;
 }
 
-/* line 161, ../sass/common.scss */
+/* line 159, ../sass/common.scss */
 .field--name-geofield-googlemaps-link .field__item {
   display: inline;
   margin: 0 10px 0 0;

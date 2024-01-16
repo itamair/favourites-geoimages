@@ -9,6 +9,8 @@ dependencies:
     - field.field.media.geoimage.field_geofield
     - field.field.media.geoimage.field_image_caption
     - field.field.media.geoimage.field_media_image
+    - field.field.media.geoimage.field_place_type
+    - field.field.media.geoimage.field_project_namespace
     - image.style.thumbnail
     - media.type.geoimage
   module:
@@ -24,13 +26,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
@@ -38,20 +40,20 @@ content:
     third_party_settings: {  }
   field_exif_creation_date:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_generate_host_content:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
-    weight: 2
+    weight: 3
     region: content
     settings:
       map_geocoder:
@@ -104,10 +106,11 @@ content:
       map_google_api_key: ''
       zoom_level: 5
       click_to_remove_marker: false
+      hide_geocode_address: false
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
-    weight: 1
+    weight: 2
     region: content
     settings:
       rows: 2
@@ -115,35 +118,47 @@ content:
     third_party_settings: {  }
   field_media_image:
     type: image_image
-    weight: 0
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_place_type:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_project_namespace:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 6
+    weight: 7
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -153,3 +168,4 @@ content:
     third_party_settings: {  }
 hidden:
   name: true
+  uuid: true

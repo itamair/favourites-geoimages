@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.geoplace.field_geofied_view
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_media_slideshow
+    - field.field.node.geoplace.field_project_namespace
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
   module:
@@ -41,6 +42,7 @@ hidden:
   field_geofied_view: true
   field_link: true
   field_media_slideshow: true
+  field_project_namespace: true
   field_related_content: true
   geoimage_caption: true
   langcode: true

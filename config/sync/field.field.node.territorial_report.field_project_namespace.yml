@@ -1,0 +1,33 @@
+uuid: 42ffbf6c-0b19-4480-a2c7-a57c2209104f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_namespace
+    - node.type.territorial_report
+    - taxonomy.vocabulary.project_namespace
+  content:
+    - 'taxonomy_term:project_namespace:3463a0e6-4f97-414a-a185-64a79b7a2082'
+id: node.territorial_report.field_project_namespace
+field_name: field_project_namespace
+entity_type: node
+bundle: territorial_report
+label: 'Project Namespace'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 3463a0e6-4f97-414a-a185-64a79b7a2082
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      project_namespace: project_namespace
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

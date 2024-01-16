@@ -1,0 +1,11 @@
+uuid: 1a9a6217-0cf8-46d5-aaa7-f24ecc0a698d
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.leaflet_popup_2
+label: 'Leaflet Popup #2'
+description: ''
+targetEntityType: node
+cache: true

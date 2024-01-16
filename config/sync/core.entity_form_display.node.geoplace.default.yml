@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.geoplace.field_geofied_view
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_media_slideshow
+    - field.field.node.geoplace.field_project_namespace
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
   module:
@@ -112,6 +113,12 @@ content:
   field_place_type:
     type: options_select
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_project_namespace:
+    type: options_select
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

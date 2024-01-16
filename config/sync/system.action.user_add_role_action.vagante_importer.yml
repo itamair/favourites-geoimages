@@ -1,0 +1,14 @@
+uuid: 4b488ceb-0f0b-42be-8eb0-079adfdd9ac4
+langcode: it
+status: true
+dependencies:
+  config:
+    - user.role.vagante_importer
+  module:
+    - user
+id: user_add_role_action.vagante_importer
+label: 'Add the Vagante Importer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vagante_importer

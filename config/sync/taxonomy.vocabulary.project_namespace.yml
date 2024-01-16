@@ -1,0 +1,8 @@
+uuid: 0a381312-3af4-4058-b2e2-c70954b6d74d
+langcode: it
+status: true
+dependencies: {  }
+name: 'Project Namespace'
+vid: project_namespace
+description: ''
+weight: 0

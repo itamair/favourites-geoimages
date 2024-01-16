@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: big
-label: 'Big 800×600'
+label: 'Big 1200×800'
 effects:
   cf63c5a4-bb7d-4b0c-b5bb-be57fc2097df:
     uuid: cf63c5a4-bb7d-4b0c-b5bb-be57fc2097df
     id: image_scale
     weight: 2
     data:
-      width: 800
-      height: 600
+      width: 1200
+      height: 800
       upscale: true

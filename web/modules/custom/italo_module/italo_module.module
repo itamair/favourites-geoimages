@@ -272,15 +272,23 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
  * to TRUE.
  */
 function italo_module_media_insert(MediaInterface $media) {
-  if ($media->bundle() === "geoimage" && $media->field_generate_host_content->value === TRUE && $title = $media->field_address->value) {
+  $user = \Drupal::currentUser();
+  if ($media->bundle() === "geoimage" && $media->field_generate_host_content->value === TRUE && !empty($media->field_geofield->value) && $title = $media->field_address->value) {
 
     // Create/Save the Geoimage Paragraph, referencing the Geoimage Media.
-    $paragraph_geoimage = Paragraph::create([
+    $paragraph_geoimage_data = [
       'type' => 'geoimage',
       'field_geoimage' => [
         'target_id' => $media->id(),
       ],
-    ]);
+    ];
+
+    // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
+    if ($media->get('field_project_namespace')->target_id == 53) {
+      $paragraph_geoimage_data['field_exclude_from_map_bounds'] = FALSE;
+    }
+
+    $paragraph_geoimage = Paragraph::create($paragraph_geoimage_data);
     $paragraph_geoimage->save();
 
     // Create the Geoimage Node data, with field_components referencing/holding
@@ -288,8 +296,9 @@ function italo_module_media_insert(MediaInterface $media) {
     $geoimage_node_data = [
       'type' => "geoimage",
       'title' => $title,
-      'uid' => \Drupal::currentUser()->id(),
+      'uid' => $user->id(),
       'status' => 1,
+      'langcode' => \Drupal::service('language_manager')->getDefaultLanguage()->getId(),
       'field_components' => [
         [
           'target_id' => $paragraph_geoimage->id(),
@@ -297,6 +306,16 @@ function italo_module_media_insert(MediaInterface $media) {
         ],
       ],
     ];
+
+    // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
+    if ($media->get('field_project_namespace')->target_id == 53) {
+      // Set the Geoimage Project Namespace field as 'Vaganti' (target_id: 53).
+      $geoimage_node_data['field_project_namespace'] = [
+        ['target_id' => 53],
+      ];
+      $geoimage_node_data['field_classname'] = 'opacity-75';
+    }
+
     // Create/Save the Geoimage Node, with Geoimage Paragraph -> Geoimage Media.
     $geoimage_node = Node::create($geoimage_node_data);
     try {
@@ -312,14 +331,9 @@ function italo_module_media_insert(MediaInterface $media) {
  * Implements hook_leaflet_views_features_group_alter().
  */
 function italo_module_leaflet_views_features_group_alter(array &$group, ViewsPluginInterface &$view_style) {
-  if ($group["group_label"] == 'Eventi') {
-    $group["group_label"] = 'italo';
-  }
-
   if ($group["group_label"] == 'Segnalazione Territoriale') {
     $group["weight"] = -10;
   }
-
 }
 
 /**
@@ -327,4 +341,10 @@ function italo_module_leaflet_views_features_group_alter(array &$group, ViewsPlu
  */
 function italo_module_alter_media_library_importer_media_extra_fields(FileInterface $file, string $file_url, string $uri, array &$extra_fields) {
   $extra_fields['field_generate_host_content'] = TRUE;
+  if (str_contains($file_url, 'Vaganti_Images')) {
+    // Set the Media Project Namespace field as 'Vaganti' (target_id: 53).
+    $extra_fields['field_project_namespace'] = [
+      ['target_id' => 53],
+    ];
+  }
 }

@@ -1,14 +1,14 @@
-uuid: a7599610-682b-44f0-94e3-c9587220b291
-langcode: en
+uuid: e86614b0-3e2c-4d67-b6b5-a1034bc708cf
+langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_place_type
-    - node.type.geoimage
+    - field.storage.media.field_place_type
+    - media.type.geoimage
     - taxonomy.vocabulary.place_types
-id: node.geoimage.field_place_type
+id: media.geoimage.field_place_type
 field_name: field_place_type
-entity_type: node
+entity_type: media
 bundle: geoimage
 label: 'Place Type'
 description: ''

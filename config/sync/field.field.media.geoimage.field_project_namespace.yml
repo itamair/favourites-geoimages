@@ -1,0 +1,33 @@
+uuid: 16c94efb-d7a3-4329-a7cc-38a7578a39ab
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_project_namespace
+    - media.type.geoimage
+    - taxonomy.vocabulary.project_namespace
+  content:
+    - 'taxonomy_term:project_namespace:3463a0e6-4f97-414a-a185-64a79b7a2082'
+id: media.geoimage.field_project_namespace
+field_name: field_project_namespace
+entity_type: media
+bundle: geoimage
+label: 'Project Namespace'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 3463a0e6-4f97-414a-a185-64a79b7a2082
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      project_namespace: project_namespace
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
