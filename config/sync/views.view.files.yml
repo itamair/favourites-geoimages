@@ -640,7 +640,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: Filename
+            label: 'Nome file'
             description: ''
             use_operator: false
             operator: filename_op
