@@ -265,6 +265,16 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+/*function italo_module_media_presave(MediaInterface $media) {
+  if ($media->bundle() == 'geoimage' && empty($media->field_geofield->value)) {
+    $media_title = $media->label();
+    throw new \Exception("Geoimage media '{$media_title}' couldn't be Geo-located and was not saved.");
+  }
+}*/
+
+/**
  * Implements hook_ENTITY_TYPE_insert().
  *
  * Generate Geoimage Node with Paragraph referencing Geoimage Media, each time
@@ -272,57 +282,81 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
  * to TRUE.
  */
 function italo_module_media_insert(MediaInterface $media) {
-  $user = \Drupal::currentUser();
-  if ($media->bundle() === "geoimage" && $media->field_generate_host_content->value === TRUE && !empty($media->field_geofield->value) && $title = $media->field_address->value) {
 
-    // Create/Save the Geoimage Paragraph, referencing the Geoimage Media.
-    $paragraph_geoimage_data = [
-      'type' => 'geoimage',
-      'field_geoimage' => [
-        'target_id' => $media->id(),
-      ],
-    ];
+  // If the Media is a Geoimage with a Geofield not empty
+  // (it means it was Geo-Located correctly).
+  if ($media->bundle() === "geoimage" && !empty($media->field_geofield->value)) {
 
-    // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
-    if ($media->get('field_project_namespace')->target_id == 53) {
-      $paragraph_geoimage_data['field_exclude_from_map_bounds'] = FALSE;
-    }
-
-    $paragraph_geoimage = Paragraph::create($paragraph_geoimage_data);
-    $paragraph_geoimage->save();
-
-    // Create the Geoimage Node data, with field_components referencing/holding
-    // the created Geoimage Paragraph.
-    $geoimage_node_data = [
-      'type' => "geoimage",
-      'title' => $title,
-      'uid' => $user->id(),
-      'status' => 1,
-      'langcode' => \Drupal::service('language_manager')->getDefaultLanguage()->getId(),
-      'field_components' => [
-        [
-          'target_id' => $paragraph_geoimage->id(),
-          'target_revision_id' => $paragraph_geoimage->getRevisionId(),
+    // If Media Geoimage Media needs to create an host Geoimage Node.
+    if ($media->field_generate_host_content->value === TRUE && $title = $media->field_address->value) {
+      $user = \Drupal::currentUser();
+      // Create/Save the Geoimage Paragraph, referencing the Geoimage Media.
+      $paragraph_geoimage_data = [
+        'type' => 'geoimage',
+        'field_geoimage' => [
+          'target_id' => $media->id(),
         ],
-      ],
-    ];
-
-    // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
-    if ($media->get('field_project_namespace')->target_id == 53) {
-      // Set the Geoimage Project Namespace field as 'Vaganti' (target_id: 53).
-      $geoimage_node_data['field_project_namespace'] = [
-        ['target_id' => 53],
       ];
-      $geoimage_node_data['field_classname'] = 'opacity-75';
-    }
 
-    // Create/Save the Geoimage Node, with Geoimage Paragraph -> Geoimage Media.
-    $geoimage_node = Node::create($geoimage_node_data);
+      // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
+      if ($media->get('field_project_namespace')->target_id == 53) {
+        $paragraph_geoimage_data['field_exclude_from_map_bounds'] = FALSE;
+      }
+
+      $paragraph_geoimage = Paragraph::create($paragraph_geoimage_data);
+      $paragraph_geoimage->save();
+
+      // Create the Geoimage Node data, with field_components referencing.
+      // the created Geoimage Paragraph.
+      $geoimage_node_data = [
+        'type' => "geoimage",
+        'title' => $title,
+        'uid' => $user->id(),
+        'status' => 1,
+        'langcode' => \Drupal::service('language_manager')->getDefaultLanguage()->getId(),
+        'field_components' => [
+          [
+            'target_id' => $paragraph_geoimage->id(),
+            'target_revision_id' => $paragraph_geoimage->getRevisionId(),
+          ],
+        ],
+      ];
+
+      // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
+      if ($media->get('field_project_namespace')->target_id == 53) {
+        // Set the Geoimage Project Namespace field as 'Vaganti'(target_id: 53).
+        $geoimage_node_data['field_project_namespace'] = [
+          ['target_id' => 53],
+        ];
+        $geoimage_node_data['field_classname'] = 'opacity-75';
+      }
+
+      // Create/Save the Geoimage Node, with Geoimage Paragraph/Geoimage Media.
+      $geoimage_node = Node::create($geoimage_node_data);
+      try {
+        $geoimage_node->save();
+      }
+      catch (\Exception $e) {
+        \Drupal::logger('italo module - media_library_importer')->error($e->getMessage());
+      }
+    }
+  }
+  // Otherwise if the Media is a Geoimage not Geo-Located (geofield is empty),
+  // then we delete it (and its source file) and log consequently.
+  elseif ($media->bundle() === "geoimage" && empty($media->field_geofield->value)) {
+    \Drupal::logger('italo module - media_library_importer')->warning("Geoimage '{$media->label()}' couldn't be Geo-Located and is being deleted");
     try {
-      $geoimage_node->save();
+      // Remove the Geoimage Media (not Geo-Located).
+      $media->delete();
+      // Also remove the source file that couldn't be geo-located
+      // (missing EXIF geo info).
+      $file_uri = $media->field_media_image->value;
+      if (!empty($file_uri)) {
+        unlink($media->field_media_image->value);
+      }
     }
     catch (\Exception $e) {
-      \Drupal::logger('media_library_importer')->error($e->getMessage());
+      \Drupal::logger('italo module - media_library_importer')->error($e->getMessage());
     }
   }
 }

@@ -33,6 +33,7 @@ dependencies:
     - system.menu.main
     - taxonomy.vocabulary.place_types
     - taxonomy.vocabulary.project_namespace
+    - user.role.authenticated
   content:
     - 'taxonomy_term:project_namespace:fd033224-7769-47a7-a698-8fa79b4f0dd3'
   module:
@@ -4424,6 +4425,11 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+      access:
+        type: role
+        options:
+          role:
+            authenticated: authenticated
       sorts: {  }
       filters:
         status:
@@ -4739,6 +4745,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        access: false
         title: false
         exposed_form: false
         group_by: false
@@ -4771,7 +4778,7 @@ display:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.media.field_geofield'
         - 'config:field.storage.node.field_active_type'
