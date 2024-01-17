@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
     - filter.format.restricted_html
     - media.type.geoimage
-    - node.type.territorial_report
   module:
     - comment
     - contact
@@ -39,14 +38,11 @@ permissions:
   - 'cast rate vote on node of territorial_report'
   - 'create geoimage media'
   - 'create paragraph content geoimage'
-  - 'create territorial_report content'
   - 'delete own files'
   - 'delete own geoimage media'
-  - 'delete own territorial_report content'
   - 'delete paragraph content geoimage'
   - 'edit own comments'
   - 'edit own geoimage media'
-  - 'edit own territorial_report content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
