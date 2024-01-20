@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.address
     - field.field.paragraph.image.field_image
-    - image.style.cropped_map_image
+    - image.style.map_scaled_cropped_image_400_300
     - paragraphs.paragraphs_type.image
   module:
     - layout_builder
@@ -24,7 +24,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: cropped_map_image
+      image_style: map_scaled_cropped_image_400_300
       image_loading:
         attribute: lazy
     third_party_settings: {  }
