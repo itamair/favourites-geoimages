@@ -12,7 +12,7 @@ dependencies:
     - field.field.media.geoimage.field_media_image
     - field.field.media.geoimage.field_place_type
     - field.field.media.geoimage.field_project_namespace
-    - image.style.cropped_map_image
+    - image.style.map_scaled_cropped_image_800_500
     - media.type.geoimage
   module:
     - datetime
@@ -42,7 +42,7 @@ content:
     label: hidden
     settings:
       photoswipe_node_style_first: ''
-      photoswipe_node_style: cropped_map_image
+      photoswipe_node_style: map_scaled_cropped_image_800_500
       photoswipe_image_style: ''
       photoswipe_reference_image_field: ''
       photoswipe_caption: field_address

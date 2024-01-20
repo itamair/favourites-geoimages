@@ -237,8 +237,7 @@ function italo_module_node_view(array &$build, NodeInterface $node, EntityViewDi
             $media_references = $paragraph->get('field_geoimage')->getValue();
             foreach ($media_references as $media_reference) {
               /** @var \Drupal\media\Entity\Media $paragraph */
-              $media = Media::load($media_reference['target_id']);
-              if ($media->field_geofield) {
+              if ($media = Media::load($media_reference['target_id'])) {
                 $geofields[] = $media->field_geofield->value;
               }
             }
