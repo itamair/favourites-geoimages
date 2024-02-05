@@ -169,5 +169,11 @@
                 "#3331890 Voting Storages does not check access on entity query 31": "https://www.drupal.org/files/issues/2023-10-25/3331890-rate-entity-query-access-list-3.0.x-31.patch.patch"
             }
         }
+    },
+    "require-dev": {
+        "mglaman/phpstan-drupal": "^1.2",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1"
     }
 }
