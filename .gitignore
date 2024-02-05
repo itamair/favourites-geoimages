@@ -16,8 +16,8 @@ node_modules
 /web/themes/unity/build
 /web/profiles/contrib
 /web/sites/*/files
-/private
-/tmp
+*private
+*tmp
 
 settings.local.php
 phpunit.xml
@@ -34,14 +34,14 @@ phpunit.xml
 # Ignore OS junk files
 .DS_Store
 
-# Ignore database dumps
+# Ignore database dumps & compressed files
 *.sql
 *.sql.gz
+*.gz
+*.zip
 
 # Ignore logs
 *.log*
 
 # Ignore .htaccess
 .htaccess
-
-development.services.local.yml
