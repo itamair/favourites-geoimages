@@ -150,7 +150,6 @@ function italo_module_views_data_alter(array &$data) {
         'field_name' => 'geofield_googlemaps_link',
       ],
     ];
-
   }
 
   // In case of Nodes based views.
@@ -184,6 +183,15 @@ function italo_module_views_data_alter(array &$data) {
         'help' => t('Show Active / Inactive Status Contents with a filter.'),
         'field' => 'field_date_range_value',
         'id' => 'date_range_active_status_filter',
+      ],
+    ];
+
+    // Add the "Leaflet Popup Rendered entity" field to Views.
+    $data['node']['leaflet_popup_rendered_entity'] = [
+      'field' => [
+        'title' => t('Leaflet Popup Rendered entity'),
+        'help' => t('Renders an entity in a view mode for the Leaflet Popup.'),
+        'id' => 'leaflet_popup_rendered_entity',
       ],
     ];
 
