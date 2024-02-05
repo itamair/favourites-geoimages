@@ -49,7 +49,12 @@ class LeafletPopupRenderedEntity extends RenderedEntity implements CacheableDepe
 /*    $build["#cache"]["tags"] = [
       'paragraph:' . $paragraph_id,
     ];*/
-    unset($build["#cache"]["keys"]);
+    $build["#cache"]["keys"] = [
+      "entity_view",
+      "paragraph",
+      "leaflet_popup",
+      $paragraph_id,
+    ];
     return $build;
   }
 
