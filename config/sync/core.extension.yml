@@ -99,6 +99,7 @@ module:
   path_alias: 0
   photoswipe: 0
   phpass: 0
+  popup_message: 0
   queue_ui: 0
   rate: 0
   replicate: 0

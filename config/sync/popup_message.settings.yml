@@ -1,0 +1,15 @@
+visibility_pages: 'admin/*'
+enable: '1'
+title: 'Taranto Viva Introduction '
+body:
+  value: "She survived an airstrike in Gaza but much of her family didn’t. A chance discovery revealed a hidden atrocity\r\nLive Updates US says it won’t support Israel’s incursion into Rafah without seeing civilian evacuation plan\r\n‘They are all gone, I have no one left’: Young woman’s story reveals previously undocumented atrocities in Gaza  9:29\r\nAid dropped in the sea by mistake. Video shows how Gazans responded  3:06\r\nIsraeli director receives death threats after calling for ceasefire at film festival"
+  format: full_html
+height: '400'
+width: '400'
+check_cookie: '0'
+expire: '0'
+delay: '0'
+close_delay: '0'
+cover_opacity: '70'
+style: black/popup.css
+visibility: '0'

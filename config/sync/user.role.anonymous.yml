@@ -11,6 +11,7 @@ dependencies:
     - filter
     - media
     - paragraphs_type_permissions
+    - popup_message
     - rate
     - search
     - system
@@ -26,6 +27,7 @@ permissions:
   - 'access site-wide contact form'
   - 'access user profiles'
   - 'cast rate vote on node of territorial_report'
+  - 'display popup message'
   - 'search content'
   - 'use text format restricted_html'
   - 'view field_exclude_from_map_bounds'

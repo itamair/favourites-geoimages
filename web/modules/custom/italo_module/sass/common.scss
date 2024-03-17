@@ -162,3 +162,15 @@ a, a.link {
   font-size: 0.8rem;
 }
 
+// Popup Message
+#popup-message-window {
+  width: 40% !important;
+  height: 80% !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  #popup-message-window {
+    width: 80% !important;
+    height: 80% !important;
+  }
+}

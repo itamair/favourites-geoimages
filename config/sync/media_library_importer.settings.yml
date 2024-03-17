@@ -1,6 +1,5 @@
 langcode: it
 exclude_styles: true
-import_unmanaged_files: true
 import_files_to_media_location: false
 import_folder: /var/www/html/web/sites/default/files/photo_albums
 media_types_import:
@@ -12,3 +11,4 @@ media_types_import:
   video: '0'
 media_types_fields:
   geoimage: field_media_image
+import_unmanaged_files: null
