@@ -182,3 +182,51 @@ a, a.link {
     height: 80% !important;
   }
 }
+/* line 179, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map.form--inline > * {
+  vertical-align: unset;
+  margin-block: 0;
+}
+/* line 183, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map fieldset {
+  border: none;
+}
+/* line 185, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map fieldset .fieldset__legend {
+  display: none;
+}
+/* line 189, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map fieldset .fieldset__wrapper {
+  padding: 0;
+}
+/* line 192, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map fieldset .fieldset__wrapper .form-item {
+  margin: 0;
+  border: none;
+}
+/* line 195, ../sass/common.scss */
+#views-exposed-form-geo-places-page-vaganti-map fieldset .fieldset__wrapper .form-item input {
+  padding: 10px;
+}
+
+/* line 207, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates h2 {
+  font-size: 1.5rem;
+}
+/* line 210, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content {
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+/* line 215, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > h3 {
+  margin-block: 4px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+/* line 220, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > div {
+  display: none;
+}

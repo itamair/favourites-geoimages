@@ -174,3 +174,52 @@ a, a.link {
     height: 80% !important;
   }
 }
+
+#views-exposed-form-geo-places-page-vaganti-map {
+  &.form--inline > * {
+    vertical-align: unset;
+    margin-block: 0;
+  }
+  fieldset {
+    border: none;
+    .fieldset__legend {
+      display: none;
+    }
+
+    .fieldset__wrapper {
+      padding: 0;
+
+      .form-item {
+        margin: 0;
+        border: none;
+        input {
+          padding: 10px;
+
+        }
+      }
+
+    }
+  }
+}
+
+  // View block-taranto-viva-views-block-geo-places-block-vaganti-dates
+  #block-taranto-viva-views-block-geo-places-block-vaganti-dates {
+    h2 {
+      font-size: 1.5rem;
+    }
+    .block__content .view-content {
+      max-height: 300px;
+      overflow-y: scroll;
+      border: 1px solid lightgrey;
+      padding: 10px;
+      > h3 {
+        margin-block: 4px;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+      > div {
+        display: none;
+      }
+    }
+  }
+

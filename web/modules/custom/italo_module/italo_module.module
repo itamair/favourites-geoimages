@@ -129,6 +129,15 @@ function italo_module_entity_base_field_info(EntityTypeInterface $entity_type) {
  */
 function italo_module_views_data_alter(array &$data) {
 
+  $data['views']['month_filter'] = [
+    'title' => t('Month filter - Custom Filter'),
+    'filter' => [
+      'title' => t('Month filter - Custom Filter'),
+      'field' => 'created',
+      'id' => 'month_filter',
+    ],
+  ];
+
   // In case of Paragraphs based views.
   if (isset($data['paragraphs_item'])) {
     // Add the Geo Marker Icon Url field to Views.
