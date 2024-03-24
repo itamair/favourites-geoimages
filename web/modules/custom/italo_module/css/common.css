@@ -209,24 +209,46 @@ a, a.link {
   padding: 10px;
 }
 
-/* line 207, ../sass/common.scss */
-#block-taranto-viva-views-block-geo-places-block-vaganti-dates h2 {
+/* line 208, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates h2,
+.view-id-geo_places.view-display-id-attachment_vaganti_dates h2 {
   font-size: 1.5rem;
 }
-/* line 210, ../sass/common.scss */
-#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content {
+/* line 211, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content,
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .block__content .view-content {
   max-height: 300px;
   overflow-y: scroll;
   border: 1px solid lightgrey;
   padding: 10px;
 }
-/* line 215, ../sass/common.scss */
-#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > h3 {
+/* line 216, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > h3,
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .block__content .view-content > h3 {
   margin-block: 4px;
   font-size: 1rem;
   font-weight: normal;
 }
-/* line 220, ../sass/common.scss */
-#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > div {
+/* line 221, ../sass/common.scss */
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates .block__content .view-content > div,
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .block__content .view-content > div {
+  display: none;
+}
+
+/* line 228, ../sass/common.scss */
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .view-content {
+  max-height: 100px;
+  overflow-y: scroll;
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+/* line 233, ../sass/common.scss */
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .view-content > h3 {
+  margin-block: 4px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+/* line 238, ../sass/common.scss */
+.view-id-geo_places.view-display-id-attachment_vaganti_dates .view-content > div {
   display: none;
 }

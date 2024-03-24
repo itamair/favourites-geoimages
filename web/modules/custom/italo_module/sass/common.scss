@@ -202,24 +202,43 @@ a, a.link {
   }
 }
 
-  // View block-taranto-viva-views-block-geo-places-block-vaganti-dates
-  #block-taranto-viva-views-block-geo-places-block-vaganti-dates {
-    h2 {
-      font-size: 1.5rem;
+// View block-taranto-viva-views-block-geo-places-block-vaganti-dates
+#block-taranto-viva-views-block-geo-places-block-vaganti-dates,
+.view-id-geo_places.view-display-id-attachment_vaganti_dates {
+  h2 {
+    font-size: 1.5rem;
+  }
+  .block__content .view-content {
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    > h3 {
+      margin-block: 4px;
+      font-size: 1rem;
+      font-weight: normal;
     }
-    .block__content .view-content {
-      max-height: 300px;
-      overflow-y: scroll;
-      border: 1px solid lightgrey;
-      padding: 10px;
-      > h3 {
-        margin-block: 4px;
-        font-size: 1rem;
-        font-weight: normal;
-      }
-      > div {
-        display: none;
-      }
+    > div {
+      display: none;
     }
   }
+}
+
+.view-id-geo_places.view-display-id-attachment_vaganti_dates {
+  .view-content {
+    max-height: 100px;
+    overflow-y: scroll;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    > h3 {
+      margin-block: 4px;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+    > div {
+      display: none;
+    }
+  }
+}
+
 
