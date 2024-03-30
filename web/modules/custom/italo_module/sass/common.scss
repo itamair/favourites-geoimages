@@ -175,7 +175,8 @@ a, a.link {
   }
 }
 
-#views-exposed-form-geo-places-page-vaganti-map {
+#views-exposed-form-geo-places-page-vaganti-map,
+#views-exposed-form-geo-images-list-page-vaganti-geimages-list{
   &.form--inline > * {
     vertical-align: unset;
     margin-block: 0;

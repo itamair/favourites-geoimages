@@ -11,6 +11,7 @@ dependencies:
   content:
     - 'taxonomy_term:project_namespace:fd033224-7769-47a7-a698-8fa79b4f0dd3'
   module:
+    - better_exposed_filters
     - datetime
     - entity_reference_revisions
     - media
@@ -576,13 +577,70 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_components'
-  page_1:
-    id: page_1
+  page_geo_images:
+    id: page_geo_images
+    display_title: 'Page Geo Images List'
+    display_plugin: page
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+      path: geo-images
+      menu:
+        type: normal
+        title: Immagini
+        description: ''
+        weight: -46
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_components'
+  page_vaganti_geimages_list:
+    id: page_vaganti_geimages_list
     display_title: 'Page I Vaganti Images List'
     display_plugin: page
     position: 2
     display_options:
       title: 'I Vaganti (Immagini)'
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_exif_creation_date_value:
+                plugin_id: default
+                advanced:
+                  collapsible: false
+                  is_secondary: false
       access:
         type: role
         options:
@@ -703,6 +761,55 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_exif_creation_date_value:
+          id: field_exif_creation_date_value
+          table: media__field_exif_creation_date
+          field: field_exif_creation_date_value
+          relationship: field_geoimage
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_exif_creation_date_value_op
+            label: 'Exif Creation Date (field_exif_creation_date)'
+            description: ''
+            use_operator: false
+            operator: field_exif_creation_date_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: date
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              vagante_importer: '0'
+              administrator: '0'
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          type: date
       filter_groups:
         operator: AND
         groups:
@@ -720,6 +827,7 @@ display:
       defaults:
         access: false
         title: false
+        exposed_form: false
         style: false
         row: false
         filters: false
@@ -741,36 +849,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.roles
-      tags:
-        - 'config:field.storage.node.field_components'
-  page_geo_images:
-    id: page_geo_images
-    display_title: 'Page Geo Images List'
-    display_plugin: page
-    position: 1
-    display_options:
-      display_description: ''
-      display_extenders: {  }
-      path: geo-images
-      menu:
-        type: normal
-        title: Immagini
-        description: ''
-        weight: -46
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_components'
