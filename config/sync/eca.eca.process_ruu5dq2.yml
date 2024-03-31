@@ -1,6 +1,6 @@
 uuid: 9dd9bea3-c68a-4a77-b6c5-4eb8a0750399
 langcode: en-gb
-status: true
+status: false
 dependencies:
   module:
     - eca_user
@@ -8,7 +8,7 @@ id: process_ruu5dq2
 modeller: bpmn_io
 label: 'ECA Feature Demo (clone)'
 version: v1
-weight: null
+weight: -10
 events:
   Event_0erz1e4:
     plugin: 'user:login'

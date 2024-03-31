@@ -6,7 +6,7 @@ name: 'Taranto Viva'
 mail: itamair@me.com
 slogan: ''
 page:
-  403: ''
+  403: /user/login
   404: ''
   front: /main_map
 admin_compact_mode: false
