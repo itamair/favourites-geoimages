@@ -94,12 +94,14 @@
       }
 
       .node--type-geoimage {
-        width: 400px !important;
         .node__content {
           margin: 0;
         }
         .node__title {
           display: none;
+        }
+        img {
+          max-width: 340px !important;
         }
       }
       .node--type-geoplace, .node--type-event {
@@ -134,7 +136,9 @@
 
     @media only screen and (max-width: 380px) {
       .node--type-geoimage {
-        width: 300px !important;
+        img {
+          max-width: 240px !important;
+        }
       }
       .node--type-geoplace, .node--type-event {
         img {
@@ -143,7 +147,7 @@
       }
       .node--type-territorial-report {
         img {
-          max-width: 300px !important;
+          max-width: 240px !important;
         }
       }
     }
