@@ -9,8 +9,6 @@ dependencies:
     - field.storage.node.field_date_range
     - node.type.territorial_report
     - system.menu.main
-    - user.role.administrator
-    - user.role.content_editor
   module:
     - better_exposed_filters
     - datetime
@@ -582,11 +580,9 @@ display:
                   collapsible: false
                   is_secondary: false
       access:
-        type: role
+        type: perm
         options:
-          role:
-            content_editor: content_editor
-            administrator: administrator
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -835,7 +831,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_active_type'
         - 'config:field.storage.node.field_components'
@@ -857,7 +853,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_active_type'
         - 'config:field.storage.node.field_components'
@@ -869,11 +865,9 @@ display:
     position: 1
     display_options:
       access:
-        type: role
+        type: perm
         options:
-          role:
-            content_editor: content_editor
-            administrator: administrator
+          perm: 'access content'
       arguments: {  }
       defaults:
         access: false
@@ -898,7 +892,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_active_type'
         - 'config:field.storage.node.field_components'
