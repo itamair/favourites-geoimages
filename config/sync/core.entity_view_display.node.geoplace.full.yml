@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.geoplace.body
     - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_components
-    - field.field.node.geoplace.field_geofied_view
+    - field.field.node.geoplace.field_geofield_view
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_media_slideshow
     - field.field.node.geoplace.field_project_namespace
@@ -16,7 +16,6 @@ dependencies:
   module:
     - text
     - user
-    - viewfield
 id: node.geoplace.full
 targetEntityType: node
 bundle: geoplace
@@ -28,16 +27,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_geofied_view:
-    type: viewfield_default
-    label: hidden
-    settings:
-      view_title: hidden
-      always_build_output: true
-      empty_view_title: hidden
-    third_party_settings: {  }
-    weight: 2
     region: content
   geoimage_caption:
     type: string
@@ -55,6 +44,7 @@ content:
 hidden:
   field_category_type: true
   field_components: true
+  field_geofield_view: true
   field_link: true
   field_media_slideshow: true
   field_project_namespace: true

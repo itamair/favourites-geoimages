@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.geoplace.body
     - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_components
-    - field.field.node.geoplace.field_geofied_view
+    - field.field.node.geoplace.field_geofield_view
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_media_slideshow
     - field.field.node.geoplace.field_project_namespace
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
+    - views.view.content_locations_addresses_and_google_maps_links
+    - views.view.content_media_images
   module:
     - entity_reference_revisions
     - layout_builder
@@ -19,6 +21,7 @@ dependencies:
     - text
     - user
     - viewfield
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -75,26 +78,49 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 50-50
         components:
-          aaf72266-743f-4f4e-80bc-f434b3eed85c:
-            uuid: aaf72266-743f-4f4e-80bc-f434b3eed85c
+          f6141acc-b521-47ab-9b42-6a6fd342115b:
+            uuid: f6141acc-b521-47ab-9b42-6a6fd342115b
             region: second
             configuration:
-              id: 'field_block:node:geoplace:field_geofied_view'
-              label: 'Geofied View'
+              id: 'views_block:content_locations_addresses_and_google_maps_links-block_content_media_images'
+              label: ''
               label_display: '0'
-              provider: layout_builder
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 2
+            additional: {  }
+          324491f6-2e1d-48a0-81eb-151b56e04c8d:
+            uuid: 324491f6-2e1d-48a0-81eb-151b56e04c8d
+            region: first
+            configuration:
+              id: 'views_block:content_media_images-block_content_media_images'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          9f9035e3-661c-4ded-bdd2-505ffe4714b6:
+            uuid: 9f9035e3-661c-4ded-bdd2-505ffe4714b6
+            region: second
+            configuration:
+              id: 'field_block:node:geoplace:field_geofield_view'
+              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: viewfield_default
-                label: hidden
+                label: above
                 settings:
                   view_title: hidden
                   always_build_output: false
                   empty_view_title: hidden
                 third_party_settings: {  }
-            weight: 1
+            weight: 3
             additional: {  }
         third_party_settings: {  }
       -
@@ -166,15 +192,15 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_geofied_view:
+  field_geofield_view:
     type: viewfield_default
-    label: hidden
+    label: above
     settings:
       view_title: hidden
       always_build_output: false
       empty_view_title: hidden
     third_party_settings: {  }
-    weight: 1
+    weight: 7
     region: content
   field_project_namespace:
     type: entity_reference_label

@@ -26,7 +26,8 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   langcode: true
+  uuid: true

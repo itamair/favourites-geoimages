@@ -6,7 +6,6 @@ dependencies:
     - field.storage.paragraph.field_location_type
     - paragraphs.paragraphs_type.geoimage
     - taxonomy.vocabulary.place_types
-    - taxonomy.vocabulary.territorial_report_type
   content:
     - 'taxonomy_term:place_types:5f210458-7dd2-4703-aaf8-f9e3a8cf33a8'
 id: paragraph.geoimage.field_location_type
@@ -26,7 +25,6 @@ settings:
   handler_settings:
     target_bundles:
       place_types: place_types
-      territorial_report_type: territorial_report_type
     sort:
       field: name
       direction: asc

@@ -1,17 +1,22 @@
-uuid: afe40732-ce03-4fce-afaf-5548ee0334a0
+uuid: 9294c2b3-2563-4976-a639-b27dbbbfa2e9
 langcode: en
 status: true
 dependencies:
   module:
+    - field_permissions
     - node
     - viewfield
     - views
-id: node.field_geofied_view
-field_name: field_geofied_view
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_geofield_view
+field_name: field_geofield_view
 entity_type: node
 type: viewfield
 settings:
   target_type: view
+  handler: 'default:view'
 module: viewfield
 locked: false
 cardinality: 1

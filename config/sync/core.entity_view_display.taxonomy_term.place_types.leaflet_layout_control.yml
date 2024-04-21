@@ -21,3 +21,4 @@ hidden:
   description: true
   field_place_type_icon: true
   langcode: true
+  uuid: true

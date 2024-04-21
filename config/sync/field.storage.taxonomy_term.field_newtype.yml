@@ -1,4 +1,4 @@
-uuid: 17c4faf1-d314-40d8-8b68-60c0bce881d7
+uuid: cfe202b1-bb72-41a4-acff-8b92e67a7f45
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: taxonomy_term.field_place_type_icon
-field_name: field_place_type_icon
+id: taxonomy_term.field_newtype
+field_name: field_newtype
 entity_type: taxonomy_term
 type: entity_reference
 settings:

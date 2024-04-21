@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.geoplace.body
     - field.field.node.geoplace.field_category_type
     - field.field.node.geoplace.field_components
-    - field.field.node.geoplace.field_geofied_view
+    - field.field.node.geoplace.field_geofield_view
     - field.field.node.geoplace.field_link
     - field.field.node.geoplace.field_media_slideshow
     - field.field.node.geoplace.field_project_namespace
@@ -46,7 +46,7 @@ content:
 hidden:
   body: true
   field_category_type: true
-  field_geofied_view: true
+  field_geofield_view: true
   field_link: true
   field_media_slideshow: true
   field_project_namespace: true
