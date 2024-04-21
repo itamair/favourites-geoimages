@@ -1,5 +1,5 @@
 uuid: caa93a29-4a69-4fa3-a7f1-62dba13b97eb
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -19,5 +19,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

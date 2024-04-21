@@ -107,6 +107,7 @@ content:
           center:
             lat: 40.47
             lon: 17.24
+          zoomControlPosition: topleft
           zoom: 15
           minZoom: 1
           maxZoom: 20
@@ -145,6 +146,9 @@ content:
       geocoder:
         control: true
         settings:
+          autocomplete:
+            placeholder: 'Search Address'
+            title: 'Search an Address on the Map'
           position: topright
           input_size: 25
           providers:
@@ -153,10 +157,13 @@ content:
               checked: true
             googlemaps:
               weight: 1
-              checked: true
+              checked: false
             file:
               weight: 0
               checked: false
+            photon:
+              weight: 0
+              checked: true
           min_terms: 4
           delay: 800
           zoom: 16

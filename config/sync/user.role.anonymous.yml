@@ -1,5 +1,5 @@
 uuid: 6972dc4d-bb7a-4484-8624-629951dcdc42
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -12,7 +12,6 @@ dependencies:
     - media
     - paragraphs_type_permissions
     - popup_message
-    - rate
     - search
     - system
 _core:
@@ -26,7 +25,6 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'access user profiles'
-  - 'cast rate vote on node of territorial_report'
   - 'display popup message'
   - 'search content'
   - 'use text format restricted_html'

@@ -1,5 +1,5 @@
 uuid: 8455d3e8-d691-4352-9be0-7312d4570037
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -33,6 +33,9 @@ settings:
         enabled: true
       geometry:
         weight: 8
+        enabled: false
+      image:
+        weight: 10
         enabled: false
       location:
         weight: 9

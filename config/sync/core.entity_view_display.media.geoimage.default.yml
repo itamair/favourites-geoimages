@@ -16,6 +16,7 @@ dependencies:
   module:
     - datetime
     - photoswipe
+    - photoswipe_dynamic_caption
 id: media.geoimage.default
 targetEntityType: media
 bundle: geoimage
@@ -34,14 +35,15 @@ content:
     type: photoswipe_field_formatter
     label: hidden
     settings:
-      photoswipe_node_style_first: ''
-      photoswipe_node_style: big
+      photoswipe_thumbnail_style_first: ''
+      photoswipe_thumbnail_style: big
       photoswipe_image_style: ''
       photoswipe_reference_image_field: ''
-      photoswipe_caption: alt
-      photoswipe_caption_custom: ''
       photoswipe_view_mode: default
-    third_party_settings: {  }
+    third_party_settings:
+      photoswipe_dynamic_caption:
+        photoswipe_caption: alt
+        photoswipe_caption_custom: ''
     weight: 1
     region: content
   geoimage_caption:

@@ -1,5 +1,5 @@
 uuid: ce97b4c0-7b11-4195-8681-5e2cd82b40cc
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -23,7 +23,10 @@ content:
     region: content
 hidden:
   created: true
+  geofield_googlemaps_link: true
+  geoimage_caption: true
   langcode: true
   name: true
   thumbnail: true
   uid: true
+  uuid: true

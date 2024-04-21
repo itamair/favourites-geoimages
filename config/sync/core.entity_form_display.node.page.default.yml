@@ -1,5 +1,5 @@
 uuid: b7376031-052b-4273-b010-54c5551b3361
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -83,4 +83,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  uuid: true

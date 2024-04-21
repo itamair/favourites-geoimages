@@ -1,0 +1,20 @@
+uuid: e85fdfca-102b-4182-8bb1-2c762be45e09
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.places_categories
+  module:
+    - path
+id: taxonomy_term.places_categories.path
+field_name: path
+entity_type: taxonomy_term
+bundle: places_categories
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

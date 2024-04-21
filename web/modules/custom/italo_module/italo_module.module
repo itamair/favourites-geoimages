@@ -314,11 +314,6 @@ function italo_module_media_insert(MediaInterface $media) {
         ],
       ];
 
-      // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
-      if ($media->get('field_project_namespace')->target_id == 53) {
-        $paragraph_geoimage_data['field_exclude_from_map_bounds'] = FALSE;
-      }
-
       $paragraph_geoimage = Paragraph::create($paragraph_geoimage_data);
       $paragraph_geoimage->save();
 
@@ -337,15 +332,6 @@ function italo_module_media_insert(MediaInterface $media) {
           ],
         ],
       ];
-
-      // If the Media Project Namespace field is 'Vaganti' (target_id: 53).
-      if ($media->get('field_project_namespace')->target_id == 53) {
-        // Set the Geoimage Project Namespace field as 'Vaganti'(target_id: 53).
-        $geoimage_node_data['field_project_namespace'] = [
-          ['target_id' => 53],
-        ];
-        $geoimage_node_data['field_classname'] = 'opacity-75';
-      }
 
       // Create/Save the Geoimage Node, with Geoimage Paragraph/Geoimage Media.
       $geoimage_node = Node::create($geoimage_node_data);
@@ -378,23 +364,8 @@ function italo_module_media_insert(MediaInterface $media) {
 }
 
 /**
- * Implements hook_leaflet_views_features_group_alter().
- */
-function italo_module_leaflet_views_features_group_alter(array &$group, ViewsPluginInterface &$view_style) {
-  if ($group["group_label"] == 'Segnalazione Territoriale') {
-    $group["weight"] = -10;
-  }
-}
-
-/**
  * Implements hook_alter_media_library_importer_media_extra_fields().
  */
 function italo_module_alter_media_library_importer_media_extra_fields(FileInterface $file, string $file_url, string $uri, array &$extra_fields) {
   $extra_fields['field_generate_host_content'] = TRUE;
-  if (str_contains($file_url, 'Vaganti_Images')) {
-    // Set the Media Project Namespace field as 'Vaganti' (target_id: 53).
-    $extra_fields['field_project_namespace'] = [
-      ['target_id' => 53],
-    ];
-  }
 }

@@ -1,5 +1,5 @@
-langcode: it
+langcode: en
 geojson_app_limit:
-  file: modules/custom/geofield_311/geojson/prov_taranto.geojson.json
-  stroke_color: '#ff2600'
-  stroke_weight: '2'
+  file: modules/custom/geofield_311/geojson/denmark-municipalities.geojson
+  stroke_color: '#7a7a7a'
+  stroke_weight: '1'

@@ -1,5 +1,5 @@
 uuid: ee378226-00bc-4c48-b8ea-c4b40cbced8d
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -16,7 +16,6 @@ dependencies:
     - node
     - paragraphs_type_permissions
     - popup_message
-    - rate
     - search
     - shortcut
     - system
@@ -35,8 +34,6 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'access user profiles'
-  - 'cast rate vote on field_comments on node of territorial_report'
-  - 'cast rate vote on node of territorial_report'
   - 'create geoimage media'
   - 'create paragraph content geoimage'
   - 'delete own files'

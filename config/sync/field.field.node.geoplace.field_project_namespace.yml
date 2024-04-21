@@ -1,5 +1,5 @@
 uuid: 65d2be1c-5e11-4749-9f7e-6b7d4fe9c941
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -7,18 +7,18 @@ dependencies:
     - node.type.geoplace
     - taxonomy.vocabulary.project_namespace
   content:
-    - 'taxonomy_term:project_namespace:3463a0e6-4f97-414a-a185-64a79b7a2082'
+    - 'taxonomy_term:project_namespace:61a51374-dc11-43fd-920b-530fa529e3d2'
 id: node.geoplace.field_project_namespace
 field_name: field_project_namespace
 entity_type: node
 bundle: geoplace
 label: 'Project Namespace'
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -
-    target_uuid: 3463a0e6-4f97-414a-a185-64a79b7a2082
+    target_uuid: 61a51374-dc11-43fd-920b-530fa529e3d2
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

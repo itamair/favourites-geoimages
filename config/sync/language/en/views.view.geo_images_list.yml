@@ -1,8 +1,0 @@
-display:
-  default:
-    display_options:
-      title: Images
-  page_geo_images:
-    display_options:
-      menu:
-        title: Images

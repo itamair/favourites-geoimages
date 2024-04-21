@@ -1,5 +1,5 @@
 uuid: 44ab2372-334f-4209-b6d0-99c42b5a5cc0
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -16,7 +16,7 @@ bundle: geoimage
 label: 'Location Type'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     target_uuid: 5f210458-7dd2-4703-aaf8-f9e3a8cf33a8

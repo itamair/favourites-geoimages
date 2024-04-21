@@ -1,5 +1,5 @@
 uuid: 97409682-1456-4fb4-a79c-9b7319874d31
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -43,8 +43,10 @@ content:
 hidden:
   created: true
   field_media_image: true
+  geofield_googlemaps_link: true
   geoimage_caption: true
   langcode: true
   name: true
   territorial_report_active_level: true
   uid: true
+  uuid: true

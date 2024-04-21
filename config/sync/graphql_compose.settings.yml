@@ -1,6 +1,6 @@
 _core:
   default_config_hash: VK9dbWdEM1126nBpuBIuDqy8NjjaON_YpFqPMEoLg_s
-langcode: it
+langcode: en
 entity_config:
   media:
     geoimage:
@@ -78,25 +78,7 @@ field_config:
         enabled: true
       field_related_content:
         enabled: true
-    territorial_report:
-      body:
-        enabled: true
-      field_active_type:
-        enabled: true
-      field_category_type:
-        enabled: true
-      field_components:
-        enabled: true
-      field_date_range:
-        enabled: true
-      field_link:
-        enabled: true
-      field_related_content:
-        enabled: true
-      field_source_is_external:
-        enabled: true
-      field_source_link:
-        enabled: true
+    territorial_report: {  }
   paragraph:
     geoimage:
       field_exclude_from_map_bounds:

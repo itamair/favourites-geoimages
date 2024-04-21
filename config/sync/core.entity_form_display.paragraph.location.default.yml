@@ -53,28 +53,28 @@ content:
     region: content
     settings:
       map_geocoder:
+        control: '1'
         settings:
           providers:
-            googlemaps:
-              checked: '1'
-              weight: '0'
             arcgisonline:
-              weight: '0'
-              checked: 0
-            file:
-              weight: '0'
-              checked: 0
+              checked: '1'
+              weight: '-20'
             photon:
-              weight: '0'
+              checked: '1'
+              weight: '-19'
+            file:
+              weight: '-18'
+              checked: 0
+            googlemaps:
+              weight: '-17'
               checked: 0
           min_terms: '4'
           delay: '800'
           options: ''
-        control: 0
       map_google_places:
         places_control: '1'
         places_additional_options: ''
-      map_library: gmap
+      map_library: leaflet
       map_type_google: roadmap
       map_type_leaflet: OpenStreetMap_Mapnik
       map_type_selector: '1'

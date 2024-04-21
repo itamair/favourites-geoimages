@@ -1,5 +1,5 @@
 uuid: 28ead2b3-1c63-49df-b55a-98036be96fda
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -30,7 +30,9 @@ content:
 hidden:
   created: true
   field_media_document: true
+  geofield_googlemaps_link: true
   geoimage_caption: true
   langcode: true
   name: true
   uid: true
+  uuid: true

@@ -1,5 +1,5 @@
 uuid: 41bbc7de-cbb3-4681-b991-bfdf009f1745
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -30,7 +30,9 @@ content:
 hidden:
   created: true
   field_media_audio_file: true
+  geofield_googlemaps_link: true
   geoimage_caption: true
   langcode: true
   name: true
   uid: true
+  uuid: true

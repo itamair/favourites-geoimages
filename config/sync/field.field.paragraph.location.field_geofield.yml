@@ -35,16 +35,16 @@ required: false
 translatable: false
 default_value:
   -
-    value: 'POINT (17.24 40.464361)'
+    value: 'POINT (12.569023 55.675757)'
     geo_type: Point
-    lon: 17.24
-    lat: 40.464361
-    left: 17.24
-    top: 40.464361
-    right: 17.24
-    bottom: 40.464361
-    geohash: srhq0q3ccpee
-    latlon: '40.464361,17.24'
+    lon: 12.569023
+    lat: 55.675757
+    left: 12.569023
+    top: 55.675757
+    right: 12.569023
+    bottom: 55.675757
+    geohash: u3buwp2qz3qg
+    latlon: '55.675757,12.569023'
 default_value_callback: ''
 settings: {  }
 field_type: geofield

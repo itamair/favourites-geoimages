@@ -1,19 +1,12 @@
 uuid: 4a7b489c-1974-43ff-a593-5c02150f5ee3
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_image
     - media.type.geoimage
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      file: '0'
-      alt: '0'
-      title: '0'
 id: media.geoimage.field_media_image
 field_name: field_media_image
 entity_type: media
@@ -21,7 +14,7 @@ bundle: geoimage
 label: Image
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

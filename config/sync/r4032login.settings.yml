@@ -1,6 +1,6 @@
 _core:
   default_config_hash: FtwnuCXmazPAh2H2i_gbDhMK1-eBmNy1dG4RBU4qt4o
-langcode: it
+langcode: en
 display_denied_message: true
 access_denied_message: 'Accesso negato. Devi effettuare il login per vedere questa pagina.'
 access_denied_message_type: error

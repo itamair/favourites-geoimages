@@ -1,5 +1,5 @@
 uuid: 9e07c0e6-fa0f-4d20-863f-04be7d1eeb01
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -42,3 +42,4 @@ hidden:
   masquerade: true
   member_for: true
   user_picture: true
+  uuid: true

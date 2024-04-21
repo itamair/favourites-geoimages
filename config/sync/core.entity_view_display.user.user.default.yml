@@ -1,5 +1,5 @@
 uuid: c34dc8f0-ab1c-4ad4-94ae-c3f3dc0b6b8c
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -7,13 +7,11 @@ dependencies:
     - field.field.user.user.field_surname
     - field.field.user.user.user_picture
     - image.style.thumbnail
-    - views.view.territorial_reports
   module:
     - layout_builder
     - layout_discovery
     - svg_image
     - user
-    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -140,20 +138,7 @@ third_party_settings:
         layout_settings:
           label: 'Segnalazioni Territoriali'
           context_mapping: {  }
-        components:
-          efb5c67b-8173-4904-8f6c-4e614b2cec80:
-            uuid: efb5c67b-8173-4904-8f6c-4e614b2cec80
-            region: content
-            configuration:
-              id: 'views_block:territorial_reports-block_territorial_reports'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
+        components: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -205,3 +190,4 @@ content:
     region: content
 hidden:
   langcode: true
+  uuid: true

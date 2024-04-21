@@ -1,5 +1,5 @@
 uuid: 3f60780f-e414-4151-acb7-5e26f60d0f92
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -61,3 +61,4 @@ content:
     third_party_settings: {  }
 hidden:
   name: true
+  uuid: true

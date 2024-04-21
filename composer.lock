@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1df8c0c71aff2687116c582d8aeb191",
+    "content-hash": "eba5139f039063d184768d6449fd1f98",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5297,29 +5297,30 @@
         },
         {
             "name": "drupal/photoswipe",
-            "version": "4.0.1",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/photoswipe.git",
-                "reference": "4.0.1"
+                "reference": "5.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/photoswipe-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "9d01589410b2a1c52fae9dc7fcc9cd1ae3b61cba"
+                "url": "https://ftp.drupal.org/files/projects/photoswipe-5.0.0.zip",
+                "reference": "5.0.0",
+                "shasum": "c9d5a04f5cca0ad017934d413be888251eb3c538"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
             },
             "suggest": {
-                "npm-asset/photoswipe": "Required to use drupal/photoswipe. Expected version: ^4"
+                "npm-asset/photoswipe": "Required to make the 'photoswipe' module functional. Expected version: ^5",
+                "npm-asset/photoswipe-dynamic-caption-plugin": "Required to make the 'photoswipe_dynamic_caption' submodule functional. Expected version: ^1.2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1691566821",
+                    "version": "5.0.0",
+                    "datestamp": "1711468657",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5636,56 +5637,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/r4032login",
                 "issues": "https://www.drupal.org/project/issues/r4032login"
-            }
-        },
-        {
-            "name": "drupal/rate",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/rate.git",
-                "reference": "3.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/rate-3.0.1.zip",
-                "reference": "3.0.1",
-                "shasum": "72077a601955262a46a4b96cfb1e24cb5cba69dd"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10",
-                "drupal/votingapi": "^3.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1646428101",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "JordiK",
-                    "homepage": "https://www.drupal.org/user/3472907"
-                },
-                {
-                    "name": "Unsupported Projects",
-                    "homepage": "https://www.drupal.org/user/291168"
-                }
-            ],
-            "description": "Flexible voting options for entity types.",
-            "homepage": "https://www.drupal.org/project/rate",
-            "support": {
-                "source": "https://git.drupalcode.org/project/rate",
-                "issues": "https://www.drupal.org/project/issues/rate"
             }
         },
         {
@@ -6567,78 +6518,6 @@
             "homepage": "https://www.drupal.org/project/views_year_filter",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_year_filter"
-            }
-        },
-        {
-            "name": "drupal/votingapi",
-            "version": "3.0.0-beta4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/votingapi.git",
-                "reference": "8.x-3.0-beta4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/votingapi-8.x-3.0-beta4.zip",
-                "reference": "8.x-3.0-beta4",
-                "shasum": "ef523e6974e66307f57e750b804a98230c4ee993"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10"
-            },
-            "require-dev": {
-                "drupal/token": "^1.5"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-3.0-beta4",
-                    "datestamp": "1679526721",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": ">=9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "eaton",
-                    "homepage": "https://www.drupal.org/user/16496"
-                },
-                {
-                    "name": "pedrorocha",
-                    "homepage": "https://www.drupal.org/user/218937"
-                },
-                {
-                    "name": "pifagor",
-                    "homepage": "https://www.drupal.org/user/2375692"
-                },
-                {
-                    "name": "torotil",
-                    "homepage": "https://www.drupal.org/user/865256"
-                },
-                {
-                    "name": "TR",
-                    "homepage": "https://www.drupal.org/user/202830"
-                }
-            ],
-            "description": "Voting API",
-            "homepage": "https://www.drupal.org/project/votingapi",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/votingapi",
-                "issues": "https://drupal.org/project/issues/votingapi"
             }
         },
         {
@@ -13083,7 +12962,6 @@
         "drupal/masquerade": 5,
         "drupal/media_entity_image_exif": 5,
         "drupal/viewfield": 10,
-        "drupal/votingapi": 10,
         "pschocke/google-maps-links": 20
     },
     "prefer-stable": true,

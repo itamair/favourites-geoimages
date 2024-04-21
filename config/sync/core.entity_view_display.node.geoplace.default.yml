@@ -12,8 +12,6 @@ dependencies:
     - field.field.node.geoplace.field_project_namespace
     - field.field.node.geoplace.field_related_content
     - node.type.geoplace
-    - views.view.content_locations_addresses_and_google_maps_links
-    - views.view.content_media_images
   module:
     - entity_reference_revisions
     - layout_builder
@@ -21,7 +19,6 @@ dependencies:
     - text
     - user
     - viewfield
-    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -78,32 +75,6 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 50-50
         components:
-          51552f6f-c110-469c-a8ce-bc415fdfcfe5:
-            uuid: 51552f6f-c110-469c-a8ce-bc415fdfcfe5
-            region: first
-            configuration:
-              id: 'views_block:content_media_images-block_content_media_images'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
-          ad64522d-7538-48fc-bbab-fffa1f730d58:
-            uuid: ad64522d-7538-48fc-bbab-fffa1f730d58
-            region: second
-            configuration:
-              id: 'views_block:content_locations_addresses_and_google_maps_links-block_content_media_images'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
           aaf72266-743f-4f4e-80bc-f434b3eed85c:
             uuid: aaf72266-743f-4f4e-80bc-f434b3eed85c
             region: second

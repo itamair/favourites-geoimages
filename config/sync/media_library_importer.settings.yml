@@ -1,4 +1,4 @@
-langcode: it
+langcode: en
 exclude_styles: true
 import_files_to_media_location: false
 import_folder: /var/www/html/web/sites/default/files/photo_albums

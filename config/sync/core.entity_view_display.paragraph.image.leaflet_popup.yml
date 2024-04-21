@@ -1,5 +1,5 @@
 uuid: d3c2afae-1dc0-4092-9471-405dd648f7d1
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -27,4 +27,6 @@ content:
     weight: 0
     region: content
 hidden:
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

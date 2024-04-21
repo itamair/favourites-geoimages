@@ -1,5 +1,5 @@
 uuid: 097e1f22-9978-4bbb-b7ee-b3b5b26a9727
-langcode: it
+langcode: en
 status: true
 dependencies: {  }
 id: user_profile_section_style

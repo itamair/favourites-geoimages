@@ -1,5 +1,5 @@
 uuid: 58dc24b9-ec94-4321-8bd9-5cc8df38e117
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -20,5 +20,6 @@ default_value:
     value: "<p>Photo Credits: <a href=\"https://www.italomairo.com\" target=\"blank\">Italo Mairo</a></p>\r\n"
     format: restricted_html
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

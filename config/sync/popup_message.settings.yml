@@ -1,8 +1,8 @@
 visibility_pages: 'admin/*'
 enable: '1'
-title: 'Taranto Viva Introduction '
+title: 'Geomapping Album'
 body:
-  value: "Taranto Viva is an experimental project aiming to the promotion of the City of Taranto,\r\nboth on the Territorial Marketing and Citizens' Active Participation sides."
+  value: 'This is a Geomapping Album relative to event X ... '
   format: full_html
 height: '400'
 width: '400'

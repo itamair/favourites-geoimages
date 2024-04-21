@@ -1,5 +1,5 @@
 uuid: 705cd89b-dc13-41d1-a18a-1d6684522cc2
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -39,4 +39,5 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  uuid: true

@@ -1,6 +1,6 @@
 _core:
   default_config_hash: crbLzxE1culnNNbMcnjEQy5F_PmdYkkXBTvemcgc2kg
-langcode: it
+langcode: en
 log_level: 3
 documentation_domain: 'https://ecaguide.org'
 user: ''

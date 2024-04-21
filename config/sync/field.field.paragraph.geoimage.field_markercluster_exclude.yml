@@ -1,5 +1,5 @@
 uuid: fcf969d6-8f1e-4c65-8e35-2509536e392a
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -12,7 +12,7 @@ bundle: geoimage
 label: 'Exclude from Markercluster '
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 0

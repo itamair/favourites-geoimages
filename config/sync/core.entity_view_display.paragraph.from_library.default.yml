@@ -1,5 +1,5 @@
 uuid: 028369e1-af29-4327-bcce-e222a948d258
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -12,4 +12,6 @@ bundle: from_library
 mode: default
 content: {  }
 hidden:
+  geofield_googlemaps_link: true
   geomarker_icon_url: true
+  uuid: true

@@ -1,5 +1,5 @@
 uuid: c21ef7ce-395e-4822-ae09-e569215780e3
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -113,4 +113,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  uuid: true

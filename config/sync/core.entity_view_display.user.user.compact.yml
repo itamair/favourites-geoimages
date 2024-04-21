@@ -1,5 +1,5 @@
 uuid: 0eb0874d-8516-4962-aa22-63836fbaaa9c
-langcode: it
+langcode: en
 status: true
 dependencies:
   config:
@@ -39,3 +39,4 @@ hidden:
   field_surname: true
   langcode: true
   member_for: true
+  uuid: true
