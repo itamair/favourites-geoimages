@@ -1,4 +1,4 @@
-name: geomapping-album
+name: copenhagen-discovery
 type: drupal10
 docroot: web
 php_version: "8.2"
