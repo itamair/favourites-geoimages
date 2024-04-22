@@ -39,12 +39,12 @@ class GeoMarkerIconUrlFieldItemList extends FieldItemList {
         switch ($paragraph_type) {
           case "geoimage":
             $media = $entity->field_geoimage->entity;
-            $image_style = 'image_map_marker';
+            $image_style = 'image_map_marker_height_40';
             break;
 
           case "image":
             $media = isset($entity->field_image) ? $entity->field_image->entity : NULL;
-            $image_style = 'image_map_marker';
+            $image_style = 'image_map_marker_height_40';
             break;
 
           case "location":

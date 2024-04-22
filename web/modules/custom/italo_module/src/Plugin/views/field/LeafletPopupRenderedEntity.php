@@ -21,11 +21,12 @@ class LeafletPopupRenderedEntity extends RenderedEntity implements CacheableDepe
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
-    $entity = Node::load($values->nid);
+    $entity_id = $values->nid;
+    $entity = Node::load($entity_id);
     $components = $entity->get('field_components')->getValue();
     $entity = $this->getEntityTranslationByRelationship($entity, $values);
     $new_entity = clone($entity);
-    if ($paragraph_id = $values->paragraphs_item_field_data_node__field_components_id_1 ?? FALSE) {
+    if ($paragraph_id = $values->paragraphs_item_field_data_node__field_components_id_1 ?? NULL) {
       $paragraph = Paragraph::load($paragraph_id);
       if ($paragraph->bundle() == 'geoimage') {
         $paragraph_id_component = [];
@@ -54,7 +55,7 @@ class LeafletPopupRenderedEntity extends RenderedEntity implements CacheableDepe
       "entity_view",
       "paragraph",
       "leaflet_popup",
-      $paragraph_id,
+      $paragraph_id ?? $entity_id,
     ];
     return $build;
   }
