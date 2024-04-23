@@ -30,7 +30,6 @@ dependencies:
     - media
     - node
     - paragraphs
-    - taxonomy
     - user
 id: geoplaces
 label: GeoPlaces
@@ -508,15 +507,6 @@ display:
           admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
-        field_location_type:
-          id: field_location_type
-          table: paragraph__field_location_type
-          field: field_location_type
-          relationship: field_components
-          group_type: group
-          admin_label: 'field_location_type: Taxonomy term'
-          plugin_id: standard
-          required: false
       css_class: leaflet-map-page
       use_ajax: true
       group_by: false
@@ -539,7 +529,7 @@ display:
     display_plugin: attachment
     position: 2
     display_options:
-      enabled: true
+      enabled: false
       title: Dates
       fields:
         field_exif_creation_date:
@@ -3333,17 +3323,7 @@ display:
       use_ajax: false
       group_by: false
       display_description: ''
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Results @start - @end of @total'
+      header: {  }
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
       path: map
