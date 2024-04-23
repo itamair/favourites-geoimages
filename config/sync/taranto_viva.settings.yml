@@ -9,11 +9,10 @@ features:
   favicon: true
   node_user_picture: false
 logo:
-  path: 'public://DK-Denmark-Flag-icon.png'
   use_default: false
 third_party_settings:
   shortcut:
     module_link: true
 mobile_menu_all_widths: 0
 site_branding_bg_color: default
-base_primary_color: '#d6d6d6'
+base_primary_color: '#1b9ae4'
