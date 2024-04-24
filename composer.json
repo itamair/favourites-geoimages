@@ -50,6 +50,7 @@
         "drupal/geofield_map": "^3.0",
         "drupal/graphql_compose": "^2.0",
         "drupal/image_style_warmer": "^1.2",
+        "drupal/image_styles_generator": "^1.2",
         "drupal/jquery_ui": "^1.6",
         "drupal/jsonapi_extras": "^3.23",
         "drupal/layout_builder_styles": "^2.0",
@@ -171,6 +172,9 @@
             "drupal/rate": {
                 "#3331890 Voting Storages does not check access on entity query 30": "https://www.drupal.org/files/issues/2023-10-23/3331890-rate-entity-query-access-list-3.0.x-30.patch",
                 "#3331890 Voting Storages does not check access on entity query 31": "https://www.drupal.org/files/issues/2023-10-25/3331890-rate-entity-query-access-list-3.0.x-31.patch.patch"
+            },
+            "drupal/geofield": {
+                "#3423627 isEmpty": "https://git.drupalcode.org/project/geofield/-/merge_requests/27/diffs.patch"
             }
         }
     },
