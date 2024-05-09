@@ -4867,17 +4867,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.2.12",
+            "version": "10.2.14",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.2.12"
+                "reference": "10.2.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.2.12.zip",
-                "reference": "10.2.12",
-                "shasum": "0c78c96e5438e9b3047f1541083e324e03b67040"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.2.14.zip",
+                "reference": "10.2.14",
+                "shasum": "bc7d09b34b05651fe036311a4416e111a3b13e48"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10",
@@ -4886,8 +4886,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.2.12",
-                    "datestamp": "1709558282",
+                    "version": "10.2.14",
+                    "datestamp": "1715114722",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5138,17 +5138,17 @@
         },
         {
             "name": "drupal/media_library_importer",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_library_importer.git",
-                "reference": "2.0.6"
+                "reference": "2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_importer-2.0.6.zip",
-                "reference": "2.0.6",
-                "shasum": "8de0c2d8ac318850447e75b8c41b0977e3be379e"
+                "url": "https://ftp.drupal.org/files/projects/media_library_importer-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "409c472318b29a2a9fe54b932cd0ef78c96dbde2"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -5157,8 +5157,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.6",
-                    "datestamp": "1710688763",
+                    "version": "2.0.7",
+                    "datestamp": "1714460345",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
