@@ -2,8 +2,8 @@ status: 0
 pattern: '[node:field_media_image:entity:field_address]'
 escape: false
 preserve_titles: false
+save: false
+chunk: 50
 dependencies:
   config:
     - node.type.geoimage
-save: 0
-chunk: '50'

@@ -158,6 +158,7 @@
     .field--name-geofield-googlemaps-link {
       display: inline-block;
       margin-right: 20px;
+      margin-top: 10px;
     }
   }
 }
@@ -282,3 +283,58 @@
     border-color: limegreen;
   }
 }
+
+// Leaflet Tooltips
+.leaflet-tooltip-left {
+  margin-left: -20px;
+}
+.leaflet-tooltip-right {
+  margin-left: 20px;
+}
+// Leaflet Markers Clusters Style overrides
+.leaflet-marker-icon.marker-cluster {
+  div {
+    font-weight: bold;
+  }
+  &.marker-cluster-small {
+    background-color: inherit !important;
+    div {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: rgba(251, 252, 251, 0.76) !important;
+      border: gray solid 1px;
+      span {
+        line-height: 20px;
+      }
+    }
+  }
+  &.marker-cluster-medium {
+    background-color: inherit !important;
+    div {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: rgba(251, 252, 251, 0.76) !important;
+      border: black solid 1px;
+      span {
+        line-height: 30px;
+      }
+    }
+  }
+  &.marker-cluster-large {
+    background-color: inherit !important;
+    z-index: 100 !important;
+    div {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: rgba(251, 252, 251, 0.76) !important;
+      border: black solid 1px;
+      span {
+        line-height: 40px;
+      }
+    }
+  }
+}
+

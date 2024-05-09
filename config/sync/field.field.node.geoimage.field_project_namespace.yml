@@ -7,7 +7,7 @@ dependencies:
     - node.type.geoimage
     - taxonomy.vocabulary.project_namespace
   content:
-    - 'taxonomy_term:project_namespace:61a51374-dc11-43fd-920b-530fa529e3d2'
+    - 'taxonomy_term:project_namespace:5f5e0fc9-cc23-4523-a80b-5ba5314e7b2c'
 id: node.geoimage.field_project_namespace
 field_name: field_project_namespace
 entity_type: node
@@ -18,7 +18,7 @@ required: true
 translatable: false
 default_value:
   -
-    target_uuid: 61a51374-dc11-43fd-920b-530fa529e3d2
+    target_uuid: 5f5e0fc9-cc23-4523-a80b-5ba5314e7b2c
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

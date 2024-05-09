@@ -15,7 +15,6 @@ dependencies:
     - media
     - node
     - paragraphs_type_permissions
-    - popup_message
     - search
     - shortcut
     - system
@@ -39,7 +38,6 @@ permissions:
   - 'delete own files'
   - 'delete own geoimage media'
   - 'delete paragraph content geoimage'
-  - 'display popup message'
   - 'edit own comments'
   - 'edit own geoimage media'
   - 'post comments'

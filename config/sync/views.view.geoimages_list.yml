@@ -278,7 +278,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 100
+          items_per_page: 150
           total_pages: null
           id: 0
           tags:
@@ -319,7 +319,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -451,17 +451,7 @@ display:
           admin_label: 'field_geoimage: Media'
           plugin_id: standard
           required: false
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Risultati @start - @end of @total'
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -899,7 +889,7 @@ display:
         type: normal
         title: Images
         description: ''
-        weight: 10
+        weight: -48
         expanded: false
         menu_name: main
         parent: ''

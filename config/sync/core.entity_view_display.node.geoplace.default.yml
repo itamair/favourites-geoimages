@@ -109,12 +109,15 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:geoplace:field_geofield_view'
+              label: 'Geofield View'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: viewfield_default
-                label: above
+                label: hidden
                 settings:
                   view_title: hidden
                   always_build_output: false

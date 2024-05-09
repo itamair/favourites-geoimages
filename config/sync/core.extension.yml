@@ -10,6 +10,7 @@ module:
   better_exposed_filters: 0
   big_pipe: 0
   blazy: 0
+  blazy_ui: 0
   block: 0
   block_content: 0
   bpmn_io: 0
@@ -98,7 +99,6 @@ module:
   photoswipe: 0
   photoswipe_dynamic_caption: 0
   phpass: 0
-  popup_message: 0
   queue_ui: 0
   r4032login: 0
   replicate: 0

@@ -50,7 +50,7 @@
         if (feature.type !== 'point' && feature.path) {
           const feature_path = feature.path instanceof Object ? feature.path : JSON.parse(feature.path);
           if (feature_path['arrowed'] === "1" && typeof lFeature.arrowheads !== "undefined") {
-            lFeature.arrowheads({size: '7%'});
+            lFeature.arrowheads({size: '40%', frequency: '500m'});
           }
         }
 
@@ -157,7 +157,7 @@
     getIconSizeRate: function(zoomLevel) {
       const self = this;
       //return Math.exp(Math.sqrt(map.getZoom()));
-      return Math.pow(zoomLevel/self.zoomDefaultIconSize, 3);
+      return Math.pow(zoomLevel/self.zoomDefaultIconSize, 3) + 0.1;
     },
 
     /**

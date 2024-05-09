@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.media.field_generate_host_content
     - field.storage.media.field_project_namespace
-    - image.style.image_map_marker_height_40
+    - image.style.image_map_marker_height_50
     - taxonomy.vocabulary.project_namespace
   module:
     - better_exposed_filters
@@ -165,7 +165,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: image_map_marker_height_40
+            image_style: image_map_marker_height_50
             image_loading:
               attribute: eager
             svg_attributes:

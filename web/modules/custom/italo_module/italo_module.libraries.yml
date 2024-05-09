@@ -12,7 +12,7 @@ leaflet_map_interactions:
   js:
     js/leaflet_map_interactions.js: {}
   dependencies:
-    - leaflet/leaflet
+    - leaflet/leaflet-drupal
     - geofield_311/geofield_311
 
 leaflet_geometry_util:
@@ -25,7 +25,7 @@ leaflet_geometry_util:
   js:
     js/Leaflet.GeometryUtil/src/leaflet.geometryutil.js: {}
   dependencies:
-    - leaflet/leaflet
+    - leaflet/leaflet-drupal
 
 leaflet-arrowheads:
   remote: https://github.com/slutske22/leaflet-arrowheads
