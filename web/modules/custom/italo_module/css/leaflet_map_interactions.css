@@ -329,15 +329,15 @@
 }
 /* line 301, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-small div {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
   background-color: rgba(251, 252, 251, 0.76) !important;
   border: gray solid 1px;
 }
 /* line 307, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-small div span {
-  line-height: 20px;
+  line-height: 22px;
 }
 /* line 312, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-medium {

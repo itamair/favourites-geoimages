@@ -299,13 +299,13 @@
   &.marker-cluster-small {
     background-color: inherit !important;
     div {
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
       background-color: rgba(251, 252, 251, 0.76) !important;
       border: gray solid 1px;
       span {
-        line-height: 20px;
+        line-height: 22px;
       }
     }
   }
