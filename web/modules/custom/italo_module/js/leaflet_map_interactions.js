@@ -157,7 +157,7 @@
     getIconSizeRate: function(zoomLevel) {
       const self = this;
       //return Math.exp(Math.sqrt(map.getZoom()));
-      return Math.pow(zoomLevel/self.zoomDefaultIconSize, 3) + 0.1;
+      return Math.pow(zoomLevel/self.zoomDefaultIconSize, 4) + 0.1;
     },
 
     /**
