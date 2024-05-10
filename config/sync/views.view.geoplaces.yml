@@ -4052,7 +4052,7 @@ display:
           leaflet_markercluster:
             control: true
             include_path: true
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"maxClusterRadius":30,"disableClusteringAtZoom":17}'
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":false,"removeOutsideVisibleBounds":false,"maxClusterRadius":30,"disableClusteringAtZoom":19}'
             excluded: field_markercluster_exclude
           fullscreen:
             control: true
