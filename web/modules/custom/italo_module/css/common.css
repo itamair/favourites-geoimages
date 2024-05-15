@@ -215,12 +215,12 @@ a, a.link {
   padding: 10px;
 }
 
-/* line 207, ../sass/common.scss */
+/* line 214, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates h2,
 .view-geoimages-list.view-display-id-attachment_dates h2 {
   font-size: 1.5rem;
 }
-/* line 210, ../sass/common.scss */
+/* line 217, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content {
   max-height: 120px;
@@ -228,19 +228,19 @@ a, a.link {
   border: 1px solid lightgrey;
   padding: 0 10px 10px 10px;
 }
-/* line 215, ../sass/common.scss */
+/* line 222, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content > h3,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content > h3 {
   margin-block: 4px;
   font-size: 1rem;
   font-weight: normal;
 }
-/* line 220, ../sass/common.scss */
+/* line 227, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content > div,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content > div {
   display: none;
 }
-/* line 224, ../sass/common.scss */
+/* line 231, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content,
 .view-geoimages-list.view-display-id-attachment_dates .view-content {
   max-height: 106px;
@@ -248,14 +248,14 @@ a, a.link {
   border: 1px solid lightgrey;
   padding: 0 10px 10px 10px;
 }
-/* line 229, ../sass/common.scss */
+/* line 236, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content > h3,
 .view-geoimages-list.view-display-id-attachment_dates .view-content > h3 {
   margin-block: 4px;
   font-size: 1rem;
   font-weight: normal;
 }
-/* line 234, ../sass/common.scss */
+/* line 241, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content > div,
 .view-geoimages-list.view-display-id-attachment_dates .view-content > div {
   display: none;

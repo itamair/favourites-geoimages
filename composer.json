@@ -175,7 +175,8 @@
         "patches": {
             "drupal/core": {
                 "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
-                "#2957368 Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2023-11-21/drupal-2957368-50.patch"
+                "#2957368 Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2023-11-21/drupal-2957368-50.patch",
+                "#3344910 Ajax error on views with aggregation": "https://www.drupal.org/files/issues/2023-09-15/aggregation_in_views-3344910-8.patch"
             },
             "drupal/viewfield": {
                 "#3381787 Getting PHP errors when setting default value": "https://www.drupal.org/files/issues/2023-08-21/3381787.patch"

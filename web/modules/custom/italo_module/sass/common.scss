@@ -202,6 +202,13 @@ a, a.link {
   }
 }
 
+// Css Rules for the attachment_dates views
+// Probably most of the following css rules are not strictly needed anymore
+// because the rows have been removed from the applied overriding
+// views-view-unformatted theme implementation for the
+// * --geoplaces--attachment_dates.html view
+// @see web/themes/taranto_viva/templates/views/views-view-unformatted--geoplaces--attachment_dates.html.twig
+// @see web/themes/taranto_viva/templates/views/views-view-unformatted--geoimages_list--attachment_dates.html.twig
 .view-id-geoplaces.view-display-id-attachment_dates,
 .view-geoimages-list.view-display-id-attachment_dates {
   h2 {
