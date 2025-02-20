@@ -1,4 +1,3 @@
-langcode: en
 geojson_app_limit:
   file: ''
   stroke_color: '#ff2600'

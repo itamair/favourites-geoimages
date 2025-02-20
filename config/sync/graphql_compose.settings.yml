@@ -1,6 +1,5 @@
 _core:
   default_config_hash: VK9dbWdEM1126nBpuBIuDqy8NjjaON_YpFqPMEoLg_s
-langcode: en
 entity_config:
   media:
     geoimage:

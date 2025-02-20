@@ -174,7 +174,7 @@
         },
         "patches": {
             "drupal/core": {
-                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
+                "#2925890 Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2024-06-25/2925890-75.patch",
                 "#2957368 Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2023-11-21/drupal-2957368-50.patch",
                 "#3344910 Ajax error on views with aggregation": "https://www.drupal.org/files/issues/2023-09-15/aggregation_in_views-3344910-8.patch"
             },
@@ -187,9 +187,6 @@
             "drupal/rate": {
                 "#3331890 Voting Storages does not check access on entity query 30": "https://www.drupal.org/files/issues/2023-10-23/3331890-rate-entity-query-access-list-3.0.x-30.patch",
                 "#3331890 Voting Storages does not check access on entity query 31": "https://www.drupal.org/files/issues/2023-10-25/3331890-rate-entity-query-access-list-3.0.x-31.patch.patch"
-            },
-            "drupal/geofield": {
-                "#3423627 isEmpty": "https://git.drupalcode.org/project/geofield/-/merge_requests/27/diffs.patch"
             }
         }
     },
