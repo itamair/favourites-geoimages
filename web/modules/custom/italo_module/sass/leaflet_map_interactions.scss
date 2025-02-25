@@ -196,12 +196,14 @@
   }
   &.opacity-50:hover {
     opacity: 100% !important;
+    border: yellow solid 3px;
   }
-  &.opacity-75 {
-    opacity: 60% !important;
+  &.opacity-70 {
+    opacity: 70% !important;
   }
-  &.opacity-75:hover {
+  &.opacity-70:hover {
     opacity: 100% !important;
+    border: #ff9300 solid 3px;
   }
 }
 
