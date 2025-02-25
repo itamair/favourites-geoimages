@@ -516,3 +516,24 @@ function italo_module_config_form_builder($entity_type_id, FieldConfigInterface 
     $fieldConfig->unsetThirdPartySetting('italo_module', 'on_update');
   }
 }
+
+/**
+ * Implements hook_cron()
+ *
+ * Delete Unused Files
+ */
+function italo_module_cron() {
+  // get all files ids
+  $fids = Drupal::entityQuery('file')->accessCheck(FALSE)->execute();
+  $file_usage = Drupal::service('file.usage');
+  // loop all fids and load files by fid
+  foreach ($fids as $fid) {
+    $file = Drupal\file\Entity\File::load($fid);
+    $usage = $file_usage->listUsage($file);
+    // check if file not used
+    if (count($usage) == 0) {
+      $file->delete();
+    }
+  }
+}
+
