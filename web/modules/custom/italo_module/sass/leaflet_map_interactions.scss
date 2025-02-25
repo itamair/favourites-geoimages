@@ -315,7 +315,7 @@
       height: 24px;
       border-radius: 12px;
       background-color: rgba(251, 252, 251, 0.76) !important;
-      border: gray solid 1px;
+      border: black solid 1px;
       span {
         line-height: 22px;
       }
@@ -324,20 +324,6 @@
   &.marker-cluster-medium {
     background-color: inherit !important;
     div {
-      width: 30px;
-      height: 30px;
-      border-radius: 15px;
-      background-color: rgba(251, 252, 251, 0.76) !important;
-      border: black solid 1px;
-      span {
-        line-height: 30px;
-      }
-    }
-  }
-  &.marker-cluster-large {
-    background-color: inherit !important;
-    z-index: 100 !important;
-    div {
       width: 40px;
       height: 40px;
       border-radius: 20px;
@@ -345,6 +331,20 @@
       border: black solid 1px;
       span {
         line-height: 40px;
+      }
+    }
+  }
+  &.marker-cluster-large {
+    background-color: inherit !important;
+    z-index: 100 !important;
+    div {
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      background-color: rgba(251, 252, 251, 0.76) !important;
+      border: black solid 1px;
+      span {
+        line-height: 50px;
       }
     }
   }

@@ -347,7 +347,7 @@
   height: 24px;
   border-radius: 12px;
   background-color: rgba(251, 252, 251, 0.76) !important;
-  border: gray solid 1px;
+  border: black solid 1px;
 }
 /* line 319, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-small div span {
@@ -359,15 +359,15 @@
 }
 /* line 326, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-medium div {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
   background-color: rgba(251, 252, 251, 0.76) !important;
   border: black solid 1px;
 }
 /* line 332, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-medium div span {
-  line-height: 30px;
+  line-height: 40px;
 }
 /* line 337, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-large {
@@ -376,13 +376,13 @@
 }
 /* line 340, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-large div {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
   background-color: rgba(251, 252, 251, 0.76) !important;
   border: black solid 1px;
 }
 /* line 346, ../sass/leaflet_map_interactions.scss */
 .leaflet-marker-icon.marker-cluster.marker-cluster-large div span {
-  line-height: 40px;
+  line-height: 50px;
 }
