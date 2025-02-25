@@ -140,10 +140,19 @@ a, a.link {
 }
 
 // view-id-geo_images_list
-
-.view-id-geo_images_list {
+.view-id-geoimages_list {
   .views-view-grid__item {
     margin-bottom: 0.5rem;
+    .block-layout-builder {
+      margin-bottom: 4px;
+    }
+    // Alter .layout--twocol-section at smaller screens.
+    .layout {
+      margin-block-end: 0 !important;
+    }
+    .layout--twocol-section > .layout__region {
+      flex: 1 0 45% !important;
+    }
   }
   .views-field-field-components {
     a {
@@ -153,13 +162,18 @@ a, a.link {
       }
     }
   }
+  .field--name-field-exif-creation-date {
+    margin: 0 10px 0 0;
+    font-size: 0.8rem;
+    float: right;
+  }
 }
 
 // GeofieldGoogleMapsLinkFieldItemList.
 .field--name-geofield-googlemaps-link .field__item {
   display: inline;
   margin: 0 10px 0 0;
-  font-size: 0.9rem;
+  text-wrap: nowrap;
 }
 
 // Popup Message

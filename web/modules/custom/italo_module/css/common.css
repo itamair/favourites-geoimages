@@ -149,78 +149,96 @@ a, a.link {
     height: 40px;
   }
 }
-/* line 145, ../sass/common.scss */
-.view-id-geo_images_list .views-view-grid__item {
+/* line 144, ../sass/common.scss */
+.view-id-geoimages_list .views-view-grid__item {
   margin-bottom: 0.5rem;
 }
-/* line 149, ../sass/common.scss */
-.view-id-geo_images_list .views-field-field-components a {
+/* line 146, ../sass/common.scss */
+.view-id-geoimages_list .views-view-grid__item .block-layout-builder {
+  margin-bottom: 4px;
+}
+/* line 150, ../sass/common.scss */
+.view-id-geoimages_list .views-view-grid__item .layout {
+  margin-block-end: 0 !important;
+}
+/* line 153, ../sass/common.scss */
+.view-id-geoimages_list .views-view-grid__item .layout--twocol-section > .layout__region {
+  flex: 1 0 45% !important;
+}
+/* line 158, ../sass/common.scss */
+.view-id-geoimages_list .views-field-field-components a {
   font-size: 0.8rem;
 }
-/* line 151, ../sass/common.scss */
-.view-id-geo_images_list .views-field-field-components a .field--name-field-media-image {
+/* line 160, ../sass/common.scss */
+.view-id-geoimages_list .views-field-field-components a .field--name-field-media-image {
   margin-bottom: 1rem;
 }
+/* line 165, ../sass/common.scss */
+.view-id-geoimages_list .field--name-field-exif-creation-date {
+  margin: 0 10px 0 0;
+  font-size: 0.8rem;
+  float: right;
+}
 
-/* line 159, ../sass/common.scss */
+/* line 173, ../sass/common.scss */
 .field--name-geofield-googlemaps-link .field__item {
   display: inline;
   margin: 0 10px 0 0;
-  font-size: 0.9rem;
+  text-wrap: nowrap;
 }
 
-/* line 166, ../sass/common.scss */
+/* line 180, ../sass/common.scss */
 #popup-message-window {
   width: 40% !important;
   height: 80% !important;
 }
 
 @media only screen and (max-width: 1000px) {
-  /* line 172, ../sass/common.scss */
+  /* line 186, ../sass/common.scss */
   #popup-message-window {
     width: 80% !important;
     height: 80% !important;
   }
 }
-/* line 179, ../sass/common.scss */
+/* line 193, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map.form--inline > *,
 #views-exposed-form-geoimages-list-page-images-list.form--inline > * {
   vertical-align: unset;
   margin-block: 0;
 }
-/* line 183, ../sass/common.scss */
+/* line 197, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map fieldset,
 #views-exposed-form-geoimages-list-page-images-list fieldset {
   border: none;
 }
-/* line 185, ../sass/common.scss */
+/* line 199, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map fieldset .fieldset__legend,
 #views-exposed-form-geoimages-list-page-images-list fieldset .fieldset__legend {
   display: none;
 }
-/* line 189, ../sass/common.scss */
+/* line 203, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map fieldset .fieldset__wrapper,
 #views-exposed-form-geoimages-list-page-images-list fieldset .fieldset__wrapper {
   padding: 0;
 }
-/* line 192, ../sass/common.scss */
+/* line 206, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map fieldset .fieldset__wrapper .form-item,
 #views-exposed-form-geoimages-list-page-images-list fieldset .fieldset__wrapper .form-item {
   margin: 0;
   border: none;
 }
-/* line 195, ../sass/common.scss */
+/* line 209, ../sass/common.scss */
 #views-exposed-form-geoplaces-page-map fieldset .fieldset__wrapper .form-item input,
 #views-exposed-form-geoimages-list-page-images-list fieldset .fieldset__wrapper .form-item input {
   padding: 10px;
 }
 
-/* line 214, ../sass/common.scss */
+/* line 228, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates h2,
 .view-geoimages-list.view-display-id-attachment_dates h2 {
   font-size: 1.5rem;
 }
-/* line 217, ../sass/common.scss */
+/* line 231, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content {
   max-height: 120px;
@@ -228,19 +246,19 @@ a, a.link {
   border: 1px solid lightgrey;
   padding: 0 10px 10px 10px;
 }
-/* line 222, ../sass/common.scss */
+/* line 236, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content > h3,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content > h3 {
   margin-block: 4px;
   font-size: 1rem;
   font-weight: normal;
 }
-/* line 227, ../sass/common.scss */
+/* line 241, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .block__content .view-content > div,
 .view-geoimages-list.view-display-id-attachment_dates .block__content .view-content > div {
   display: none;
 }
-/* line 231, ../sass/common.scss */
+/* line 245, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content,
 .view-geoimages-list.view-display-id-attachment_dates .view-content {
   max-height: 106px;
@@ -248,14 +266,14 @@ a, a.link {
   border: 1px solid lightgrey;
   padding: 0 10px 10px 10px;
 }
-/* line 236, ../sass/common.scss */
+/* line 250, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content > h3,
 .view-geoimages-list.view-display-id-attachment_dates .view-content > h3 {
   margin-block: 4px;
   font-size: 1rem;
   font-weight: normal;
 }
-/* line 241, ../sass/common.scss */
+/* line 255, ../sass/common.scss */
 .view-id-geoplaces.view-display-id-attachment_dates .view-content > div,
 .view-geoimages-list.view-display-id-attachment_dates .view-content > div {
   display: none;

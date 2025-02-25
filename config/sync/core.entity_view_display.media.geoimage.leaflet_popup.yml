@@ -15,18 +15,118 @@ dependencies:
     - image.style.map_scaled_cropped_image_800_500
     - media.type.geoimage
   module:
+    - datetime
     - layout_builder
+    - layout_discovery
     - link
     - svg_image
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          layout_builder_styles_style:
+            user_profile_section_style: 0
+        components:
+          7ca9cf85-b79d-40ab-bbfd-ff054f1a5592:
+            uuid: 7ca9cf85-b79d-40ab-bbfd-ff054f1a5592
+            region: content
+            configuration:
+              id: 'field_block:media:geoimage:field_media_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: map_scaled_cropped_image_800_500
+                  image_loading:
+                    attribute: eager
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+          layout_builder_styles_style:
+            user_profile_section_style: 0
+        components:
+          706369d3-6fbf-483f-92d7-2a23c5475762:
+            uuid: 706369d3-6fbf-483f-92d7-2a23c5475762
+            region: second
+            configuration:
+              id: 'field_block:media:geoimage:field_exif_creation_date'
+              label: 'Exif Creation Date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: day
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          551e1df9-e4d9-415d-ba6b-863d95d0c95a:
+            uuid: 551e1df9-e4d9-415d-ba6b-863d95d0c95a
+            region: first
+            configuration:
+              id: 'field_block:media:geoimage:geofield_googlemaps_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
 id: media.geoimage.leaflet_popup
 targetEntityType: media
 bundle: geoimage
 mode: leaflet_popup
 content:
+  field_exif_creation_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_media_image:
     type: image
     label: hidden
@@ -52,12 +152,11 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   created: true
   field_address: true
-  field_exif_creation_date: true
   field_generate_host_content: true
   field_geofield: true
   field_image_caption: true

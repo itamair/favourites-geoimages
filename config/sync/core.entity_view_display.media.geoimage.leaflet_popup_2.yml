@@ -41,7 +41,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: taranto_viva_medium
+      format_type: day
     third_party_settings: {  }
     weight: 1
     region: content

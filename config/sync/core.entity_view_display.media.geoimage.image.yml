@@ -17,13 +17,116 @@ dependencies:
   module:
     - datetime
     - layout_builder
+    - layout_discovery
     - link
     - photoswipe
     - photoswipe_dynamic_caption
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ef9eaf7d-fc77-40e8-8360-818630c04a03:
+            uuid: ef9eaf7d-fc77-40e8-8360-818630c04a03
+            region: content
+            configuration:
+              id: 'field_block:media:geoimage:field_media_image'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: map_scaled_cropped_image_800_500
+                  image_loading:
+                    attribute: lazy
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          554a21e8-191b-4073-954f-c9b616084a09:
+            uuid: 554a21e8-191b-4073-954f-c9b616084a09
+            region: content
+            configuration:
+              id: 'field_block:media:geoimage:field_address'
+              label: Address
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+          layout_builder_styles_style:
+            user_profile_section_style: 0
+        components:
+          1d4d5243-cc69-49be-b509-88b588d843e8:
+            uuid: 1d4d5243-cc69-49be-b509-88b588d843e8
+            region: second
+            configuration:
+              id: 'field_block:media:geoimage:field_exif_creation_date'
+              label: 'Exif Creation Date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: UTC
+                  format_type: day
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          2731a1fa-3589-4036-a632-6a8e2e65a8ff:
+            uuid: 2731a1fa-3589-4036-a632-6a8e2e65a8ff
+            region: first
+            configuration:
+              id: 'field_block:media:geoimage:geofield_googlemaps_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: nofollow
+                  target: _blank
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: media.geoimage.image
 targetEntityType: media
 bundle: geoimage
