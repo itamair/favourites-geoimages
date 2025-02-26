@@ -4078,8 +4078,8 @@ display:
             html_class: leaflet-map-divicon
             circle_marker_options: '{"radius":4,"color":"red","fillColor":"#f03","fillOpacity":0.5,"stroke":false}'
             iconSize:
-              x: '200'
-              'y': '150'
+              x: '120'
+              'y': '80'
             iconAnchor:
               x: ''
               'y': ''
