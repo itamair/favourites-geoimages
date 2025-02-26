@@ -76,6 +76,7 @@
         "drupal/single_image_formatter": "^1.6",
         "drupal/slick": "^2.7",
         "drupal/svg_image": "^3.0",
+        "drupal/taxonomy_delete": "^1.5",
         "drupal/token": "^1.11",
         "drupal/upgrade_status": "^4.0",
         "drupal/uuid_extra": "^2.0",

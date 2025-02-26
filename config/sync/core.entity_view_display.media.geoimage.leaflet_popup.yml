@@ -92,9 +92,12 @@ third_party_settings:
             region: first
             configuration:
               id: 'field_block:media:geoimage:geofield_googlemaps_link'
+              label: 'Geofield Google Maps Link'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: link
                 label: hidden
@@ -102,8 +105,8 @@ third_party_settings:
                   trim_length: 80
                   url_only: false
                   url_plain: false
-                  rel: ''
-                  target: ''
+                  rel: '0'
+                  target: _blank
                 third_party_settings: {  }
             weight: 0
             additional: {  }
