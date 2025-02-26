@@ -11,6 +11,7 @@ dependencies:
     - field.field.media.geoimage.field_image_caption
     - field.field.media.geoimage.field_media_image
     - field.field.media.geoimage.field_place_type
+    - field.field.media.geoimage.field_project_event
     - field.field.media.geoimage.field_project_namespace
     - image.style.map_scaled_cropped_image_800_500
     - media.type.geoimage
@@ -55,24 +56,24 @@ third_party_settings:
                     height: null
                   svg_render_as_image: false
                 third_party_settings: {  }
-            weight: 2
+            weight: 3
             additional: {  }
-          554a21e8-191b-4073-954f-c9b616084a09:
-            uuid: 554a21e8-191b-4073-954f-c9b616084a09
+          cd590cbd-48e5-4ba3-8e6c-e792189ae10b:
+            uuid: cd590cbd-48e5-4ba3-8e6c-e792189ae10b
             region: content
             configuration:
-              id: 'field_block:media:geoimage:field_address'
-              label: Address
+              id: 'field_block:media:geoimage:field_project_event'
+              label: Project/Event
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: string
+                type: entity_reference_label
                 label: hidden
                 settings:
-                  link_to_entity: false
+                  link: false
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -175,6 +176,7 @@ hidden:
   field_geofield: true
   field_image_caption: true
   field_place_type: true
+  field_project_event: true
   field_project_namespace: true
   geoimage_caption: true
   langcode: true

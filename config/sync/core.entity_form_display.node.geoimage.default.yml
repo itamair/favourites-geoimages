@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.geoimage.field_components
     - field.field.node.geoimage.field_exclude_from_map_bounds
     - field.field.node.geoimage.field_place_type
+    - field.field.node.geoimage.field_project_event
     - field.field.node.geoimage.field_project_namespace
     - node.type.geoimage
   module:
+    - autocomplete_deluxe
     - paragraphs
     - path
 id: node.geoimage.default
@@ -20,13 +22,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_classname:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
@@ -34,7 +36,7 @@ content:
     third_party_settings: {  }
   field_components:
     type: paragraphs
-    weight: 11
+    weight: 12
     region: content
     settings:
       title: Paragraph
@@ -52,10 +54,27 @@ content:
     third_party_settings: {  }
   field_exclude_from_map_bounds:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_project_event:
+    type: autocomplete_deluxe
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
+      size: 60
+      selection_handler: default
+      match_limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: false
+      not_found_message: "The term '@term' will be added"
+      new_terms: true
+      no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
   field_project_namespace:
     type: options_select
@@ -65,34 +84,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -107,7 +126,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

@@ -1,0 +1,11 @@
+uuid: 19fab096-c474-41ee-9cde-618e0dec6e76
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.project_event
+id: taxonomy_term.project_event
+target_entity_type_id: taxonomy_term
+target_bundle: project_event
+default_langcode: site_default
+language_alterable: false

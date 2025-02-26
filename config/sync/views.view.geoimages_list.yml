@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_components
     - node.type.geoimage
     - system.menu.main
+    - taxonomy.vocabulary.project_event
   module:
     - better_exposed_filters
     - datetime
@@ -14,6 +15,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - taxonomy
     - user
 id: geoimages_list
 label: 'GeoImages List'
@@ -320,7 +322,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -863,13 +865,70 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           type: date
+        field_project_event_target_id:
+          id: field_project_event_target_id
+          table: node__field_project_event
+          field: field_project_event_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_project_event_target_id_op
+            label: 'Project / Event'
+            description: ''
+            use_operator: false
+            operator: field_project_event_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_project_event_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              vagante_importer: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: project_event
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
           1: AND
       style:
         type: grid
-        options: {  }
+        options:
+          grouping: {  }
+          columns: 3
+          automatic_width: true
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: true
+          col_class_custom: ''
+          col_class_default: true
       row:
         type: fields
         options:

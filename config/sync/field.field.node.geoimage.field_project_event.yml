@@ -1,0 +1,29 @@
+uuid: ffe9fe86-db82-4f18-9214-c57a5c9059ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_event
+    - node.type.geoimage
+    - taxonomy.vocabulary.project_event
+id: node.geoimage.field_project_event
+field_name: field_project_event
+entity_type: node
+bundle: geoimage
+label: 'Project / Event'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      project_event: project_event
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -11,6 +11,7 @@ dependencies:
     - field.field.media.geoimage.field_image_caption
     - field.field.media.geoimage.field_media_image
     - field.field.media.geoimage.field_place_type
+    - field.field.media.geoimage.field_project_event
     - field.field.media.geoimage.field_project_namespace
     - image.style.thumbnail
     - media.type.geoimage
@@ -50,6 +51,7 @@ hidden:
   field_geofield: true
   field_image_caption: true
   field_place_type: true
+  field_project_event: true
   name: true
   path: true
   status: true

@@ -1,0 +1,4 @@
+services:
+  italo_module.utility_service:
+      class: Drupal\italo_module\UtilityService
+      arguments: ['@config.factory', '@media_library_importer.service']

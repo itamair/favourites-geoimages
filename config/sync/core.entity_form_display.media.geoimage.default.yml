@@ -10,10 +10,12 @@ dependencies:
     - field.field.media.geoimage.field_image_caption
     - field.field.media.geoimage.field_media_image
     - field.field.media.geoimage.field_place_type
+    - field.field.media.geoimage.field_project_event
     - field.field.media.geoimage.field_project_namespace
     - image.style.thumbnail
     - media.type.geoimage
   module:
+    - autocomplete_deluxe
     - datetime
     - geofield_311
     - path
@@ -26,13 +28,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
@@ -40,20 +42,20 @@ content:
     third_party_settings: {  }
   field_exif_creation_date:
     type: datetime_default
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_generate_host_content:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_geofield:
     type: geofield_311_geofield_map_widget
-    weight: 3
+    weight: 4
     region: content
     settings:
       map_geocoder:
@@ -110,7 +112,7 @@ content:
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
-    weight: 2
+    weight: 3
     region: content
     settings:
       rows: 2
@@ -118,7 +120,7 @@ content:
     third_party_settings: {  }
   field_media_image:
     type: image_image
-    weight: 1
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber
@@ -126,9 +128,26 @@ content:
     third_party_settings: {  }
   field_place_type:
     type: options_select
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_project_event:
+    type: autocomplete_deluxe
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
+      size: 60
+      selection_handler: default
+      match_limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: false
+      not_found_message: "The term '@term' will be added"
+      new_terms: true
+      no_empty_message: 'No terms could be found. Please type in order to add a new term.'
     third_party_settings: {  }
   field_project_namespace:
     type: options_select
@@ -138,27 +157,27 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 7
+    weight: 8
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS

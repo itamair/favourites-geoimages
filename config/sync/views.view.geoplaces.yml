@@ -26,6 +26,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.location
     - system.menu.main
+    - taxonomy.vocabulary.project_event
   module:
     - better_exposed_filters
     - color_field
@@ -38,6 +39,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - taxonomy
     - user
 id: geoplaces
 label: GeoPlaces
@@ -647,8 +649,8 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
       access:
         type: perm
         options:
@@ -2145,20 +2147,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.teaser'
-        - 'config:core.entity_view_display.node.geoimage.default'
-        - 'config:core.entity_view_display.node.geoimage.leaflet_popup'
-        - 'config:core.entity_view_display.node.geoimage.leaflet_popup_2'
-        - 'config:core.entity_view_display.node.geoimage.teaser'
-        - 'config:core.entity_view_display.node.geoplace.default'
-        - 'config:core.entity_view_display.node.geoplace.full'
-        - 'config:core.entity_view_display.node.geoplace.geoplace_tile'
-        - 'config:core.entity_view_display.node.geoplace.leaflet_popup'
-        - 'config:core.entity_view_display.node.geoplace.teaser'
-        - 'config:core.entity_view_display.node.page.default'
-        - 'config:core.entity_view_display.node.page.teaser'
         - 'config:field.storage.media.field_geofield'
         - 'config:field.storage.node.field_category_type'
         - 'config:field.storage.paragraph.field_arrowed'
@@ -3981,6 +3969,55 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           type: date
+        field_project_event_target_id:
+          id: field_project_event_target_id
+          table: node__field_project_event
+          field: field_project_event_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: '1'
+          exposed: true
+          expose:
+            operator_id: field_project_event_target_id_op
+            label: 'Project / Event'
+            description: ''
+            use_operator: 0
+            operator: field_project_event_target_id_op
+            operator_limit_selection: 0
+            operator_list: {  }
+            identifier: field_project_event_target_id
+            required: 0
+            remember: 0
+            multiple: 0
+            remember_roles:
+              authenticated: authenticated
+              anonymous: 0
+              content_editor: 0
+              vagante_importer: 0
+              administrator: 0
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: project_event
+          hierarchy: 0
+          error_message: 1
+          plugin_id: taxonomy_index_tid
       filter_groups:
         operator: AND
         groups:
@@ -4153,20 +4190,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.teaser'
-        - 'config:core.entity_view_display.node.geoimage.default'
-        - 'config:core.entity_view_display.node.geoimage.leaflet_popup'
-        - 'config:core.entity_view_display.node.geoimage.leaflet_popup_2'
-        - 'config:core.entity_view_display.node.geoimage.teaser'
-        - 'config:core.entity_view_display.node.geoplace.default'
-        - 'config:core.entity_view_display.node.geoplace.full'
-        - 'config:core.entity_view_display.node.geoplace.geoplace_tile'
-        - 'config:core.entity_view_display.node.geoplace.leaflet_popup'
-        - 'config:core.entity_view_display.node.geoplace.teaser'
-        - 'config:core.entity_view_display.node.page.default'
-        - 'config:core.entity_view_display.node.page.teaser'
         - 'config:field.storage.media.field_geofield'
         - 'config:field.storage.node.field_category_type'
         - 'config:field.storage.node.field_classname'

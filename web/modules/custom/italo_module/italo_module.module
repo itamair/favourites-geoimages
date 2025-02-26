@@ -312,6 +312,15 @@ function italo_module_media_insert(MediaInterface $media) {
     // If Media Geoimage Media needs to create an host Geoimage Node.
     if ($media->field_generate_host_content->value && $title = $media->field_address->value) {
       $user = \Drupal::currentUser();
+
+      $media_image_data = $media->get('field_media_image')->getValue();
+      $file_url = parse_url($media_image_data[0]['value'], PHP_URL_PATH);
+
+      // Generate the Project/Event Term Id for the Media Image Url being imported.
+      /** @var \Drupal\italo_module\ItaloModuleUtilityService $utility_service */
+      $utility_service = \Drupal::service('italo_module.utility_service');
+      $tid = $utility_service->getMediaProjectEventTid($file_url);
+
       // Create/Save the Geoimage Paragraph, referencing the Geoimage Media.
       $paragraph_geoimage_data = [
         'type' => 'geoimage',
@@ -337,6 +346,7 @@ function italo_module_media_insert(MediaInterface $media) {
             'target_revision_id' => $paragraph_geoimage->getRevisionId(),
           ],
         ],
+        'field_project_event' => isset($tid) ? [['target_id' => (int) $tid]] : NULL,
       ];
 
       // Create/Save the Geoimage Node, with Geoimage Paragraph/Geoimage Media.
@@ -374,7 +384,16 @@ function italo_module_media_insert(MediaInterface $media) {
  */
 function italo_module_alter_media_library_importer_media_extra_fields(FileInterface $file, string $file_url, string $uri, array &$extra_fields) {
   $extra_fields['field_generate_host_content'] = TRUE;
+
+  // Generate the Project/Event Term Id for the Media Image Url being imported.
+  /** @var \Drupal\italo_module\UtilityService $utility_service */
+  $utility_service = \Drupal::service('italo_module.utility_service');
+  $tid = $utility_service->getMediaProjectEventTid($file_url);
+  $extra_fields['field_project_event'] = [
+    ['target_id' => $tid]
+  ];
 }
+
 
 /**
  * Implements hook_entity_prepare_form().
