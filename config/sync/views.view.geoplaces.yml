@@ -3920,6 +3920,51 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: 0
+            operator: title_op
+            operator_limit_selection: 0
+            operator_list: {  }
+            identifier: title
+            required: 0
+            remember: 0
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: 0
+              content_editor: 0
+              vagante_importer: 0
+              administrator: 0
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
         field_exif_creation_date_value:
           id: field_exif_creation_date_value
           table: media__field_exif_creation_date
@@ -3978,7 +4023,7 @@ display:
           admin_label: ''
           operator: or
           value: {  }
-          group: '1'
+          group: 1
           exposed: true
           expose:
             operator_id: field_project_event_target_id_op
