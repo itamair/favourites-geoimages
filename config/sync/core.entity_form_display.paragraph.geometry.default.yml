@@ -84,7 +84,8 @@ content:
     type: color_field_widget_html5
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      show_extra: false
     third_party_settings: {  }
   field_fill_opacity:
     type: number
@@ -140,12 +141,14 @@ content:
         options: '{"position":"topleft","pseudoFullscreen":false}'
       path: '{"color":"[paragraph:field_stroke_color]","opacity":"[paragraph:field_stroke_opacity]","stroke":true,"weight":3,"fill":"depends","fillColor":"[paragraph:field_fill_color]","fillOpacity":"[paragraph:field_fill_opacity]","radius":"6"}'
       locate:
-        control: true
+        control: false
         options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
         automatic: false
       geocoder:
         control: true
         settings:
+          set_marker: false
+          popup: true
           autocomplete:
             placeholder: 'Search Address'
             title: 'Search an Address on the Map'
@@ -155,19 +158,18 @@ content:
             arcgisonline:
               weight: 0
               checked: true
-            googlemaps:
-              weight: 1
-              checked: false
+            photon:
+              weight: 3
+              checked: true
             file:
               weight: 0
               checked: false
-            photon:
+            googlemaps:
               weight: 0
-              checked: true
+              checked: false
           min_terms: 4
           delay: 800
           zoom: 16
-          popup: true
           options: ''
       geometry_validation: '1'
       feature_properties:
@@ -199,7 +201,8 @@ content:
     type: color_field_widget_html5
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      show_extra: false
     third_party_settings: {  }
   field_stroke_opacity:
     type: number

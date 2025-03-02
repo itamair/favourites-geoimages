@@ -17,8 +17,8 @@ third_party_settings:
     disabled: false
     hidden: false
     providers:
-      - photon
       - googlemaps
+      - photon
     dumper: wkt
     delta_handling: default
     failure:
@@ -33,18 +33,7 @@ label: Geofield
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: 'POINT (12.569023 55.675757)'
-    geo_type: Point
-    lon: 12.569023
-    lat: 55.675757
-    left: 12.569023
-    top: 55.675757
-    right: 12.569023
-    bottom: 55.675757
-    geohash: u3buwp2qz3qg
-    latlon: '55.675757,12.569023'
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: geofield
